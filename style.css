@@ -1,0 +1,88 @@
+/* CC Labs Stylesheet */
+
+body {
+  background: url('/images/bg-std.png') top left repeat-x;
+  background-color: #fafafa;
+  	color: #333;
+  	font: 0.85em/120% "Trebuchet MS", "Lucidia Grande", verdana, arial, sans-serif;
+  	padding: 0;
+  	margin: 15px;
+  	margin-bottom: 0;
+}
+
+#box {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#header {
+  margin-bottom: 15px;
+}
+#header img {
+  float: left;
+  margin-bottom: 20px;
+  
+}
+
+#header p.blurb {
+  float: right;
+  padding-top: 7px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  border-left: 1px solid #999;
+  margin-left: 200px;
+}
+
+#innertube {
+	clear: both;
+	background-color: #fff;
+}
+
+#content {
+  clear: both;
+  background-color: #fff;
+  width: 66%;
+  margin-left: 15%;
+}
+
+
+#content .blurb {
+  padding: 20px;
+  
+}
+
+#content .blurb p {
+ /* width: 66%;*/
+}
+
+div.blurb {
+	border-bottom: 1px solid #999;
+	
+}
+
+#content h2 {
+  padding: 20px;
+  padding-bottom: 10px;
+	color: #4a4c4a;
+	border-bottom: 5px solid #ABB3AC;
+}
+
+#content .grey {
+  /*background-color: #f2faf7;*/
+}
+
+#footer {
+  clear: both;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
+  padding-top: 3px;
+  padding-bottom: 20px;
+  font-size: 75%;
+}
+
+img.dev {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 30px;
+	margin-top: 4px;
+}
