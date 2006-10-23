@@ -53,6 +53,8 @@ function redo(mode) {
     
     if (!remix) {
       document.getElementById('flg-connect-remix').className = "flg-pipe-middle";
+    } else {
+      document.getElementById('flg-connect-remix').className = "flg-pipe-on";
     }
     
   } else {
