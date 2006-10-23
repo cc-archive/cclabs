@@ -1,167 +1,170 @@
-<? $pagetitle = "Freedoms License Generator - one"; ?>
-<? $include = "flg-two.css"; ?>
-<? $onload = "init()"; ?>
+/* Freedoms License Generator - 1 */
 
-<? include_once "../_header.php"; ?>
-
-<script lang="javascript">
-
-var share = false;
-var remix = false;
-var sa = false;
-var nc = false;
-var sa_on = false;
-var nc_on = false;
-
-
-function init() {
-  share = true;
-  remix = true;
-  
-  redo();
+#flg-container {
+	text-align: center;
+	margin: 0 auto;
+	width: 550px;
+	position: relative;
+	top: 0; left: 0;
 }
 
-function redo(mode) {
-  
-  switch (mode) {
-    case "share":
-      share = !share;
-      break;
-    case "remix":
-      remix = !remix;
-      break;
-    case "nc":
-      if (nc_on) { nc = !nc; }
-      break;
-    case "sa":
-      if (sa_on) { sa = !sa; }
-      break;
-    
-  }
-  
-  
-  
-  if (!share) {
-    sa = false;
-    sa_on = false;
-    nc = false;
-    nc_on = false;
-    
-    document.getElementById('flg-connect-nc').className = "flg-pipe-off";
-    document.getElementById('flg-connect-sa').className = "flg-pipe-off";
-    document.getElementById('flg-connect-share').className = "flg-pipe-middle";
-    
-    if (!remix) {
-      document.getElementById('flg-connect-remix').className = "flg-pipe-middle";
-    } else {
-      document.getElementById('flg-connect-remix').className = "flg-pipe-on";
-    }
-    
-  } else {
-    nc_on = true;
-    
-    document.getElementById('flg-connect-share').className = "flg-pipe-on";
-    
-    if (nc) {
-      document.getElementById('flg-connect-nc').className = "flg-pipe-on";
-    } else {
-      document.getElementById('flg-connect-nc').className = "flg-pipe-middle";
-    }
-    
-    if (remix) {
-      sa_on = true;
-      
-      if (sa) {
-        document.getElementById('flg-connect-sa').className = "flg-pipe-on";
-      } else {
-        document.getElementById('flg-connect-sa').className = "flg-pipe-middle";
-      }
-      
-      document.getElementById('flg-connect-remix').className = "flg-pipe-on";
-    } else {
-      sa = false;
-      sa_on = false;
-      document.getElementById('flg-connect-sa').className = "flg-pipe-off";
-      document.getElementById('flg-connect-remix').className = "flg-pipe-middle";
-    }
-  }
-    
-  results();
+h4.freedoms {
+	margin: 5px;
+	color: #6C9D31;
 }
-function results() {
-  f = document.forms[0];
-  if (!share) {
-    if (!remix) {
-      document.getElementById('flg-result').innerHTML = "";
-      return;
-    } else {
-      display('sampling/1.0', 'Sampling 1.0', 'Remix');
-    }
-  } else {
-    if (!remix) {
-      if (nc) {
-        display('by-nc-nd/2.5', 'Attribution-NonCommercial-NoDerivs 2.5', 'Share:NC:ND');
-      } else {
-        display('by-nd/2.5', 'Attribution-NoDerivs 2.5', 'Share:ND');
-      }
-    } else {
-      if (nc) {
-        if (sa) {
-          display('by-nc-sa/2.5', 'Attribution-NonCommercial-ShareAlike 2.5', 'Remix&Share:NC:SA');
-        } else {
-          display('by-nc/2.5', 'Attribution-NonCommercial 2.5', 'Remix&Share:NC');
-        }
-      } else if (sa) {
-          display('by-sa/2.5', 'Attribution-ShareAlike 2.5', 'Remix&Share:SA');
-      } else {
-          display('by/2.5', 'Attribution 2.5', 'Remix&Share');
-      }
-    }
-  }
+h4.conditions {
+	margin: 5px;
+	color: #C0272D;
 }
-function display(code, name, aka) {
-  document.getElementById('flg-result').innerHTML = "<img src='http://i.creativecommons.org/l/"+code+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka;
+
+#flg-ui {
+	position: relative;
+	top: 0; left: 0;
+	width: 500px;
+	padding: 20px;
+	margin: 0 auto;
+	
+	border-top: 2px solid #CADB2A;
+	border-bottom: 2px solid #F26522;
 }
-</script>
+
+#flg-ui img {
+	border: none;
+}
+
+#flg-ui a:link {
+	text-decoration: none;
+}
+
+#flg-freedoms {
+	clear: both;
+}
+
+#flg-freedoms #flg-f-share {
+	float: left;
+}
+
+#flg-freedoms #flg-f-remix {
+	float: right;
+}
+
+#flg-left {
+	clear: both;
+	width: 200px;
+	float: left;
+}
+#flg-mid {
+	position: absolute;
+	top: 256px;
+	left: 120px;
+	background: url(../images/fuzzy.png);
+}
+#flg-right {
+	width: 200px;
+	float: right;
+}
+
+#flg-connect-share {
+	border: 3px solid #888;
+	float: left;
+}
+
+#flg-connect-remix {
+	border: 3px solid #888;
+	float: right;
+}
+
+#flg-connect-nc {
+	clear: both;
+	margin-top: 25px;
+	border: 3px solid #888;
+	float: left;
+}
+
+#flg-connect-sa {
+	clear: both;
+	margin-top: 25px;
+	border: 3px solid #888;
+	float: right;
+}
+
+.flg-pipe-off {
+	border-color: #fff !important;
+}
+
+#flg-connect-share.flg-pipe-middle {
+	border-color: #ccc !important;
+	margin-left: 0;
+	background-color: #eee;
+}
+#flg-connect-remix.flg-pipe-middle {
+	border-color: #ccc !important;
+	margin-right: 0;
+	background-color: #eee;
+}
 
 
-<div id="content">
-  <h2>Freedoms License Generator</h2>
-  <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/>This demo will currently not work with Internet Explorer.</small></p>
-</div>
-
-<div id="flg-container">
-  <h4 class="freedoms">Freedoms</h4>
-<div id="flg-ui">
-  <div id="flg-freedoms">
-    <div id="flg-f-share"><strong><a href="javascript:redo('share')"><img src="http://a2.creativecommons.org/images/deed/share.png" style="float:left"/><br/>
-    Share</a></strong></div>
-    <div id="flg-f-remix"><strong><a href="javascript:redo('remix')">Remix<img src="http://a2.creativecommons.org/images/deed/remix.png"/></a></strong></div>
-  </div>
-  <div id="flg-left">
-    <div id="flg-connect-share" class="flg-pipe-on">&nbsp;</div>
-    <div id="flg-connect-nc" class="flg-pipe-middle">&nbsp;</div>
-  </div>
-
-  <div id="flg-right">
-    <div id="flg-connect-remix" class="flg-pipe-on">&nbsp;</div>
-    <div id="flg-connect-sa" class="flg-pipe-middle">&nbsp;</div>
-  </div>
-  
-  <div id="flg-conditions">
-    <div id="flg-c-nc"><strong><a href="javascript:redo('nc')"><img src="http://a2.creativecommons.org/images/deed/nc.png" style="float:left"/><br/>Non-Commercial</a></strong></div>
-    <div id="flg-c-sa"><strong><a href="javascript:redo('sa')">ShareAlike<img src="http://a2.creativecommons.org/images/deed/sa.png"/></a></strong></div>
-  </div>
-
-  
-  <br clear="all"/>
-</div>
-<h4 class="conditions">Conditions</h4>
-  
-  <div id="flg-mid">
-    <div id="flg-result">BY</div>
-  </div>
-</div>
+#flg-connect-share.flg-pipe-on {
+	border-color: #8cc63f !important;
+	background-color: #a8e67f;
+	margin-left: 44px;
+	margin-top: 15px;
+}
+#flg-connect-remix.flg-pipe-on {
+	border-color: #8cc63f !important;
+	background-color: #a8e67f;
+	margin-right: 44px;
+	margin-top: 15px;
+}
 
 
-<? include_once "../_footer.php"; ?>
+
+#flg-connect-nc.flg-pipe-middle, 
+#flg-connect-sa.flg-pipe-middle {
+	border-color: #ccc !important;
+background-color: #eee;
+}
+
+#flg-connect-nc.flg-pipe-on {
+	border-color: #f7931d !important;
+	background-color: #f3c99d;
+	margin-top: -4px;
+	margin-left: 44px;
+}
+#flg-connect-sa.flg-pipe-on {
+	border-color: #f7931d !important;
+	background-color: #f3c99d;
+	margin-top: -4px;
+	margin-right: 44px;
+}
+
+
+
+#flg-connect-share, 
+#flg-connect-remix, 
+#flg-connect-nc, 
+#flg-connect-sa {
+	width: 200px;
+	height: 175px;
+	border-width: 4px;
+	
+}
+
+#flg-conditions {
+	clear: both;
+}
+
+#flg-conditions #flg-c-nc {
+	float: left;
+}
+
+#flg-conditions #flg-c-sa {
+	float: right;
+}
+
+#flg-result {
+	width: 258px;
+	height: 80px;
+	padding: 20px;
+	border: 1px solid #aaa;
+}
