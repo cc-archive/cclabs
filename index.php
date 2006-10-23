@@ -6,7 +6,8 @@
   <p class="blurb"><img src="/images/dev.png" class="dev" /> Featured here are projects currently under development at <a href="http://creativecommons.org">Creative Commons</a>. All projects are prone to change and are unsupported. Comments and feedback welcome.</p>
   <h2>Current Projects</h2>
   <div class="blurb grey">
-    <h3><a href="/remixshare/"><em>Freedoms</em> Licensing Engine</a></h3>
+    <h3><em>Freedoms</em> Licensing Engine</h3>
+    <p><a href="remixshare/one.php">Implementation One</a> | <a href="remixshare/two.php">Implementation Two</a></p>
     <p>An experimental take on the licensing concept. Playing with the idea of licensing components as puzzle pieces, to allow you to figuratively bolt together and customize the CC license of your choice.</p>
   </div>
   <div class="blurb">
