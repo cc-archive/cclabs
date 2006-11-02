@@ -60,6 +60,7 @@ h4.conditions {
 	left: 250px;
 	background: url(../images/fuzzy.png);
 	font-size:  80%;
+	border:  2px dashed #777;
 }
 #flg-right {
 	width: 243px;
