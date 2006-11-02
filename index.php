@@ -7,7 +7,7 @@
   <h2>Current Projects</h2>
   <div class="blurb grey">
     <h3><em>Freedoms</em> Licensing Engine</h3>
-    <p><a href="remixshare/one.php">Iteration One</a> | <a href="remixshare/two.php">Iteration Two</a> | <a href="remixshare/three.php">Iteration Three</a></p>
+    <p><a href="remixshare/one.php">Iteration One</a> | <a href="remixshare/two.php">Iteration Two</a> | <a href="remixshare/three.php">Iteration Three</a> | <a href="remixshare/four.php">Iteration Four</a></p>
     <p>An experimental take on the licensing concept. Playing with the idea of licensing components as puzzle pieces, to allow you to figuratively bolt together and customize the CC license of your choice.</p>
   </div>
   <div class="blurb">
