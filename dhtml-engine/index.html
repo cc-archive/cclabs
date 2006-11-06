@@ -1,0 +1,157 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>My CC License</title>
+	<style type="text/css" media="screen">
+	/* <![CDATA[ */
+		body {
+			padding: 0px 30px;
+			margin: 0;
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			font: 12px/17px helvetica, arial, verdana;
+		}
+		#container {
+			text-align: left;
+			width: 90%;
+			margin: 0 auto;
+		}
+		#head {
+			border-bottom: 1px solid #009E38;
+			padding: 10px;
+			background-color: #009EF5;
+			color: #fff;
+			font-size: 133%;
+		}
+		#foot {
+			border-top: 1px solid #009E38;
+			padding: 10px;
+			background-color: #efefef;
+		}
+		#main {
+			padding: 20px 10px;
+		}
+		#main .block {
+			width: 68%;
+		}
+		
+		#main div {
+			margin-bottom: 50px;
+		}
+		#main {
+			margin-bottom: 0;
+		}
+		
+		form {
+			margin-left: 30px;
+		}
+		
+		textarea { width: 100%; }
+		
+		#submit {
+			border: 1px solid #009EF5;
+			background-color: #009EF5;
+			font-weight: bold;
+			color: #fff;
+		}
+		
+		.inactive {
+			color: #ccc;
+		}
+		
+		#lic-result {
+			padding-top: 25px;
+			margin-left: -30px;
+			margin-top: 15px;
+			border-top: 1px solid #ddd;
+		}
+		
+		#lic-menu label:hover {
+			border-bottom: 1px dotted #ddd;
+		}
+		
+		#lic-menu label.inactive:hover {
+			border-bottom: none;
+		}
+		
+		#tipDiv {
+			width: 175px;
+			border: 1px solid #ddd;
+			background-color: #fff;
+		}
+		
+	/* ]]> */
+	</style>
+	
+	<script type="text/javascript" language="javascript" src="prototype.js"></script>
+	<script type="text/javascript" language="javascript" src="tooltip.js"></script>
+	<script type="text/javascript" language="javascript" src="cc-license.js"></script>
+	<script type="text/javascript" language="javascript" charset="utf-8">
+	// <![CDATA[
+		function pageInit() {
+			init();
+			initTip();
+		}
+	// ]]>
+	</script>
+</head>
+<body id="" onload="pageInit()">
+	<div id="container">
+		<div id="head">
+			MySpace CC License Generator<br/><em>beta</em> <small>aka, <em>Oops, this looks like Flickr...</em></small>
+		</div>
+		<div id="main">
+			<div class="block">
+			<h3>Information on what makes CC so awesome to use it on MySpace</h3>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla ut tellus ac ligula lacinia aliquet. Vivamus orci dolor, euismod vel, malesuada non, interdum eu, nulla. Nam at libero. Cras nec diam vitae quam fermentum ornare. Maecenas a justo ac velit dignissim porttitor. Mauris eget libero sit amet nibh vehicula luctus. Fusce sit amet nisl vel tortor semper mattis. Quisque vitae sem nec lacus fringilla dignissim. Sed in dolor id nisl condimentum suscipit. Fusce congue ante sagittis augue. Suspendisse potenti. Curabitur id leo. Donec accumsan. Ut ultricies leo. Sed mauris. Morbi dignissim. Donec mattis, erat eget sagittis facilisis, mi odio iaculis sapien, malesuada gravida purus nisl nec eros. Quisque mollis, massa posuere varius feugiat, justo diam faucibus massa, quis varius leo leo nec pede. Vestibulum scelerisque tempus dolor.	
+			</div>
+			
+			<div id="lic-menu" class="block">
+				<h3>Choose the options below for your personalized Creative Commons license</h3>
+				<form>
+					<p>
+						<em><span id="by">by</span><span id="nc">-nc</span><span id="nd">-nd</span><span id="sa" style="display:none;">-sa</span></em><br/>
+					
+					<input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
+					<label for="com">Allow your work to be used commercially</label><br />
+					<input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
+					<label for="mod">Allow other people to modify your work</label><br />
+					<input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
+					<label for="share" id="share-label" class="inactive">People must share their changes</label><br />
+					</p>
+					
+					<p> <!-- MySpace centric style module. You know, for the kids. -->
+						<strong>Style</strong><br />
+						<label><input type="radio" name="style" value="silver" id="style_silver" checked /> Silver&nbsp;</label>
+						<label><input type="radio" name="style" value="red" id="style_red" /> Red&nbsp;</label>
+						<label><input type="radio" name="style" value="green" id="style_green" /> Green&nbsp;</label>
+						<label><input type="radio" name="style" value="blue" id="style_blue" /> Blue&nbsp;</label>
+						<label><input type="radio" name="style" value="black" id="style_black" /> Black&nbsp;</label>
+						<label><input type="radio" name="style" value="none" id="style_black" /> None&nbsp;</label>
+					</p>
+					
+					<p>
+						<strong>Position</strong><br /> <!-- Show thumbnail of position on mouseover? -->
+						<label onmouseover="doTooltip(event,'floating.png');" onmouseout="hideTip()"><input type="radio" name="pos" value="floating" id="pos_float" checked /> Floating&nbsp;</label>
+						<label onmouseover="doTooltip(event,'profile.png')" onmouseout="hideTip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" /> Profile&nbsp;</label>
+					</p>
+					
+					<p><input type="button" name="submit" value="Create!" id="submit" onClick="testSub();"/></p>
+					
+					<p id="lic-result">
+						Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!<br/>
+						<textarea name="result" id="result" rows="8" cols="60">	</textarea>
+					</p>
+				</form>
+				
+			</div>
+		</div>
+		<div id="foot">
+			<small>2006-06-14 / 2006-07-10</small>
+		</div>
+	</div>
+	<div id="tipDiv" style="position:absolute; visibility:hidden; z-index:100">hi!</div>
+</body>
+
+</html>
