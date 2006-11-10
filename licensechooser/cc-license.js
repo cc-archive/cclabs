@@ -4,7 +4,14 @@
 	var nd;
 	var sa;
 	var was;
+    var using;
+    var jurisdiction;
+    var jurisdiction_name = '';
+    var format;
 	
+    var license_root_url = 'http://creativecommons.org/licenses';
+    var license_version  = '2.5';
+
 	/**
 	 * Initialise our license codes, and reset the UI
 	 */
@@ -17,10 +24,15 @@
 		
 		$("mod").checked = false;
 		$("com").checked = false;
-		
+
+        // document.write( $("using") );
+        $("using").checked = true; //  = "using_webpage";
+
 		no_share();
 		
 		was = false;
+        
+        testSub();
 	}
 	
 	/**
@@ -73,6 +85,27 @@
 			Element.toggle('sa');
 			obj.checked ? sa = true : sa = false;
 		}
+
+        if (obj.id == "using")
+        {
+            using = obj.value;
+        }
+
+        if (obj.id == "jurisdiction")
+        {
+            // document.write( obj.value );
+            jurisdiction = obj.value;
+            // TODO: The following is not working in internet explorer on wine
+            jurisdiction_name = jurisdictions_array[jurisdiction]['name'];
+        }
+
+        if (obj.id == "format")
+        {
+            format = obj.value;
+            // document.write( format);
+        }
+
+        testSub();
 	}
 	
 	/**
@@ -102,7 +135,12 @@
 		
 		ver = "2.5";
 		
-		meta = ' <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><Work rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/'+l+'/'+ver+'/" /></Work><License rdf:about="http://creativecommons.org/licenses/'+l+'/'+ver+'/">';
+		meta = '<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><Work rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/'+l+'/'+ver+'/" />';
+
+        if ( format )
+            meta += '<dc:type rdf:resource="http://purl.org/dc/dcmitype/' + format + '" />';
+
+        meta += '</Work><License rdf:about="http://creativecommons.org/licenses/'+l+'/'+ver+'/">';
 		
 		
 		meta += '<requires rdf:resource="http://web.resource.org/cc/Attribution" />';
@@ -116,11 +154,14 @@
 		
 		meta += '<requires rdf:resource="http://web.resource.org/cc/Notice" />';
 		
-		meta += '</License></rdf:RDF> ';
+		meta += '</License></rdf:RDF>';
 		return meta;
-		
 	}
-	
+
+    function comment_out (str)
+    {
+        return ("<!-- " + str + "-->");
+    }
 	
 	/**
 	 * Retreive the selected style option
@@ -146,6 +187,28 @@
 		}
 		return "margin-top:20px;";
 	}
+
+    function build_license_url (license)
+    {
+        var license_url = license_root_url + "/" + license + "/" + 
+                          license_version + "/" ;
+        if ( jurisdiction )
+            license_url += jurisdiction + "/" ;
+
+        return( license_url );
+    }
+
+    function build_license_text (license_url, license_name)
+    {
+        var license_text = '';
+        if ( jurisdiction_name )
+            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + jurisdiction_name + ' License</a>.';
+        else if ( jurisdiction )
+            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + jurisdiction.toUpperCase() + ' License</a>.';
+        else 
+            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' License</a>.';
+        return( license_text );
+    }
 	
 	/**
 	 * Checks what options the user has set and spits out license code based on the values
@@ -172,16 +235,24 @@
 		
 		if (( nd) && ( nc) && (!sa)) {
 		/* by-nc-nd */ license[0] = "by-nc-nd"; license[1] = "Attribution-NonCommercial-NoDerivatives"; }
-		
-		
-		cc = '<div class="cc-info">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/' + license[0] + '/2.5/">Creative Commons ' + license[1] + ' 2.5 License</a>.</div><a rel="license" href="http://creativecommons.org/licenses/' + license[0] + '/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png" class="cc-button"/></a> ';
+
+        license_url = build_license_url(license[0]);
+
+        var license_text = build_license_text(license_url, license[1]);
+
+		    cc = '<div class="cc-info">' + license_text + '</div><a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png" class="cc-button"/></a> ';
 
 		/* banner wrapper */
-		cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; margin: 10px 15px 0 0; width: 275px; } </style> <div class="cc-bar">' + cc + buildRDF() + '</div>';
-		
+        if ( 'myspace' == using )
+		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; margin: 10px 15px 0 0; width: 275px; } </style> <div class="cc-bar">' + cc + comment_out( buildRDF() ) + '</div>';
+        else
+            cc += comment_out( buildRDF() ) + "</div>";
 		
 		/* ** */
+        // new Insertion.Top('license_example', cc);
+        $('license_example').innerHTML = cc;
 		
 		$('result').value = cc;
+        $('result').focus = true;
 	}
 // ]]>
