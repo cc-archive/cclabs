@@ -16,22 +16,23 @@
 	 * Initialise our license codes, and reset the UI
 	 */
 	function init() {
-		/* default: by-nd-nc */
+		/* default: by */
 		by = true;
-		nc = true;
-		nd = true;
+		nc = false;
+		nd = false;
 		sa = false;
 		
-		$("mod").checked = false;
-		$("com").checked = false;
+		$("mod").checked = true;
+		$("com").checked = true;
 
-        // document.write( $("using") );
         $("using").checked = true; //  = "using_webpage";
 
-		no_share();
+		// no_share();
+        $("share").disabled = false;
 		
 		was = false;
         
+        // sets everything
         testSub();
 	}
 	

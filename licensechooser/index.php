@@ -189,7 +189,7 @@
 
                     </div>
 
-                    <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc">-nc</span><span id="nd">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4>
+                    <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4>
                     <div id="license_selected">
                         <div id="license_example"></div>
 						
