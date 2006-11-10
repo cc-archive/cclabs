@@ -12,7 +12,7 @@
   </div>
   <div class="blurb">
     <h3>DHTML Licensing Engine</h3>
-    <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side <abbr title="Javascript">JS</abbr> application.</p>
+    <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side <abbr title="Javascript">JS</abbr> application. <a href="dhtml-engine">Test it out</a></p>
   </div>
 </div>
 

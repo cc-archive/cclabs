@@ -4,14 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <?= (($meta_extra) ? "$meta_extra\n" : ""); ?>
 
 	<title>ccLabs <?= (($pagetitle) ? "- $pagetitle" : ""); ?></title>
 	
 	<style type="text/css" media="screen">
     @import url(/style.css);
-    <?= (($include) ? "@import url($include);\n" : "\n"); ?>
+    <?= (($include) ? "@import url($include);\n" : ""); ?>
 	</style>
-	
+
+    <?= (($head_extra) ? "$head_extra\n" : "\n"); ?>
 	
 </head>
 

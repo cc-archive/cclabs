@@ -1,90 +1,7 @@
-<html>
-<head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>CC License Generator</title>
-    <link rel="stylesheet" href="../style.css" type="text/css" />
-	<style type="text/css" media="screen">
-	/* <![CDATA[ */
-		body {
-			padding: 0px 30px;
-			margin: 0;
-			text-align: center;
-			color: #333;
-			font: 12px/17px helvetica, arial, verdana;
-		}
-		#container {
-			text-align: left;
-			width: 90%;
-			margin: 0 auto;
-		}
-		#head {
-			border-bottom: 1px solid #009E38;
-			padding: 10px;
-			background-color: #009EF5;
-			color: #fff;
-			font-size: 133%;
-		}
-		#foot {
-			border-top: 1px solid #009E38;
-			padding: 10px;
-			background-color: #efefef;
-		}
-		#main {
-			padding: 20px 10px;
-		}
-		#main .block {
-			width: 68%;
-		}
-		
-		#main div {
-			margin-bottom: 50px;
-		}
-		#main {
-			margin-bottom: 0;
-		}
-		
-		form {
-			margin-left: 30px;
-		}
-		
-		textarea { width: 100%; }
-		
-		#submit {
-			border: 1px solid #009EF5;
-			background-color: #009EF5;
-			font-weight: bold;
-			color: #fff;
-		}
-		
-		.inactive {
-			color: #ccc;
-		}
-		
-		#lic-result {
-			padding-top: 25px;
-			margin-left: -30px;
-			margin-top: 15px;
-			border-top: 1px solid #ddd;
-		}
-		
-		#lic-menu label:hover {
-			border-bottom: 1px dotted #ddd;
-		}
-		
-		#lic-menu label.inactive:hover {
-			border-bottom: none;
-		}
-		
-		#tipDiv {
-			width: 175px;
-			border: 1px solid #ddd;
-			background-color: #fff;
-		}
-		
-	/* ]]> */
-	</style>
-	
-	<script type="text/javascript" language="javascript" src="prototype.js"></script>
+<?php
+    $pagetitle  = 'CC License Generator';
+    $head_extra = 
+	'<script type="text/javascript" language="javascript" src="prototype.js"></script>
 	<script type="text/javascript" language="javascript" src="tooltip.js"></script>
 	<script type="text/javascript" language="javascript" src="cc-license.js"></script>
 	<script type="text/javascript" language="javascript" charset="utf-8">
@@ -94,14 +11,11 @@
 			initTip();
 		}
 	// ]]>
-	</script>
-</head>
-<body id="" onload="pageInit()">
+	</script>';
+    $onload = 'pageInit()';
+    include_once '../_header.php';
+?>
 	<div id="container">
-		<div id="head">
-			CC License Generator<br />
-            <small><em>It is now dynamic...</em></small>
-		</div>
 		<div id="main">
 			<div class="block">
 			<h3>Choose a License</h3>
@@ -154,6 +68,7 @@
 		</div> -->
 	</div>
 	<!-- <div id="tipDiv" style="position:absolute; visibility:hidden; z-index:100">hi!</div> -->
-</body>
 
-</html>
+<?php
+    include_once '../_footer.php';
+?>
