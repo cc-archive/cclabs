@@ -12,6 +12,8 @@
     var license_root_url = 'http://creativecommons.org/licenses';
     var license_version  = '2.5';
 
+    var warning_text = '';
+
 	/**
 	 * Initialise our license codes, and reset the UI
 	 */
@@ -24,8 +26,6 @@
 		
 		$("mod").checked = true;
 		$("com").checked = true;
-
-        $("using").checked = true; //  = "using_webpage";
 
 		// no_share();
         $("share").disabled = false;
@@ -90,10 +90,14 @@
         if (obj.id == "using")
         {
             using = obj.value;
-            if ( 'myspace' == using )
+            if ( 'myspace' == using ) {
                 $('myspace_style').style.display = 'block';
-            else
+                $('myspace_position').style.display = 'block';
+            } else {
                 $('myspace_style').style.display = 'none';
+                $('myspace_position').style.display = 'none';
+                warning_text = '';
+            }
         }
 
         if (obj.id == "jurisdiction")
@@ -108,6 +112,19 @@
         {
             format = obj.value;
             // document.write( format);
+        }
+
+        if (obj.id == 'pos_float')
+        {
+        /*     if ( obj.value == 'floating' ) */
+                warning_text = 
+                    '<p class="alert">Check the bottom of your browser.</p>';
+        }
+
+        if (obj.id == 'pos_profile')
+        {
+                warning_text = '';
+
         }
 
         testSub();
@@ -249,15 +266,14 @@
 
 		/* banner wrapper */
         if ( 'myspace' == using )
-		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 50px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; margin: 1%; width: 300px; } </style> <div class="cc-bar">' + cc + comment_out( buildRDF() ) + '</div>';
+		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 300px; } </style> <div class="cc-bar">' + cc + comment_out( buildRDF() ) + '</div>';
         else
             cc += comment_out( buildRDF() ) + "</div>";
 
         cc = "<!--Creative Commons License-->" + cc;
 
-		/* ** */
         // new Insertion.Top('license_example', cc);
-        $('license_example').innerHTML = cc;
+        $('license_example').innerHTML = warning_text + cc;
 		
 		$('result').value = cc;
         $('result').focus = true;
