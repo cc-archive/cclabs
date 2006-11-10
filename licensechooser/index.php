@@ -140,6 +140,12 @@
                     </p>
                     </div>
 
+                    <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4>
+                    <p class="note"><a href="#result">Get the Code</a></p>
+                    <div id="license_selected">
+                        <div id="license_example"></div>
+                    </div>
+
                     <div id="optional">
 
                     <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('http://a2.creativecommons.org/license/jurisdiction-popup?lang=en'); ?> </p>
@@ -196,12 +202,6 @@
 
                     </div>
 
-                    <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4>
-                    <div id="license_selected">
-                        <div id="license_example"></div>
-                        
-
-                    </div>
 
                     
                     <!-- <p><input type="button" name="submit" value="<?= _('Create Code!'); ?>" id="submit" onClick="testSub();"/></p> -->
