@@ -141,13 +141,6 @@
                     </div>
 
                     <div id="optional">
-                    <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
-					<p>
-                    <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using" />
-					<label for="using"><?= _('Webpage'); ?></label> 
-					<input type="radio" onChange="modify(this)" name="using" value="myspace" id="using" />
-					<label for="using"><?= _('Myspace'); ?></label><br />
-                    </p>
 
                     <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('http://a2.creativecommons.org/license/jurisdiction-popup?lang=en'); ?> </p>
                     
@@ -174,7 +167,25 @@
                     </option>
                     </select>
 
-                    <h4><a href="#"><?= _('Click to include more information about your work') ;?></a></h4>
+                    <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
+					<p>
+                    <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using" />
+					<label for="using"><?= _('Webpage'); ?></label> 
+					<input type="radio" onChange="modify(this)" name="using" value="myspace" id="using" />
+					<label for="using"><?= _('Myspace'); ?></label><br />
+                    </p>
+                    <!-- <h4><a href="#"><?= _('Click to include more information about your work') ;?></a></h4> -->
+
+					<!-- MySpace centric style module. You know, for the kids. -->
+					<div id="myspace_style" style="display: none"> 
+				    <p><strong><?= _('Style') ?></strong></p>
+						<label><input type="radio" name="style" value="silver" id="style_silver" checked="checked" onChange="modify(this)" /> <?= _('Silver') ?>&nbsp;</label>
+						<label><input type="radio" name="style" value="red" id="style_red" onChange="modify(this)" /> <?= _('Red') ?>&nbsp;</label>
+						<label><input type="radio" name="style" value="green" id="style_green" onChange="modify(this)" /> <?= _('Green') ?>&nbsp;</label>
+						<label><input type="radio" name="style" value="blue" id="style_blue" onChange="modify(this)" /> <?= _('Blue') ?>&nbsp;</label>
+						<label><input type="radio" name="style" value="black" id="style_black" onChange="modify(this)" /> <?= _('Black') ?>&nbsp;</label>
+						<label><input type="radio" name="style" value="none" id="style_none" onChange="modify(this)" /> <?= _('None') ?>&nbsp;</label>
+					</div>
 
                     </div>
 
@@ -185,16 +196,6 @@
 
                     </div>
 
-					<!-- MySpace centric style module. You know, for the kids. 
-					<p> 
-						<strong>Style</strong><br />
-						<label><input type="radio" name="style" value="silver" id="style_silver" checked /> Silver&nbsp;</label>
-						<label><input type="radio" name="style" value="red" id="style_red" /> Red&nbsp;</label>
-						<label><input type="radio" name="style" value="green" id="style_green" /> Green&nbsp;</label>
-						<label><input type="radio" name="style" value="blue" id="style_blue" /> Blue&nbsp;</label>
-						<label><input type="radio" name="style" value="black" id="style_black" /> Black&nbsp;</label>
-						<label><input type="radio" name="style" value="none" id="style_black" /> None&nbsp;</label>
-					</p> -->
 					<!-- Show thumbnail of position on mouseover? 
 					<p>
 						<strong>Position</strong><br /> 
@@ -205,7 +206,7 @@
 					<!-- <p><input type="button" name="submit" value="<?= _('Create Code!'); ?>" id="submit" onClick="testSub();"/></p> -->
 					
 					<!-- <p id="lic-result">
-						Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!<br/> -->
+						<?= _("Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!") ?> -->
                        <p id="lic-result"><?= _("Paste the following code into your web page's html."); ?><br />
 						<textarea name="result" id="result" rows="8" cols="60" onfocus="this.select();"></textarea>
 					</p>

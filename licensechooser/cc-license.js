@@ -89,6 +89,10 @@
         if (obj.id == "using")
         {
             using = obj.value;
+            if ( 'myspace' == using )
+                $('myspace_style').style.display = 'block';
+            else
+                $('myspace_style').style.display = 'none';
         }
 
         if (obj.id == "jurisdiction")
@@ -240,14 +244,16 @@
 
         var license_text = build_license_text(license_url, license[1]);
 
-		    cc = '<div class="cc-info">' + license_text + '</div><a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png" class="cc-button"/></a> ';
+		    cc = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
 
 		/* banner wrapper */
         if ( 'myspace' == using )
-		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; margin: 10px 15px 0 0; width: 275px; } </style> <div class="cc-bar">' + cc + comment_out( buildRDF() ) + '</div>';
+		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 50px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; margin: 1%; width: 300px; } </style> <div class="cc-bar">' + cc + comment_out( buildRDF() ) + '</div>';
         else
             cc += comment_out( buildRDF() ) + "</div>";
-		
+
+        cc = "<!--Creative Commons License-->" + cc;
+
 		/* ** */
         // new Insertion.Top('license_example', cc);
         $('license_example').innerHTML = cc;
