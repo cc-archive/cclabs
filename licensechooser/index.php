@@ -1,5 +1,5 @@
 <?php
-    $pagetitle  = 'CC License Generator';
+    $pagetitle  = 'CC License Chooser';
     $head_extra = 
 	'<script type="text/javascript" language="javascript" src="prototype.js"></script>
 	<script type="text/javascript" language="javascript" src="tooltip.js"></script>
@@ -18,7 +18,7 @@
 	<div id="content">
 		<div id="main">
 			<div class="block">
-			<h3>Choose a License</h3>
+			<h2>Choose a License</h2>
             <p>With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to <a href="http://creativecommons.org/learn/licenses/fullrights">copy and distribute your work</a> provided they <a href="http://creativecommons.org/characteristic/by?lang=en" onclick="window.open('http://creativecommons.org/characteristic/by?lang=en', 'characteristic_help', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;">give you credit</a> -- and only on the conditions you specify here. For those new to Creative Commons licensing, we've prepared <a href="http://creativecommons.org/about/think">a list of things to think about</a>. If you want to offer your work with no conditions, choose the <a href="http://creativecommons.org/publicdomain-2">public domain</a>.</p>
 			</div>
 			
