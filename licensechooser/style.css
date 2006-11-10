@@ -1,0 +1,35 @@
+#license_selected
+{
+    border:         1px solid #eee;
+    text-align:     center;
+    padding:        3%;
+}
+
+textarea#result
+{
+    width: 100%;
+}
+
+a img
+{
+    border: none;
+    text-decoration: none;
+}
+
+
+#required
+{
+    border: 1px solid #ccc;
+    padding: 0.5% 2% 1% 2%;
+    margin-bottom: 2.7%;
+    background: #efefef;
+}
+
+
+#optional
+{
+    border: 1px solid #eee;
+    padding: 0.5% 2% 1% 2%;
+    margin-bottom: 1%;
+}
+
