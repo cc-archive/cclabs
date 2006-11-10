@@ -1,4 +1,11 @@
 <?php
+    function print_more_info ($url, $window_name = 'characteristic_help')
+    {
+        $onclick = " onclick=\"window.open('$url', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
+        echo "<em><a href=\"$url\"$onclick>" . _('more info') . "</a>\n" . 
+             "<a href=\"$url\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
+    }
+
     $pagetitle  = _('CC License Chooser');
     $include    = 'style.css';
     $head_extra = 
@@ -28,22 +35,47 @@
 			<div id="lic-menu" class="block">
 				<h3><?= _('Choose the options below for your personalized Creative Commons license.'); ?></h3>
 				<form>
+                    <div id="required">
 					<p>
 					<input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
-					<label for="com"><strong><?= _('Allow commercial uses of your work?'); ?></strong></label><br />
+					<label for="com"><strong><?= _('Allow commercial uses of your work?'); ?></strong></label> 
+                    <?= print_more_info('http://a2.creativecommons.org/characteristic/nc?lang=en'); ?>
+                    <br />
 					<input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
-					<label for="mod"><strong><?= _('Allow modifications of your work?'); ?></strong></label><br />
+					<label for="mod"><strong><?= _('Allow modifications of your work?'); ?></strong></label>
+                    <?= print_more_info('http://a2.creativecommons.org/characteristic/nd?lang=en'); ?>
+                    <br />
 					<input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
-					<label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes?'); ?></strong></label><br />
+					<label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes?'); ?></strong></label>
+                    <?= print_more_info('http://a2.creativecommons.org/characteristic/sa?lang=en'); ?>
+                    <br />
 					</p>
+                    </div>
 
-                    <h4><?= _('Where are you going to apply this license?') ;?></h4>
+                    <div id="optional">
+                    <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
 					<p>
                     <input type="radio" onChange="modify(this)" name="used" value="" id="use_webpage" />
 					<label for="used_webpage"><?= _('Webpage'); ?></label> 
 					<input type="radio" onChange="modify(this)" name="used" value="" id="used_myspace" />
 					<label for="use_myspace"><?= _('Myspace'); ?></label><br />
                     </p>
+
+                    <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('http://a2.creativecommons.org/license/jurisdiction-popup?lang=en'); ?> </p>
+                    
+                    <select>
+                    <option><?= _('Generic') ?></option>
+                    </select>
+
+                    <p><strong><?= _('Tell us the format of your work') . ':' ;?></strong></p>
+
+                    <select>
+                    <option><?= _('Other') ?></option>
+                    </select>
+
+                    <h4><a href="#"><?= _('Click to include more information about your work') ;?></a></h4>
+
+                    </div>
 
                     <h4><?= _('Currently Selected License'); ?></h4>
                     <div id="license_selected">
