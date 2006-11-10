@@ -15,7 +15,7 @@
     $onload = 'pageInit()';
     include_once '../_header.php';
 ?>
-	<div id="container">
+	<div id="content">
 		<div id="main">
 			<div class="block">
 			<h3>Choose a License</h3>
