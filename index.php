@@ -11,8 +11,8 @@
     <p>An experimental take on the licensing concept. Playing with the idea of licensing components as puzzle pieces, to allow you to figuratively bolt together and customize the CC license of your choice.</p>
   </div>
   <div class="blurb">
-    <h3>DHTML Licensing Engine</h3>
-    <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side <abbr title="Javascript">JS</abbr> application. <a href="dhtml-engine">Test it out</a></p>
+    <h3>DHTML License Chooser</h3>
+    <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side <abbr title="Javascript">JS</abbr> application. <a href="licensechooser">Test it out</a></p>
   </div>
 </div>
 
