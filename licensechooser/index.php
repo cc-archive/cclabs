@@ -214,7 +214,7 @@
                         <label><input type="radio" name="style" value="green" id="style_green" onChange="modify(this)" /> <?= _('Green') ?>&nbsp;</label>
                         <label><input type="radio" name="style" value="blue" id="style_blue" onChange="modify(this)" /> <?= _('Blue') ?>&nbsp;</label>
                         <label><input type="radio" name="style" value="black" id="style_black" onChange="modify(this)" /> <?= _('Black') ?>&nbsp;</label>
-                        <label><input type="radio" name="style" value="white" id="style_white" onChange="modify(this)" /> <?= _('White') ?>&nbsp;</label>
+                        <!-- <label><input type="radio" name="style" value="white" id="style_white" onChange="modify(this)" /> <?= _('White') ?>&nbsp;</label> -->
                         <label><input type="radio" name="style" value="none" id="style_none" onChange="modify(this)" /> <?= _('None') ?>&nbsp;</label>
                     </div>
 
