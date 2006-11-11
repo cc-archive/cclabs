@@ -78,11 +78,17 @@
 
 
 
-    function print_more_info ($url, $window_name = 'characteristic_help')
+    function print_more_info ($msg, $use_ajax = true, 
+                              $window_name = 'characteristic_help')
     {
-        $onclick = " onclick=\"window.open('$url', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
-        echo "<em><a href=\"$url\"$onclick>" . _('more info') . "</a>\n" . 
-             "<a href=\"$url\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
+        if ( $use_ajax ) 
+            echo "<img src=\"icon_popup.gif\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" />\n";
+        else 
+        {
+            $onclick = " onclick=\"window.open('$msg', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
+            echo "<em><a href=\"$msg\"$onclick>" . _('more info') . "</a>\n" . 
+                 "<a href=\"$msg\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
+        }
     }
 
     $pagetitle  = _('CC License Chooser');
@@ -127,15 +133,17 @@
                     <p>
                     <input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
                     <label for="com"><strong><?= _('Allow commercial uses of your work?'); ?></strong></label> 
-                    <?= print_more_info('http://a2.creativecommons.org/characteristic/nc?lang=en'); ?>
+                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nc/standard.gif\' alt=\'nc\' class=\'icon\' /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>'); ?>
                     <br />
                     <input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
                     <label for="mod"><strong><?= _('Allow modifications of your work?'); ?></strong></label>
-                    <?= print_more_info('http://a2.creativecommons.org/characteristic/nd?lang=en'); ?>
+                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nd/standard.gif\' alt=\'nd\' class=\'icon\' /><strong>' . _('No Derivative Works') . 
+                    '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>'); ?>
                     <br />
                     <input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
                     <label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes?'); ?></strong></label>
-                    <?= print_more_info('http://a2.creativecommons.org/characteristic/sa?lang=en'); ?>
+                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/sa/standard.gif\' alt=\'sa\' class=\'icon\' /><strong>' . 
+                    _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'); ?>
                     <br />
                     </p>
                     </div>
@@ -148,7 +156,8 @@
 
                     <div id="optional">
 
-                    <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('http://a2.creativecommons.org/license/jurisdiction-popup?lang=en'); ?> </p>
+                    <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('<p><strong>' . _('Jurisdiction') . '</strong> ' . 
+                    _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>'); ?> </p>
                     
                     <select name="jurisdiction" id="jurisdiction" onChange="modify(this)">
                     <?php

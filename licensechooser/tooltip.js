@@ -8,6 +8,7 @@ Visit http://www.dynamicdrive.com for this script
 --
 
 Modified by Alex Roberts for Creative Commons, 2006
+Modified by Jon Phillips for Creative Commons, 2006
 
 */
 
@@ -100,7 +101,28 @@ function doTooltip(evt, img) {
 	//else curBgColor = tipBgColor;
 	//if (messages[num][3])	var curFontColor = messages[num][3];
 	//else curFontColor = tipFontColor
-	var tip = '<div class="tipimage"><img src="' + img + '" border="0"/></div>';
+	var tip = '<div class="tooltipimage"><img src="' + img + '" border="0"/></div>';
+	//var tip = 'hell oworld!';
+	tooltip.innerHTML = tip;
+
+	if (!tipFollowMouse) positionTip(evt);
+	else t1 = setTimeout("tipcss.visibility='visible'", 100);
+}
+
+/**
+ * This is a generic tooltip for displaying any html inside of a box.
+ */
+function doTooltipHTML(evt, html) {
+	if (!tooltip) return;
+	if (t1) clearTimeout(t1);	if (t2) clearTimeout(t2);
+	tipOn = true;
+	
+	// set colors if included in messages array
+	//if (messages[num][2])	var curBgColor = messages[num][2];
+	//else curBgColor = tipBgColor;
+	//if (messages[num][3])	var curFontColor = messages[num][3];
+	//else curFontColor = tipFontColor
+	var tip = '<div class="tooltip">' + html + '</div>';
 	//var tip = 'hell oworld!';
 	tooltip.innerHTML = tip;
 
