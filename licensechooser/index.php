@@ -168,7 +168,8 @@
                         <div id="license_example"></div>
                     </div>
 
-                    <div id="optional">
+                    <p><strong><a href="#optional" id="advanced_toggle" onclick="toggle('optional', 'advanced_toggle');"><?= _('Advanced Options') ?></a></strong> 
+                    <div id="optional" style="display:none">
 
                     <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('<p><strong>' . _('Jurisdiction') . '</strong> ' . 
                     _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>',
