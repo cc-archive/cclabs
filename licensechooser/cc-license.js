@@ -18,6 +18,7 @@
 	
     var license_root_url        = 'http://creativecommons.org/licenses';
     var license_version         = '2.5';
+    var button_style            = '';
 
     var warning_text            = '';
 
@@ -103,11 +104,13 @@
                     $('myspace_style').style.display = 'block';
                     $('myspace_position').style.display = 'block';
                     $('more_info_toggle').style.display = 'none';
+                    $('more_info').style.display = 'none';
                     break;
 
                 case 'webpage':
                     $('myspace_style').style.display = 'none';
                     $('more_info_toggle').style.display = 'none';
+                    $('more_info').style.display = 'none';
                     break;
 
                 case 'rdf':
@@ -118,6 +121,9 @@
                     warning_text = '';
             }
         }
+
+        if (obj.id == 'button_style')
+            button_style = obj.value;
 
         if (obj.id == "jurisdiction")
         {
@@ -289,6 +295,14 @@
         return( license_text );
     }
 	
+    function build_license_image (license)
+    {
+        if ( button_style == 'version3' )
+            return 'http://i.creativecommons.org/l/' + license + "/" + license_version + "/" + jurisdiction + "/" + '88x31.png';
+        else
+            return 'http://creativecommons.org/images/public/somerights20.png';
+    }
+
 	/**
 	 * Checks what options the user has set and spits out license code based on the values
 	 */
@@ -318,8 +332,8 @@
         license_url = build_license_url(license[0]);
 
         var license_text = build_license_text(license_url, license[1]);
-
-		    cc = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
+        
+		    cc = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="' + build_license_image(license[0]) + '" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
 
 		/* banner wrapper */
         if ( 'myspace' == using )
