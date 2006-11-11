@@ -1,4 +1,4 @@
-<? $pagetitle = "Freedoms License Generator - r4"; ?>
+<? $pagetitle = "Freedoms License Generator - r5"; ?>
 <? $include = "flg-five.css"; ?>
 <? $onload = "init()"; ?>
 

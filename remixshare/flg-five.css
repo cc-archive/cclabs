@@ -66,7 +66,7 @@ h4.conditions {
 	width: 366px;
 	margin:  15px 0;
 	float:  left;
-	margin-left: -146px;
+	margin-left: -147px;
 	margin-top:  85px;
 }
 
@@ -89,7 +89,7 @@ h4.conditions {
 #flg-connect-sa {
 	clear: both;
 	margin-top: -76px;
-	margin-right: 75px;
+	margin-right: 74px;
 	float: right;
 }
 
@@ -101,10 +101,10 @@ h4.conditions {
 }
 
 #flg-connect-nc.flg-pipe-off {
-	background: url(5/nc-dim.png) no-repeat top left;
+	background: url(5/nc-off.png) no-repeat top left;
 }
 #flg-connect-sa.flg-pipe-off {
-	background: url(5/sa-dim.png) no-repeat top left;
+	background: url(5/sa-off.png) no-repeat top left;
 }
 
 #flg-connect-share.flg-pipe-middle {
