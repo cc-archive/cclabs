@@ -102,6 +102,16 @@
         }
     }
 
+    function print_tooltip_js ($msg, $url = '')
+    {
+        $onclick = '';
+        if ( !empty($url) )
+            $onclick = " onclick=\"window.open('$url', 'tooltip', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
+
+            echo "onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . 
+                 "');\" onmouseout=\"hideTip()\"$onclick";
+    }
+
     $pagetitle  = _('CC License Chooser');
     $include    = 'style.css';
     $head_extra = 
@@ -201,11 +211,13 @@
                     <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
                     <p>
                     <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using" checked="checked" />
-                    <label for="using"><?= _('Webpage'); ?></label> 
+                    <label for="using" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
                     <input type="radio" onChange="modify(this)" name="using" value="myspace" id="using" />
-                    <label for="using"><?= _('Myspace'); ?></label><br />
+                    <label for="using" <?= print_tooltip_js( _('The generator will make html that may be inserted into the popular social networking site\'s, http://myspace.com, <em>Who I\'d Like To Meet</em> box')) ?>><?= _('Myspace'); ?></label>
+                    <input type="radio" onChange="modify(this)" name="using" value="rdf" id="using" />
+                    <label for="using" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label>
                     </p>
-                    <!-- <h4><a href="#"><?= _('Click to include more information about your work') ;?></a></h4> -->
+
 
                     <!-- MySpace centric style module. You know, for the kids. -->
                     <div id="myspace_style" style="display: none"> 
@@ -225,6 +237,99 @@
                         <label onmouseover="doTooltip(event,'floating.png');" onmouseout="hideTip()"><input type="radio" name="pos" value="floating" id="pos_float" onChange="modify(this)" /> <?= _('Floating') ?>&nbsp;</label>
                         <label onmouseover="doTooltip(event,'profile.png')" onmouseout="hideTip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" checked="checked" onChange="modify(this)" /> <?= _('Profile') ?>&nbsp;</label>
                     </div>
+
+                    <p><strong><a href="#more_info" id="more_info_toggle" onclick="toggle('more_info', this);" style="display: none"><?= _('More Information About Work Options') ?></a></strong></p>
+                    <table id="more_info" style="display: none">
+                    <tr>
+                        <td class="header">
+                            <label for="info_title">
+                            <?= _('Title of Work') ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_title" id="info_title" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_description">
+                            <?= _('Description') ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_description" id="info_description" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_creators_name">
+                            <?= _("Creator's Name") ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_creators_name" id="info_creators_name" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_copyright_holders_name">
+                            <?= _("Copyright Holder's Name") ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_copyright_holders_name" id="info_copyright_holders_name" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_copyright_year">
+                            <?= _("Year of Copyright") ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_copyright_year" id="info_copyright_year" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_source_work_url">
+                            <?= _("Source Work URL") ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_source_work_url" id="info_source_work_url" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="header">
+                            <label for="info_attribute_to_name">
+                            <?= _('Attribute to Name') ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_attribute_to_name" value="" id="info_attribute_to_name" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_attribute_to_url">
+                            <?= _('Attribute to URL') ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_attribute_to_url" value="" id="info_attribute_to_url" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_source_work_url">
+                            <a href="#" <?= print_tooltip_js(_('A work another is derived from.'), 'http://a2.creativecommons.org/jargon/source_work')?>><?= _('Source Work') ?></a> <?= _('URL') ?></label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_source_work_url" value="" id="info_source_work_url" onChange="modify(this)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <label for="info_more_permissions_url"><?= _('More Permissions URL') ?>&nbsp;</label>
+                        </td>
+                        <td>
+                            <input type="text" name="info_more_permissions_url" value="" id="info_more_permissions_url" onChange="modify(this)" />
+                        </td>
+                    </tr> -->
+                    </table>
 
                     </div>
 

@@ -5,15 +5,21 @@
 	var sa;
 	var was;
     var using;
-    var jurisdiction;
-    var jurisdiction_name = '';
-    var jurisdiction_generic = false;
-    var format;
+    var jurisdiction            = '';
+    var jurisdiction_name       = '';
+    var jurisdiction_generic    = false;
+    var dc_title                = '';
+    var dc_format               = '';
+    var dc_description          = '';
+    var dc_source               = '';
+    var dc_creator              = '';
+    var dc_copyright_holder     = '';
+    var dc_date                 = '';
 	
-    var license_root_url = 'http://creativecommons.org/licenses';
-    var license_version  = '2.5';
+    var license_root_url        = 'http://creativecommons.org/licenses';
+    var license_version         = '2.5';
 
-    var warning_text = '';
+    var warning_text            = '';
 
 	/**
 	 * Initialise our license codes, and reset the UI
@@ -91,13 +97,25 @@
         if (obj.id == "using")
         {
             using = obj.value;
-            if ( 'myspace' == using ) {
-                $('myspace_style').style.display = 'block';
-                $('myspace_position').style.display = 'block';
-            } else {
-                $('myspace_style').style.display = 'none';
-                $('myspace_position').style.display = 'none';
-                warning_text = '';
+            switch ( using )
+            {
+                case 'myspace':
+                    $('myspace_style').style.display = 'block';
+                    $('myspace_position').style.display = 'block';
+                    $('more_info_toggle').style.display = 'none';
+                    break;
+
+                case 'webpage':
+                    $('myspace_style').style.display = 'none';
+                    $('more_info_toggle').style.display = 'none';
+                    break;
+
+                case 'rdf':
+                    $('more_info_toggle').style.display = 'block';
+                default:
+                    $('myspace_style').style.display = 'none';
+                    $('myspace_position').style.display = 'none';
+                    warning_text = '';
             }
         }
 
@@ -110,11 +128,6 @@
             jurisdiction_generic = jurisdictions_array[jurisdiction]['generic'];
         }
 
-        if (obj.id == "format")
-        {
-            format = obj.value;
-            // document.write( format);
-        }
 
         if (obj.id == 'pos_float')
         {
@@ -128,6 +141,27 @@
                 warning_text = '';
 
         }
+
+        if (obj.id == 'info_title')
+            dc_title = obj.value;
+
+        if (obj.id == 'info_description')
+            dc_description = obj.value;
+        
+        if (obj.id == 'info_creators_name')
+            dc_creator = obj.value;
+
+        if (obj.id == 'info_copyright_holders_name')
+            dc_copyright_holder = obj.value;
+        
+        if (obj.id == 'info_source_work_url')
+            dc_source = obj.value;
+        
+        if (obj.id  == 'info_copyright_year')
+            dc_date = obj.value;
+
+        if (obj.id == 'format')
+            dc_format = obj.value;
 
         testSub();
 	}
@@ -159,24 +193,47 @@
 		
 		ver = "2.5";
 		
-		meta = '<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><Work rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/'+l+'/'+ver+'/" />';
+		meta = '<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">' + "\n" + 
+        '<Work rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/'+l+'/'+ver+'/" />';
 
-        if ( format )
-            meta += '<dc:type rdf:resource="http://purl.org/dc/dcmitype/' + format + '" />';
+        if ( dc_title )
+            meta += '<dc:title>' + dc_title + '</dc:title>' + "\n";
 
-        meta += '</Work><License rdf:about="http://creativecommons.org/licenses/'+l+'/'+ver+'/">';
+        if ( dc_date )
+            meta += '<dc:date>' + dc_date + '</dc:date>' + "\n";
+
+        if ( dc_description )
+            meta += '<dc:description>' + dc_description + '</dc:description>' 
+                    + "\n";
+
+        if ( dc_creator )
+            meta += '<dc:creator><Agent><dc:title>' + dc_creator + 
+                    '</dc:title></Agent></dc:creator>' + "\n";
+
+        if ( dc_copyright_holder )
+            meta += '<dc:rights><Agent><dc:title>' + dc_copyright_holder + 
+                    '</dc:title></Agent></dc:rights>' + "\n";
+
+        if ( dc_source )
+            meta += '<dc:source rdf:resource="' + dc_source + '">' + "\n";
+
+        if ( dc_format )
+            meta += '<dc:type rdf:resource="http://purl.org/dc/dcmitype/' + dc_format + '" />';
+
+        meta += '</Work>' + "\n" + '<License rdf:about="http://creativecommons.org/licenses/'+l+'/'+ver+'/">' + "\n";
 		
 		
-		meta += '<requires rdf:resource="http://web.resource.org/cc/Attribution" />';
-		meta += '<permits rdf:resource="http://web.resource.org/cc/Reproduction" />';
-		meta += '<permits rdf:resource="http://web.resource.org/cc/Distribution" />';
+		meta += '<requires rdf:resource="http://web.resource.org/cc/Attribution" />' + "\n";
+		meta += '<permits rdf:resource="http://web.resource.org/cc/Reproduction" />' + "\n";
+		meta += '<permits rdf:resource="http://web.resource.org/cc/Distribution" />' + "\n";
 		
-		if (!nd) meta += '<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />';
+		if (!nd) meta += '<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />' + "\n";
 		 	    
-		if (sa) meta += '<requires rdf:resource="http://web.resource.org/cc/ShareAlike" />';
-		if (nc) meta += '<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />';
+		if (sa) meta += '<requires rdf:resource="http://web.resource.org/cc/ShareAlike" />' + "\n";
+		if (nc) meta += '<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />' + "\n";
 		
-		meta += '<requires rdf:resource="http://web.resource.org/cc/Notice" />';
+		meta += '<requires rdf:resource="http://web.resource.org/cc/Notice" />'
+                + "\n";
 		
 		meta += '</License></rdf:RDF>';
 		return meta;
@@ -266,11 +323,13 @@
 
 		/* banner wrapper */
         if ( 'myspace' == using )
-		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + cc + comment_out( buildRDF() ) + '</div>';
+		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + cc + '</div>';
+        else if ( 'rdf' == using )
+            cc = buildRDF();
         else
-            cc += comment_out( buildRDF() ) + "</div>";
+            cc += "</div>";
 
-        cc = "<!--Creative Commons License-->" + cc;
+        cc = "<!--Creative Commons License-->\n" + cc;
 
         // new Insertion.Top('license_example', cc);
         $('license_example').innerHTML = warning_text + cc;

@@ -19,6 +19,28 @@ a img
     text-decoration: none;
 }
 
+#more_info
+{
+    border: 1px solid #eee;
+    padding: 1%;
+
+    width: 65%;
+}
+#more_info table
+{
+    width: 100%;
+}
+
+#more_info .header
+{
+    width: 35%;
+}
+
+#more_info input
+{
+    width: 100%;
+    border: 1px solid #ccc;
+}
 
 #required
 {
@@ -46,6 +68,10 @@ a img
 .cc-button
 {
     padding-bottom: 1%;
+}
+
+.header
+{
 }
 
 .note
