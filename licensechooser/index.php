@@ -78,16 +78,26 @@
 
 
 
-    function print_more_info ($msg, $use_ajax = true, 
+    function print_more_info ($msg, $url = '', $use_ajax = true, 
                               $window_name = 'characteristic_help')
     {
-        if ( $use_ajax ) 
-            echo "<img src=\"icon_popup.gif\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" />\n";
+        if ( !empty( $url ) )
+            $onclick = " onclick=\"window.open('$url', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
+
+        if ( $use_ajax )
+        {
+            if ( !empty($url) )
+                echo '<a href="' . $url . '">';
+                
+            echo "<img src=\"icon_popup.gif\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" $onclick/>\n";
+            
+            if ( !empty($url) )
+                echo '</a>';
+        }
         else 
         {
-            $onclick = " onclick=\"window.open('$msg', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
-            echo "<em><a href=\"$msg\"$onclick>" . _('more info') . "</a>\n" . 
-                 "<a href=\"$msg\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
+            echo "<em><a href=\"$url\"$onclick>" . _('more info') . "</a>\n" . 
+                 "<a href=\"$url\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
         }
     }
 
@@ -133,17 +143,20 @@
                     <p>
                     <input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
                     <label for="com"><strong><?= _('Allow commercial uses of your work?'); ?></strong></label> 
-                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nc/standard.gif\' alt=\'nc\' class=\'icon\' /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>'); ?>
+                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nc/standard.gif\' alt=\'nc\' class=\'icon\' /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>',
+                    'http://a2.creativecommons.org/characteristic/nc?lang=en'); ?>
                     <br />
                     <input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
                     <label for="mod"><strong><?= _('Allow modifications of your work?'); ?></strong></label>
                     <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nd/standard.gif\' alt=\'nd\' class=\'icon\' /><strong>' . _('No Derivative Works') . 
-                    '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>'); ?>
+                    '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>', 
+                    'http://a2.creativecommons.org/characteristic/nc?lang=en' ); ?>
                     <br />
                     <input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
                     <label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes?'); ?></strong></label>
                     <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/sa/standard.gif\' alt=\'sa\' class=\'icon\' /><strong>' . 
-                    _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'); ?>
+                    _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>', 
+                    'http://a2.creativecommons.org/characteristic/sa?lang=en'); ?>
                     <br />
                     </p>
                     </div>
@@ -157,7 +170,8 @@
                     <div id="optional">
 
                     <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('<p><strong>' . _('Jurisdiction') . '</strong> ' . 
-                    _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>'); ?> </p>
+                    _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>',
+                    'http://a2.creativecommons.org/license/jurisdiction-popup?lang=en'); ?> </p>
                     
                     <select name="jurisdiction" id="jurisdiction" onChange="modify(this)">
                     <?php
@@ -199,6 +213,7 @@
                         <label><input type="radio" name="style" value="green" id="style_green" onChange="modify(this)" /> <?= _('Green') ?>&nbsp;</label>
                         <label><input type="radio" name="style" value="blue" id="style_blue" onChange="modify(this)" /> <?= _('Blue') ?>&nbsp;</label>
                         <label><input type="radio" name="style" value="black" id="style_black" onChange="modify(this)" /> <?= _('Black') ?>&nbsp;</label>
+                        <label><input type="radio" name="style" value="white" id="style_white" onChange="modify(this)" /> <?= _('White') ?>&nbsp;</label>
                         <label><input type="radio" name="style" value="none" id="style_none" onChange="modify(this)" /> <?= _('None') ?>&nbsp;</label>
                     </div>
 
