@@ -219,6 +219,13 @@
                     </p>
 
 
+                    <p style="display:none"><strong><?= _('What type of button would you like?') ;?></strong></p>
+                    <p style="display:none">
+                    <input type="radio" onChange="modify(this)" name="button_style" value="version2" id="button_style" checked="checked" />
+                    <label for="button_style" <?= print_tooltip_js( _('The old style buttons that are generic for all licenses.')) ?>><?= _('Version 2.0 Generic'); ?></label> 
+                    <input type="radio" onChange="modify(this)" name="button_style" value="version3" id="button_style" />
+                    <label for="button_style" <?= print_tooltip_js( _('The new more specific version 3.0 license buttons.')) ?>><?= _('Version 3.0 Specific'); ?></label></p>
+
                     <!-- MySpace centric style module. You know, for the kids. -->
                     <div id="myspace_style" style="display: none"> 
                     <p><strong><?= _('Style') ?></strong></p>
