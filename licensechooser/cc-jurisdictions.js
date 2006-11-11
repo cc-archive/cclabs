@@ -1,7 +1,8 @@
 // <![CDATA[
     var jurisdictions_array = {
-               'en' : { 'name' : _('Generic'),
-                        'url'  : 'http://creativecommons.org' },
+               'generic' : { 'name' : _('Generic'),
+                        'url'  : 'http://creativecommons.org',
+                        'generic' : true },
                'ar' : { 'name' : _('Argentina'),
                         'url'  : 'http://creativecommons.org/worldwide/ar/'},
                'au' : { 'name' : _('Australia'),

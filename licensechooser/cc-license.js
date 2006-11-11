@@ -7,6 +7,7 @@
     var using;
     var jurisdiction;
     var jurisdiction_name = '';
+    var jurisdiction_generic = false;
     var format;
 	
     var license_root_url = 'http://creativecommons.org/licenses';
@@ -106,6 +107,7 @@
             jurisdiction = obj.value;
             // TODO: The following is not working in internet explorer on wine
             jurisdiction_name = jurisdictions_array[jurisdiction]['name'];
+            jurisdiction_generic = jurisdictions_array[jurisdiction]['generic'];
         }
 
         if (obj.id == "format")
@@ -214,7 +216,7 @@
     {
         var license_url = license_root_url + "/" + license + "/" + 
                           license_version + "/" ;
-        if ( jurisdiction )
+        if ( jurisdiction && ! jurisdiction_generic )
             license_url += jurisdiction + "/" ;
 
         return( license_url );
@@ -223,10 +225,8 @@
     function build_license_text (license_url, license_name)
     {
         var license_text = '';
-        if ( jurisdiction_name )
-            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + jurisdiction_name + ' License</a>.';
-        else if ( jurisdiction )
-            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + jurisdiction.toUpperCase() + ' License</a>.';
+        if ( jurisdiction_name && ! jurisdiction_generic )
+            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : jurisdiction.toUpperCase() ) + ' License</a>.';
         else 
             license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' License</a>.';
         return( license_text );

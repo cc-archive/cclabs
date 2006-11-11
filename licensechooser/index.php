@@ -5,8 +5,9 @@
     //       are being mirrored!!!! BAD!!!!
     // 
     $jurisdictions = 
-        Array( 'en' => Array( 'name' => 'Generic',
-                              'url'  => 'http://creativecommons.org' ),
+        Array( 'generic' => Array( 'name' => 'Generic',
+                              'url'  => 'http://creativecommons.org',
+                              'generic' => true ),
                'ar' => Array( 'name' => 'Argentina',
                               'url'  => 'http://creativecommons.org/worldwide/ar/'),
                'au' => Array( 'name' => 'Australia',
