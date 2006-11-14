@@ -4,21 +4,11 @@
 	var nd;
 	var sa;
 	var was;
-    var using;
-    var jurisdiction            = '';
     var jurisdiction_name       = '';
     var jurisdiction_generic    = false;
-    var dc_title                = '';
-    var dc_format               = '';
-    var dc_description          = '';
-    var dc_source               = '';
-    var dc_creator              = '';
-    var dc_copyright_holder     = '';
-    var dc_date                 = '';
 	
     var license_root_url        = 'http://creativecommons.org/licenses';
     var license_version         = '2.5';
-    var button_style            = '';
 
     var warning_text            = '';
 
@@ -61,6 +51,8 @@
 	 * Checks what the user pressed, sets licensing options based on it.
 	 */
 	function modify(obj) {
+        warning_text = '';
+
 		if (obj.id == "mod") {
 			if (obj.checked) {
 				$('share').disabled = false;
@@ -95,79 +87,37 @@
 			obj.checked ? sa = true : sa = false;
 		}
 
-        if (obj.id == "using")
+        if (obj.id == "using_myspace")
         {
-            using = obj.value;
-            switch ( using )
-            {
-                case 'myspace':
-                    $('myspace_style').style.display = 'block';
-                    $('myspace_position').style.display = 'block';
-                    $('more_info_toggle').style.display = 'none';
-                    $('more_info').style.display = 'none';
-                    break;
-
-                case 'webpage':
-                    $('myspace_style').style.display = 'none';
-                    $('more_info_toggle').style.display = 'none';
-                    $('more_info').style.display = 'none';
-                    break;
-
-                case 'rdf':
-                    $('more_info_toggle').style.display = 'block';
-                default:
-                    $('myspace_style').style.display = 'none';
-                    $('myspace_position').style.display = 'none';
-                    warning_text = '';
-            }
-        }
-
-        if (obj.id == 'button_style')
-            button_style = obj.value;
-
-        if (obj.id == "jurisdiction")
+            $('myspace_style').style.display = 'block';
+            $('myspace_position').style.display = 'block';
+            $('more_info_toggle').style.display = 'none';
+            $('more_info').style.display = 'none';
+        } else if ( obj.id == 'using_webpage' ) 
         {
+            $('myspace_style').style.display = 'none';
+            $('myspace_position').style.display = 'none';
+            $('more_info_toggle').style.display = 'none';
+            $('more_info').style.display = 'none';
+        } else if ( obj.id == 'using_rdf' ) 
+        {
+            $('more_info_toggle').style.display = 'block';
+            $('myspace_style').style.display = 'none';
+            $('myspace_position').style.display = 'none';
+        } 
+
             // document.write( obj.value );
-            jurisdiction = obj.value;
-            // TODO: The following is not working in internet explorer on wine
-            jurisdiction_name = jurisdictions_array[jurisdiction]['name'];
-            jurisdiction_generic = jurisdictions_array[jurisdiction]['generic'];
-        }
+        // TODO: The following is not working in internet explorer on wine
+        jurisdiction_name = jurisdictions_array[$F('jurisdiction')]['name'];
+        jurisdiction_generic = jurisdictions_array[$F('jurisdiction')]['generic'];
 
+        if ( $F('pos_float') == 'floating' && $F('using_myspace') )
+            warning_text = 
+                '<p class="alert">Check the bottom of your browser.</p>';
 
-        if (obj.id == 'pos_float')
-        {
-        /*     if ( obj.value == 'floating' ) */
-                warning_text = 
-                    '<p class="alert">Check the bottom of your browser.</p>';
-        }
-
-        if (obj.id == 'pos_profile')
-        {
-                warning_text = '';
-
-        }
-
-        if (obj.id == 'info_title')
-            dc_title = obj.value;
-
-        if (obj.id == 'info_description')
-            dc_description = obj.value;
-        
-        if (obj.id == 'info_creators_name')
-            dc_creator = obj.value;
-
-        if (obj.id == 'info_copyright_holders_name')
-            dc_copyright_holder = obj.value;
-        
-        if (obj.id == 'info_source_work_url')
-            dc_source = obj.value;
-        
-        if (obj.id  == 'info_copyright_year')
-            dc_date = obj.value;
-
-        if (obj.id == 'format')
-            dc_format = obj.value;
+        if ( $F('using_rdf') )
+            warning_text = 
+                '<p class="alert">RDF does not provide the graphical license. It is shown here as a visual example of the license selected.</p>';
 
         testSub();
 	}
@@ -202,29 +152,33 @@
 		meta = '<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">' + "\n" + 
         '<Work rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/'+l+'/'+ver+'/" />';
 
-        if ( dc_title )
-            meta += '<dc:title>' + dc_title + '</dc:title>' + "\n";
+        if ( $F('info_title') )
+            meta += '<dc:title>' + $F('info_title') + '</dc:title>' + "\n";
 
-        if ( dc_date )
-            meta += '<dc:date>' + dc_date + '</dc:date>' + "\n";
+        if ( $F('info_copyright_year') )
+            meta += '<dc:date>' + $F('info_copyright_year') + '</dc:date>' + 
+                    "\n";
 
-        if ( dc_description )
-            meta += '<dc:description>' + dc_description + '</dc:description>' 
-                    + "\n";
+        if ( $F('info_description') )
+            meta += '<dc:description>' + $F('info_description') + 
+                    '</dc:description>' + "\n";
 
-        if ( dc_creator )
-            meta += '<dc:creator><Agent><dc:title>' + dc_creator + 
-                    '</dc:title></Agent></dc:creator>' + "\n";
+        if ( $F('info_creators_name') )
+            meta += '<dc:creator><Agent><dc:title>' + $F('info_creators_name') 
+                    + '</dc:title></Agent></dc:creator>' + "\n";
 
-        if ( dc_copyright_holder )
-            meta += '<dc:rights><Agent><dc:title>' + dc_copyright_holder + 
-                    '</dc:title></Agent></dc:rights>' + "\n";
+        if ( $F('info_copyright_holders_name') )
+            meta += '<dc:rights><Agent><dc:title>' + 
+                    $F('info_copyright_holders_name')
+                    + '</dc:title></Agent></dc:rights>' + "\n";
 
-        if ( dc_source )
-            meta += '<dc:source rdf:resource="' + dc_source + '">' + "\n";
+        if ( $F('info_source_work_url') )
+            meta += '<dc:source rdf:resource="' + $F('info_source_work_url') + 
+                    '">' + "\n";
 
-        if ( dc_format )
-            meta += '<dc:type rdf:resource="http://purl.org/dc/dcmitype/' + dc_format + '" />';
+        if ( $F('info_format') )
+            meta += '<dc:type rdf:resource="http://purl.org/dc/dcmitype/' + 
+                    $F('info_format') + '" />';
 
         meta += '</Work>' + "\n" + '<License rdf:about="http://creativecommons.org/licenses/'+l+'/'+ver+'/">' + "\n";
 		
@@ -279,8 +233,8 @@
     {
         var license_url = license_root_url + "/" + license + "/" + 
                           license_version + "/" ;
-        if ( jurisdiction && ! jurisdiction_generic )
-            license_url += jurisdiction + "/" ;
+        if ( $F('jurisdiction') && ! jurisdiction_generic )
+            license_url += $F('jurisdiction') + "/" ;
 
         return( license_url );
     }
@@ -289,7 +243,7 @@
     {
         var license_text = '';
         if ( jurisdiction_name && ! jurisdiction_generic )
-            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : jurisdiction.toUpperCase() ) + ' License</a>.';
+            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.';
         else 
             license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' License</a>.';
         return( license_text );
@@ -297,8 +251,8 @@
 	
     function build_license_image (license)
     {
-        if ( button_style == 'version3' )
-            return 'http://i.creativecommons.org/l/' + license + "/" + license_version + "/" + jurisdiction + "/" + '88x31.png';
+        if ( $F('button_style_version3') )
+            return 'http://i.creativecommons.org/l/' + license + "/" + license_version + "/" + $F('jurisdiction') + "/" + '88x31.png';
         else
             return 'http://creativecommons.org/images/public/somerights20.png';
     }
@@ -333,20 +287,23 @@
 
         var license_text = build_license_text(license_url, license[1]);
         
-		    cc = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="' + build_license_image(license[0]) + '" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
+		cc = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="' + build_license_image(license[0]) + '" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
 
-		/* banner wrapper */
-        if ( 'myspace' == using )
+        if ( $F('using_webpage') )
+        {
+            $('license_example').innerHTML = warning_text + cc;
+        }
+        else if ( $F('using_myspace') )
+        {
 		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + cc + '</div>';
-        else if ( 'rdf' == using )
+            $('license_example').innerHTML = warning_text + cc;
+        }
+        else if ( $F('using_rdf') )
+        {
+            $('license_example').innerHTML = warning_text + cc;
             cc = buildRDF();
-
-        cc = "<!--Creative Commons License-->\n" + cc;
-
-        // new Insertion.Top('license_example', cc);
-        $('license_example').innerHTML = warning_text + cc;
+        }
 		
-		$('result').value = cc;
-        $('result').focus = true;
+		$('result').value = "<!--Creative Commons License-->\n" + cc;
 	}
 // ]]>

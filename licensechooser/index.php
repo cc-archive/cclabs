@@ -196,34 +196,22 @@
                     <!-- <script>print_jurisdictions_option();</script> -->
                     </select>
 
-                    <p><strong><?= _('Tell us the format of your work') . ':' ;?></strong></p>
-
-                    <select name="format" id="format" onChange="modify(this)">
-                    <option value=""><?= _('Other') ?></option>
-                    <option value="Sound"><?= _('Audio') ?></option>
-                    <option value="MovingImage"><?= _('Video') ?></option>
-                    <option value="StillImage"><?= _('Image') ?></option>
-                    <option value="Text"><?= _('Text') ?></option>
-                    <option value="InteractiveResource"><?= _('Interactive') ?>
-                    </option>
-                    </select>
-
                     <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
                     <p>
-                    <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using" checked="checked" />
+                    <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
                     <label for="using" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
-                    <input type="radio" onChange="modify(this)" name="using" value="myspace" id="using" />
+                    <input type="radio" onChange="modify(this)" name="using" value="myspace" id="using_myspace" />
                     <label for="using" <?= print_tooltip_js( _('The generator will make html that may be inserted into the popular social networking site\'s, http://myspace.com, <em>Who I\'d Like To Meet</em> box')) ?>><?= _('Myspace'); ?></label>
-                    <input type="radio" onChange="modify(this)" name="using" value="rdf" id="using" />
+                    <input type="radio" onChange="modify(this)" name="using" value="rdf" id="using_rdf" />
                     <label for="using" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label>
                     </p>
 
 
                     <p><strong><?= _('What type of button would you like?') ;?></strong></p>
                     <p>
-                    <input type="radio" onChange="modify(this)" name="button_style" value="version2" id="button_style" checked="checked" />
+                    <input type="radio" onChange="modify(this)" name="button_style" value="version2" id="button_style_version2" checked="checked" />
                     <label for="button_style" <?= print_tooltip_js( _('The old style buttons that are generic for all licenses.')) ?>><?= _('Version 2.0 Generic'); ?></label> 
-                    <input type="radio" onChange="modify(this)" name="button_style" value="version3" id="button_style" />
+                    <input type="radio" onChange="modify(this)" name="button_style" value="version3" id="button_style_version3" />
                     <label for="button_style" <?= print_tooltip_js( _('The new more specific version 3.0 license buttons.')) ?>><?= _('Version 3.0 Specific'); ?></label></p>
 
                     <!-- MySpace centric style module. You know, for the kids. -->
@@ -246,7 +234,22 @@
                     </div>
 
                     <p><strong><a href="#more_info" id="more_info_toggle" onclick="toggle('more_info', this);" style="display: none"><?= _('More Information About Work Options') ?></a></strong></p>
-                    <table id="more_info" style="display: none">
+
+                    <div id="more_info" style="display: none">
+
+                    <p><?= _('Tell us the format of your work') . ':' ;?></p>
+
+                    <p><select name="info_format" id="info_format" onChange="modify(this)">
+                    <option value=""><?= _('Other') ?></option>
+                    <option value="Sound"><?= _('Audio') ?></option>
+                    <option value="MovingImage"><?= _('Video') ?></option>
+                    <option value="StillImage"><?= _('Image') ?></option>
+                    <option value="Text"><?= _('Text') ?></option>
+                    <option value="InteractiveResource"><?= _('Interactive') ?>
+                    </option>
+                    </select></p>
+
+                    <table>
                     <tr>
                         <td class="header">
                             <label for="info_title">
@@ -337,6 +340,7 @@
                         </td>
                     </tr> -->
                     </table>
+                    </div>
 
                     </div>
 
