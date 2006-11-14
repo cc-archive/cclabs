@@ -13,13 +13,17 @@
 
 <p>Code for the labs projects may be found in our 
 <a href="http://sf.net/projects/cctools">Sourceforge project page</a>. 
-We encourage you to <a href="http://wiki.creativecommons.org/SVN">install this code</a>, <a href="http://wiki.creativecommons.org/HOWTO_Patch">create patches</a> for the edits you make, <a href="http://sourceforge.net/tracker/?group_id=80503&atid=559968">submit them to our patch tracker</a>, and 
-actively participate in the development of our labs projects.</p>
+We encourage you to:
+<ul>
+<li><a href="http://wiki.creativecommons.org/SVN">Install Code</a> from ccLabs projects</li>
+<li><a href="http://wiki.creativecommons.org/HOWTO_Patch">Create Patches</a> for the edits you make</li>
+<li><a href="http://sourceforge.net/tracker/?group_id=80503&atid=559968">Submit Patches</a> to our patch tracker</li>
+</ul>
+</p>
 
 <h3>Participate</h3>
 
-<p>Please join the <a href="http://developer.creativecommons.org/">CC Developer Community</a> by participating on the following three communication channels.
-</p>
+<p>Please join the <a href="http://developer.creativecommons.org/">CC Developer Community</a> by participating on the channels:
 
 <ul>
 <li><a href="http://wiki.creativecommons.org/IRC">Chat Channel</a>: Log onto 
@@ -31,6 +35,7 @@ actively participate in the development of our labs projects.</p>
 </li>
 <li><a href="http://wiki.creativecommons.org/wiki/Developer">Developer Wiki</a></li>
 </ul>
+</p>
 
 </div>
 
