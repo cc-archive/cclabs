@@ -1,5 +1,9 @@
 /* CC Labs Stylesheet */
 
+html {
+    min-width: 800px;
+}
+
 body {
     background: url('/images/bg-std.png') top left repeat-x;
     background-color: #fafafa;
