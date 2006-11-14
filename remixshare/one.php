@@ -128,7 +128,6 @@ function display(code, name, aka) {
 <div id="content">
   <h2>Freedoms License Generator</h2>
   <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.</small></p>
-</div>
 
 <div id="flg-container">
   <h4 class="freedoms">Freedoms</h4>
@@ -158,6 +157,8 @@ function display(code, name, aka) {
   <br clear="all"/>
 </div>
 <h4 class="conditions">Conditions</h4>
+</div>
+
 </div>
 
 

@@ -22,8 +22,9 @@
   <div id="box">
     <div id="header">
       <a href="/"><img src="/images/cc-labs.png" border="0" alt="ccLabs"/></a>
-      <p class="blurb"><a href="http://creativecommons.org">Creative Commons</a></p>
+      <p class="blurb"><a href="http://creativecommons.org">Creative Commons</a>
+      </p>
     </div>
     
     <div id="innertube">
-      
+     

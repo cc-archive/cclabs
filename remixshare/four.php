@@ -129,7 +129,6 @@ function display(code, name, aka) {
 <div id="content">
   <h2>Freedoms License Generator</h2>
   <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/>This demo will currently <strong>not</strong> work with Internet Explorer.</small></p>
-</div>
 
 <div id="flg-container">
   <h4 class="freedoms">Freedoms</h4>
@@ -153,5 +152,6 @@ function display(code, name, aka) {
   </div>
 </div>
 
+</div>
 
 <? include_once "../_footer.php"; ?>

@@ -2,18 +2,21 @@
 
 #flg-container {
 	text-align: center;
-	margin: 0 auto;
+	margin: 0 auto; 
 	width: 550px;
-
+    /* border: 1px solid black; */
+    clear: both;
 }
 
 h4.freedoms {
 	margin: 5px;
 	color: #6C9D31;
+    text-align: center;
 }
 h4.conditions {
 	margin: 5px;
 	color: #C0272D;
+    text-align: center;
 }
 
 #flg-ui {
@@ -146,4 +149,5 @@ h4.conditions {
 	padding: 20px;
 	margin-top: 152px;
 	border: 1px solid #444;
+    text-align: center;
 }
