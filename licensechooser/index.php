@@ -79,37 +79,52 @@
 
 
 
-    function print_more_info ($msg, $url = '', $use_ajax = true, 
+    function get_more_info ($msg, $url = '', $use_ajax = true, 
                               $window_name = 'characteristic_help')
     {
+        $output = '';
+
         if ( !empty( $url ) )
             $onclick = " onclick=\"window.open('$url', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
 
         if ( $use_ajax )
         {
             if ( !empty($url) )
-                echo '<a href="' . $url . '">';
+                $output = '<a href="' . $url . '">';
                 
-            echo "<span class=\"questionbox\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" $onclick/>?</span>";
-            
+            $output .= "<span class=\"questionbox\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" $onclick/>?</span>";
             if ( !empty($url) )
-                echo '</a>';
+                $output .= '</a>';
         }
         else 
         {
-            echo "<em><a href=\"$url\"$onclick>" . _('more info') . "</a>\n" . 
+            $output .=  
+                 "<em><a href=\"$url\"$onclick>" . _('more info') . "</a>\n" . 
                  "<a href=\"$url\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
         }
+        return $output;
     }
 
-    function print_tooltip_js ($msg, $url = '')
+    function print_more_info ($msg, $url = '', $use_ajax = true, 
+                              $window_name = 'characteristic_help')
+    {
+        echo get_more_info($msg, $url, $use_ajax, $window_name);
+    }
+
+    function get_tooltip_js ($msg, $url = '')
     {
         $onclick = '';
         if ( !empty($url) )
             $onclick = " onclick=\"window.open('$url', 'tooltip', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
 
-            echo "class=\"question\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . 
-                 "');\" onmouseout=\"hideTip()\"$onclick";
+        return "class=\"question\" onmouseover=\"doTooltipHTML(event,'"
+                      . addslashes($msg) . 
+                      "');\" onmouseout=\"hideTip()\"$onclick";
+    }
+
+    function print_tooltip_js ($msg, $url = '')
+    {
+        get_tooltip_js($msg, $url);
     }
 
     $pagetitle  = _('CC License Chooser');
@@ -138,8 +153,7 @@
             <?= sprintf(_('With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to %scopy and distribute your work%s provided they %sgive you credit%s &mdash; and only on the conditions you specify here.'), 
             '<a href="http://creativecommons.org/learn/licenses/fullrights">', 
             '</a>', 
-            '<a href="http://creativecommons.org/characteristic/by?lang=en" onclick="window.open(\'http://creativecommons.org/characteristic/by?lang=en\', \'characteristic_help\', \'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes\');return false;">', 
-            '</a>') . 
+            '<a href="#" ' . get_tooltip_js('<p><img src=\'http://creativecommons.org/icon/by/standard.gif\' alt=\'by\' class=\'icon\' /><strong>' . _('Attribution') . '</strong> ' . _('You must attribute the work in the manner specified by the author or licensor.') . '</p>',  'http://a2.creativecommons.org/characteristic/by?lang=en') . '>', '</a>' ) . 
             sprintf(_("For those new to Creative Commons licensing, we've prepared %sa list of things to think about%s."), 
             '<a href="http://creativecommons.org/about/think">', '</a>') . 
             sprintf(_('If you want to offer your work with no conditions, choose the %spublic domain%s'), 

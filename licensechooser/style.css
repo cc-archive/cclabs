@@ -117,3 +117,10 @@ a img
 {
     cursor:         help;
 }
+
+/* indent share mod */
+input#share
+{
+    margin-top:  4px;
+    margin-left: 30px;
+}

@@ -57,6 +57,8 @@
 			if (obj.checked) {
 				$('share').disabled = false;
 				$('share-label').className = "";
+                $('share-label').style.color = 'black'
+                
 				if (was){
 					 $('share').checked = true;
 					 sa = true;
@@ -66,6 +68,7 @@
 				nd = false;
 				Element.toggle('nd');
 			} else {
+                $('share-label').style.color = 'gray'
 				
 				/* remember if the user wanted to share */
 				$('share').checked ? was = true : was = false;
