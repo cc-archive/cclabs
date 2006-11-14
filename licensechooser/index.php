@@ -90,7 +90,7 @@
             if ( !empty($url) )
                 echo '<a href="' . $url . '">';
                 
-            echo "<img src=\"icon_popup.gif\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" $onclick/>\n";
+            echo "<span class=\"questionbox\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" $onclick/>?</span>";
             
             if ( !empty($url) )
                 echo '</a>';
@@ -108,7 +108,7 @@
         if ( !empty($url) )
             $onclick = " onclick=\"window.open('$url', 'tooltip', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
 
-            echo "onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . 
+            echo "class=\"question\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . 
                  "');\" onmouseout=\"hideTip()\"$onclick";
     }
 
@@ -153,18 +153,18 @@
                     <div id="required">
                     <p>
                     <input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
-                    <label for="com"><strong><?= _('Allow commercial uses of your work?'); ?></strong></label> 
+                    <label for="com"><strong><?= _('Allow commercial uses of your work'); ?></strong></label> 
                     <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nc/standard.gif\' alt=\'nc\' class=\'icon\' /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>',
                     'http://a2.creativecommons.org/characteristic/nc?lang=en'); ?>
                     <br />
                     <input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
-                    <label for="mod"><strong><?= _('Allow modifications of your work?'); ?></strong></label>
+                    <label for="mod"><strong><?= _('Allow modifications of your work'); ?></strong></label>
                     <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nd/standard.gif\' alt=\'nd\' class=\'icon\' /><strong>' . _('No Derivative Works') . 
                     '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>', 
                     'http://a2.creativecommons.org/characteristic/nc?lang=en' ); ?>
                     <br />
                     <input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
-                    <label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes?'); ?></strong></label>
+                    <label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes'); ?></strong></label>
                     <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/sa/standard.gif\' alt=\'sa\' class=\'icon\' /><strong>' . 
                     _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>', 
                     'http://a2.creativecommons.org/characteristic/sa?lang=en'); ?>
