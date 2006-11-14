@@ -82,7 +82,6 @@
 
     function print_jurisdictions ()
     {
-        document.write("hello");
         for (var j in jurisdictions_array)
             document.write(j);
     } 
