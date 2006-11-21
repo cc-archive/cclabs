@@ -6,6 +6,11 @@
     margin-bottom: 2.7%;
 }
 
+select#jurisdiction
+{
+    margin-bottom: 2%;
+}
+
 textarea#result
 {
     width: 100%;
@@ -74,6 +79,11 @@ a img
 {
 }
 
+.info
+{
+    vertical-align: middle;
+}
+
 .note
 {
     float:          right;
@@ -88,6 +98,7 @@ a img
     border:         2px solid gray;
     padding:        3px 10px 3px 10px;
     width:          300px;
+    text-align:     left;
 }
 
 .tooltip .icon
@@ -113,14 +124,14 @@ a img
     cursor:         help;
 }
 
-.question
+.infobox
 {
     cursor:         help;
 }
 
-/* indent share mod */
-input#share
+.question
 {
-    margin-top:  4px;
-    margin-left: 30px;
+    cursor:         help;
+    color:          #00b;
 }
+

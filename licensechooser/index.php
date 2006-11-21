@@ -85,52 +85,41 @@
         $jurisdiction = $lang;
 
 
-    function get_more_info ($msg, $url = '', $use_ajax = true, 
-                              $window_name = 'characteristic_help')
+    function get_more_info ($msg, $img = 'information.png', $window_name = 'characteristic_help')
     {
-        $output = '';
-
-        if ( !empty( $url ) )
-            $onclick = " onclick=\"window.open('$url', '$window_name', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
-
-        if ( $use_ajax )
-        {
-            if ( !empty($url) )
-                $output = '<a href="' . $url . '">';
-                
-            $output .= "<span class=\"questionbox\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . "');\" onmouseout=\"hideTip()\" $onclick/>?</span>";
-            if ( !empty($url) )
-                $output .= '</a>';
+        $info_text = '';
+        $class_text = '';
+        if ( !empty($img) ) {
+            $info_text = 
+                '<img src="' . $img . '" alt="info" class="info" />';
+            $class_text = 'infobox';
+        } else {
+            $info_text = '?';
+            $class_text = 'questionbox';
         }
-        else 
-        {
-            $output .=  
-                 "<em><a href=\"$url\"$onclick>" . _('more info') . "</a>\n" . 
-                 "<a href=\"$url\"$onclick><img src=\"icon_popup.gif\" /></a></em>\n";
-        }
-        return $output;
+
+        return "<span class=\"" . $class_text . 
+               "\" onmouseover=\"doTooltipHTML(event,'" . addslashes($msg) . 
+               "');\" onmouseout=\"hideTip()\" />" . $info_text . 
+               "</span>";
     }
 
-    function print_more_info ($msg, $url = '', $use_ajax = true, 
+    function print_more_info ($msg, $img = 'information.png', 
                               $window_name = 'characteristic_help')
     {
-        echo get_more_info($msg, $url, $use_ajax, $window_name);
+        echo get_more_info($msg, $img, $window_name);
     }
 
-    function get_tooltip_js ($msg, $url = '')
+    function get_tooltip_js ($msg)
     {
-        $onclick = '';
-        if ( !empty($url) )
-            $onclick = " onclick=\"window.open('$url', 'tooltip', 'width=375,height=300,scrollbars=yes,resizable=yes,toolbar=no,directories=no,location=yes,menubar=no,status=yes');return false;\"";
-
         return "class=\"question\" onmouseover=\"doTooltipHTML(event,'"
                       . addslashes($msg) . 
-                      "');\" onmouseout=\"hideTip()\"$onclick";
+                      "');\" onmouseout=\"hideTip()\"";
     }
 
     function print_tooltip_js ($msg, $url = '')
     {
-        get_tooltip_js($msg, $url);
+        echo get_tooltip_js($msg, $url);
     }
 
     $pagetitle  = _('CC License Chooser');
@@ -159,7 +148,7 @@
             <?= sprintf(_('With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to %scopy and distribute your work%s provided they %sgive you credit%s &mdash; and only on the conditions you specify here.'), 
             '<a href="http://creativecommons.org/learn/licenses/fullrights">', 
             '</a>', 
-            '<a href="#" ' . get_tooltip_js('<p><img src=\'http://creativecommons.org/icon/by/standard.gif\' alt=\'by\' class=\'icon\' /><strong>' . _('Attribution') . '</strong> ' . _('You must attribute the work in the manner specified by the author or licensor.') . '</p>',  'http://a2.creativecommons.org/characteristic/by?lang=' . $lang) . '>', '</a>' ) . 
+            '<span ' . get_tooltip_js('<p><img src=\'http://creativecommons.org/icon/by/standard.gif\' alt=\'by\' class=\'icon\' /><strong>' . _('Attribution') . '</strong> ' . _('You must attribute the work in the manner specified by the author or licensor.') . '</p>',  'http://a2.creativecommons.org/characteristic/by?lang=' . $lang) . '>', '</span>' ) . 
             sprintf(_("For those new to Creative Commons licensing, we've prepared %sa list of things to think about%s."), 
             '<a href="http://creativecommons.org/about/think">', '</a>') . 
             sprintf(_('If you want to offer your work with no conditions, choose the %spublic domain%s'), 
@@ -173,37 +162,29 @@
                     <div id="required">
                     <p>
                     <input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
-                    <label for="com"><strong><?= _('Allow commercial uses of your work'); ?></strong></label> 
-                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nc/standard.gif\' alt=\'nc\' class=\'icon\' /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>',
-                    'http://a2.creativecommons.org/characteristic/nc?lang=' . $lang); ?>
+                    <?php $com_tooltip = '<p><img src=\'http://creativecommons.org/icon/nc/standard.gif\' alt=\'nc\' class=\'icon\' /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
+                    ?>
+                    <label for="com" <?= get_tooltip_js($com_tooltip); ?>><strong><?= _('Allow commercial uses of your work'); ?></strong></label> 
+                    <?= print_more_info($com_tooltip); ?>
                     <br />
                     <input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
-                    <label for="mod"><strong><?= _('Allow modifications of your work'); ?></strong></label>
-                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/nd/standard.gif\' alt=\'nd\' class=\'icon\' /><strong>' . _('No Derivative Works') . 
-                    '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>', 
-                    'http://a2.creativecommons.org/characteristic/nc?lang=' . $lang ); ?>
+                    <?php $mod_tooltip = '<p><img src=\'http://creativecommons.org/icon/nd/standard.gif\' alt=\'nd\' class=\'icon\' /><strong>' . _('No Derivative Works') .
+                                        '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>'; ?>
+                    <label for="mod" <?= get_tooltip_js($mod_tooltip)?>><strong><?= _('Allow modifications of your work'); ?></strong></label>
+                    <?= print_more_info($mod_tooltip); ?>
                     <br />
                     <input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
-                    <label for="share" id="share-label" class="inactive"><strong><?= _('Require other people to share their changes'); ?></strong></label>
-                    <?= print_more_info('<p><img src=\'http://creativecommons.org/icon/sa/standard.gif\' alt=\'sa\' class=\'icon\' /><strong>' . 
-                    _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>', 
-                    'http://a2.creativecommons.org/characteristic/sa?lang=' . $lang); ?>
+                    <?php $share_tooltip = '<p><img src=\'http://creativecommons.org/icon/sa/standard.gif\' alt=\'sa\' class=\'icon\' /><strong>' .
+                                        _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'; ?>
+                    <label for="share" id="share-label" <?= get_tooltip_js($share_tooltip) ?>><strong><?= _('Require other people to share their changes'); ?></strong></label>
+                    <?= print_more_info($share_tooltip); ?>
                     <br />
                     </p>
                     </div>
 
-                    <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4>
-                    <p class="note"><a href="#result">Get the Code</a></p>
-                    <div id="license_selected">
-                        <div id="license_example"></div>
-                    </div>
-
-                    <p><strong><a href="#optional" id="advanced_toggle" onclick="toggle('optional', 'advanced_toggle');"><?= _('Advanced Options') ?></a></strong> 
-                    <div id="optional" style="display:none">
-
-                    <p><strong><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info('<p><strong>' . _('Jurisdiction') . '</strong> ' . 
-                    _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>',
-                    'http://a2.creativecommons.org/license/jurisdiction-popup?lang=' . $lang); ?> </p>
+                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
+                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
+                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
                     
                     <select name="jurisdiction" id="jurisdiction" onChange="modify(this)">
                     <?php
@@ -220,15 +201,24 @@
                     <!-- <script>print_jurisdictions_option();</script> -->
                     </select>
 
+                    <!-- <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4> -->
+                    <!-- <p class="note"><a href="#result">Get the Code</a></p>-->
+                    <div id="license_selected">
+                        <div id="license_example"></div>
+                    </div>
+
+                    <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong> 
+                    <div id="optional">
+
                     <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
                     <p>
                     <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
                     <label for="using" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
                     <input type="radio" onChange="modify(this)" name="using" value="myspace" id="using_myspace" />
                     <label for="using" <?= print_tooltip_js( _('The generator will make html that may be inserted into the popular social networking site\'s, http://myspace.com, <em>Who I\'d Like To Meet</em> box')) ?>><?= _('Myspace'); ?></label>
-                    <input type="radio" onChange="modify(this)" name="using" value="rdf" id="using_rdf" />
-                    <label for="using" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label>
-                    </p>
+                    <!--<input type="radio" onChange="modify(this)" name="using" value="rdf" id="using_rdf" />
+                    <label for="using" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label> -->
+                    </p> 
 
 
                     <p><strong><?= _('What type of button would you like?') ;?></strong></p>

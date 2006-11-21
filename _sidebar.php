@@ -1,41 +1,40 @@
 <div id="sidebar">
 
+<div id="currentprojects">
 <h3>Current Projects</h3>
 
 <ul>
-<li>Freedoms Licensing Engine <a href="/remixshare/one.php">1</a>, 
+<li>Freedoms Licensing Engine <br />
+<a href="/remixshare/one.php">1</a>, 
 <a href="/remixshare/two.php">2</a>, <a href="/remixshare/three.php">3</a>, 
 <a href="/remixshare/four.php">4</a>, <a href="/remixshare/five.php">5</a></li>
 <li><a href="/licensechooser/">DHTML License Chooser</a></li>
 </ul>
+</div>
 
-<h3>Explore</h3>
+<div id="feedback">
+<h3>Feedback</h3>
 
-<p>Code for the labs projects may be found in our 
-<a href="http://sf.net/projects/cctools">Sourceforge project page</a>. 
-We encourage you to:
 <ul>
-<li><a href="http://wiki.creativecommons.org/SVN">Install Code</a> from ccLabs projects</li>
-<li><a href="http://wiki.creativecommons.org/HOWTO_Patch">Create Patches</a> for the edits you make</li>
-<li><a href="http://sourceforge.net/tracker/?group_id=80503&atid=559968">Submit Patches</a> to our patch tracker</li>
+<li><a href="<?= print_wiki_page_name(); ?>">Current Project Wiki Page</a></li>
+<li><a href="mailto:labs%40creativecommons.org">labs@creativecommons.org</a></li>
+</ul>
+
+</div>
+
+<div id="developer">
+<h3>Developer</h3>
+
+<ul>
+<li>Join the <a href="http://developer.creativecommons.org/">CC Developer Community</a></li>
+<li><a href="http://wiki.creativecommons.org/SVN">Install Code</a>, <a href="http://wiki.creativecommons.org/HOWTO_Patch">Create Patches</a> &amp; <a href="http://sourceforge.net/tracker/?group_id=80503&atid=559968">Submit</a></li>
 </ul>
 </p>
 
-<h3>Participate</h3>
 
-<p>Please join the <a href="http://developer.creativecommons.org/">CC Developer Community</a> by participating on the channels:
+</div>
 
-<ul>
-<li><a href="http://wiki.creativecommons.org/IRC">Chat Channel</a>: Log onto 
-#cc on irc.freenode.net.</li>
-<li><a href="http://wiki.creativecommons.org/Mailing_Lists">Mailing lists</a>:
-<ul><li><a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">cc-devel</a></li>
-<li><a href="http://lists.ibiblio.org/mailman/listinfo/cc-metadata">cc-metadata</a
-></li></ul>
-</li>
-<li><a href="http://wiki.creativecommons.org/wiki/Developer">Developer Wiki</a></li>
-</ul>
-</p>
+<hr id="spacer" />
 
 </div>
 

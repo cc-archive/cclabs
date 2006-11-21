@@ -12,6 +12,9 @@
 
     var warning_text            = '';
 
+    var share_label_orig_class  = '';
+    var share_label_orig_color  = '';
+
 	/**
 	 * Initialise our license codes, and reset the UI
 	 */
@@ -27,6 +30,8 @@
 
 		// no_share();
         $("share").disabled = false;
+        share_label_orig_class = $('share-label').className;
+        share_label_orig_color = $('share-label').style.color;
 		
 		was = false;
         
@@ -41,7 +46,6 @@
 		sa = false;
 		$("share").disabled = true;
 		$("share").checked = false;
-		$('share-label').className = "inactive";
 		
 		Element.hide('sa');
 	}
@@ -56,8 +60,8 @@
 		if (obj.id == "mod") {
 			if (obj.checked) {
 				$('share').disabled = false;
-				$('share-label').className = "";
-                $('share-label').style.color = 'black'
+                $('share-label').className = share_label_orig_class;
+                $('share-label').style.color = share_label_orig_color;
                 
 				if (was){
 					 $('share').checked = true;

@@ -31,10 +31,13 @@ a:hover
 #box {
     width: 95%;
     margin: 0 auto;
+    text-align: center;
 }
 
 #header {
     margin-bottom: 15px;
+    /* border: 1px solid black; */
+    height: 48px;
 }
 
 #header img {
@@ -42,13 +45,25 @@ a:hover
     margin-bottom: 20px;
 }
 
-#header p.blurb {
+#header .blurb {
+    /* border: 1px solid black; */
     float: right;
-    padding-top: 7px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    border-left: 1px solid #999;
-    margin-left: 200px;
+    /* border-left: 1px solid #999; */
+    padding: 0 0 0 12px ;
+    margin: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#header .support
+{
+    /* border: 1px solid black; */
+    float: right;
+    /* border-left: 1px solid #999; */
+    padding: 0 0 0 14px;
+    vertical-align: middle;
+    height: 100%;
+    margin: 0;
 }
 
 #innertube {
@@ -62,9 +77,10 @@ a:hover
 {
     background-color: #fff;
     width: 66%;
-    margin-left: 3%;
+    /* margin-left: 3%; */
+    margin: auto;
     /* border: 1px solid black; */
-    float: left;
+    text-align: left;
 }
 
 
@@ -103,12 +119,22 @@ div.blurb {
 }
 
 #footer {
-  clear: both;
   border-top: 1px solid #ddd;
   margin-top: 30px;
   padding-top: 3px;
   padding-bottom: 20px;
   font-size: 75%;
+}
+
+
+img {
+    border: none;
+}
+
+img#supportbutton
+{
+    margin: 0;
+    padding: 0.1%;
 }
 
 img.dev {
@@ -121,19 +147,43 @@ img.dev {
 
 #sidebar
 {
-    float: left;
-    width: 24%;
-    border: 1px dotted #aaa;
+    /* border: 1px dotted #aaa; */
     /* background-color: #efefef; */
-    padding: 1%;
+    /* padding: 1%; */
+    padding: 5% 0 4% 0;
     margin: 5.3% 0 0 2%;
     color: gray;
+    text-align: left;
+    width: 66%;
+    margin: auto;
 }
 
 #sidebar h3
 {
     padding-top: 5%;
     margin-top: 0;
+}
+
+#sidebar #currentprojects,
+#sidebar #feedback,
+#sidebar #developer
+{
+    float: left;
+    width: 32%;
+    vertical-align: top;
+
+}
+
+#sidebar #currentprojects
+{
+    width: 36%;
+}
+
+#sidebar ul
+{
+    padding-left: 13px;
+    margin: 0;
+    list-style-type: square;
 }
 
 #spacer
