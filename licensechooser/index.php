@@ -70,7 +70,7 @@
                               'url'  => 'http://creativecommons.org/worldwide/se/'),
                'tw' => Array( 'name' => 'Taiwan',
                               'url'  => 'http://www.creativecommons.org.tw'),
-               'uk' => Array( 'name' => 'UK: England & Wales',
+               'uk' => Array( 'name' => 'UK: England &amp; Wales',
                               'url'  => 'http://www.creativecommons.org.uk'),
                'scotland' =>
                        Array( 'name' => 'UK: Scotland',
@@ -99,9 +99,9 @@
         }
 
         return "<span class=\"" . $class_text . 
-               "\" onmouseover=\"doTooltipHTML(event,'" . htmlspecialchars(addslashes($msg)) . 
-               "');\" onmouseout=\"hideTip()\" />" . $info_text . 
-               "</span>";
+               "\" onmouseover=\"doTooltipHTML(event,'" . 
+               htmlspecialchars(addslashes($msg)) . 
+               "');\" onmouseout=\"hideTip()\">" . $info_text . "</span>";
     }
 
     function print_more_info ($msg, $img = 'information.png', 
@@ -158,22 +158,22 @@
             
             <div id="lic-menu" class="block">
                 <h3><?= _('Choose the options below for your personalized Creative Commons license.'); ?></h3>
-                <form>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div id="required">
                     <p>
-                    <input type="checkbox" onChange="modify(this)" name="com" value="" id="com" />
+                    <input type="checkbox" onchange="modify(this)" name="com" value="" id="com" />
                     <?php $com_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
                     ?>
                     <label for="com" <?= get_tooltip_js($com_tooltip); ?>><strong><?= _('Allow commercial uses of your work'); ?></strong></label> 
                     <?= print_more_info($com_tooltip); ?>
                     <br />
-                    <input type="checkbox" onChange="modify(this)" name="mod" value="" id="mod" />
+                    <input type="checkbox" onchange="modify(this)" name="mod" value="" id="mod" />
                     <?php $mod_tooltip = '<p><img src="http://creativecommons.org/icon/nd/standard.gif" alt="nd" class="icon" /><strong>' . _('No Derivative Works') .
                                         '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>'; ?>
                     <label for="mod" <?= get_tooltip_js($mod_tooltip)?>><strong><?= _('Allow modifications of your work'); ?></strong></label>
                     <?= print_more_info($mod_tooltip); ?>
                     <br />
-                    <input type="checkbox" name="share" onChange="modify(this)" value="" id="share" disabled />
+                    <input type="checkbox" name="share" onchange="modify(this)" value="" id="share" disabled="disabled" />
                     <?php $share_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
                                         _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'; ?>
                     <label for="share" id="share-label" <?= get_tooltip_js($share_tooltip) ?>><strong><?= _('Require other people to share their changes'); ?></strong></label>
@@ -186,7 +186,7 @@
                                         _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
                     <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
                     
-                    <select name="jurisdiction" id="jurisdiction" onChange="modify(this)">
+                    <select name="jurisdiction" id="jurisdiction" onchange="modify(this)">
                     <?php
                         foreach ( $jurisdictions as $jkey => $jarray )
                         {
@@ -207,44 +207,44 @@
                         <div id="license_example"></div>
                     </div>
 
-                    <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong> 
+                    <!-- <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong></p> -->
                     <div id="optional">
 
                     <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
                     <p>
-                    <input type="radio" onChange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
-                    <label for="using" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
-                    <input type="radio" onChange="modify(this)" name="using" value="myspace" id="using_myspace" />
-                    <label for="using" <?= print_tooltip_js( _("The generator will make html that may be inserted into the popular social networking site's, http://myspace.com, <em>Who I'd Like To Meet</em> box")) ?>><?= _('Myspace'); ?></label>
-                    <!--<input type="radio" onChange="modify(this)" name="using" value="rdf" id="using_rdf" />
-                    <label for="using" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label> -->
+                    <input type="radio" onchange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
+                    <label for="using_webpage" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
+                    <input type="radio" onchange="modify(this)" name="using" value="myspace" id="using_myspace" />
+                    <label for="using_myspace" <?= print_tooltip_js( _("The generator will make html that may be inserted into the popular social networking site's, http://myspace.com, <em>Who I'd Like To Meet</em> box")) ?>><?= _('Myspace'); ?></label>
+                    <!--<input type="radio" onchange="modify(this)" name="using" value="rdf" id="using_rdf" />
+                    <label for="using_rdf" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label> -->
                     </p> 
 
 
-                    <p><strong><?= _('What type of button would you like?') ;?></strong></p>
+                    <!-- <p><strong><?= _('What type of button would you like?') ;?></strong></p>
                     <p>
-                    <input type="radio" onChange="modify(this)" name="button_style" value="version2" id="button_style_version2" checked="checked" />
-                    <label for="button_style" <?= print_tooltip_js( _('The old style buttons that are generic for all licenses.')) ?>><?= _('Version 2.0 Generic'); ?></label> 
-                    <input type="radio" onChange="modify(this)" name="button_style" value="version3" id="button_style_version3" />
-                    <label for="button_style" <?= print_tooltip_js( _('The new more specific version 3.0 license buttons.')) ?>><?= _('Version 3.0 Specific'); ?></label></p>
+                    <input type="radio" onchange="modify(this)" name="button_style" value="version2" id="button_style_version2" checked="checked" />
+                    <label for="button_style_version2" <?= print_tooltip_js( _('The old style buttons that are generic for all licenses.')) ?>><?= _('Version 2.0 Generic'); ?></label> -->
+                    <input type="radio" onchange="modify(this)" name="button_style" value="version3" id="button_style_version3" checked="checked" style="display:none" />
+                    <!-- <label for="button_style_version3" <?= print_tooltip_js( _('The new more specific version 3.0 license buttons.')) ?>><?= _('Version 3.0 Specific'); ?></label></p> -->
 
                     <!-- MySpace centric style module. You know, for the kids. -->
                     <div id="myspace_style" style="display: none"> 
                     <p><strong><?= _('Style') ?></strong></p>
-                        <label><input type="radio" name="style" value="silver" id="style_silver" checked="checked" onChange="modify(this)" /> <?= _('Silver') ?>&nbsp;</label>
-                        <label><input type="radio" name="style" value="red" id="style_red" onChange="modify(this)" /> <?= _('Red') ?>&nbsp;</label>
-                        <label><input type="radio" name="style" value="green" id="style_green" onChange="modify(this)" /> <?= _('Green') ?>&nbsp;</label>
-                        <label><input type="radio" name="style" value="blue" id="style_blue" onChange="modify(this)" /> <?= _('Blue') ?>&nbsp;</label>
-                        <label><input type="radio" name="style" value="black" id="style_black" onChange="modify(this)" /> <?= _('Black') ?>&nbsp;</label>
-                        <!-- <label><input type="radio" name="style" value="white" id="style_white" onChange="modify(this)" /> <?= _('White') ?>&nbsp;</label> -->
-                        <label><input type="radio" name="style" value="none" id="style_none" onChange="modify(this)" /> <?= _('None') ?>&nbsp;</label>
+                        <label><input type="radio" name="style" value="silver" id="style_silver" checked="checked" onchange="modify(this)" /> <?= _('Silver') ?>&nbsp;</label>
+                        <label><input type="radio" name="style" value="red" id="style_red" onchange="modify(this)" /> <?= _('Red') ?>&nbsp;</label>
+                        <label><input type="radio" name="style" value="green" id="style_green" onchange="modify(this)" /> <?= _('Green') ?>&nbsp;</label>
+                        <label><input type="radio" name="style" value="blue" id="style_blue" onchange="modify(this)" /> <?= _('Blue') ?>&nbsp;</label>
+                        <label><input type="radio" name="style" value="black" id="style_black" onchange="modify(this)" /> <?= _('Black') ?>&nbsp;</label>
+                        <!-- <label><input type="radio" name="style" value="white" id="style_white" onchange="modify(this)" /> <?= _('White') ?>&nbsp;</label> -->
+                        <label><input type="radio" name="style" value="none" id="style_none" onchange="modify(this)" /> <?= _('None') ?>&nbsp;</label>
                     </div>
 
                     <!-- Show thumbnail of position on mouseover? -->
                     <div id="myspace_position" style="display: none">
                     <p><strong><?= _('Position') ?></strong></p>
-                        <label onmouseover="doTooltip(event,'floating.png');" onmouseout="hideTip()"><input type="radio" name="pos" value="floating" id="pos_float" onChange="modify(this)" /> <?= _('Floating') ?>&nbsp;</label>
-                        <label onmouseover="doTooltip(event,'profile.png')" onmouseout="hideTip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" checked="checked" onChange="modify(this)" /> <?= _('Profile') ?>&nbsp;</label>
+                        <label onmouseover="doTooltip(event,'floating.png');" onmouseout="hideTip()"><input type="radio" name="pos" value="floating" id="pos_float" onchange="modify(this)" /> <?= _('Floating') ?>&nbsp;</label>
+                        <label onmouseover="doTooltip(event,'profile.png')" onmouseout="hideTip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" checked="checked" onchange="modify(this)" /> <?= _('Profile') ?>&nbsp;</label>
                     </div>
 
                     <p><strong><a href="#more_info" id="more_info_toggle" onclick="toggle('more_info', this);" style="display: none"><?= _('More Information About Work Options') ?></a></strong></p>
@@ -253,7 +253,7 @@
 
                     <p><?= _('Tell us the format of your work') . ':' ;?></p>
 
-                    <p><select name="info_format" id="info_format" onChange="modify(this)">
+                    <p><select name="info_format" id="info_format" onchange="modify(this)">
                     <option value=""><?= _('Other') ?></option>
                     <option value="Sound"><?= _('Audio') ?></option>
                     <option value="MovingImage"><?= _('Video') ?></option>
@@ -270,7 +270,7 @@
                             <?= _('Title of Work') ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_title" id="info_title" onChange="modify(this)" />
+                            <input type="text" name="info_title" id="info_title" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -279,7 +279,7 @@
                             <?= _('Description') ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_description" id="info_description" onChange="modify(this)" />
+                            <input type="text" name="info_description" id="info_description" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -288,7 +288,7 @@
                             <?= _("Creator's Name") ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_creators_name" id="info_creators_name" onChange="modify(this)" />
+                            <input type="text" name="info_creators_name" id="info_creators_name" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -297,7 +297,7 @@
                             <?= _("Copyright Holder's Name") ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_copyright_holders_name" id="info_copyright_holders_name" onChange="modify(this)" />
+                            <input type="text" name="info_copyright_holders_name" id="info_copyright_holders_name" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -306,7 +306,7 @@
                             <?= _("Year of Copyright") ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_copyright_year" id="info_copyright_year" onChange="modify(this)" />
+                            <input type="text" name="info_copyright_year" id="info_copyright_year" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -315,7 +315,7 @@
                             <?= _("Source Work URL") ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_source_work_url" id="info_source_work_url" onChange="modify(this)" />
+                            <input type="text" name="info_source_work_url" id="info_source_work_url" onchange="modify(this)" />
                         </td>
                     </tr>
                     <!-- <tr>
@@ -324,7 +324,7 @@
                             <?= _('Attribute to Name') ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_attribute_to_name" value="" id="info_attribute_to_name" onChange="modify(this)" />
+                            <input type="text" name="info_attribute_to_name" value="" id="info_attribute_to_name" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -333,7 +333,7 @@
                             <?= _('Attribute to URL') ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_attribute_to_url" value="" id="info_attribute_to_url" onChange="modify(this)" />
+                            <input type="text" name="info_attribute_to_url" value="" id="info_attribute_to_url" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -342,7 +342,7 @@
                             <a href="#" <?= print_tooltip_js(_('A work another is derived from.'), 'http://a2.creativecommons.org/jargon/source_work')?>><?= _('Source Work') ?></a> <?= _('URL') ?></label>
                         </td>
                         <td>
-                            <input type="text" name="info_source_work_url" value="" id="info_source_work_url" onChange="modify(this)" />
+                            <input type="text" name="info_source_work_url" value="" id="info_source_work_url" onchange="modify(this)" />
                         </td>
                     </tr>
                     <tr>
@@ -350,7 +350,7 @@
                             <label for="info_more_permissions_url"><?= _('More Permissions URL') ?>&nbsp;</label>
                         </td>
                         <td>
-                            <input type="text" name="info_more_permissions_url" value="" id="info_more_permissions_url" onChange="modify(this)" />
+                            <input type="text" name="info_more_permissions_url" value="" id="info_more_permissions_url" onchange="modify(this)" />
                         </td>
                     </tr> -->
                     </table>

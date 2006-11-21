@@ -65,7 +65,7 @@
                         'url'  : 'http://creativecommons.org/worldwide/se/'},
                'tw' : { 'name' : _('Taiwan'),
                         'url'  : 'http://www.creativecommons.org.tw'},
-               'uk' : { 'name' : _('UK: England & Wales'),
+               'uk' : { 'name' : _('UK: England &amp; Wales'),
                         'url'  : 'http://www.creativecommons.org.uk'},
                'scotland' :
                       { 'name' : _('UK: Scotland'),
