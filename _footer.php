@@ -1,5 +1,5 @@
-<?php include_once '_sidebar.php'; ?>
     </div>
+<?php include_once '_sidebar.php'; ?>
     <div id="footer">
 <a href="http://creativecommons.org/licenses/by/2.5/"><img src="http://creativecommons.org/images/public/somerights20.png" border="0" alt="Creative Commons" align="right" style="margin-right: 7px;"/></a> 
   <a href="http://creativecommons.org/">Creative Commons</a> | <a href="http://creativecommons.org/contact">Contact</a>

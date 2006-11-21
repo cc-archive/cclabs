@@ -127,6 +127,7 @@ div.blurb {
 }
 
 
+
 img {
     border: none;
 }
@@ -184,6 +185,7 @@ img.dev {
     padding-left: 13px;
     margin: 0;
     list-style-type: square;
+    font-size: 75%;
 }
 
 #spacer
