@@ -140,7 +140,8 @@ h4.conditions {
 
 
 #flg-connect-share {
-		width:  220px;
+display:block;
+width:  220px;
 		height:  366px;
 }
 

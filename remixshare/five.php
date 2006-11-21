@@ -1,6 +1,7 @@
 <? $pagetitle = "Freedoms License Generator - r5"; ?>
 <? $include = "flg-five.css"; ?>
-<? $onload = "init()"; ?>
+<? $head_extra = "<!--[if lt IE 7]><link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"flg-five-ie.css\" /><![endif]-->";?>
+<? /*$onload = "init()"; */ ?>
 
 <? include_once "../_header.php"; ?>
 

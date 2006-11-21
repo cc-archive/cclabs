@@ -32,6 +32,8 @@ var tipWidth= 175;
 var offX= 20;	// how far from mouse to show tip
 var offY= 10; 
 
+var popup_timeout = 500;
+
 // tooltip content goes here (image, description, optional bgColor, optional textcolor)
 //var messages = new Array();
 // multi-dimensional arrays containing: 
@@ -106,7 +108,7 @@ function doTooltip(evt, img) {
 	tooltip.innerHTML = tip;
 
 	if (!tipFollowMouse) positionTip(evt);
-	else t1 = setTimeout("tipcss.visibility='visible'", 100);
+	else t1 = setTimeout("tipcss.visibility='visible'", popup_timeout);
 }
 
 /**
@@ -127,7 +129,7 @@ function doTooltipHTML(evt, html) {
 	tooltip.innerHTML = tip;
 
 	if (!tipFollowMouse) positionTip(evt);
-	else t1 = setTimeout("tipcss.visibility='visible'", 100);
+	else t1 = setTimeout("tipcss.visibility='visible'", popup_timeout);
 }
 
 var mouseX, mouseY;
@@ -164,12 +166,12 @@ function positionTip(evt) {
 	if ((mouseY + offY + tpHt) > winHt) 
 		tipcss.top = winHt - (tpHt + offY) + "px";
 	else tipcss.top = mouseY + offY + "px";
-	if (!tipFollowMouse) t1 = setTimeout("tipcss.visibility='visible'", 100);
+	if (!tipFollowMouse) t1 = setTimeout("tipcss.visibility='visible'", popup_timeout);
 }
 
 function hideTip() {
 	if (!tooltip) return;
-	t2 = setTimeout("tipcss.visibility='hidden'", 100);
+	t2 = setTimeout("tipcss.visibility='hidden'", popup_timeout);
 	tipOn = false;
 }
 

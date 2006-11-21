@@ -100,7 +100,7 @@
 
         return "<span class=\"" . $class_text . 
                "\" onmouseover=\"doTooltipHTML(event,'" . 
-               htmlspecialchars(addslashes($msg)) . 
+               htmlspecialchars($msg) . 
                "');\" onmouseout=\"hideTip()\">" . $info_text . "</span>";
     }
 
@@ -113,7 +113,7 @@
     function get_tooltip_js ($msg)
     {
         return "class=\"question\" onmouseover=\"doTooltipHTML(event,'"
-                      . htmlspecialchars(addslashes($msg)) . 
+                      . htmlspecialchars($msg) . 
                       "');\" onmouseout=\"hideTip()\"";
     }
 
@@ -215,7 +215,7 @@
                     <input type="radio" onchange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
                     <label for="using_webpage" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
                     <input type="radio" onchange="modify(this)" name="using" value="myspace" id="using_myspace" />
-                    <label for="using_myspace" <?= print_tooltip_js( _("The generator will make html that may be inserted into the popular social networking site's, http://myspace.com, <em>Who I'd Like To Meet</em> box")) ?>><?= _('Myspace'); ?></label>
+                    <label for="using_myspace" <?= print_tooltip_js( _("The generator will make html that may be inserted into the popular social networking site\'s, http://myspace.com, <em>Who I\'d Like To Meet</em> box")) ?>><?= _('Myspace'); ?></label>
                     <!--<input type="radio" onchange="modify(this)" name="using" value="rdf" id="using_rdf" />
                     <label for="using_rdf" <?= print_tooltip_js( _('The generator will make Resource Description Framework (RDF) metadata that you may use to describe your content.')) ?>><?= _('RDF'); ?></label> -->
                     </p> 
