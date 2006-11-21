@@ -27,9 +27,8 @@
 
 <ul>
 <li>Join the <a href="http://developer.creativecommons.org/">CC Developer Community</a></li>
-<li><a href="http://wiki.creativecommons.org/SVN">Install Code</a>, <a href="http://wiki.creativecommons.org/HOWTO_Patch">Create Patches</a> &amp; <a href="http://sourceforge.net/tracker/?group_id=80503&atid=559968">Submit</a></li>
+<li><a href="http://wiki.creativecommons.org/SVN">Install Code</a>, <a href="http://wiki.creativecommons.org/HOWTO_Patch">Create Patches</a> &amp; <a href="http://sourceforge.net/tracker/?group_id=80503&amp;atid=559968">Submit</a></li>
 </ul>
-</p>
 
 
 </div>
