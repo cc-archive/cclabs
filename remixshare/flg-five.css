@@ -147,7 +147,8 @@ h4.conditions {
 #flg-connect-remix {
 		height:  220px;
 		width: 366px;
-		margin-left:  100px;
+		margin-left: 0px;
+		m\argin-left:  0px;
 }
 #flg-connect-nc {
 	height:  220px;
@@ -163,7 +164,11 @@ h4.conditions {
 #flg-connect-share a:link, 
 #flg-connect-remix a:link, 
 #flg-connect-nc a:link, 
-#flg-connect-sa a:link {
+#flg-connect-sa a:link,
+#flg-connect-share a:visited, 
+#flg-connect-remix a:visited,
+#flg-connect-nc a:visited,
+#flg-connect-sa a:visited {
 	display:  block;
 	width:  100%;
 	height:  100%;
