@@ -46,8 +46,6 @@
 		sa = false;
 		$("share").disabled = true;
 		$("share").checked = false;
-		
-		Element.hide('sa');
 	}
 	
 	/**
@@ -66,11 +64,9 @@
 				if (was){
 					 $('share').checked = true;
 					 sa = true;
-					 Element.show('sa');
 				}
 				
 				nd = false;
-				Element.toggle('nd');
 			} else {
                 $('share-label').style.color = 'gray'
 				
@@ -80,17 +76,14 @@
 				no_share();
 			
 				nd = true;
-				Element.toggle('nd');
 			}
 		}
 		
 		if (obj.id == "com") {
-			Element.toggle('nc');
 			obj.checked ? nc = false : nc = true;
 		}
 		
 		if (obj.id == "share") {
-			Element.toggle('sa');
 			obj.checked ? sa = true : sa = false;
 		}
 
@@ -98,34 +91,35 @@
         {
             $('myspace_style').style.display = 'block';
             $('myspace_position').style.display = 'block';
-            $('more_info_toggle').style.display = 'none';
-            $('more_info').style.display = 'none';
+            // $('more_info_toggle').style.display = 'none';
+            // $('more_info').style.display = 'none';
         } else if ( obj.id == 'using_webpage' ) 
         {
             $('myspace_style').style.display = 'none';
             $('myspace_position').style.display = 'none';
-            $('more_info_toggle').style.display = 'none';
-            $('more_info').style.display = 'none';
-        } else if ( obj.id == 'using_rdf' ) 
+            // $('more_info_toggle').style.display = 'none';
+            // $('more_info').style.display = 'none';
+        } /* else if ( obj.id == 'using_rdf' ) 
         {
             $('more_info_toggle').style.display = 'block';
             $('myspace_style').style.display = 'none';
             $('myspace_position').style.display = 'none';
-        } 
+        } */
 
             // document.write( obj.value );
         // TODO: The following is not working in internet explorer on wine
         jurisdiction_name = jurisdictions_array[$F('jurisdiction')]['name'];
-        jurisdiction_generic = jurisdictions_array[$F('jurisdiction')]['generic'];
+        jurisdiction_generic = 
+            jurisdictions_array[$F('jurisdiction')]['generic'];
 
         if ( $F('pos_float') == 'floating' && $F('using_myspace') )
             warning_text = 
                 '<p class="alert">Check the bottom of your browser.</p>';
 
-        if ( $F('using_rdf') )
+        /* if ( $F('using_rdf') )
             warning_text = 
                 '<p class="alert">RDF does not provide the graphical license. It is shown here as a visual example of the license selected.</p>';
-
+        */
         testSub();
 	}
 	
@@ -248,6 +242,7 @@
 
     function build_license_text (license_url, license_name)
     {
+        // document.write(jurisdiction_name);
         var license_text = '';
         if ( jurisdiction_name && ! jurisdiction_generic )
             license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.';
