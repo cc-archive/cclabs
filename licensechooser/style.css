@@ -6,6 +6,21 @@
     margin-bottom: 2.7%;
 }
 
+#jurisdiction_box
+{
+    float: right;
+    /* border: 1px solid black; */
+    padding: 1%;
+}
+
+#lic-menu h2
+{
+    /* text-decoration: underline; */
+    /* border-bottom: 1px solid black; */
+    padding: 3% 0 1% 0;
+    border: none;
+}
+    
 select#jurisdiction
 {
     margin-bottom: 2%;

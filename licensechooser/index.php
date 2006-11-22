@@ -157,9 +157,31 @@
             </div>
             
             <div id="lic-menu" class="block">
-                <h3>1. <?= _('Choose the options below for your personalized Creative Commons license.'); ?></h3>
+                <h2>1. <?= _('Choose the options below for your personalized Creative Commons license.'); ?></h2>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div id="required">
+                    
+                    <div id="jurisdiction_box">
+                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
+                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
+                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
+                    
+                    <select name="jurisdiction" id="jurisdiction" onchange="modify(this)">
+                    <?php
+                        foreach ( $jurisdictions as $jkey => $jarray )
+                        {
+                            $selected = '';
+                            if ( $jurisdiction == $jkey )
+                                $selected = ' selected="selected"';
+
+                            echo "<option value=\"$jkey\"$selected>" . 
+                                 $jarray['name'] . "</option>\n";
+                        }
+                    ?>
+                    <!-- <script>print_jurisdictions_option();</script> -->
+                    </select>
+                    </div>
+
                     <p>
                     <input type="checkbox" onchange="modify(this)" name="com" value="" id="com" />
                     <?php $com_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
@@ -180,26 +202,8 @@
                     <?= print_more_info($share_tooltip); ?>
                     <br />
                     </p>
+
                     </div>
-
-                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
-                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
-                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
-                    
-                    <select name="jurisdiction" id="jurisdiction" onchange="modify(this)">
-                    <?php
-                        foreach ( $jurisdictions as $jkey => $jarray )
-                        {
-                            $selected = '';
-                            if ( $jurisdiction == $jkey )
-                                $selected = ' selected="selected"';
-
-                            echo "<option value=\"$jkey\"$selected>" . 
-                                 $jarray['name'] . "</option>\n";
-                        }
-                    ?>
-                    <!-- <script>print_jurisdictions_option();</script> -->
-                    </select>
 
                     <!-- <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4> -->
                     <!-- <p class="note"><a href="#result">Get the Code</a></p>-->
@@ -208,7 +212,7 @@
                     </div>
 
                     <!-- <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong></p> -->
-                    <h3>2. <strong><?= _('Where are you going to apply this license?') ;?></strong></h3>
+                    <h2>2. <strong><?= _('Where are you going to apply this license?') ;?></strong></h2>
                     <div id="optional">
 
                     <p>
@@ -364,7 +368,7 @@
                     
                     <!-- <p id="lic-result">
                         <?= _("Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!") ?> -->
-                       <h3>3. Get the Code</h3>
+                       <h2>3. Get the Code</h2>
                        <p id="lic-result"><?= _("Paste the following code into your web page's html."); ?></p>
                         <textarea name="result" id="result" rows="8" cols="60" onfocus="this.select();"></textarea>
                 </form>
