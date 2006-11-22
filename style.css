@@ -10,8 +10,7 @@ body {
   	color: #333;
   	font: 0.85em/120% "Trebuchet MS", "Lucidia Grande", verdana, arial, sans-serif;
   	padding: 0;
-  	margin: 15px;
-  	margin-bottom: 0;
+    margin: 0;
 }
 
 /* NOTE: These a tags are ripped off from new site design */
@@ -29,7 +28,6 @@ a:hover
 
 
 #box {
-    width: 95%;
     margin: 0 auto;
     text-align: center;
 }
@@ -38,6 +36,7 @@ a:hover
     margin-bottom: 15px;
     /* border: 1px solid black; */
     height: 48px;
+    margin: 3%;
 }
 
 #header img {
@@ -59,7 +58,7 @@ a:hover
 {
     /* border: 1px solid black; */
     float: right;
-    /* border-left: 1px solid #999; */
+    /*border-left: 1px solid #999;*/
     padding: 0 0 0 14px;
     vertical-align: middle;
     height: 100%;
@@ -71,6 +70,7 @@ a:hover
 	background-color: #fff;
     border: 1px solid #ccc;
     padding: 1% 2% 3% 2%;
+    margin: 3%;
 }
 
 #content 
@@ -119,11 +119,12 @@ div.blurb {
 }
 
 #footer {
-  border-top: 1px solid #ddd;
-  margin-top: 30px;
-  padding-top: 3px;
-  padding-bottom: 20px;
-  font-size: 75%;
+    margin-top: 20px;
+    padding-bottom: 10px;
+
+    background: url('http://a2.creativecommons.org/images/bg-std.png') repeat-x top left;
+    clear: both;
+    color: #888;
 }
 
 
@@ -148,52 +149,61 @@ img.dev {
 
 #sidebar
 {
-    /* border: 1px dotted #aaa; */
+    /* border: 1px dotted #aaa;  */
     /* background-color: #efefef; */
-    /* padding: 1%; */
-    padding: 5% 0 4% 0;
-    margin: 5.3% 0 0 2%;
     color: gray;
     text-align: left;
-    width: 66%;
+    width: 59%;
     margin: auto;
+    margin-bottom: 2%;
+    padding-top: 3.5%;
 }
 
 #sidebar h3
 {
     padding-top: 5%;
     margin-top: 0;
+    /* border: 1px solid black; */
+    margin-bottom: 1%;
 }
 
 #sidebar #currentprojects,
 #sidebar #feedback,
 #sidebar #developer
 {
+    /* border: 1px solid black;  */
     float: left;
-    width: 32%;
     vertical-align: top;
-
 }
 
 #sidebar #currentprojects
 {
-    width: 36%;
+    width: 37%;
+}
+
+#sidebar #feedback
+{
+    width: 33%;
+}
+
+#sidebar #developer
+{
+    width: 30%;
 }
 
 #sidebar ul
 {
+    /* border: 1px solid black; */
     padding-left: 13px;
-    margin: 0;
+    margin: auto;
     list-style-type: square;
-    font-size: 75%;
+    font-size: 95%;
 }
 
 #spacer
 {
     clear: both;
     border: none;
-    background-color: none;
-    color: none;
     padding: 0;
     margin: 0;
     height: 0;
