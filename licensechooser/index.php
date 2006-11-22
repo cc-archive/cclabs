@@ -157,7 +157,7 @@
             </div>
             
             <div id="lic-menu" class="block">
-                <h3><?= _('Choose the options below for your personalized Creative Commons license.'); ?></h3>
+                <h3>1. <?= _('Choose the options below for your personalized Creative Commons license.'); ?></h3>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div id="required">
                     <p>
@@ -208,9 +208,9 @@
                     </div>
 
                     <!-- <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong></p> -->
+                    <h3>2. <strong><?= _('Where are you going to apply this license?') ;?></strong></h3>
                     <div id="optional">
 
-                    <p><strong><?= _('Where are you going to apply this license?') ;?></strong></p>
                     <p>
                     <input type="radio" onchange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
                     <label for="using_webpage" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
@@ -364,6 +364,7 @@
                     
                     <!-- <p id="lic-result">
                         <?= _("Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!") ?> -->
+                       <h3>3. Get the Code</h3>
                        <p id="lic-result"><?= _("Paste the following code into your web page's html."); ?></p>
                         <textarea name="result" id="result" rows="8" cols="60" onfocus="this.select();"></textarea>
                 </form>
