@@ -176,14 +176,14 @@ function display(code, name, aka) {
     <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:redo('remix')">&nbsp;</a></div>
     <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:redo('sa')">&nbsp;</a></div>
   </div>
-  
+  <div id="flg-mid">
+    <div id="flg-result">BY</div>
+  </div>
   <br clear="all"/>
 </div>
 <h4 class="conditions">Conditions</h4>
   
-  <div id="flg-mid">
-    <div id="flg-result">BY</div>
-  </div>
+
 </div>
 
 </div>

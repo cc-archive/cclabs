@@ -54,12 +54,11 @@ h4.conditions {
 	margin:  15px 0;
 }
 #flg-mid {
-	position: absolute;
-	top: 275px;
-	left: 219px;
-	background: url(../images/fuzzy.png);
-	font-size:  80%;
-	border:  2px dashed #777;
+	position: relative;
+	top: 260px;
+	left: 218px;
+	width:  120px;
+
 }
 #flg-right {
 	width: 366px;
@@ -186,8 +185,11 @@ h4.conditions {
 }
 
 #flg-result {
+	position:  absolute;
 	width: 108px;
 	height: 80px;
 	padding: 20px;
-/*	border: 1px solid #aaa;*/
+	background: url(../images/fuzzy.png);
+	font-size:  80%;
+	border:  2px dashed #777;
 }
