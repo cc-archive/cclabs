@@ -1,7 +1,11 @@
+<? /* RemixShare License Generator */ ?>
+<? /* Creative Commons, 2006 */ ?>
+
 <? $pagetitle = "Freedoms License Generator - r5"; ?>
 <? $include = "flg-five.css"; ?>
-<? $head_extra = "<!--[if lt IE 7]><link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"flg-five-ie.css\" /><![endif]-->";?>
-<? /*$onload = "init()"; */ ?>
+<? $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
+<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->'; ?>
+<? $onload = "init()"; ?>
 
 <? include_once "../_header.php"; ?>
 
@@ -14,10 +18,40 @@ var nc = false;
 var sa_on = false;
 var nc_on = false;
 
+/* Preload images, FF/NS/IE7 only. */
+/* FIXME: IE6 relies on PNG filter loader, so this type of preloading has no effect.
+          Setting up the filter on 1x1 div's may acheive same effect. Must test. */
+if (document.images) {
+  saon = new Image(376, 282);
+  saon.src = "5/sa-on.png";
+  saoff = new Image(376, 282);
+  saoff.src = "5/sa-off.png";
+  sadim = new Image(376, 282);
+  sadim.src = "5/sa-dim.png";
+  
+  ncon = new Image(282, 376);
+  ncon.src = "5/nc-on.png";
+  ncoff = new Image(282, 376);
+  ncoff.src = "5/nc-off.png";
+  ncdim = new Image(282, 376);
+  ncdim.src = "5/nc-dim.png";
+  
+  shareon  = new Image(282, 376);
+  shareon.src = "5/share-on.png";
+  sharedim  = new Image(282, 376);
+  sharedim.src = "5/share-dim.png";
+  
+  remixon  = new Image(376, 282);
+  remixon.src = "5/remix-on.png";
+  remixdim  = new Image(376, 282);
+  remixdim.src = "5/remix-dim.png";
+  
+}
+
+
 
 function init() {
-  share = true;
-  remix = true;
+  share = remix = true;
   
   redo();
 }
@@ -43,57 +77,53 @@ function redo(mode) {
   
   
   if (!share) {
-    sa = false;
-    sa_on = false;
-    nc = false;
-    nc_on = false;
+    sa = sa_on = nc = nc_on = false;
     
-    document.getElementById('flg-connect-nc').className = "flg-pipe-off";
-    document.getElementById('flg-connect-sa').className = "flg-pipe-off";
-    document.getElementById('flg-connect-share').className = "flg-pipe-middle";
+    Element.classNames ('flg-connect-nc').set ("flg-pipe-off");
+    Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
+    Element.classNames ('flg-connect-share').set ("flg-pipe-middle");
     
     if (!remix) {
-      document.getElementById('flg-connect-remix').className = "flg-pipe-middle";
+      Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
     } else {
-      document.getElementById('flg-connect-remix').className = "flg-pipe-on";
+      Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
     }
     
   } else {
     nc_on = true;
     
-    document.getElementById('flg-connect-share').className = "flg-pipe-on";
+    Element.classNames ('flg-connect-share').set ("flg-pipe-on");
     
     if (nc) {
-      document.getElementById('flg-connect-nc').className = "flg-pipe-on";
+      Element.classNames ('flg-connect-nc').set ("flg-pipe-on");
     } else {
-      document.getElementById('flg-connect-nc').className = "flg-pipe-middle";
+      Element.classNames ('flg-connect-nc').set ("flg-pipe-middle");
     }
     
     if (remix) {
       sa_on = true;
       
       if (sa) {
-        document.getElementById('flg-connect-sa').className = "flg-pipe-on";
+        Element.classNames ('flg-connect-sa').set ("flg-pipe-on");
       } else {
-        document.getElementById('flg-connect-sa').className = "flg-pipe-middle";
+        Element.classNames ('flg-connect-sa').set ("flg-pipe-middle");
       }
       
-      document.getElementById('flg-connect-remix').className = "flg-pipe-on";
+      Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
     } else {
-      sa = false;
-      sa_on = false;
-      document.getElementById('flg-connect-sa').className = "flg-pipe-off";
-      document.getElementById('flg-connect-remix').className = "flg-pipe-middle";
+      sa = sa_on = false;
+
+      Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
+      Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
     }
   }
     
   results();
 }
 function results() {
-  f = document.forms[0];
   if (!share) {
     if (!remix) {
-      document.getElementById('flg-result').innerHTML = "";
+      Element.update ("flg-result", "");
       return;
     } else {
       display('sampling/1.0', 'Sampling 1.0', 'Remix');
@@ -122,7 +152,7 @@ function results() {
 }
 function display(code, name, aka) {
   name = "&nbsp;";
-  document.getElementById('flg-result').innerHTML = "<img src='http://i.creativecommons.org/l/"+code+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka;
+  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka);
 }
 </script>
 
