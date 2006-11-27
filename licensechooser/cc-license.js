@@ -36,7 +36,7 @@
 		was = false;
         
         // sets everything
-        testSub();
+        update();
 	}
 	
 	/**
@@ -120,7 +120,7 @@
             warning_text = 
                 '<p class="alert">RDF does not provide the graphical license. It is shown here as a visual example of the license selected.</p>';
         */
-        testSub();
+        update();
 	}
 	
 	/**
@@ -261,8 +261,10 @@
 
 	/**
 	 * Checks what options the user has set and spits out license code based on the values
+     * There are several global variables which need to be set to get this
+     * update to work right.
 	 */
-	function testSub() {
+	function update() {
 		var cc;
 		
 		var license = Array;
