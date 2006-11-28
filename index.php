@@ -11,7 +11,7 @@
   </div>
   <div class="blurb">
     <h3>DHTML License Chooser</h3>
-    <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side <abbr title="Javascript">JS</abbr> application. <a href="licensechooser">Test it out</a></p>
+    <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side <abbr title="Javascript">JS</abbr> application. <a href="dhtmllicense">Test it out</a></p>
   </div>
 </div>
 
