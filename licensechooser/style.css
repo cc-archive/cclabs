@@ -8,9 +8,9 @@
 
 #jurisdiction_box
 {
-    float: right;
     /* border: 1px solid black; */
-    padding: 1%;
+    padding: 0.5% 2% 1% 2%;
+    margin-bottom: 1%;
 }
 
 #lic-menu h2
@@ -19,6 +19,12 @@
     /* border-bottom: 1px solid black; */
     padding: 3% 0 1% 0;
     border: none;
+}
+
+#lic-result
+{
+    padding: 0;
+    margin: 0;
 }
     
 select#jurisdiction
@@ -31,6 +37,7 @@ textarea#result
     width: 100%;
     border: 1px solid #ccc;
     color: gray;
+    margin-top: 1%;
 }
 
 a img
@@ -66,7 +73,8 @@ a img
 {
     border: 1px solid #ccc;
     padding: 0.5% 2% 1% 2%;
-    margin-bottom: 2.7%;
+    margin-bottom: 1%;
+    margin-top: 1%;
     /* background: #efefef; */
     background: #eef6e6;
 }
@@ -77,6 +85,7 @@ a img
     border: 1px solid #eee;
     padding: 0.5% 2% 1% 2%;
     margin-bottom: 1%;
+    margin-top: 1%;
 }
 
 

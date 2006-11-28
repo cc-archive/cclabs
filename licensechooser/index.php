@@ -161,27 +161,6 @@
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div id="required">
                     
-                    <div id="jurisdiction_box">
-                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
-                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
-                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
-                    
-                    <select name="jurisdiction" id="jurisdiction" onchange="modify(this)">
-                    <?php
-                        foreach ( $jurisdictions as $jkey => $jarray )
-                        {
-                            $selected = '';
-                            if ( $jurisdiction == $jkey )
-                                $selected = ' selected="selected"';
-
-                            echo "<option value=\"$jkey\"$selected>" . 
-                                 $jarray['name'] . "</option>\n";
-                        }
-                    ?>
-                    <!-- <script>print_jurisdictions_option();</script> -->
-                    </select>
-                    </div>
-
                     <p>
                     <input type="checkbox" onchange="modify(this)" name="com" value="" id="com" />
                     <?php $com_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
@@ -204,6 +183,28 @@
                     </p>
 
                     </div>
+
+                    <div id="jurisdiction_box">
+                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
+                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
+                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
+                    
+                    <select name="jurisdiction" id="jurisdiction" onchange="modify(this)">
+                    <?php
+                        foreach ( $jurisdictions as $jkey => $jarray )
+                        {
+                            $selected = '';
+                            if ( $jurisdiction == $jkey )
+                                $selected = ' selected="selected"';
+
+                            echo "<option value=\"$jkey\"$selected>" . 
+                                 $jarray['name'] . "</option>\n";
+                        }
+                    ?>
+                    <!-- <script>print_jurisdictions_option();</script> -->
+                    </select>
+                    </div>
+
 
                     <!-- <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4> -->
                     <!-- <p class="note"><a href="#result">Get the Code</a></p>-->
