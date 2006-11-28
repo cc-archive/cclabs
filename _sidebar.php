@@ -5,9 +5,9 @@
 
 <ul>
 <li>Freedoms Licensing Engine <br />
-<a href="/remixshare/one.php">1</a>, 
-<a href="/remixshare/two.php">2</a>, <a href="/remixshare/three.php">3</a>, 
-<a href="/remixshare/four.php">4</a>, <a href="/remixshare/five.php">5</a></li>
+<a href="/freedomslicense/one.php">1</a>, 
+<a href="/freedomslicense/two.php">2</a>, <a href="/freedomslicense/three.php">3</a>, 
+<a href="/freedomslicense/four.php">4</a>, <a href="/freedomslicense/five.php">5</a></li>
 <li><a href="/dhtmllicense/">DHTML License Chooser</a></li>
 </ul>
 </div>
