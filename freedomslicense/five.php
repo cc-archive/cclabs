@@ -126,33 +126,35 @@ function results() {
       Element.update ("flg-result", "");
       return;
     } else {
-      display('sampling/1.0', 'Sampling 1.0', 'Remix');
+      display('sampling', '1.0', 'Sampling 1.0', 'Remix');
     }
   } else {
     if (!remix) {
       if (nc) {
-        display('by-nc-nd/2.5', 'Attribution-NonCommercial-NoDerivs 2.5', 'Share:NC:ND');
+        display('by-nc-nd', '2.5', 'Attribution-NonCommercial-NoDerivs 2.5', 'Share:NC:ND');
       } else {
-        display('by-nd/2.5', 'Attribution-NoDerivs 2.5', 'Share:ND');
+        display('by-nd', '2.5', 'Attribution-NoDerivs 2.5', 'Share:ND');
       }
     } else {
       if (nc) {
         if (sa) {
-          display('by-nc-sa/2.5', 'Attribution-NonCommercial-ShareAlike 2.5', 'Remix&Share:NC:SA');
+          display('by-nc-sa', '2.5', 'Attribution-NonCommercial-ShareAlike 2.5', 'Remix&Share:NC:SA');
         } else {
-          display('by-nc/2.5', 'Attribution-NonCommercial 2.5', 'Remix&Share:NC');
+          display('by-nc', '2.5', 'Attribution-NonCommercial 2.5', 'Remix&Share:NC');
         }
       } else if (sa) {
-          display('by-sa/2.5', 'Attribution-ShareAlike 2.5', 'Remix&Share:SA');
+          display('by-sa', '2.5', 'Attribution-ShareAlike 2.5', 'Remix&Share:SA');
       } else {
-          display('by/2.5', 'Attribution 2.5', 'Remix&Share');
+          display('by', '2.5', 'Attribution 2.5', 'Remix&Share');
       }
     }
   }
 }
-function display(code, name, aka) {
+function display(code, version, name, aka) {
   name = "&nbsp;";
-  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka);
+  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
+  '<br /><i><a href="#result">Get the Code!</a></i>');
+  // update(code);
 }
 </script>
 
@@ -185,6 +187,8 @@ function display(code, name, aka) {
   
 
 </div>
+
+<?php include '../dhtmllicense/cc-license-result.php' ?>
 
 </div>
 

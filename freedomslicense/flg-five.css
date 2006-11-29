@@ -193,3 +193,11 @@ h4.conditions {
 	font-size:  80%;
 	border:  2px dashed #777;
 }
+
+textarea#result
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    color: gray;
+    margin-top: 1%;
+}
