@@ -193,7 +193,7 @@ function display(code, version, name, aka) {
 </div>
 
 <?php 
-    print_jurisdictions_option();
+    print_jurisdictions_box();
     include '../dhtmllicense/cc-license-result.php' 
 
 ?>
