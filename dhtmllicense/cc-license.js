@@ -96,7 +96,6 @@
             $('myspace_position').style.display = 'none';
         } 
 
-            // document.write( obj.value );
         // TODO: The following is not working in internet explorer on wine
         // THIS fixes the generic being the default selection...
         var current_jurisdiction = ($F('jurisdiction') ? $F('jurisdiction') : 'generic');
@@ -109,10 +108,6 @@
             warning_text = 
                 '<p class="alert">Check the bottom of your browser.</p>';
 
-        /* if ( $F('using_rdf') )
-            warning_text = 
-                '<p class="alert">RDF does not provide the graphical license. It is shown here as a visual example of the license selected.</p>';
-        */
         update();
 	}
 	

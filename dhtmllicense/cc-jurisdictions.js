@@ -1,4 +1,5 @@
 // <![CDATA[
+    var default_version_number = '2.5';
     var jurisdictions_array = {
                'generic' : { 'name' : _('Generic'),
                         'url'  : 'http://creativecommons.org',

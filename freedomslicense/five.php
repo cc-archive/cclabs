@@ -1,13 +1,17 @@
-<? /* RemixShare License Generator */ ?>
-<? /* Creative Commons, 2006 */ ?>
+<?php 
+    /* RemixShare License Generator */
+    /* Creative Commons, 2006 */
 
-<? $pagetitle = "Freedoms License Generator - r5"; ?>
-<? $include = "flg-five.css"; ?>
-<? $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
-<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->'; ?>
-<? $onload = "init()"; ?>
+    $pagetitle = "Freedoms License Generator - r5";
+    $include = "flg-five.css";
+    $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script><script type="text/javascript" language="javascript" src="../dhtmlengine/tooltip.js"></script>
+<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
+    $onload = "init()";
 
-<? include_once "../_header.php"; ?>
+    include_once "../_header.php"; 
+
+    require_once '../dhtmllicense/cc-license-jurisdictions.php';
+?>
 
 <script lang="javascript">
 
@@ -188,7 +192,11 @@ function display(code, version, name, aka) {
 
 </div>
 
-<?php include '../dhtmllicense/cc-license-result.php' ?>
+<?php 
+    print_jurisdictions_option();
+    include '../dhtmllicense/cc-license-result.php' 
+
+?>
 
 </div>
 
