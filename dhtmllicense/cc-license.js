@@ -36,7 +36,6 @@
 		was = false;
         
         // sets everything
-        update();
 	}
 	
 	/**
@@ -91,26 +90,20 @@
         {
             $('myspace_style').style.display = 'block';
             $('myspace_position').style.display = 'block';
-            // $('more_info_toggle').style.display = 'none';
-            // $('more_info').style.display = 'none';
         } else if ( obj.id == 'using_webpage' ) 
         {
             $('myspace_style').style.display = 'none';
             $('myspace_position').style.display = 'none';
-            // $('more_info_toggle').style.display = 'none';
-            // $('more_info').style.display = 'none';
-        } /* else if ( obj.id == 'using_rdf' ) 
-        {
-            $('more_info_toggle').style.display = 'block';
-            $('myspace_style').style.display = 'none';
-            $('myspace_position').style.display = 'none';
-        } */
+        } 
 
             // document.write( obj.value );
         // TODO: The following is not working in internet explorer on wine
-        jurisdiction_name = jurisdictions_array[$F('jurisdiction')]['name'];
+        // THIS fixes the generic being the default selection...
+        var current_jurisdiction = ($F('jurisdiction') ? $F('jurisdiction') : 'generic');
+
+        jurisdiction_name = jurisdictions_array[current_jurisdiction]['name'];
         jurisdiction_generic = 
-            jurisdictions_array[$F('jurisdiction')]['generic'];
+            jurisdictions_array[current_jurisdiction]['generic'];
 
         if ( $F('pos_float') == 'floating' && $F('using_myspace') )
             warning_text = 
@@ -253,10 +246,7 @@
 	
     function build_license_image (license)
     {
-        if ( $F('button_style_version3') )
-            return 'http://i.creativecommons.org/l/' + license + "/" + license_version + "/" + $F('jurisdiction') + "/" + '88x31.png';
-        else
-            return 'http://creativecommons.org/images/public/somerights20.png';
+            return 'http://i.creativecommons.org/l/' + license + "/" + license_version + "/" + ( jurisdiction_generic  ? '' : $F('jurisdiction') + "/" ) + '88x31.png';
     }
 
 	/**

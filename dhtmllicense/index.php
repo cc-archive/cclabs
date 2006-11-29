@@ -7,7 +7,8 @@
     $jurisdictions = 
         Array( 'generic' => Array( 'name' => 'Generic',
                               'url'  => 'http://creativecommons.org',
-                              'generic' => true ),
+                              'generic' => true,
+                              'version' => ''),
                'ar' => Array( 'name' => 'Argentina',
                               'url'  => 'http://creativecommons.org/worldwide/ar/'),
                'au' => Array( 'name' => 'Australia',
@@ -133,6 +134,7 @@
     // <![CDATA[
         function pageInit() {
             init();
+            modify(this);
             initTip();
         }
     // ]]>
@@ -212,8 +214,14 @@
                         <div id="license_example"></div>
                     </div>
 
+
+
+                    <h2>2. <?= _('More Information About Work (Optional)') ?></h2>
+
+<?php include 'cc-license-more-info.php'; ?>
+
                     <!-- <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong></p> -->
-                    <h2>2. <strong><?= _('Where are you going to apply this license?') ;?></strong></h2>
+                    <h2>3. <strong><?= _('Where are you going to apply this license?') ;?></strong></h2>
                     <div id="optional">
 
                     <p>
@@ -252,114 +260,6 @@
                         <label onmouseover="doTooltip(event,'profile.png')" onmouseout="hideTip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" checked="checked" onchange="modify(this)" /> <?= _('Profile') ?>&nbsp;</label>
                     </div>
 
-                    <p><strong><a href="#more_info" id="more_info_toggle" onclick="toggle('more_info', this);" style="display: none"><?= _('More Information About Work Options') ?></a></strong></p>
-
-                    <div id="more_info" style="display: none">
-
-                    <p><?= _('Tell us the format of your work') . ':' ;?></p>
-
-                    <p><select name="info_format" id="info_format" onchange="modify(this)">
-                    <option value=""><?= _('Other') ?></option>
-                    <option value="Sound"><?= _('Audio') ?></option>
-                    <option value="MovingImage"><?= _('Video') ?></option>
-                    <option value="StillImage"><?= _('Image') ?></option>
-                    <option value="Text"><?= _('Text') ?></option>
-                    <option value="InteractiveResource"><?= _('Interactive') ?>
-                    </option>
-                    </select></p>
-
-                    <table>
-                    <tr>
-                        <td class="header">
-                            <label for="info_title">
-                            <?= _('Title of Work') ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_title" id="info_title" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_description">
-                            <?= _('Description') ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_description" id="info_description" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_creators_name">
-                            <?= _("Creator's Name") ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_creators_name" id="info_creators_name" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_copyright_holders_name">
-                            <?= _("Copyright Holder's Name") ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_copyright_holders_name" id="info_copyright_holders_name" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_copyright_year">
-                            <?= _("Year of Copyright") ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_copyright_year" id="info_copyright_year" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_source_work_url">
-                            <?= _("Source Work URL") ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_source_work_url" id="info_source_work_url" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <!-- <tr>
-                        <td class="header">
-                            <label for="info_attribute_to_name">
-                            <?= _('Attribute to Name') ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_attribute_to_name" value="" id="info_attribute_to_name" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_attribute_to_url">
-                            <?= _('Attribute to URL') ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_attribute_to_url" value="" id="info_attribute_to_url" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_source_work_url">
-                            <a href="#" <?= print_tooltip_js(_('A work another is derived from.'), 'http://a2.creativecommons.org/jargon/source_work')?>><?= _('Source Work') ?></a> <?= _('URL') ?></label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_source_work_url" value="" id="info_source_work_url" onchange="modify(this)" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="header">
-                            <label for="info_more_permissions_url"><?= _('More Permissions URL') ?>&nbsp;</label>
-                        </td>
-                        <td>
-                            <input type="text" name="info_more_permissions_url" value="" id="info_more_permissions_url" onchange="modify(this)" />
-                        </td>
-                    </tr> -->
-                    </table>
-                    </div>
 
                     </div>
 
@@ -369,7 +269,7 @@
                     
                     <!-- <p id="lic-result">
                         <?= _("Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!") ?> -->
-                       <h2>3. Get the Code</h2>
+                       <h2>4. Get the Code</h2>
                        <p id="lic-result"><?= _("Paste the following code into your web page's html."); ?></p>
                         <textarea name="result" id="result" rows="8" cols="60" onfocus="this.select();"></textarea>
                 </form>

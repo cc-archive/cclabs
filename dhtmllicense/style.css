@@ -49,13 +49,14 @@ a img
 #more_info
 {
     border: 1px solid #eee;
-    padding: 1%;
+    padding: 0.5% 2% 1% 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
 
-    width: 65%;
 }
 #more_info table
 {
-    width: 100%;
+    width: 65%;
 }
 
 #more_info .header
