@@ -73,7 +73,7 @@
     <div id="content">
         <div id="main">
             <div class="block">
-            <h2><?= _('Choose License'); ?></h2>
+            <h2><?= _('DHTML License Chooser'); ?></h2>
             <p>
             <?= sprintf(_('With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to %scopy and distribute your work%s provided they %sgive you credit%s &mdash; and only on the conditions you specify here.'), 
             '<a href="http://creativecommons.org/learn/licenses/fullrights">', 
