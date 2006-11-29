@@ -89,7 +89,7 @@ if ( ! function_exists( 'print_more_info' ) )
     }
 }
 
-function print_jurisdictions_option() 
+function print_jurisdictions_box() 
 {
     global $jurisdictions;
 

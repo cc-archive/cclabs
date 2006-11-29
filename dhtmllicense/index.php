@@ -116,11 +116,9 @@
 
                     
                     <?php
-                        print_jurisdictions_option();
+                        print_jurisdictions_box();
                     ?>
                     <!-- <script>print_jurisdictions_option();</script> -->
-                    </select>
-                    </div>
 
 
                     <!-- <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4> -->

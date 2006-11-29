@@ -228,14 +228,48 @@
         return( license_url );
     }
 
+    /**
+     * Builds the nicely formatted attribution of a work
+     */
     function build_license_text (license_url, license_name)
     {
         // document.write(jurisdiction_name);
         var license_text = '';
+
+
+        var work_title = '';
+        var work_by    = '';
+
+        if ( $F('info_title') )
+            work_title = '<span id="work_title" property="dc:title">' + $F('info_title') +
+                         '</span>';
+        else
+            work_title = 'This work';
+
+        if ( $F('info_attribute_to_name') && $F('info_attribute_to_url') )
+            work_by = '<a rel="cc:attributionURL" property="cc:attributionName" href="' + $F('info_attribute_to_url') + '">' + $F('info_attribute_to_name') + '</a>' ;
+        else if ( $F('info_attribute_to_name') )
+            work_by = '<span property="cc:attributionName">' + 
+            $F('info_attribute_to_name') + 
+            '</span>';
+
+        if ( work_by )
+            work_by = ' by ' + work_by;
+
+        if ( $F('info_source_work_url') )
+            license_text += '<span rel="dc:source" href="' + 
+                $F('info_source_work_url') + '"/>';
+
+        if ( $F('info_more_permissions_url') )
+            license_text += 
+                'Permissions beyond the scope of this license may be available at <a rel="cc:morePermissions" href="' + $F('info_more_permissions_url') + 
+                '">' + $F('info_more_permissions_url') + '</a>.' + "\n";
+
         if ( jurisdiction_name && ! jurisdiction_generic )
-            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.';
+            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.' + ' ' + license_text;
         else 
-            license_text = 'This work is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' License</a>.';
+            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' License</a>.' + ' ' + license_text;
+
         return( license_text );
     }
 	
