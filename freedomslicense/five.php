@@ -156,9 +156,9 @@ function results() {
 }
 function display(code, version, name, aka) {
   name = "&nbsp;";
-  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
-  '<br /><i><a href="#result">Get the Code!</a></i>');
-  // update(code);
+  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka);
+  /* '<br /><i><a href="#result">Get the Code!</a></i>'); */
+  /* update(code); */
 }
 </script>
 
@@ -193,8 +193,8 @@ function display(code, version, name, aka) {
 </div>
 
 <?php 
-    print_jurisdictions_box();
-    include '../dhtmllicense/cc-license-result.php' 
+    // print_jurisdictions_box();
+    // include '../dhtmllicense/cc-license-result.php' 
 
 ?>
 
