@@ -6,6 +6,7 @@
 	var was;
     var jurisdiction_name       = '';
     var jurisdiction_generic    = false;
+    var jurisdiction_version    = '';
 	
     var license_root_url        = 'http://creativecommons.org/licenses';
     var license_version         = '2.5';
@@ -103,6 +104,10 @@
         jurisdiction_name = jurisdictions_array[current_jurisdiction]['name'];
         jurisdiction_generic = 
             jurisdictions_array[current_jurisdiction]['generic'];
+        jurisdiction_version = 
+            jurisdictions_array[current_jurisdiction]['version'];
+        if ( ! jurisdiction_version )
+            jurisdiction_version = license_version;
 
         if ( $F('pos_float') == 'floating' && $F('using_myspace') )
             warning_text = 
@@ -221,7 +226,7 @@
     function build_license_url (license)
     {
         var license_url = license_root_url + "/" + license + "/" + 
-                          license_version + "/" ;
+                          jurisdiction_version + "/" ;
         if ( $F('jurisdiction') && ! jurisdiction_generic )
             license_url += $F('jurisdiction') + "/" ;
 
@@ -266,16 +271,16 @@
                 '">' + $F('info_more_permissions_url') + '</a>.' + "\n";
 
         if ( jurisdiction_name && ! jurisdiction_generic )
-            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.' + ' ' + license_text;
+            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + jurisdiction_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.' + ' ' + license_text;
         else 
-            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + license_version + ' License</a>.' + ' ' + license_text;
+            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + jurisdiction_version + ' License</a>.' + ' ' + license_text;
 
         return( license_text );
     }
 	
     function build_license_image (license)
     {
-            return 'http://i.creativecommons.org/l/' + license + "/" + license_version + "/" + ( jurisdiction_generic  ? '' : $F('jurisdiction') + "/" ) + '88x31.png';
+            return 'http://i.creativecommons.org/l/' + license + "/" + jurisdiction_version + "/" + ( jurisdiction_generic  ? '' : $F('jurisdiction') + "/" ) + '88x31.png';
     }
 
 	/**
