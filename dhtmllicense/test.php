@@ -1,3 +1,22 @@
+<?php
+
+/*
+if ( ! $dom = domxml_open_file('licenses.xml') )
+    echo "error";
+
+$root = $dom->document_element(); */
+
+
+$doc = new DOMDocument()
+$doc->load('licenses.xml');
+// echo $doc->saveXML();
+print_r($doc) ;
+
+$doc->getElementsByTagName('jurisdiction');
+
+
+?>
+<html>
 <script type="text/javascript" language="javascript">
 <!--
 
@@ -32,13 +51,27 @@ function test_jurisdictions ()
     alert(alertText);
 }
 
+
+/*
+class DHTMLLicense extends Object
+{
+    function constructor ()
+    {
+    }
+}
+
+var dhtmlLicense = new DHTMLLicense();
+*/
+
 -->
 </script>
+<body>
 
 
 <p><a href="#" onclick="test_jurisdictions();">Test</a></p>
 
-
+</body>
+</html>
 
 
 

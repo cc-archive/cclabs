@@ -96,10 +96,17 @@
             $('myspace_style').style.display = 'none';
             $('myspace_position').style.display = 'none';
         } 
-
+        
         // TODO: The following is not working in internet explorer on wine
+
         // THIS fixes the generic being the default selection...
-        var current_jurisdiction = ($F('jurisdiction') ? $F('jurisdiction') : 'generic');
+        var current_jurisdiction = '';
+        
+        if ( $F('jurisdiction') )
+            current_jurisdiction = $F('jurisdiction');
+        else
+            current_jurisdiction = 'generic';
+
 
         jurisdiction_name = jurisdictions_array[current_jurisdiction]['name'];
         jurisdiction_generic = 
