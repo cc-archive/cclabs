@@ -4,9 +4,11 @@
 
     $pagetitle = "Freedoms License Generator - r5";
     $include = "flg-five.css";
-    $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script><script type="text/javascript" language="javascript" src="../dhtmlengine/tooltip.js"></script>
+    $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
+    <script type="text/javascript" language="javascript" src="../dhtmlengine/tooltip.js"></script>
+    <script type="text/javascript" language="javascript" src="../dhtmlengine/cc-license.js"></script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "init()";
+    $onload = "initFreedoms(); init(); modify(this);";
 
     include_once "../_header.php"; 
 
@@ -17,8 +19,8 @@
 
 var share = false;
 var remix = false;
-var sa = false;
-var nc = false;
+var sa_cond = false;
+var nc_cond = false;
 var sa_on = false;
 var nc_on = false;
 
@@ -54,7 +56,7 @@ if (document.images) {
 
 
 
-function init() {
+function initFreedoms() {
   share = remix = true;
   
   redo();
@@ -70,10 +72,10 @@ function redo(mode) {
       remix = !remix;
       break;
     case "nc":
-      if (nc_on) { nc = !nc; }
+      if (nc_on) { nc_cond = !nc_cond; }
       break;
     case "sa":
-      if (sa_on) { sa = !sa; }
+      if (sa_on) { sa_cond = !sa_cond; }
       break;
     
   }
@@ -81,7 +83,7 @@ function redo(mode) {
   
   
   if (!share) {
-    sa = sa_on = nc = nc_on = false;
+    sa_cond = sa_on = nc_cond = nc_on = false;
     
     Element.classNames ('flg-connect-nc').set ("flg-pipe-off");
     Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
@@ -98,7 +100,7 @@ function redo(mode) {
     
     Element.classNames ('flg-connect-share').set ("flg-pipe-on");
     
-    if (nc) {
+    if (nc_cond) {
       Element.classNames ('flg-connect-nc').set ("flg-pipe-on");
     } else {
       Element.classNames ('flg-connect-nc').set ("flg-pipe-middle");
@@ -107,7 +109,7 @@ function redo(mode) {
     if (remix) {
       sa_on = true;
       
-      if (sa) {
+      if (sa_cond) {
         Element.classNames ('flg-connect-sa').set ("flg-pipe-on");
       } else {
         Element.classNames ('flg-connect-sa').set ("flg-pipe-middle");
@@ -115,7 +117,7 @@ function redo(mode) {
       
       Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
     } else {
-      sa = sa_on = false;
+      sa_cond = sa_on = false;
 
       Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
       Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
@@ -134,19 +136,19 @@ function results() {
     }
   } else {
     if (!remix) {
-      if (nc) {
+      if (nc_cond) {
         display('by-nc-nd', '2.5', 'Attribution-NonCommercial-NoDerivs 2.5', 'Share:NC:ND');
       } else {
         display('by-nd', '2.5', 'Attribution-NoDerivs 2.5', 'Share:ND');
       }
     } else {
-      if (nc) {
-        if (sa) {
+      if (nc_cond) {
+        if (sa_cond) {
           display('by-nc-sa', '2.5', 'Attribution-NonCommercial-ShareAlike 2.5', 'Remix&Share:NC:SA');
         } else {
           display('by-nc', '2.5', 'Attribution-NonCommercial 2.5', 'Remix&Share:NC');
         }
-      } else if (sa) {
+      } else if (sa_cond) {
           display('by-sa', '2.5', 'Attribution-ShareAlike 2.5', 'Remix&Share:SA');
       } else {
           display('by', '2.5', 'Attribution 2.5', 'Remix&Share');
@@ -156,9 +158,10 @@ function results() {
 }
 function display(code, version, name, aka) {
   name = "&nbsp;";
-  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka);
-  /* '<br /><i><a href="#result">Get the Code!</a></i>'); */
-  /* update(code); */
+  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
+  '<br /><i><a href="#result">Get the Code!</a></i>'); 
+  update();
+  /* update(code, version, name, aka); */
 }
 </script>
 
@@ -193,8 +196,8 @@ function display(code, version, name, aka) {
 </div>
 
 <?php 
-    // print_jurisdictions_box();
-    // include '../dhtmllicense/cc-license-result.php' 
+    print_jurisdictions_box();
+    include '../dhtmllicense/cc-license-result.php' 
 
 ?>
 
