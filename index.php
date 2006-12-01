@@ -12,6 +12,10 @@
     <h3><a href="dhtmllicense/">DHTML License Chooser</a></h3>
     <p>A simplified licensing engine, building from our current server-side implementation, and turning it into a responsive client-side javascript application.</p>
   </div>
+  <div class="blurb">
+    <h3><a href="metadata/">Metadata Lab</a></h3>
+    <p>The license choosers above generate experimental metadata.  Read all about it.</p>
+  </div>
   <h2><a name="feedback"></a>Feedback</h2>
   <div class="blurb">
   <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
