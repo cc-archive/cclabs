@@ -7,7 +7,7 @@
     var jurisdiction_name       = '';
     var jurisdiction_generic    = false;
     var jurisdiction_version    = '';
-	
+
     var license_root_url        = 'http://creativecommons.org/licenses';
     var license_version         = '2.5';
 
@@ -26,17 +26,19 @@
 		nd = false;
 		sa = false;
 		
-		$("mod").checked = true;
-		$("com").checked = true;
+        if ( $("mod") && $("com") ) {
+		    $("mod").checked = true;
+		    $("com").checked = true;
+        }
 
 		// no_share();
-        $("share").disabled = false;
-        share_label_orig_class = $('share-label').className;
-        share_label_orig_color = $('share-label').style.color;
+        if ( $("share") ) {
+            $("share").disabled = false;
+            share_label_orig_class = $('share-label').className;
+            share_label_orig_color = $('share-label').style.color;
+        }
 		
 		was = false;
-        
-        // sets everything
 	}
 	
 	/**
@@ -96,7 +98,17 @@
             $('myspace_style').style.display = 'none';
             $('myspace_position').style.display = 'none';
         } 
-        
+
+        if ( $F('pos_float') && $F('using_myspace') && 
+             $F('pos_float') == 'floating' )
+            warning_text = 
+                '<p class="alert">Check the bottom of your browser.</p>';
+
+        update();
+	}
+
+    function build_jurisdictions ()
+    {
         // TODO: The following is not working in internet explorer on wine
 
         // THIS fixes the generic being the default selection...
@@ -107,7 +119,6 @@
         else
             current_jurisdiction = 'generic';
 
-
         jurisdiction_name = jurisdictions_array[current_jurisdiction]['name'];
         jurisdiction_generic = 
             jurisdictions_array[current_jurisdiction]['generic'];
@@ -116,90 +127,8 @@
         if ( ! jurisdiction_version )
             jurisdiction_version = license_version;
 
-        if ( $F('pos_float') == 'floating' && $F('using_myspace') )
-            warning_text = 
-                '<p class="alert">Check the bottom of your browser.</p>';
-
-        update();
-	}
+    }
 	
-	/**
-	 * Generates the license RDF code based on selected options
-	 */
-	function buildRDF() {
-		var meta, l, ver;
-		
-		/* FIXME: This block can be improved */
-		if ((!nd) && (!nc) && (!sa))
-		/* by */       l = 'by';
-		
-		if ((!nd) && (!nc) && ( sa))
-		/* by-sa */    l = 'by-sa';
-		
-		if (( nd) && (!nc) && (!sa))
-		/* by-nd */    l = 'by-nd';
-		
-		if ((!nd) && ( nc) && (!sa))
-		/* by-nc */    l = 'by-nc';
-		
-		if ((!nd) && ( nc) && ( sa))
-		/* by-nc-sa */ l = 'by-nc-sa';
-		
-		if (( nd) && ( nc) && (!sa))
-		/* by-nc-nd */ l = 'by-nc-nd';
-		
-		ver = "2.5";
-		
-		meta = '<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">' + "\n" + 
-        '<Work rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/'+l+'/'+ver+'/" />';
-
-        if ( $F('info_title') )
-            meta += '<dc:title>' + $F('info_title') + '</dc:title>' + "\n";
-
-        if ( $F('info_copyright_year') )
-            meta += '<dc:date>' + $F('info_copyright_year') + '</dc:date>' + 
-                    "\n";
-
-        if ( $F('info_description') )
-            meta += '<dc:description>' + $F('info_description') + 
-                    '</dc:description>' + "\n";
-
-        if ( $F('info_creators_name') )
-            meta += '<dc:creator><Agent><dc:title>' + $F('info_creators_name') 
-                    + '</dc:title></Agent></dc:creator>' + "\n";
-
-        if ( $F('info_copyright_holders_name') )
-            meta += '<dc:rights><Agent><dc:title>' + 
-                    $F('info_copyright_holders_name')
-                    + '</dc:title></Agent></dc:rights>' + "\n";
-
-        if ( $F('info_source_work_url') )
-            meta += '<dc:source rdf:resource="' + $F('info_source_work_url') + 
-                    '">' + "\n";
-
-        if ( $F('info_format') )
-            meta += '<dc:type rdf:resource="http://purl.org/dc/dcmitype/' + 
-                    $F('info_format') + '" />';
-
-        meta += '</Work>' + "\n" + '<License rdf:about="http://creativecommons.org/licenses/'+l+'/'+ver+'/">' + "\n";
-		
-		
-		meta += '<requires rdf:resource="http://web.resource.org/cc/Attribution" />' + "\n";
-		meta += '<permits rdf:resource="http://web.resource.org/cc/Reproduction" />' + "\n";
-		meta += '<permits rdf:resource="http://web.resource.org/cc/Distribution" />' + "\n";
-		
-		if (!nd) meta += '<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />' + "\n";
-		 	    
-		if (sa) meta += '<requires rdf:resource="http://web.resource.org/cc/ShareAlike" />' + "\n";
-		if (nc) meta += '<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />' + "\n";
-		
-		meta += '<requires rdf:resource="http://web.resource.org/cc/Notice" />'
-                + "\n";
-		
-		meta += '</License></rdf:RDF>';
-		return meta;
-	}
-
     function comment_out (str)
     {
         return ("<!-- " + str + "-->");
@@ -290,55 +219,103 @@
             return 'http://i.creativecommons.org/l/' + license + "/" + jurisdiction_version + "/" + ( jurisdiction_generic  ? '' : $F('jurisdiction') + "/" ) + '88x31.png';
     }
 
+    /**
+     * Builds an array of our license options from global variables...scary!
+     */
+	function get_license_array () 
+    {
+        var license_array = Array;
+        /* 
+        license_array['code']     = '';
+        license_array['version']  = '';
+        license_array['full_name']     = ''; // 'name' is reserved
+        license_array['text']     = '';
+        */
+
+        build_jurisdictions();
+
+        /* BY */
+		if ((!nd) && (!nc) && (!sa)) {
+		    license_array['code'] = "by"; 
+            license_array['full_name'] = "Attribution"; 
+        }
+		
+        /* BY-SA */
+		else if ((!nd) && (!nc) && ( sa)) {
+		    license_array['code'] = "by-sa"; 
+            license_array['full_name'] = "Attribution-ShareAlike";
+        }
+		
+        /* BY-ND */
+		else if (( nd) && (!nc) && (!sa)) {
+		    license_array['code'] = "by-nd"; 
+            license_array['full_name'] = "Attribution-NoDerivatives"; 
+        }
+		
+        /* BY-NC */
+		else if ((!nd) && ( nc) && (!sa)) {
+		    license_array['code'] = "by-nc"; 
+            license_array['full_name'] = "Attribution-NonCommercial";
+        }
+		
+        /* BY-NC-SA */
+		else if ((!nd) && ( nc) && ( sa)) {
+	        license_array['code'] = "by-nc-sa"; 
+            license_array['full_name'] = "Attribution-NonCommercial-ShareAlike"; 
+        }
+		
+        /* BY-NC-ND */
+		else if (( nd) && ( nc) && (!sa)) {
+		    license_array['code'] = "by-nc-nd"; 
+            license_array['full_name'] = "Attribution-NonCommercial-NoDerivatives"; 
+        }
+
+
+        return license_array;
+    }
+
+    /**
+     * This inserts html into an html element with the given insertion_id. 
+     */
+    function insert_html (output, insertion_id)
+    {
+        $(insertion_id).innerHTML = output;
+        return true;
+    }
+
+    /**
+     * This builds our custom html license code using various refactored 
+     * functions for handling all the nastiness...
+     */
+    function build_license_html ()
+    {
+        var license_array = get_license_array();
+        var license_url  = build_license_url(license_array['code']);
+        var license_text = build_license_text(license_url, 
+                                              license_array['full_name']);
+
+        // warning_text is a global variable.
+		var output = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="' + build_license_image(license_array['code']) + '" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
+
+        if ( $F('using_myspace') )
+        {
+		    output = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + output + '</div>';
+        }
+        insert_html( warning_text + output, 'license_example');
+        return output;
+	}
+
 	/**
 	 * Checks what options the user has set and spits out license code based on the values
      * There are several global variables which need to be set to get this
      * update to work right.
 	 */
-	function update() {
-		var cc;
-		
-		var license = Array;
-		
-		if ((!nd) && (!nc) && (!sa)) {
-		/* by */      license[0] = "by"; license[1] = "Attribution"; }
-		
-		if ((!nd) && (!nc) && ( sa)) {
-		/* by-sa */   license[0] = "by-sa"; license[1] = "Attribution-ShareAlike"; }
-		
-		if (( nd) && (!nc) && (!sa)) {
-		/* by-nd */    license[0] = "by-nd"; license[1] = "Attribution-NoDerivatives"; }
-		
-		if ((!nd) && ( nc) && (!sa)) {
-		/* by-nc */    license[0] = "by-nc"; license[1] = "Attribution-NonCommercial"; }
-		
-		if ((!nd) && ( nc) && ( sa)) {
-		/* by-nc-sa */ license[0] = "by-nc-sa"; license[1] = "Attribution-NonCommercial-ShareAlike"; }
-		
-		if (( nd) && ( nc) && (!sa)) {
-		/* by-nc-nd */ license[0] = "by-nc-nd"; license[1] = "Attribution-NonCommercial-NoDerivatives"; }
+    function update ()
+    {
+        // our insert_html function also does some modifications on 
+        var output = build_license_html();
+        if ( $('result') )
+		    $('result').value = "<!--Creative Commons License-->\n" + output;
+    }
 
-        license_url = build_license_url(license[0]);
-
-        var license_text = build_license_text(license_url, license[1]);
-        
-		cc = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="' + build_license_image(license[0]) + '" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
-
-        if ( $F('using_webpage') )
-        {
-            $('license_example').innerHTML = warning_text + cc;
-        }
-        else if ( $F('using_myspace') )
-        {
-		    cc = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + cc + '</div>';
-            $('license_example').innerHTML = warning_text + cc;
-        }
-        else if ( $F('using_rdf') )
-        {
-            $('license_example').innerHTML = warning_text + cc;
-            cc = buildRDF();
-        }
-		
-		$('result').value = "<!--Creative Commons License-->\n" + cc;
-	}
 // ]]>
