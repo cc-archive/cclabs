@@ -9,7 +9,7 @@
     <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-jurisdictions.js"></script>
     <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-license.js"></script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "initFreedoms(); init(); ";
+    $onload = "initFreedoms(); init(); update()";
 
     include_once "../_header.php"; 
 
@@ -127,43 +127,54 @@ function redo(mode) {
     
   results();
 }
+function no_lic_selection() {
+    $('flg-result').style.display = 'none';
+    $('get_the_code').style.display = 'none';
+}
+function some_lic_selection() {
+    $('flg-result').style.display = 'block';
+    $('get_the_code').style.display = 'block';
+}
 function results() {
+  some_lic_selection(); // This is purely cosmetic.
   if (!share) {
     if (!remix) {
+      // NOTE: This is the nothing selected option
       Element.update ("flg-result", "");
+      no_lic_selection();
       return;
     } else {
-      display('sampling', '1.0', 'Sampling 1.0', 'Remix');
+      display('sampling', '1.0', 'Sampling', 'Remix');
     }
   } else {
     if (!remix) {
       if (nc_cond) {
-        display('by-nc-nd', '2.5', 'Attribution-NonCommercial-NoDerivs 2.5', 'Share:NC:ND');
+        display('by-nc-nd', '2.5', 'Attribution-NonCommercial-NoDerivs', 'Share:NC:ND');
       } else {
-        display('by-nd', '2.5', 'Attribution-NoDerivs 2.5', 'Share:ND');
+        display('by-nd', '2.5', 'Attribution-NoDerivs', 'Share:ND');
       }
     } else {
       if (nc_cond) {
         if (sa_cond) {
-          display('by-nc-sa', '2.5', 'Attribution-NonCommercial-ShareAlike 2.5', 'Remix&Share:NC:SA');
+          display('by-nc-sa', '2.5', 'Attribution-NonCommercial-ShareAlike', 'Remix&Share:NC:SA');
         } else {
-          display('by-nc', '2.5', 'Attribution-NonCommercial 2.5', 'Remix&Share:NC');
+          display('by-nc', '2.5', 'Attribution-NonCommercial', 'Remix&Share:NC');
         }
       } else if (sa_cond) {
-          display('by-sa', '2.5', 'Attribution-ShareAlike 2.5', 'Remix&Share:SA');
+          display('by-sa', '2.5', 'Attribution-ShareAlike', 'Remix&Share:SA');
       } else {
-          display('by', '2.5', 'Attribution 2.5', 'Remix&Share');
+          display('by', '2.5', 'Attribution', 'Remix&Share');
       }
     }
   }
 }
 function display(code, version, name, aka) {
-  name = "&nbsp;";
-  Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
-  '<br /><i><a href="#result">Get the Code!</a></i>'); 
-  /* modify(this); */
-  update_hack(code, version, name);
-  /* update(code, version, name, aka); */
+    name = "&nbsp;"; // notice this is reset to space!
+    Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
+    '<br /><i><a href="#result">Get the Code!</a></i>'); 
+    /* modify(this); */
+    update_hack(code, version, name);
+    /* update(code, version, name, aka); */
 }
 </script>
 
@@ -197,11 +208,13 @@ function display(code, version, name, aka) {
 
 </div>
 
+<div id="get_the_code">
 <?php 
     print_jurisdictions_box();
     include '../dhtmllicense/cc-license-result.php' 
 
 ?>
+</div>
 
 </div>
 

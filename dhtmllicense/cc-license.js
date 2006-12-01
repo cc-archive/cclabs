@@ -56,6 +56,9 @@
 	function modify(obj) {
         warning_text = '';
 
+        try
+        {
+
 		if (obj.id == "mod") {
 			if (obj.checked) {
 				$('share').disabled = false;
@@ -102,6 +105,7 @@
              $F('pos_float') == 'floating' )
             warning_text = 
                 '<p class="alert">Check the bottom of your browser.</p>';
+        } catch (err) {};
 
         update();
 	}
@@ -141,21 +145,22 @@
     {
         var license_url = license_root_url + "/" + license_array['code'] + 
                           "/" + license_array['version'] + "/" ;
-        if ( $F('jurisdiction') && ! license_array['generic'] )
-            license_url += $F('jurisdiction') + "/" ;
+        try {
+            if ( $F('jurisdiction') && ! license_array['generic'] )
+                license_url += $F('jurisdiction') + "/" ;
+        } catch (err) {}
 
         license_array['url'] = license_url;
     }
 
     /**
-     * Builds the nicely formatted attribution of a work
+     * Builds the nicely formatted test about the work
      */
     function build_license_text ()
     {
-        // document.write(jurisdiction_name);
-        var license_text = '';
-        var work_title = '';
-        var work_by    = '';
+        var license_text     = '';
+        var work_title       = '';
+        var work_by          = '';
         var namespaces_array = new Array();
 
         var use_namespace_dc = false;
@@ -163,12 +168,18 @@
 
         var info_format_text = '';
 
+        // I had to put this big try block around all the
+        // prototype.js attempts to access nonexistent form fields...
+        try
+        {
+
         // set if we need any type support
         if ( $F('info_format') && $F('info_format') != '' && 
              $F('info_format') != '-' )
             info_format_text = 
                 'rel="dc:type" href="http://purl.org/dc/dcmitype/' + 
                 $F('info_format') + '"';
+
 
         if ( $F('info_title') ) {
             if ( info_format_text == "" )
@@ -188,7 +199,6 @@
                 use_namespace_dc = true;
             }
         }
-
 
         if ( $F('info_attribute_to_name') && $F('info_attribute_to_url') ) {
             work_by = '<a rel="cc:attributionURL" property="cc:attributionName" href="' + $F('info_attribute_to_url') + '">' + $F('info_attribute_to_name') + '</a>' ;
@@ -232,6 +242,9 @@
             use_namespace_cc = true;
         }
 
+        } catch (err) {}
+
+        // The main bit of text including or not, jurisdiction love
         if ( license_array['jurisdiction'] && ! license_array['generic'] )
             license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_array['url'] + '">Creative Commons ' + license_array['full_name'] + ' ' + license_array['version'] + ' ' + ( license_array['jurisdiction'] ? license_array['jurisdiction'] : license_array['jurisdiction'].toUpperCase() ) + ' License</a>.' + ' ' + license_text;
         else 
@@ -262,11 +275,13 @@
 	
     function build_license_image ()
     {
-            license_array['img'] = 
-                'http://i.creativecommons.org/l/' + license_array['code'] + 
-                "/" + license_array['version'] + "/" + 
-                ( license_array['generic']  ? '' : $F('jurisdiction') + "/" ) +
-                '88x31.png';
+            try {
+                license_array['img'] = 
+                    'http://i.creativecommons.org/l/' + license_array['code'] + 
+                    "/" + license_array['version'] + "/" + 
+                    ( license_array['generic']  ? '' : $F('jurisdiction') + 
+                    "/" ) + '88x31.png';
+            } catch (err) {}
     }
 
     /**
@@ -279,10 +294,14 @@
         // THIS fixes the generic being the default selection...
         var current_jurisdiction = '';
         
-        if ( $F('jurisdiction') )
-            current_jurisdiction = $F('jurisdiction');
-        else
+        try {
+            if ( $F('jurisdiction') )
+                current_jurisdiction = $F('jurisdiction');
+            else
+                current_jurisdiction = 'generic';
+        } catch (err) {
             current_jurisdiction = 'generic';
+        }
 
         license_array['jurisdiction'] = 
             jurisdictions_array[current_jurisdiction]['name'];
@@ -363,7 +382,9 @@
      */
     function insert_html (output, insertion_id)
     {
-        $(insertion_id).innerHTML = output;
+        try {
+            $(insertion_id).innerHTML = output;
+        } catch (err) {};
         return true;
     }
 
@@ -375,10 +396,13 @@
     {
 		var output = '<a rel="license" href="' + license_array['url'] + '"><img alt="Creative Commons License" border="0" src="' + license_array['img'] + '" class="cc-button"/></a><div class="cc-info">' + license_array['text'] + '</div>';
 
-        if ( $F('using_myspace') )
-        {
-		    output = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + output + '</div>';
-        }
+        try {
+            if ( $F('using_myspace') )
+            {
+		        output = '<style type="text/css">body { padding-bottom: 50px;} div.cc-bar { width:100%; height: 40px; ' + position() + ' bottom: 0px; left: 0px; background:url(http://mirrors.creativecommons.org/myspace/'+ style() +') repeat-x; } img.cc-button { float: left; border:0; margin: 5px 0 0 15px; } div.cc-info { float: right; padding: 0.3%; width: 400px; margin: auto; vertical-align: middle; font-size: 90%;} </style> <div class="cc-bar">' + output + '</div>';
+            }
+        } catch (err) {}
+
         insert_html( warning_text + output, 'license_example');
         return output;
 	}
@@ -411,10 +435,6 @@
         // build_license_details();
         build_license_url();
         build_license_text();
-
-        /* CHECK THIS OUT>>>>>>FIX THE CODE HERE FOR<<<<<<<
-        return;
-        */
         build_license_image();
 
         // our insert_html function also does some modifications on 
