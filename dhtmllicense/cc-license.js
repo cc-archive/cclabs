@@ -156,36 +156,91 @@
         var license_text = '';
         var work_title = '';
         var work_by    = '';
+        var namespaces_array = new Array();
 
-        if ( $F('info_title') )
+        var use_namespace_dc = false;
+        var use_namespace_cc = false;
+
+        if ( $F('info_title') ) {
             work_title = '<span id="work_title" property="dc:title">' + $F('info_title') +
                          '</span>';
-        else
+            use_namespace_dc = true;
+        } else
             work_title = 'This work';
 
-        if ( $F('info_attribute_to_name') && $F('info_attribute_to_url') )
+        if ( $F('info_format') && $F('info_format') != '' && 
+             $F('info_format') != '-' ) {
+            work_title = 
+                '<span rel="dc:type" href="http://purl.org/dc/dcmitype/' + 
+                $F('info_format') + '">' + work_title + '</span>';
+        }
+
+        if ( $F('info_attribute_to_name') && $F('info_attribute_to_url') ) {
             work_by = '<a rel="cc:attributionURL" property="cc:attributionName" href="' + $F('info_attribute_to_url') + '">' + $F('info_attribute_to_name') + '</a>' ;
-        else if ( $F('info_attribute_to_name') )
+            use_namespace_cc = true;
+        } else if ( $F('info_attribute_to_name') && 
+                    ! $F('info_attribute_to_url') ) {
             work_by = '<span property="cc:attributionName">' + 
             $F('info_attribute_to_name') + 
             '</span>';
+            use_namespace_cc = true;
+        } else if ( ! $F('info_attribute_to_name') && 
+                    $F('info_attribute_to_url') ) {
+            work_by = '<a rel="cc:attributionURL" href="' + 
+            $F('info_attribute_to_url') + '">' + 
+            $F('info_attribute_to_url') + '</a>';
+            use_namespace_cc = true;
+        }
 
         if ( work_by )
             work_by = ' by ' + work_by;
 
-        if ( $F('info_source_work_url') )
+        if ( $F('info_source_work_url') ) {
             license_text += '<span rel="dc:source" href="' + 
                 $F('info_source_work_url') + '"/>';
+            use_namespace_dc = true;
+        }
 
-        if ( $F('info_more_permissions_url') )
+        if ( $F('info_more_permissions_url') ) {
+            var domain = 
+              $F('info_more_permissions_url').match( /:\/\/(www\.)?([^\/:]+)/ );
+            // set this to either just the domain or the full url if
+            // the domain can't be extracted...yep, lame for now...
+            if ( domain != null && domain[2] > "" )
+                domain = domain[2];
+            else 
+                domain = $F('info_more_permissions_url');
+
             license_text += 
                 'Permissions beyond the scope of this license may be available at <a rel="cc:morePermissions" href="' + $F('info_more_permissions_url') + 
-                '">' + $F('info_more_permissions_url') + '</a>.' + "\n";
+                '">' + domain + '</a>.' + "\n";
+            use_namespace_cc = true;
+        }
 
         if ( license_array['jurisdiction'] && ! license_array['generic'] )
             license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_array['url'] + '">Creative Commons ' + license_array['full_name'] + ' ' + license_array['version'] + ' ' + ( license_array['jurisdiction'] ? license_array['jurisdiction'] : license_array['jurisdiction'].toUpperCase() ) + ' License</a>.' + ' ' + license_text;
         else 
             license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_array['url'] + '">Creative Commons ' + license_array['full_name'] + ' ' + license_array['version'] + ' License</a>.' + ' ' + license_text;
+        
+        // Lets set some namespaces if they are needed
+        var namespace_text = '';
+        if ( use_namespace_cc )
+            namespaces_array.push('xmlns:cc="http://creativecommons.org/ns#"');
+
+        if ( use_namespace_dc )
+            namespaces_array.push('xmlns:dc="http://purl.org/dc/elements/1.1/"');
+        if ( namespaces_array.length > 0 ) {
+            namespace_text = '<span';
+            namespaces_array.each( function(ns) { 
+                namespace_text += ' ' + ns; });
+            namespace_text += '>';
+
+            license_text = namespace_text + license_text + '</span>';
+        }
+
+
+
+
         // set the array container here
         license_array['text'] = license_text;
     }

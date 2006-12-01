@@ -4,7 +4,7 @@
                     <p><?= _('Tell us the format of your work') . ':' ;?> 
 
                     <select name="info_format" id="info_format" onchange="modify(this)">
-                    <option value=""><?= _('Other') ?></option>
+                    <option value="-"><?= _('Other') ?></option>
                     <option value="Sound"><?= _('Audio') ?></option>
                     <option value="MovingImage"><?= _('Video') ?></option>
                     <option value="StillImage"><?= _('Image') ?></option>
