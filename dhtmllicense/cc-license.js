@@ -161,19 +161,34 @@
         var use_namespace_dc = false;
         var use_namespace_cc = false;
 
-        if ( $F('info_title') ) {
-            work_title = '<span id="work_title" property="dc:title">' + $F('info_title') +
-                         '</span>';
-            use_namespace_dc = true;
-        } else
-            work_title = 'This work';
+        var info_format_text = '';
 
+        // set if we need any type support
         if ( $F('info_format') && $F('info_format') != '' && 
-             $F('info_format') != '-' ) {
-            work_title = 
-                '<span rel="dc:type" href="http://purl.org/dc/dcmitype/' + 
-                $F('info_format') + '">' + work_title + '</span>';
+             $F('info_format') != '-' )
+            info_format_text = 
+                'rel="dc:type" href="http://purl.org/dc/dcmitype/' + 
+                $F('info_format') + '"';
+
+        if ( $F('info_title') ) {
+            if ( info_format_text == "" )
+                work_title = '<span id="work_title" property="dc:title">' + 
+                    $F('info_title') + '</span>';
+            else
+                work_title = '<span id="work_title" ' + info_format_text + ' property="dc:title">' + $F('info_title') + '</span>';
+
+            use_namespace_dc = true;
+        } else {
+            // if we need format support, please add it
+            if ( info_format_text == "" )
+                work_title = 'This work';
+            else {
+                work_title = '<span ' + info_format_text + 
+                '>This Work</span>';
+                use_namespace_dc = true;
+            }
         }
+
 
         if ( $F('info_attribute_to_name') && $F('info_attribute_to_url') ) {
             work_by = '<a rel="cc:attributionURL" property="cc:attributionName" href="' + $F('info_attribute_to_url') + '">' + $F('info_attribute_to_name') + '</a>' ;
