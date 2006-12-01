@@ -127,21 +127,20 @@ function redo(mode) {
     
   results();
 }
-function no_lic_selection() {
+function no_license_selection() {
     $('flg-result').style.display = 'none';
     $('get_the_code').style.display = 'none';
 }
-function some_lic_selection() {
+function some_license_selection() {
     $('flg-result').style.display = 'block';
     $('get_the_code').style.display = 'block';
 }
 function results() {
-  some_lic_selection(); // This is purely cosmetic.
+  some_license_selection(); // This is purely cosmetic.
   if (!share) {
     if (!remix) {
-      // NOTE: This is the nothing selected option
       Element.update ("flg-result", "");
-      no_lic_selection();
+      no_license_selection();
       return;
     } else {
       display('sampling', '1.0', 'Sampling', 'Remix');
@@ -169,12 +168,10 @@ function results() {
   }
 }
 function display(code, version, name, aka) {
+    update_hack(code, version, name);
     name = "&nbsp;"; // notice this is reset to space!
     Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
     '<br /><i><a href="#result">Get the Code!</a></i>'); 
-    /* modify(this); */
-    update_hack(code, version, name);
-    /* update(code, version, name, aka); */
 }
 </script>
 
@@ -210,7 +207,7 @@ function display(code, version, name, aka) {
 
 <div id="get_the_code">
 <?php 
-    print_jurisdictions_box();
+    print_jurisdictions_box('results();');
     include '../dhtmllicense/cc-license-result.php' 
 
 ?>

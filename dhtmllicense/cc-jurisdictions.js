@@ -1,10 +1,12 @@
 // <![CDATA[
     var default_version_number = '2.5';
     var jurisdictions_array = {
-               'generic' : { 'name' : _('Generic'),
+               'generic' : { 
+                        'name' : _('Generic'),
                         'url'  : 'http://creativecommons.org',
                         'generic' : true,
-                        'version' : '2.5'},
+                        'version' : '2.5',
+                        'sampling' : '1.0' },
                'ar' : { 'name' : _('Argentina'),
                         'url'  : 'http://creativecommons.org/worldwide/ar/',
                         'version' : '2.5'},
@@ -19,7 +21,8 @@
                         'version' : '2.0'},
                'br' : { 'name' : _('Brazil'),
                         'url'  : 'http://creativecommons.org/worldwide/br/',
-                        'version' : '2.5'},
+                        'version' : '2.5',
+                        'sampling' : '1.0'},
                'bg' : { 'name' : _('Bulgaria'),
                         'url'  : 'http://creativecommons.org/worldwide/bg/',
                         'version' : '2.5'},
@@ -97,7 +100,8 @@
                         'version' : '2.5'},
                'tw' : { 'name' : _('Taiwan'),
                         'url'  : 'http://www.creativecommons.org.tw',
-                        'version' : '2.5'},
+                        'version' : '2.5',
+                        'sampling' : '1.0'},
                'uk' : { 'name' : _('UK: England &amp; Wales'),
                         'url'  : 'http://www.creativecommons.org.uk',
                         'version' : '2.0'},

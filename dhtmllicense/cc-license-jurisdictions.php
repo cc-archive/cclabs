@@ -89,7 +89,7 @@ if ( ! function_exists( 'print_more_info' ) )
     }
 }
 
-function print_jurisdictions_box() 
+function print_jurisdictions_box( $js_on_change = 'modify(this);' ) 
 {
     global $jurisdictions;
 
@@ -100,7 +100,7 @@ function print_jurisdictions_box()
                                         _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
                     <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
 
-    <select name="jurisdiction" id="jurisdiction" onchange="modify(this)">
+    <select name="jurisdiction" id="jurisdiction" onchange="<?= $js_on_change ?>">
 <?php
     foreach ( $jurisdictions as $jkey => $jarray )
     {

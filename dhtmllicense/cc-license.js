@@ -307,11 +307,30 @@
             jurisdictions_array[current_jurisdiction]['name'];
         license_array['generic'] = 
             jurisdictions_array[current_jurisdiction]['generic'];
-        license_array['version'] = 
-            jurisdictions_array[current_jurisdiction]['version'];
+
+        license_array['sampling'] = 
+            jurisdictions_array[current_jurisdiction]['sampling'];
+
+        // NOTE: This is all a bit hacky to get around that there are
+        // only 2 customized jurisdictions with sampling licenses
+        // If current jurisdiction doesn't have, then we just set
+        // to generic sampling...cool?
+        if ( license_array['code'] == 'sampling' ) {
+            if ( jurisdictions_array[current_jurisdiction]['sampling'] ) {  
+                license_array['version'] = 
+                    jurisdictions_array[current_jurisdiction]['sampling'];
+            } else {
+                license_array['version'] =
+                    jurisdictions_array['generic']['sampling'];
+                license_array['generic'] = true;
+            }
+        } else
+            license_array['version'] = 
+                jurisdictions_array[current_jurisdiction]['version'];
+
+
         if ( ! license_array['version'] )
             license_array['version'] = license_version;
-
     }
     
     function build_license_details ()
