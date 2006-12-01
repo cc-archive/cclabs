@@ -4,9 +4,8 @@
 	var nd;
 	var sa;
 	var was;
-    var jurisdiction_name       = '';
-    var jurisdiction_generic    = false;
-    var jurisdiction_version    = '';
+
+    var license_array;
 
     var license_root_url        = 'http://creativecommons.org/licenses';
     var license_version         = '2.5';
@@ -107,27 +106,6 @@
         update();
 	}
 
-    function build_jurisdictions ()
-    {
-        // TODO: The following is not working in internet explorer on wine
-
-        // THIS fixes the generic being the default selection...
-        var current_jurisdiction = '';
-        
-        if ( $F('jurisdiction') )
-            current_jurisdiction = $F('jurisdiction');
-        else
-            current_jurisdiction = 'generic';
-
-        jurisdiction_name = jurisdictions_array[current_jurisdiction]['name'];
-        jurisdiction_generic = 
-            jurisdictions_array[current_jurisdiction]['generic'];
-        jurisdiction_version = 
-            jurisdictions_array[current_jurisdiction]['version'];
-        if ( ! jurisdiction_version )
-            jurisdiction_version = license_version;
-
-    }
 	
     function comment_out (str)
     {
@@ -159,25 +137,23 @@
 		return "margin-top:20px;";
 	}
 
-    function build_license_url (license)
+    function build_license_url ()
     {
-        var license_url = license_root_url + "/" + license + "/" + 
-                          jurisdiction_version + "/" ;
-        if ( $F('jurisdiction') && ! jurisdiction_generic )
+        var license_url = license_root_url + "/" + license_array['code'] + 
+                          "/" + license_array['version'] + "/" ;
+        if ( $F('jurisdiction') && ! license_array['generic'] )
             license_url += $F('jurisdiction') + "/" ;
 
-        return( license_url );
+        license_array['url'] = license_url;
     }
 
     /**
      * Builds the nicely formatted attribution of a work
      */
-    function build_license_text (license_url, license_name)
+    function build_license_text ()
     {
         // document.write(jurisdiction_name);
         var license_text = '';
-
-
         var work_title = '';
         var work_by    = '';
 
@@ -206,34 +182,51 @@
                 'Permissions beyond the scope of this license may be available at <a rel="cc:morePermissions" href="' + $F('info_more_permissions_url') + 
                 '">' + $F('info_more_permissions_url') + '</a>.' + "\n";
 
-        if ( jurisdiction_name && ! jurisdiction_generic )
-            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + jurisdiction_version + ' ' + ( jurisdiction_name ? jurisdiction_name : $F('jurisdiction').toUpperCase() ) + ' License</a>.' + ' ' + license_text;
+        if ( license_array['jurisdiction'] && ! license_array['generic'] )
+            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_array['url'] + '">Creative Commons ' + license_array['full_name'] + ' ' + license_array['version'] + ' ' + ( license_array['jurisdiction'] ? license_array['jurisdiction'] : license_array['jurisdiction'].toUpperCase() ) + ' License</a>.' + ' ' + license_text;
         else 
-            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_url + '">Creative Commons ' + license_name + ' ' + jurisdiction_version + ' License</a>.' + ' ' + license_text;
-
-        return( license_text );
+            license_text = work_title + work_by + ' is licensed under a <a rel="license" href="' + license_array['url'] + '">Creative Commons ' + license_array['full_name'] + ' ' + license_array['version'] + ' License</a>.' + ' ' + license_text;
+        // set the array container here
+        license_array['text'] = license_text;
     }
 	
-    function build_license_image (license)
+    function build_license_image ()
     {
-            return 'http://i.creativecommons.org/l/' + license + "/" + jurisdiction_version + "/" + ( jurisdiction_generic  ? '' : $F('jurisdiction') + "/" ) + '88x31.png';
+            license_array['img'] = 
+                'http://i.creativecommons.org/l/' + license_array['code'] + 
+                "/" + license_array['version'] + "/" + 
+                ( license_array['generic']  ? '' : $F('jurisdiction') + "/" ) +
+                '88x31.png';
     }
 
     /**
-     * Builds an array of our license options from global variables...scary!
+     * Builds the jurisdictions and sets things up properly...
      */
-	function get_license_array () 
+    function build_jurisdictions ()
     {
-        var license_array = Array;
-        /* 
-        license_array['code']     = '';
-        license_array['version']  = '';
-        license_array['full_name']     = ''; // 'name' is reserved
-        license_array['text']     = '';
-        */
+        // TODO: The following is not working in internet explorer on wine
 
-        build_jurisdictions();
+        // THIS fixes the generic being the default selection...
+        var current_jurisdiction = '';
+        
+        if ( $F('jurisdiction') )
+            current_jurisdiction = $F('jurisdiction');
+        else
+            current_jurisdiction = 'generic';
 
+        license_array['jurisdiction'] = 
+            jurisdictions_array[current_jurisdiction]['name'];
+        license_array['generic'] = 
+            jurisdictions_array[current_jurisdiction]['generic'];
+        license_array['version'] = 
+            jurisdictions_array[current_jurisdiction]['version'];
+        if ( ! license_array['version'] )
+            license_array['version'] = license_version;
+
+    }
+    
+    function build_license_details ()
+    {
         /* BY */
 		if ((!nd) && (!nc) && (!sa)) {
 		    license_array['code'] = "by"; 
@@ -269,10 +262,31 @@
 		    license_array['code'] = "by-nc-nd"; 
             license_array['full_name'] = "Attribution-NonCommercial-NoDerivatives"; 
         }
-
-
-        return license_array;
     }
+
+    /**
+     * Builds an array of our license options from global variables...scary!
+     * Here is what we are putting in this (its basically an object):
+        license_array['code']     = '';
+        license_array['version']  = '';
+        license_array['full_name']     = ''; // 'name' is reserved
+        license_array['text']     = '';
+        license_array['img'] = '';
+        license_array['jurisdiction'] = '';
+        license_array['generic'] = '';
+     */
+	function build_license_array () 
+    {
+        // the following is global and we want to reset it definitely...
+        license_array = Array;
+
+        build_jurisdictions();
+        build_license_details();
+        build_license_url();
+        build_license_text();
+        build_license_image();
+    }
+
 
     /**
      * This inserts html into an html element with the given insertion_id. 
@@ -287,15 +301,9 @@
      * This builds our custom html license code using various refactored 
      * functions for handling all the nastiness...
      */
-    function build_license_html ()
+    function output_license_html ()
     {
-        var license_array = get_license_array();
-        var license_url  = build_license_url(license_array['code']);
-        var license_text = build_license_text(license_url, 
-                                              license_array['full_name']);
-
-        // warning_text is a global variable.
-		var output = '<a rel="license" href="' + license_url + '"><img alt="Creative Commons License" border="0" src="' + build_license_image(license_array['code']) + '" class="cc-button"/></a><div class="cc-info">' + license_text + '</div>';
+		var output = '<a rel="license" href="' + license_array['url'] + '"><img alt="Creative Commons License" border="0" src="' + license_array['img'] + '" class="cc-button"/></a><div class="cc-info">' + license_array['text'] + '</div>';
 
         if ( $F('using_myspace') )
         {
@@ -312,10 +320,38 @@
 	 */
     function update ()
     {
+        // warning_text is a global variable as well as license_array.
+        build_license_array(); // This does a lot of magic for us...
+
         // our insert_html function also does some modifications on 
-        var output = build_license_html();
+        var output = output_license_html();
         if ( $('result') )
 		    $('result').value = "<!--Creative Commons License-->\n" + output;
+    }
+
+    function update_hack(code, version, full_name)
+    {
+        license_array = Array;
+
+        license_array['code']       = code;
+        license_array['version']    = version;
+        license_array['full_name']  = full_name;
+        build_jurisdictions();
+
+        // build_license_details();
+        build_license_url();
+        build_license_text();
+
+        /* CHECK THIS OUT>>>>>>FIX THE CODE HERE FOR<<<<<<<
+        return;
+        */
+        build_license_image();
+
+        // our insert_html function also does some modifications on 
+        var output = output_license_html();
+        if ( $('result') )
+		    $('result').value = "<!--Creative Commons License-->\n" + output;
+
     }
 
 // ]]>

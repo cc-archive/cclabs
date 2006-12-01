@@ -9,7 +9,7 @@
     <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-jurisdictions.js"></script>
     <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-license.js"></script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "initFreedoms(); init(); modify(this);";
+    $onload = "initFreedoms(); init(); ";
 
     include_once "../_header.php"; 
 
@@ -162,7 +162,7 @@ function display(code, version, name, aka) {
   Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
   '<br /><i><a href="#result">Get the Code!</a></i>'); 
   /* modify(this); */
-  update();
+  update_hack(code, version, name);
   /* update(code, version, name, aka); */
 }
 </script>
