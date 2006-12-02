@@ -213,6 +213,14 @@ function display(code, version, name, aka) {
 ?>
 </div>
 
+  <h2><a name="feedback"></a>Feedback</h2>
+    <div class="blurb">
+      <p>What do you think of this license chooser concept? How can it be improved? How does it compare to our <a href="http://creativecommons.org/license/">current license chooser</a> or other experimental concepts here at CC Labs?</p>
+      <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
+    </div>
+
 </div>
+
+
 
 <? include_once "../_footer.php"; ?>
