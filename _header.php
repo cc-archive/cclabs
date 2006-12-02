@@ -51,7 +51,7 @@ function print_wiki_page_name ($page_name = '')
     <div id="header">
       <a href="/"><img src="/images/cc-labs.png" alt="ccLabs"/></a>
       <p class="support">
-      <a href="http://creativecommons.org/support/"><img src="/images/spread-3.gif" alt="Support CC 2006" id="supportbutton" /></a> 
+      <a href="http://creativecommons.org/support/"><img src="http://creativecommons.org/images/support/2006/spread-3.gif" alt="Support CC 2006" id="supportbutton" /></a> 
       </p>
       <p class="blurb">
       <a href="http://creativecommons.org">Creative Commons</a> 

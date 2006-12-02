@@ -11,6 +11,15 @@
 
 <p>If you provide any optional information it will be included in the license notice HTML generated for your site. The optional information will also be annotated so that a computer may discern, e.g., the URL you want used for attribution purposes.</p>
 
-</div>
+<h3 id="demo">Demo</h3>
 
-<? include_once "../_footer.php"; ?>
+<span xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#">
+<a rel="license" href="http://a3.creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://i.creativecommons.org/l/by/2.5/88x31.png" class="cc-button"/></a><div class="cc-info"><span id="work_title" property="dc:title">Metadata Lab Demo</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://labs.creativecommons.org">CC Labs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>. Permissions beyond the scope of this public license may be available at <a rel="cc:morePermissions" href="http://labs.creativecommons.org/metadata/demo-beyond">labs.creativecommons.org</a>.
+</span>
+
+
+<h3 id="backgroound">Background</h3>
+
+<h3 id="future">Future</h3>
+
+</div>
