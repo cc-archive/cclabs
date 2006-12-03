@@ -241,8 +241,6 @@ function display(code, version, name, aka) {
     </div>
 
 </div>
-</div>
-
 
 
 <? include_once "../_footer.php"; ?>
