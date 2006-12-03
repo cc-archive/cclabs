@@ -194,6 +194,7 @@
        <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
       </div>
     </div>
+   <div id="tipDiv" style="position:absolute; visibility:hidden; z-index:100">hi!</div> 
 
 <?php
     include_once '../_footer.php';
