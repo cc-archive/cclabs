@@ -89,9 +89,9 @@ if ( ! function_exists( 'print_more_info' ) )
     }
 }
 
-function print_jurisdictions_box( $js_on_change = 'modify(this);' ) 
+function print_jurisdictions_box( $jurisdiction = '', $js_on_change = 'modify(this);' ) 
 {
-    global $jurisdictions;
+    global $jurisdictions; // a global array of all jurisdictions
 
 ?>
 

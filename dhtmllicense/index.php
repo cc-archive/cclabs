@@ -119,7 +119,7 @@
 
                     
                     <?php
-                        print_jurisdictions_box();
+                        print_jurisdictions_box($jurisdiction);
                     ?>
                     <!-- <script>print_jurisdictions_option();</script> -->
 

@@ -219,7 +219,7 @@ function display(code, version, name, aka) {
 <div id="get_the_code">
 
 <?php 
-    print_jurisdictions_box('results();');
+    print_jurisdictions_box($jurisdiction, 'results();');
 ?>
 <br />
 <h4>More Information About Your Work (Optional)</h4>
