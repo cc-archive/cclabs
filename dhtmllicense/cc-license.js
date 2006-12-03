@@ -192,7 +192,7 @@
         } else {
             // if we need format support, please add it
             if ( info_format_text == "" )
-                work_title = 'This work';
+                work_title = 'This Work';
             else {
                 work_title = '<span ' + info_format_text + 
                 '>This Work</span>';
