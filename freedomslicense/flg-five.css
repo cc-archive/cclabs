@@ -188,7 +188,7 @@ h4.conditions {
 	position:  absolute;
 	width: 108px;
 	height: 80px;
-	padding: 20px;
+	padding: 30px 20px 10px 20px;
 	background: url(../images/fuzzy.png);
 	font-size:  80%;
 	border:  2px dashed #777;
@@ -200,4 +200,29 @@ textarea#result
     border: 1px solid #ccc;
     color: gray;
     margin-top: 1%;
+}
+
+
+#more_info
+{
+    border: 1px solid #eee;
+    padding: 0.5% 2% 1% 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+
+}
+#more_info table
+{
+    width: 65%;
+}
+
+#more_info .header
+{
+    width: 35%;
+}
+
+#more_info input
+{
+    width: 100%;
+    border: 1px solid #ccc;
 }

@@ -2,6 +2,16 @@
     /* RemixShare License Generator */
     /* Creative Commons, 2006 */
 
+    // The next few lines allow for basic interfacing with standard
+    // CC website's handling of jurisdiction for jurisdiction shortname 
+    // and for future language support, aka, local language strings...
+    $jurisdiction   = $_REQUEST['jurisdiction'];
+    $lang           = $_REQUEST['lang'];
+
+    if ( empty($jurisdiction) && !empty($lang) )
+        $jurisdiction = $lang;
+
+
     $pagetitle = "Freedoms License Generator - r5";
     $include = "flg-five.css";
     $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
@@ -14,6 +24,7 @@
     include_once "../_header.php"; 
 
     require_once '../dhtmllicense/cc-license-jurisdictions.php';
+
 ?>
 
 <script lang="javascript">
@@ -170,8 +181,8 @@ function results() {
 function display(code, version, name, aka) {
     update_hack(code, version, name);
     name = "&nbsp;"; // notice this is reset to space!
-    Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>"+name+"<br/><small>AKA</small><br/>"+aka+
-    '<br /><i><a href="#result">Get the Code!</a></i>'); 
+    Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>" +
+    '<br /><i><a href="#get_the_code">Get the Code!</a></i>'); 
 }
 </script>
 
@@ -206,9 +217,19 @@ function display(code, version, name, aka) {
 </div>
 
 <div id="get_the_code">
+
 <?php 
     print_jurisdictions_box('results();');
-    include '../dhtmllicense/cc-license-result.php' 
+?>
+<br />
+<h4>More Information About Your Work (Optional)</h4>
+<?php
+    include '../dhtmllicense/cc-license-more-info.php';
+?>
+<br />
+<h4>Get the Code</h4>
+<?php
+    include '../dhtmllicense/cc-license-result.php';
 
 ?>
 </div>

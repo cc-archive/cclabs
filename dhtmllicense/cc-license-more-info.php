@@ -1,3 +1,31 @@
+<?php
+/* These function stubs are more of hacks around lack of support of the 
+ * tooltips in the main chooser.
+ */
+if ( ! function_exists( 'print_tooltip_js' ) )
+{
+    function print_tooltip_js ($msg = '')
+    {
+        return 'title="' . $msg . '"';
+    }
+}
+
+if ( ! function_exists( 'get_tooltip_js' ) )
+{
+    function get_tooltip_js ()
+    {
+        return;
+    }
+}
+
+if ( ! function_exists( 'print_more_info' ) )
+{
+    function print_more_info ()
+    {
+        return;
+    }
+}
+?>
 
                     <div id="more_info">
 
@@ -44,7 +72,7 @@
                     <tr>
                         <td class="header">
                             <label for="info_source_work_url">
-                            <a href="#" <?= print_tooltip_js(_('A work another is derived from.'), 'http://a2.creativecommons.org/jargon/source_work')?>><?= _('Source Work') ?></a> <?= _('URL') ?></label>
+                            <a <?= print_tooltip_js(_('A work another is derived from.'), 'http://a2.creativecommons.org/jargon/source_work')?>><?= _('Source Work') ?></a> <?= _('URL') ?></label>
                         </td>
                         <td>
                             <input type="text" name="info_source_work_url" value="" id="info_source_work_url" onchange="modify(this)" />

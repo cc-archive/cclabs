@@ -7,6 +7,9 @@
 
     require_once( 'cc-license-jurisdictions.php' );
 
+    // The next few lines allow for basic interfacing with standard
+    // CC website's handling of jurisdiction for jurisdiction shortname 
+    // and for future language support, aka, local language strings...
     $jurisdiction   = $_REQUEST['jurisdiction'];
     $lang           = $_REQUEST['lang'];
 
@@ -129,7 +132,7 @@
 
 
 
-                    <h2>2. <?= _('More Information About Work (Optional)') ?></h2>
+                    <h2>2. <?= _('More Information About Your Work (Optional)') ?></h2>
 
 <?php include 'cc-license-more-info.php'; ?>
 
