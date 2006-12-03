@@ -12,7 +12,7 @@
         $jurisdiction = $lang;
 
 
-    $pagetitle = "Freedoms License Generator - r5";
+    $pagetitle = "Freedoms License Generator";
     $include = "flg-five.css";
     $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
     <script type="text/javascript" language="javascript" src="../dhtmllicense/tooltip.js"></script>
@@ -187,12 +187,13 @@ function display(code, version, name, aka) {
 </script>
 
 
-<div id="content">
+<div id="flg-sidebar">
   <h2>Freedoms License Generator</h2>
   <p>
     With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to <a href="http://creativecommons.org/learn/licenses/fullrights">copy and distribute your work</a> provided they <span class="question" onmouseover="doTooltipHTML(event,'&lt;p&gt;&lt;img src=&quot;http://creativecommons.org/icon/by/standard.gif&quot; alt=&quot;by&quot; class=&quot;icon&quot; /&gt;&lt;strong&gt;Attribution&lt;/strong&gt; You must attribute the work in the manner specified by the author or licensor.&lt;/p&gt;');" onmouseout="hideTip()">give you credit</span> &mdash; and only on the conditions you specify here. For those new to Creative Commons licensing, we've prepared <a href="http://creativecommons.org/about/think">a list of things to think about</a>.
   </p>
-  <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/>This demo will currently <strong>not</strong> work with Internet Explorer 6.</small></p>
+  <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/><br/>This demo will currently <strong>not</strong> work with Internet Explorer 6.</small></p>
+</div>
 
 <div id="flg-container">
   <h4 class="freedoms">Freedoms</h4>
@@ -212,10 +213,9 @@ function display(code, version, name, aka) {
   <br clear="all"/>
 </div>
 <h4 class="conditions">Conditions</h4>
-  
-
 </div>
-
+  
+<div id="content">
 <div id="get_the_code">
 
 <?php 
@@ -240,6 +240,7 @@ function display(code, version, name, aka) {
       <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
     </div>
 
+</div>
 </div>
 
 
