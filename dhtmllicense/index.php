@@ -1,13 +1,6 @@
 <?php
-    // This is used here because IE doesn't like javascript array written
-    // in...
-    // TODO: Replace this PHP array with javascript array...right now, they
-    //       are being mirrored!!!! BAD!!!!
-    // 
-
     define('CC_LIB', '../cclib');
-    define('CC_LIB_PHP', CC_LIB . '/php');
-    define('CC_LIB_JS', CC_LIB . '/js');
+    require_once( CC_LIB . '/php/cc-lib.php' );
 
     require_once( CC_LIB_PHP . '/cc-license-jurisdictions.php' );
 

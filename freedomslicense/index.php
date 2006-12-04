@@ -2,6 +2,9 @@
     /* RemixShare License Generator */
     /* Creative Commons, 2006 */
 
+    define('CC_LIB', '../cclib');
+    require_once( CC_LIB . '/php/cc-lib.php' );
+
     // The next few lines allow for basic interfacing with standard
     // CC website's handling of jurisdiction for jurisdiction shortname 
     // and for future language support, aka, local language strings...
@@ -16,14 +19,16 @@
     $include = "flg-five.css";
     $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
     <script type="text/javascript" language="javascript" src="../dhtmllicense/tooltip.js"></script>
-    <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-jurisdictions.js"></script>
-    <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-license.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+    '/cc-jurisdictions.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+    '/cc-license.js"></script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
     $onload = "initFreedoms(); init(); update()";
 
     include_once "../_header.php"; 
 
-    require_once '../dhtmllicense/cc-license-jurisdictions.php';
+    require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
 
 ?>
 
@@ -231,12 +236,12 @@ function display(code, version, name, aka) {
 <br />
 <h4>More Information About Your Work (Optional)</h4>
 <?php
-    include '../dhtmllicense/cc-license-more-info.php';
+    include CC_LIB_PHP . '/cc-license-more-info.php';
 ?>
 <br />
 <h4>Get the Code</h4>
 <?php
-    include '../dhtmllicense/cc-license-result.php';
+    include CC_LIB_PHP . '/cc-license-result.php';
 
 ?>
 </div>
