@@ -190,7 +190,14 @@ function display(code, version, name, aka) {
 <div id="flg-sidebar">
   <h2>Freedoms License Generator</h2>
   <p>
-    With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to <a href="http://creativecommons.org/learn/licenses/fullrights">copy and distribute your work</a> provided they <span class="question" onmouseover="doTooltipHTML(event,'&lt;p&gt;&lt;img src=&quot;http://creativecommons.org/icon/by/standard.gif&quot; alt=&quot;by&quot; class=&quot;icon&quot; /&gt;&lt;strong&gt;Attribution&lt;/strong&gt; You must attribute the work in the manner specified by the author or licensor.&lt;/p&gt;');" onmouseout="hideTip()">give you credit</span> &mdash; and only on the conditions you specify here. For those new to Creative Commons licensing, we've prepared <a href="http://creativecommons.org/about/think">a list of things to think about</a>.
+  Creative Commons licenses mark creative work with the freedoms the  
+  author wants it to carry. This license engine helps make those  
+  freedoms, and limits, clear. Begin by selecting which freedoms you  
+  want to enable -- either Share, or Remix, or both -- by clicking on  
+  the green puzzle pieces. Then select which conditions, if any, you'd  
+  like to impose -- either NonCommercial, or ShareAlike, or both. Not  
+  all combinations are possible, but as you experiment with the  
+  selections, you can see the different licenses that result.
   </p>
   <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/><br/>This demo will currently <strong>not</strong> work with Internet Explorer 6.</small></p>
 </div>
