@@ -5,7 +5,11 @@
     //       are being mirrored!!!! BAD!!!!
     // 
 
-    require_once( 'cc-license-jurisdictions.php' );
+    define('CC_LIB', '../cclib');
+    define('CC_LIB_PHP', CC_LIB . '/php');
+    define('CC_LIB_JS', CC_LIB . '/js');
+
+    require_once( CC_LIB_PHP . '/cc-license-jurisdictions.php' );
 
     // The next few lines allow for basic interfacing with standard
     // CC website's handling of jurisdiction for jurisdiction shortname 
@@ -59,8 +63,8 @@
     $head_extra = 
     '<script type="text/javascript" language="javascript" src="prototype.js"></script>
     <script type="text/javascript" language="javascript" src="tooltip.js"></script>
-    <script type="text/javascript" language="javascript" src="cc-jurisdictions.js"></script>
-    <script type="text/javascript" language="javascript" src="cc-license.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-jurisdictions.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-license.js"></script>
     <script type="text/javascript" language="javascript" charset="utf-8">
     // <![CDATA[
         function pageInit() {
@@ -134,7 +138,7 @@
 
                     <h2>2. <?= _('More Information About Your Work (Optional)') ?></h2>
 
-<?php include 'cc-license-more-info.php'; ?>
+<?php include CC_LIB_PHP . '/cc-license-more-info.php'; ?>
 
                     <!-- <p><strong><a href="#optional" id="advanced_toggle"><?= _('Advanced Options') ?></a></strong></p> -->
                     <h2>3. <strong><?= _('Where are you going to apply this license?') ;?></strong></h2>
@@ -186,7 +190,7 @@
                     <!-- <p id="lic-result">
                         <?= _("Now paste the following code into your <em>Who I'd Like To Meet</em> box. It may look scary and confusing, but don't worry, it's full of useful information that keeps your creativity free!") ?> -->
                        <h2>4. Get the Code</h2>
-                       <?php include 'cc-license-result.php' ?>
+                       <?php include CC_LIB_PHP . '/cc-license-result.php' ?>
                 </form>
                 
             </div>
