@@ -1,4 +1,27 @@
 <?php
+/**
+ * Creative Commons has made the contents of this file
+ * available under a CC-GNU-GPL license:
+ *
+ * http://creativecommons.org/licenses/GPL/2.0/
+ *
+ * A copy of the full license can be found as part of this
+ * distribution in the file COPYING.
+ *
+ * You may use this software in accordance with the
+ * terms of that license. You agree that you are solely 
+ * responsible for your use of this software and you
+ * represent and warrant to Creative Commons that your use
+ * of this software will comply with the CC-GNU-GPL.
+ *
+ * $Id: $
+ *
+ * Copyright 2006, Creative Commons, www.creativecommons.org.
+ *
+ * This is what generates the dhtml license chooser. It uses a hodge-podge
+ * of different languages and is always under work.
+ */
+
     define('CC_LIB', '../cclib');
     require_once( CC_LIB . '/php/cc-lib.php' );
 
@@ -28,9 +51,9 @@
         }
 
         return "<span class=\"" . $class_text . 
-               "\" onmouseover=\"doTooltipHTML(event,'" . 
+               "\" onmouseover=\"on_tooltip_html(event,'" . 
                htmlspecialchars($msg) . 
-               "');\" onmouseout=\"hideTip()\">" . $info_text . "</span>";
+               "');\" onmouseout=\"hide_tip()\">" . $info_text . "</span>";
     }
 
     function print_more_info ($msg, $img = 'information.png', 
@@ -41,9 +64,9 @@
 
     function get_tooltip_js ($msg)
     {
-        return "class=\"question\" onmouseover=\"doTooltipHTML(event,'"
+        return "class=\"question\" onmouseover=\"on_tooltip_html(event,'"
                       . htmlspecialchars($msg) . 
-                      "');\" onmouseout=\"hideTip()\"";
+                      "');\" onmouseout=\"hide_tip()\"";
     }
 
     function print_tooltip_js ($msg, $url = '')
@@ -54,8 +77,8 @@
     $pagetitle  = _('CC License Chooser');
     $include    = 'style.css';
     $head_extra = 
-    '<script type="text/javascript" language="javascript" src="prototype.js"></script>
-    <script type="text/javascript" language="javascript" src="tooltip.js"></script>
+    '<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/prototype.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-tooltip.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-jurisdictions.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-license.js"></script>
     <script type="text/javascript" language="javascript" charset="utf-8">
@@ -63,7 +86,7 @@
         function pageInit() {
             init();
             modify(this);
-            initTip();
+            init_tip();
         }
     // ]]>
     </script>';
@@ -169,8 +192,8 @@
                     <!-- Show thumbnail of position on mouseover? -->
                     <div id="myspace_position" style="display: none">
                     <p><strong><?= _('Position') ?></strong></p>
-                        <label onmouseover="doTooltip(event,'floating.png');" onmouseout="hideTip()"><input type="radio" name="pos" value="floating" id="pos_float" onchange="modify(this)" /> <?= _('Floating') ?>&nbsp;</label>
-                        <label onmouseover="doTooltip(event,'profile.png')" onmouseout="hideTip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" checked="checked" onchange="modify(this)" /> <?= _('Profile') ?>&nbsp;</label>
+                        <label onmouseover="doTooltip(event,'floating.png');" onmouseout="hide_tip()"><input type="radio" name="pos" value="floating" id="pos_float" onchange="modify(this)" /> <?= _('Floating') ?>&nbsp;</label>
+                        <label onmouseover="doTooltip(event,'profile.png')" onmouseout="hide_tip()"><input type="radio" name="pos" value="fixed" id="pos_fixed" checked="checked" onchange="modify(this)" /> <?= _('Profile') ?>&nbsp;</label>
                     </div>
 
 
@@ -194,7 +217,7 @@
        <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
       </div>
     </div>
-   <div id="tipDiv" style="position:absolute; visibility:hidden; z-index:100">hi!</div> 
+   <div id="tip_cloak" style="position:absolute; visibility:hidden; z-index:100">hidden tip</div> 
 
 <?php
     include_once '../_footer.php';

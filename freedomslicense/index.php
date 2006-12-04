@@ -1,34 +1,53 @@
 <?php 
-    /* RemixShare License Generator */
-    /* Creative Commons, 2006 */
+/**
+ * Creative Commons has made the contents of this file
+ * available under a CC-GNU-GPL license:
+ *
+ * http://creativecommons.org/licenses/GPL/2.0/
+ *
+ * A copy of the full license can be found as part of this
+ * distribution in the file COPYING.
+ *
+ * You may use this software in accordance with the
+ * terms of that license. You agree that you are solely 
+ * responsible for your use of this software and you
+ * represent and warrant to Creative Commons that your use
+ * of this software will comply with the CC-GNU-GPL.
+ *
+ * $Id: $
+ *
+ * Copyright 2006, Creative Commons, www.creativecommons.org.
+ *
+ * This file generates the remixshare, aka, freedsom license chooser.
+ */
 
-    define('CC_LIB', '../cclib');
-    require_once( CC_LIB . '/php/cc-lib.php' );
+define('CC_LIB', '../cclib');
+require_once( CC_LIB . '/php/cc-lib.php' );
 
-    // The next few lines allow for basic interfacing with standard
-    // CC website's handling of jurisdiction for jurisdiction shortname 
-    // and for future language support, aka, local language strings...
-    $jurisdiction   = $_REQUEST['jurisdiction'];
-    $lang           = $_REQUEST['lang'];
+// The next few lines allow for basic interfacing with standard
+// CC website's handling of jurisdiction for jurisdiction shortname 
+// and for future language support, aka, local language strings...
+$jurisdiction   = $_REQUEST['jurisdiction'];
+$lang           = $_REQUEST['lang'];
 
-    if ( empty($jurisdiction) && !empty($lang) )
-        $jurisdiction = $lang;
+if ( empty($jurisdiction) && !empty($lang) )
+    $jurisdiction = $lang;
 
-
-    $pagetitle = "Freedoms License Generator";
-    $include = "flg-five.css";
-    $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
-    <script type="text/javascript" language="javascript" src="../dhtmllicense/tooltip.js"></script>
-    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
-    '/cc-jurisdictions.js"></script>
-    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
-    '/cc-license.js"></script>
+$pagetitle = "Freedoms License Generator";
+$include = "flg-five.css";
+$head_extra = '<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/prototype.js"></script>
+<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+'/cc-tooltip.js"></script>
+<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+'/cc-jurisdictions.js"></script>
+<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+'/cc-license.js"></script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "initFreedoms(); init(); update()";
+$onload = "initFreedoms(); init(); update()";
 
-    include_once "../_header.php"; 
+include_once "../_header.php"; 
 
-    require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
+require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
 
 ?>
 
