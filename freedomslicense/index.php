@@ -24,15 +24,6 @@
 define('CC_LIB', '../cclib');
 require_once( CC_LIB . '/php/cc-lib.php' );
 
-// The next few lines allow for basic interfacing with standard
-// CC website's handling of jurisdiction for jurisdiction shortname 
-// and for future language support, aka, local language strings...
-$jurisdiction   = $_REQUEST['jurisdiction'];
-$lang           = $_REQUEST['lang'];
-
-if ( empty($jurisdiction) && !empty($lang) )
-    $jurisdiction = $lang;
-
 $pagetitle = "Freedoms License Generator";
 $include = "flg-five.css";
 $head_extra = '<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/prototype.js"></script>
@@ -46,8 +37,6 @@ $head_extra = '<script type="text/javascript" language="javascript" src="' . CC_
 $onload = "initFreedoms(); init(); update()";
 
 include_once "../_header.php"; 
-
-require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
 
 ?>
 

@@ -25,55 +25,6 @@
     define('CC_LIB', '../cclib');
     require_once( CC_LIB . '/php/cc-lib.php' );
 
-    require_once( CC_LIB_PHP . '/cc-license-jurisdictions.php' );
-
-    // The next few lines allow for basic interfacing with standard
-    // CC website's handling of jurisdiction for jurisdiction shortname 
-    // and for future language support, aka, local language strings...
-    $jurisdiction   = $_REQUEST['jurisdiction'];
-    $lang           = $_REQUEST['lang'];
-
-    if ( empty($jurisdiction) && !empty($lang) )
-        $jurisdiction = $lang;
-
-
-    function get_more_info ($msg, $img = 'information.png', $window_name = 'characteristic_help')
-    {
-        $info_text = '';
-        $class_text = '';
-        if ( !empty($img) ) {
-            $info_text = 
-                '<img src="' . $img . '" alt="info" class="info" />';
-            $class_text = 'infobox';
-        } else {
-            $info_text = '?';
-            $class_text = 'questionbox';
-        }
-
-        return "<span class=\"" . $class_text . 
-               "\" onmouseover=\"on_tooltip_html(event,'" . 
-               htmlspecialchars($msg) . 
-               "');\" onmouseout=\"hide_tip()\">" . $info_text . "</span>";
-    }
-
-    function print_more_info ($msg, $img = 'information.png', 
-                              $window_name = 'characteristic_help')
-    {
-        echo get_more_info($msg, $img, $window_name);
-    }
-
-    function get_tooltip_js ($msg)
-    {
-        return "class=\"question\" onmouseover=\"on_tooltip_html(event,'"
-                      . htmlspecialchars($msg) . 
-                      "');\" onmouseout=\"hide_tip()\"";
-    }
-
-    function print_tooltip_js ($msg, $url = '')
-    {
-        echo get_tooltip_js($msg, $url);
-    }
-
     $pagetitle  = _('CC License Chooser');
     $include    = 'style.css';
     $head_extra = 
