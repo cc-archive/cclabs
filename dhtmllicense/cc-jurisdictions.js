@@ -125,10 +125,22 @@
             document.write(j);
     } 
 
-    function print_jurisdictions_option ()
+    function print_jurisdictions_option (jurisdiction, lic_curr, js_on_change)
     {
-        for (var j in jurisdictions_array)
-           document.write("<option value=\"" + j + "\">" + 
-                          jurisdictions_array[j]['name'] + "</option>\n");
+        var output = '';
+
+        if ( ! js_on_change )
+            js_on_change = 'modify(this);';
+
+        output = '<select name="jurisdiction" id="jurisdiction" onchange="' + 
+                 js_on_change + '">';
+
+        for (var j in jurisdictions_array) {
+           output += "<option value=\"" + j + "\">" + 
+                          jurisdictions_array[j]['name'] + "</option>\n";
+        }
+        output += '</select>';
+
+        document.write( output );
     }
 // ]]>
