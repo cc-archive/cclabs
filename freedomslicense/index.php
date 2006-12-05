@@ -33,21 +33,18 @@ $head_extra = '<script type="text/javascript" language="javascript" src="' . CC_
 '/cc-jurisdictions.js"></script>
 <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
 '/cc-license.js"></script>
+<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+'/cc-lib-freedoms.js"></script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-$onload = "initFreedoms(); init(); update()";
+$onload = "init(); freedoms = new CCLibFreedoms(); update()";
 
 include_once "../_header.php"; 
 
 ?>
 
 <script lang="javascript">
+var freedoms;
 
-var share = false;
-var remix = false;
-var sa_cond = false;
-var nc_cond = false;
-var sa_on = false;
-var nc_on = false;
 
 /* Preload images, FF/NS/IE7 only. */
 /* FIXME: IE6 relies on PNG filter loader, so this type of preloading has no effect.
@@ -78,79 +75,6 @@ if (document.images) {
   remixdim.src = "5/remix-dim.png";
   
 }
-
-
-
-function initFreedoms() {
-  share = remix = true;
-  
-  redo();
-}
-
-function redo(mode) {
-  
-  switch (mode) {
-    case "share":
-      share = !share;
-      break;
-    case "remix":
-      remix = !remix;
-      break;
-    case "nc":
-      if (nc_on) { nc_cond = !nc_cond; }
-      break;
-    case "sa":
-      if (sa_on) { sa_cond = !sa_cond; }
-      break;
-    
-  }
-  
-  
-  
-  if (!share) {
-    sa_cond = sa_on = nc_cond = nc_on = false;
-    
-    Element.classNames ('flg-connect-nc').set ("flg-pipe-off");
-    Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
-    Element.classNames ('flg-connect-share').set ("flg-pipe-middle");
-    
-    if (!remix) {
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
-    } else {
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
-    }
-    
-  } else {
-    nc_on = true;
-    
-    Element.classNames ('flg-connect-share').set ("flg-pipe-on");
-    
-    if (nc_cond) {
-      Element.classNames ('flg-connect-nc').set ("flg-pipe-on");
-    } else {
-      Element.classNames ('flg-connect-nc').set ("flg-pipe-middle");
-    }
-    
-    if (remix) {
-      sa_on = true;
-      
-      if (sa_cond) {
-        Element.classNames ('flg-connect-sa').set ("flg-pipe-on");
-      } else {
-        Element.classNames ('flg-connect-sa').set ("flg-pipe-middle");
-      }
-      
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
-    } else {
-      sa_cond = sa_on = false;
-
-      Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
-    }
-  }
-    
-  results();
-}
 function no_license_selection() {
     $('flg-result').style.display = 'none';
     $('get_the_code').style.display = 'none';
@@ -159,44 +83,9 @@ function some_license_selection() {
     $('flg-result').style.display = 'block';
     $('get_the_code').style.display = 'block';
 }
-function results() {
-  some_license_selection(); // This is purely cosmetic.
-  if (!share) {
-    if (!remix) {
-      Element.update ("flg-result", "");
-      no_license_selection();
-      return;
-    } else {
-      display('sampling', '1.0', 'Sampling', 'Remix');
-    }
-  } else {
-    if (!remix) {
-      if (nc_cond) {
-        display('by-nc-nd', '2.5', 'Attribution-NonCommercial-NoDerivs', 'Share:NC:ND');
-      } else {
-        display('by-nd', '2.5', 'Attribution-NoDerivs', 'Share:ND');
-      }
-    } else {
-      if (nc_cond) {
-        if (sa_cond) {
-          display('by-nc-sa', '2.5', 'Attribution-NonCommercial-ShareAlike', 'Remix&Share:NC:SA');
-        } else {
-          display('by-nc', '2.5', 'Attribution-NonCommercial', 'Remix&Share:NC');
-        }
-      } else if (sa_cond) {
-          display('by-sa', '2.5', 'Attribution-ShareAlike', 'Remix&Share:SA');
-      } else {
-          display('by', '2.5', 'Attribution', 'Remix&Share');
-      }
-    }
-  }
-}
-function display(code, version, name, aka) {
-    update_hack(code, version, name);
-    name = "&nbsp;"; // notice this is reset to space!
-    Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>" +
-    '<br /><i><a href="#get_the_code">Get the Code!</a></i>'); 
-}
+
+// var freedoms = new CCLibFreedoms();
+
 </script>
 
 
@@ -219,13 +108,13 @@ function display(code, version, name, aka) {
   <h4 class="freedoms">Freedoms</h4>
 <div id="flg-ui">
   <div id="flg-left">
-    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:redo('share')">&nbsp;</a></div>
-    <div id="flg-connect-nc" class="flg-pipe-middle"><a href="javascript:redo('nc')">&nbsp;</a></div>
+    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:freedoms.redo('share')">&nbsp;</a></div>
+    <div id="flg-connect-nc" class="flg-pipe-middle"><a href="javascript:freedoms.redo('nc')">&nbsp;</a></div>
   </div>
 
   <div id="flg-right">
-    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:redo('remix')">&nbsp;</a></div>
-    <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:redo('sa')">&nbsp;</a></div>
+    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:freedoms.redo('remix')">&nbsp;</a></div>
+    <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:freedoms.redo('sa')">&nbsp;</a></div>
   </div>
   <div id="flg-mid">
     <div id="flg-result">BY</div>

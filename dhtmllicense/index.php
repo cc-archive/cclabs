@@ -32,8 +32,11 @@
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-tooltip.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-jurisdictions.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-license.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-lib-freedoms.js"></script>
     <script type="text/javascript" language="javascript" charset="utf-8">
     // <![CDATA[
+        var freedoms = new CCLibFreedoms();
+
         function pageInit() {
             init();
             modify(this);
@@ -64,7 +67,41 @@
                 <h2>1. <?= _('Choose the options below for your personalized Creative Commons license.'); ?></h2>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div id="required">
-                    
+
+                    <p>
+
+                    <input type="checkbox" onclick="freedoms.redo('share');" 
+                    name="share" value="" id="share" />
+                    <label for="share"><?= _('Allow Sharing') ?></label>
+                    <br />
+
+                    <input type="checkbox" onclick="freedoms.redo('nc');" 
+                    name="nc" value="" id="nc" />
+                    <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
+                    ?>
+                    <label for="nc" <?= get_tooltip_js($nc_tooltip); ?>><strong><?= _('Prohibit Commercial Use'); ?></strong></label> 
+                    <?= print_more_info($nc_tooltip); ?>
+                    <br />
+            
+                    <input type="checkbox" onclick="freedoms.redo('remix');" 
+                    name="remix" value="" id="remix" />
+                    <label for="remix"><?= _('Allow Remix') ?></label>
+                    <br />
+
+                    <input type="checkbox" onclick="freedoms.redo('sa');" 
+                    name="sa" value="" id="sa" />
+                    <?php $sa_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
+                    _('Share Alike') . '</strong> ' . 
+                    _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'; ?>
+                    <label for="sa" id="share-label" <?= get_tooltip_js($sa_tooltip) ?>><strong><?= _('Require Share-Alike'); ?></strong></label>
+                    <?= print_more_info($sa_tooltip); ?>
+
+
+                    <br />
+
+                    </p>
+
+                    <?php /*
                     <p>
                     <input type="checkbox" onchange="modify(this)" name="com" value="" id="com" />
                     <?php $com_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
@@ -84,7 +121,8 @@
                     <label for="share" id="share-label" <?= get_tooltip_js($share_tooltip) ?>><strong><?= _('Require other people to share their changes'); ?></strong></label>
                     <?= print_more_info($share_tooltip); ?>
                     <br />
-                    </p>
+                    </p>  
+                    */ ?>
 
                     </div>
 
