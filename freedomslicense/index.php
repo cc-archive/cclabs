@@ -104,6 +104,7 @@ function some_license_selection() {
   <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/><br/>This demo will currently <strong>not</strong> work with Internet Explorer 6.</small></p>
 </div>
 
+
 <div id="flg-container">
   <h4 class="freedoms">Freedoms</h4>
 <div id="flg-ui">
@@ -122,9 +123,9 @@ function some_license_selection() {
   <br clear="all"/>
 </div>
 <h4 class="conditions">Conditions</h4>
-</div>
-  
-<div id="content">
+
+<div id="flg-rest">
+
 <div id="get_the_code">
 
 <?php 
@@ -151,5 +152,8 @@ function some_license_selection() {
 
 </div>
 
+</div>
+
+<hr id="spacer" />
 
 <? include_once "../_footer.php"; ?>

@@ -16,6 +16,10 @@
 	width: 25%;
 }
 
+#flg-rest {
+    text-align: left;
+}
+
 h4.freedoms {
 	margin: 5px;
 	color: #6C9D31;
