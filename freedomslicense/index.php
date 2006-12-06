@@ -34,8 +34,10 @@
     '/cc-license.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
     '/cc-lib-freedoms.js"></script>
-    <script language="javascript">
+    <script type="text/javascript" language="javascript">
+    <!--
     var freedoms;
+    // -->
     </script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
     $onload = "freedoms = new CCLibFreedoms(); init(); modify(this)";
