@@ -84,8 +84,18 @@ if (document.images) {
   remixdim.src = "5/remix-dim.png";
   
 }
-</script>
 
+    function no_license_selection () {
+        $('flg-result').style.display = 'none';
+    }
+
+    function some_license_selection () {
+        $('flg-result').style.display = 'block';
+    }
+    
+
+</script>
+ 
 
 <div id="flg-sidebar">
   <h2>Freedoms License Generator</h2>
@@ -121,7 +131,9 @@ if (document.images) {
 </div>
 <h4 class="conditions">Conditions</h4>
 </div>
-  
+
+<hr id="spacer" />
+
 <div id="content">
 <div id="get_the_code">
 

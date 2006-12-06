@@ -25,7 +25,7 @@
     define('CC_LIB', '../cclib');
     require_once( CC_LIB . '/php/cc-lib.php' );
 
-    $pagetitle  = _('CC License Chooser');
+    $pagetitle  = _('CC DHTML License');
     $include    = 'style.css';
     $head_extra = 
     '<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/prototype.js"></script>
@@ -35,7 +35,7 @@
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-lib-freedoms.js"></script>
     <script type="text/javascript" language="javascript" charset="utf-8">
     // <![CDATA[
-        var freedoms = new CCLibFreedoms();
+        // var freedoms = new CCLibFreedoms();
 
         function pageInit() {
             init();
@@ -70,30 +70,30 @@
 
                     <p>
 
-                    <input type="checkbox" onclick="freedoms.redo('share');" 
+                    <input type="checkbox" onchange="modify(this);" 
                     name="share" value="" id="share" />
-                    <label for="share"><?= _('Allow Sharing') ?></label>
+                    <label for="share" id="share-label"><?= _('Allow Sharing') ?></label>
                     <br />
 
-                    <input type="checkbox" onclick="freedoms.redo('nc');" 
+                    <input type="checkbox" onchange="modify(this);" 
                     name="nc" value="" id="nc" />
                     <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
                     ?>
-                    <label for="nc" <?= get_tooltip_js($nc_tooltip); ?>><strong><?= _('Prohibit Commercial Use'); ?></strong></label> 
+                    <label for="nc" <?= get_tooltip_js($nc_tooltip); ?> id="nc-label"><strong><?= _('Prohibit Commercial Use'); ?></strong></label> 
                     <?= print_more_info($nc_tooltip); ?>
                     <br />
             
-                    <input type="checkbox" onclick="freedoms.redo('remix');" 
+                    <input type="checkbox" onchange="modify(this);" 
                     name="remix" value="" id="remix" />
-                    <label for="remix"><?= _('Allow Remix') ?></label>
+                    <label for="remix" id="remix-label"><?= _('Allow Remix') ?></label>
                     <br />
 
-                    <input type="checkbox" onclick="freedoms.redo('sa');" 
+                    <input type="checkbox" onchange="modify(this);" 
                     name="sa" value="" id="sa" />
                     <?php $sa_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
                     _('Share Alike') . '</strong> ' . 
                     _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'; ?>
-                    <label for="sa" id="share-label" <?= get_tooltip_js($sa_tooltip) ?>><strong><?= _('Require Share-Alike'); ?></strong></label>
+                    <label for="sa" id="sa-label" <?= get_tooltip_js($sa_tooltip) ?>><strong><?= _('Require Share-Alike'); ?></strong></label>
                     <?= print_more_info($sa_tooltip); ?>
 
 
