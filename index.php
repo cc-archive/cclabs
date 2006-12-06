@@ -25,7 +25,7 @@ include_once "_header.php";
 
 <div id="content">
   <h2>Welcome to the labs</h2>
-  <p class="blurb"><img src="/images/dev.png" class="dev" /> Featured here are projects currently under development at <a href="http://creativecommons.org">Creative Commons</a>. All projects are prone to change and are unsupported. Comments and <a href="#feedback">feedback</a> welcome.</p>
+  <p class="blurb"><img src="/images/dev.png" class="dev" alt="[ Development ]" /> Featured here are projects currently under development at <a href="http://creativecommons.org">Creative Commons</a>. All projects are prone to change and are unsupported. Comments and <a href="#feedback">feedback</a> welcome.</p>
   <h2>Current Projects</h2>
   <div class="blurb">
     <h3><a href="freedomslicense/"><em>Freedoms</em> License Chooser</a></h3>
