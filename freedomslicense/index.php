@@ -37,10 +37,18 @@
     <script type="text/javascript" language="javascript">
     <!--
     var freedoms;
+    function init_freedoms ()
+    {
+        freedoms = new CCLibFreedoms(); // in cc-lib-freedoms.js
+        // the next two are in cc-license.js
+        init(); 
+        modify(this);
+
+    }
     // -->
     </script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "freedoms = new CCLibFreedoms(); init(); modify(this)";
+    $onload = "init_freedoms();";
 
     include_once "../_header.php"; 
 
