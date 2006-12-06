@@ -134,9 +134,15 @@
 
                     
                     <?php
-                        print_jurisdictions_box($jurisdiction);
+                        // print_jurisdictions_box($jurisdiction);
                     ?>
-                    <!-- <script>print_jurisdictions_option();</script> -->
+                    <script>
+
+                    var jurisdiction_code = "<?= ( $jurisdiction ? $jurisdiction : '') ?>";
+                        
+
+                    print_jurisdictions_option( jurisdiction_code );
+                    </script>
 
 
                     <!-- <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4> -->
