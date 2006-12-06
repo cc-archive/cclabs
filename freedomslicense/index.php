@@ -115,9 +115,9 @@ if (document.images) {
   Creative Commons licenses mark creative work with the freedoms the  
   author wants it to carry. This license engine helps make those  
   freedoms, and limits, clear. Begin by selecting which freedoms you  
-  want to enable -- either Share, or Remix, or both -- by clicking on  
+  want to enable &mdash; either Share, or Remix, or both &mdash; by clicking on  
   the green puzzle pieces. Then select which conditions, if any, you'd  
-  like to impose -- either NonCommercial, or ShareAlike, or both. Not  
+  like to impose &mdash; either NonCommercial, or ShareAlike, or both. Not  
   all combinations are possible, but as you experiment with the  
   selections, you can see the different licenses that result.
   </p>

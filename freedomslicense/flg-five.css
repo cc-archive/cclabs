@@ -63,7 +63,7 @@ h4.conditions {
 #flg-mid {
 	position: relative;
 	top: 200px;
-	left: 180px;
+	left: 190px;
 	width:  120px;
 
 }
@@ -193,7 +193,7 @@ h4.conditions {
 
 #flg-result {
 	position:  absolute;
-	width: 108px;
+	width: 85px;
 	height: 80px;
 	padding: 30px 20px 10px 20px;
 	background: url(../images/fuzzy.png);
