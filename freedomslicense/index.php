@@ -128,12 +128,12 @@ if (document.images) {
   <h4 class="freedoms">Freedoms</h4>
 <div id="flg-ui">
   <div id="flg-left">
-    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:freedoms.redo('share')">&nbsp;</a></div>
+    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:freedoms.redo('share'); set_share(freedoms._share); ">&nbsp;</a></div>
     <div id="flg-connect-nc" class="flg-pipe-middle"><a href="javascript:freedoms.redo('nc')">&nbsp;</a></div>
   </div>
 
   <div id="flg-right">
-    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:freedoms.redo('remix')">&nbsp;</a></div>
+    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:freedoms.redo('remix'); set_remix(freedoms._remix);">&nbsp;</a></div>
     <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:freedoms.redo('sa')">&nbsp;</a></div>
   </div>
   <div id="flg-mid">
@@ -150,8 +150,20 @@ if (document.images) {
 <div id="get_the_code">
 
 <?php 
-    print_jurisdictions_box($jurisdiction);
+    // print_jurisdictions_box($jurisdiction);
 ?>
+                    <div id="jurisdiction_box">
+                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
+                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
+                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
+                    <script language="javascript">
+
+                    // hardwiring the jurisdiction passed in, right into
+                    // js
+                    var jurisdiction_code = "<?= ( $jurisdiction ? $jurisdiction : '') ?>";
+                    print_jurisdictions_option( jurisdiction_code );
+                    </script>
+                    </div>
 <br />
 <h4>More Information About Your Work (Optional)</h4>
 <?php

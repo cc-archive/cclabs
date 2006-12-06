@@ -107,42 +107,25 @@
 
                     </p>
 
-                    <?php /*
-                    <p>
-                    <input type="checkbox" onchange="modify(this)" name="com" value="" id="com" />
-                    <?php $com_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
-                    ?>
-                    <label for="com" <?= get_tooltip_js($com_tooltip); ?>><strong><?= _('Allow commercial uses of your work'); ?></strong></label> 
-                    <?= print_more_info($com_tooltip); ?>
-                    <br />
-                    <input type="checkbox" onchange="modify(this)" name="mod" value="" id="mod" />
-                    <?php $mod_tooltip = '<p><img src="http://creativecommons.org/icon/nd/standard.gif" alt="nd" class="icon" /><strong>' . _('No Derivative Works') .
-                                        '</strong> ' . _('The licensor permits others to copy, distribute, display and perform only unaltered copies of the work &mdash; not derivative works based on it.') . '</p>'; ?>
-                    <label for="mod" <?= get_tooltip_js($mod_tooltip)?>><strong><?= _('Allow modifications of your work'); ?></strong></label>
-                    <?= print_more_info($mod_tooltip); ?>
-                    <br />
-                    <input type="checkbox" name="share" onchange="modify(this)" value="" id="share" disabled="disabled" />
-                    <?php $share_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
-                                        _('Share Alike') . '</strong> ' . _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'; ?>
-                    <label for="share" id="share-label" <?= get_tooltip_js($share_tooltip) ?>><strong><?= _('Require other people to share their changes'); ?></strong></label>
-                    <?= print_more_info($share_tooltip); ?>
-                    <br />
-                    </p>  
-                    */ ?>
-
                     </div>
 
                     
                     <?php
                         // print_jurisdictions_box($jurisdiction);
                     ?>
-                    <script>
 
+                    <div id="jurisdiction_box">
+                    <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
+                                        _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
+                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
+                    <script language="javascript">
+
+                    // hardwiring the jurisdiction passed in, right into
+                    // js
                     var jurisdiction_code = "<?= ( $jurisdiction ? $jurisdiction : '') ?>";
-                        
-
                     print_jurisdictions_option( jurisdiction_code );
                     </script>
+                    </div>
 
 
                     <!-- <h4><?= _('Currently Selected License'); ?> : <em><span id="by">by</span><span id="nc" style="display: none">-nc</span><span id="nd" style="display:none">-nd</span><span id="sa" style="display:none;">-sa</span></em></h4> -->
