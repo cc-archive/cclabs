@@ -16,10 +16,6 @@
 	width: 25%;
 }
 
-#flg-rest {
-    text-align: left;
-}
-
 h4.freedoms {
 	margin: 5px;
 	color: #6C9D31;
@@ -30,8 +26,8 @@ h4.conditions {
 }
 
 #flg-ui {
-	width: 585px;
-	padding: 20px 0;
+	width: 525px;
+	padding: 10px 0 10px 10px;
 	margin: 0 auto;
 	
 	border-top: 2px solid #CADB2A;
@@ -60,7 +56,7 @@ h4.conditions {
 
 #flg-left {
 	clear: both;
-	width: 366px;
+	width: 326px;
 	float: left;
 	margin:  15px 0;
 }
@@ -72,10 +68,10 @@ h4.conditions {
 
 }
 #flg-right {
-	width: 366px;
+	width: 326px;
 	margin:  15px 0;
 	float:  left;
-	margin-left: -147px;
+	margin-left: -142px;
 	margin-top:  85px;
 }
 
@@ -92,80 +88,80 @@ h4.conditions {
 
 #flg-connect-nc {
 	clear: both;
-	margin-top: -94px;
+	margin-top: -82px;
 	margin-left:  12px;
 	float: left;
 }
 
 #flg-connect-sa {
 	clear: both;
-	margin-top: -94px;
+	margin-top: -82px;
 	margin-right: 9px;
 	float: right;
 }
 
 #flg-connect-share.flg-pipe-off {
-	background: url(5/share-dim.png) no-repeat top left;
+	background: url(images/share-dim.png) no-repeat top left;
 }
 #flg-connect-remix.flg-pipe-off {
-	background: url(5/remix-dim.png) no-repeat top left;
+	background: url(images/remix-dim.png) no-repeat top left;
 }
 
 #flg-connect-nc.flg-pipe-off {
-	background: url(5/nc-off.png) no-repeat top left;
+	background: url(images/nc-off.png) no-repeat top left;
 }
 #flg-connect-sa.flg-pipe-off {
-	background: url(5/sa-off.png) no-repeat top left;
+	background: url(images/sa-off.png) no-repeat top left;
 }
 
 #flg-connect-share.flg-pipe-middle {
-	background: url(5/share-dim.png) no-repeat top left;
+	background: url(images/share-dim.png) no-repeat top left;
 }
 #flg-connect-remix.flg-pipe-middle {
-	background: url(5/remix-dim.png) no-repeat top left;
+	background: url(images/remix-dim.png) no-repeat top left;
 }
 
 #flg-connect-nc.flg-pipe-middle {
-	background: url(5/nc-dim.png) no-repeat top left;
+	background: url(images/nc-dim.png) no-repeat top left;
 }
 #flg-connect-sa.flg-pipe-middle {
-	background: url(5/sa-dim.png) no-repeat top left;
+	background: url(images/sa-dim.png) no-repeat top left;
 }
 
 #flg-connect-share.flg-pipe-on {
-	background: url(5/share-on.png) no-repeat top left;
+	background: url(images/share-on.png) no-repeat top left;
 }
 #flg-connect-remix.flg-pipe-on {
-	background: url(5/remix-on.png) no-repeat top left;
+	background: url(images/remix-on.png) no-repeat top left;
 }
 
 
 #flg-connect-nc.flg-pipe-on {
-	background: url(5/nc-on.png) no-repeat top left;
+	background: url(images/nc-on.png) no-repeat top left;
 }
 #flg-connect-sa.flg-pipe-on {
-  background: url(5/sa-on.png) no-repeat top left;
+  background: url(images/sa-on.png) no-repeat top left;
 }
 
 
 
 #flg-connect-share {
-		width:  376px;
-		height:  282px;
+		width:  326px;
+		height:  245px;
 }
 
 #flg-connect-remix {
-		height:  376px;
-		width: 282px;
+		height:  326px;
+		width: 245px;
 		margin-left: 0px;
 }
 #flg-connect-nc {
-	height:  376px;
-	width:  282px;
+	height:  326px;
+	width:  245px;
 }
 #flg-connect-sa {
-	width:  376px;
-	height:  282px;
+	width:  326px;
+	height:  245px;
 	border-width: 4px;
 	
 }
