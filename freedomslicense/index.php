@@ -138,7 +138,7 @@ if (document.images) {
 <div id="get_the_code">
 
 <?php 
-    print_jurisdictions_box($jurisdiction, '', 'results();');
+    print_jurisdictions_box($jurisdiction);
 ?>
 <br />
 <h4>More Information About Your Work (Optional)</h4>
