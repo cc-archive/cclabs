@@ -119,7 +119,7 @@
                     <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
                                         _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
                     <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
-                    <script language="javascript">
+                    <script language="javascript" type="text/javascript">
 
                     // hardwiring the jurisdiction passed in, right into
                     // js

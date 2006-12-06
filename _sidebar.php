@@ -21,7 +21,7 @@
 ?>
 <div id="sidebar">
 
-<hr id="spacer" />
+<hr class="spacer" />
 
 </div>
 
