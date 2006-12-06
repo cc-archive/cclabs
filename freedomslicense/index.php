@@ -38,7 +38,7 @@
     var freedoms;
     </script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "freedoms = new CCLibFreedoms(); init(); update()";
+    $onload = "freedoms = new CCLibFreedoms(); init(); modify(this)";
 
     include_once "../_header.php"; 
 
