@@ -72,12 +72,15 @@
 
                     <input type="checkbox" onchange="modify(this);" 
                     name="share" value="" id="share" />
-                    <label for="share" id="share-label"><?= _('Allow Sharing') ?></label>
+                    <?php $share_tooltip = '<p><strong>' . _('Share') . '</strong> ' . _('This is a placeholder.') . '</p>'; 
+                    ?>
+                    <label for="share" <?= get_tooltip_js($share_tooltip); ?> id="share-label"><strong><?= _('Allow Sharing'); ?></strong></label> 
+                    <?= print_more_info($share_tooltip); ?>
                     <br />
 
                     <input type="checkbox" onchange="modify(this);" 
                     name="nc" value="" id="nc" />
-                    <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.' . '</p>'); 
+                    <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>'; 
                     ?>
                     <label for="nc" <?= get_tooltip_js($nc_tooltip); ?> id="nc-label"><strong><?= _('Prohibit Commercial Use'); ?></strong></label> 
                     <?= print_more_info($nc_tooltip); ?>
@@ -85,7 +88,10 @@
             
                     <input type="checkbox" onchange="modify(this);" 
                     name="remix" value="" id="remix" />
-                    <label for="remix" id="remix-label"><?= _('Allow Remix') ?></label>
+                    <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('This is a placeholder.') . '</p>'; 
+                    ?>
+                    <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remix'); ?></strong></label> 
+                    <?= print_more_info($remix_tooltip); ?>
                     <br />
 
                     <input type="checkbox" onchange="modify(this);" 
