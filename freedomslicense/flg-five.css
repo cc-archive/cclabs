@@ -233,3 +233,26 @@ textarea#result
     width: 100%;
     border: 1px solid #ccc;
 }
+
+
+.tooltip
+{
+    background:     white;
+    border:         2px solid gray;
+    padding:        3px 10px 3px 10px;
+    width:          300px;
+    text-align:     left;
+}
+
+.tooltip .icon
+{
+    float:          left; 
+    padding-right:  4%;
+    padding-bottom: 20%;
+}
+
+.tooltipimage
+{
+    border:         2px solid gray;
+}
+
