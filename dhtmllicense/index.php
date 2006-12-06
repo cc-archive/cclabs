@@ -79,6 +79,14 @@
                     <br />
 
                     <input type="checkbox" onchange="modify(this);" 
+                    name="remix" value="" id="remix" />
+                    <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('Licensor permits others to make derivative works.') . '</p>'; 
+                    ?>
+                    <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remix'); ?></strong></label> 
+                    <?= print_more_info($remix_tooltip); ?>
+                    <br />
+
+                    <input type="checkbox" onchange="modify(this);" 
                     name="nc" value="" id="nc" />
                     <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>'; 
                     ?>
@@ -86,13 +94,6 @@
                     <?= print_more_info($nc_tooltip); ?>
                     <br />
             
-                    <input type="checkbox" onchange="modify(this);" 
-                    name="remix" value="" id="remix" />
-                    <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('Licensor permits others to make derivative works.') . '</p>'; 
-                    ?>
-                    <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remix'); ?></strong></label> 
-                    <?= print_more_info($remix_tooltip); ?>
-                    <br />
 
                     <input type="checkbox" onchange="modify(this);" 
                     name="sa" value="" id="sa" />
