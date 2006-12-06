@@ -72,7 +72,7 @@
 
                     <input type="checkbox" onchange="modify(this);" 
                     name="share" value="" id="share" />
-                    <?php $share_tooltip = '<p><strong>' . _('Share') . '</strong> ' . _('This is a placeholder.') . '</p>'; 
+                    <?php $share_tooltip = '<p><strong>' . _('Share') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work.') . '</p>'; 
                     ?>
                     <label for="share" <?= get_tooltip_js($share_tooltip); ?> id="share-label"><strong><?= _('Allow Sharing'); ?></strong></label> 
                     <?= print_more_info($share_tooltip); ?>
@@ -88,7 +88,7 @@
             
                     <input type="checkbox" onchange="modify(this);" 
                     name="remix" value="" id="remix" />
-                    <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('This is a placeholder.') . '</p>'; 
+                    <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('Licensor permits others to make derivative works.') . '</p>'; 
                     ?>
                     <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remix'); ?></strong></label> 
                     <?= print_more_info($remix_tooltip); ?>
