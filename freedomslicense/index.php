@@ -1,29 +1,48 @@
 <?php 
-    /* RemixShare License Generator */
-    /* Creative Commons, 2006 */
-
-    // The next few lines allow for basic interfacing with standard
-    // CC website's handling of jurisdiction for jurisdiction shortname 
-    // and for future language support, aka, local language strings...
-    $jurisdiction   = $_REQUEST['jurisdiction'];
-    $lang           = $_REQUEST['lang'];
-
-    if ( empty($jurisdiction) && !empty($lang) )
-        $jurisdiction = $lang;
-
+/**
+ * Creative Commons has made the contents of this file
+ * available under a CC-GNU-GPL license:
+ *
+ * http://creativecommons.org/licenses/GPL/2.0/
+ *
+ * A copy of the full license can be found as part of this
+ * distribution in the file COPYING.
+ *
+ * You may use this software in accordance with the
+ * terms of that license. You agree that you are solely 
+ * responsible for your use of this software and you
+ * represent and warrant to Creative Commons that your use
+ * of this software will comply with the CC-GNU-GPL.
+ *
+ * $Id: $
+ *
+ * Copyright 2006, Creative Commons, www.creativecommons.org.
+ *
+ */
+    define('CC_LIB', '../cclib');
+    require_once( CC_LIB . '/php/cc-lib.php' );
 
     $pagetitle = "Freedoms License Generator";
     $include = "flg-five.css";
-    $head_extra = '<script type="text/javascript" language="javascript" src="prototype.js"></script>
-    <script type="text/javascript" language="javascript" src="../dhtmllicense/tooltip.js"></script>
-    <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-jurisdictions.js"></script>
-    <script type="text/javascript" language="javascript" src="../dhtmllicense/cc-license.js"></script>
+    $head_extra = '<script type="text/javascript" language="javascript" src="' .
+    CC_LIB_JS . '/prototype.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+    '/cc-tooltip.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+    '/cc-jurisdictions.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+    '/cc-license.js"></script>
+    <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
+    '/cc-lib-freedoms.js"></script>
+    <script language="javascript">
+    var freedoms;
+    </script>
 <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "initFreedoms(); init(); update()";
+    $onload = "freedoms = new CCLibFreedoms(); init(); update()";
 
     include_once "../_header.php"; 
 
-    require_once '../dhtmllicense/cc-license-jurisdictions.php';
+    require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
 
 ?>
 
@@ -65,125 +84,6 @@ if (document.images) {
   remixdim.src = "5/remix-dim.png";
   
 }
-
-
-
-function initFreedoms() {
-  share = remix = true;
-  
-  redo();
-}
-
-function redo(mode) {
-  
-  switch (mode) {
-    case "share":
-      share = !share;
-      break;
-    case "remix":
-      remix = !remix;
-      break;
-    case "nc":
-      if (nc_on) { nc_cond = !nc_cond; }
-      break;
-    case "sa":
-      if (sa_on) { sa_cond = !sa_cond; }
-      break;
-    
-  }
-  
-  
-  
-  if (!share) {
-    sa_cond = sa_on = nc_cond = nc_on = false;
-    
-    Element.classNames ('flg-connect-nc').set ("flg-pipe-off");
-    Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
-    Element.classNames ('flg-connect-share').set ("flg-pipe-middle");
-    
-    if (!remix) {
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
-    } else {
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
-    }
-    
-  } else {
-    nc_on = true;
-    
-    Element.classNames ('flg-connect-share').set ("flg-pipe-on");
-    
-    if (nc_cond) {
-      Element.classNames ('flg-connect-nc').set ("flg-pipe-on");
-    } else {
-      Element.classNames ('flg-connect-nc').set ("flg-pipe-middle");
-    }
-    
-    if (remix) {
-      sa_on = true;
-      
-      if (sa_cond) {
-        Element.classNames ('flg-connect-sa').set ("flg-pipe-on");
-      } else {
-        Element.classNames ('flg-connect-sa').set ("flg-pipe-middle");
-      }
-      
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-on");
-    } else {
-      sa_cond = sa_on = false;
-
-      Element.classNames ('flg-connect-sa').set ("flg-pipe-off");
-      Element.classNames ('flg-connect-remix').set ("flg-pipe-middle");
-    }
-  }
-    
-  results();
-}
-function no_license_selection() {
-    $('flg-result').style.display = 'none';
-    $('get_the_code').style.display = 'none';
-}
-function some_license_selection() {
-    $('flg-result').style.display = 'block';
-    $('get_the_code').style.display = 'block';
-}
-function results() {
-  some_license_selection(); // This is purely cosmetic.
-  if (!share) {
-    if (!remix) {
-      Element.update ("flg-result", "");
-      no_license_selection();
-      return;
-    } else {
-      display('sampling', '1.0', 'Sampling', 'Remix');
-    }
-  } else {
-    if (!remix) {
-      if (nc_cond) {
-        display('by-nc-nd', '2.5', 'Attribution-NonCommercial-NoDerivs', 'Share:NC:ND');
-      } else {
-        display('by-nd', '2.5', 'Attribution-NoDerivs', 'Share:ND');
-      }
-    } else {
-      if (nc_cond) {
-        if (sa_cond) {
-          display('by-nc-sa', '2.5', 'Attribution-NonCommercial-ShareAlike', 'Remix&Share:NC:SA');
-        } else {
-          display('by-nc', '2.5', 'Attribution-NonCommercial', 'Remix&Share:NC');
-        }
-      } else if (sa_cond) {
-          display('by-sa', '2.5', 'Attribution-ShareAlike', 'Remix&Share:SA');
-      } else {
-          display('by', '2.5', 'Attribution', 'Remix&Share');
-      }
-    }
-  }
-}
-function display(code, version, name, aka) {
-    update_hack(code, version, name);
-    name = "&nbsp;"; // notice this is reset to space!
-    Element.update ("flg-result", "<img src='http://i.creativecommons.org/l/"+code+"/"+version+"/88x31.png'/><br/>" +
-    '<br /><i><a href="#get_the_code">Get the Code!</a></i>'); 
-}
 </script>
 
 
@@ -206,13 +106,13 @@ function display(code, version, name, aka) {
   <h4 class="freedoms">Freedoms</h4>
 <div id="flg-ui">
   <div id="flg-left">
-    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:redo('share')">&nbsp;</a></div>
-    <div id="flg-connect-nc" class="flg-pipe-middle"><a href="javascript:redo('nc')">&nbsp;</a></div>
+    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:freedoms.redo('share')">&nbsp;</a></div>
+    <div id="flg-connect-nc" class="flg-pipe-middle"><a href="javascript:freedoms.redo('nc')">&nbsp;</a></div>
   </div>
 
   <div id="flg-right">
-    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:redo('remix')">&nbsp;</a></div>
-    <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:redo('sa')">&nbsp;</a></div>
+    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:freedoms.redo('remix')">&nbsp;</a></div>
+    <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:freedoms.redo('sa')">&nbsp;</a></div>
   </div>
   <div id="flg-mid">
     <div id="flg-result">BY</div>
@@ -226,17 +126,17 @@ function display(code, version, name, aka) {
 <div id="get_the_code">
 
 <?php 
-    print_jurisdictions_box($jurisdiction, 'results();');
+    print_jurisdictions_box($jurisdiction, '', 'results();');
 ?>
 <br />
 <h4>More Information About Your Work (Optional)</h4>
 <?php
-    include '../dhtmllicense/cc-license-more-info.php';
+    include CC_LIB_PHP . '/cc-license-more-info.php';
 ?>
 <br />
 <h4>Get the Code</h4>
 <?php
-    include '../dhtmllicense/cc-license-result.php';
+    include CC_LIB_PHP . '/cc-license-result.php';
 
 ?>
 </div>
