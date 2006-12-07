@@ -107,6 +107,10 @@ a CC option to interested musicians.  Two examples are <a
 href="http://www.lovetheory.com/listenbuy.html">Electron Love Theory</a>
 and <a href="http://www.myspace.com/garynewvision">Gary Robinson</a>.</p>
 
+<p><a href="http://www.beatpick.com">BeatPick</a> is a "fair play" record label that offers music under a CC license and handles commercial licensing and sales for artists. Visit any artist page, for example <a href="http://www.beatpick.com/2-Seconds-Away">2 Seconds Away</a>.</p>
+
+<p><a href="http://jamendo.com">Jamendo</a> is a "is a new model for artists to promote, publish, and be paid for their music." Nearly 2000 albums are streamable, downloadable via P2P, and many may be purchased via artists' sites, for example, Revolution Void's <em><a href="http://www.jamendo.com/us/album/2225/">Increase the Dosage</a></em>.</p>
+
 <p><a href="http://www.scoopt.com">Scoopt</a> makes it easy to sell your
 pictures and blog content to the press.  Like Pump Audio, they offer a
 CC license option when a user gets a button for commercial licensing (<a
