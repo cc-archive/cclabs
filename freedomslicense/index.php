@@ -23,7 +23,7 @@
     require_once( CC_LIB . '/php/cc-lib.php' );
 
     $pagetitle = "Freedoms License Generator";
-    $include = "flg-five.css";
+    $include = "flg-five.css?5559393";
     $head_extra = '<script type="text/javascript" language="javascript" src="' .
     CC_LIB_JS . '/prototype.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
