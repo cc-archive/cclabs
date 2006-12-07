@@ -49,13 +49,9 @@ you want used for attribution purposes.</p>
 the license button and the license deed will update itself to display
 metadata scraped from this page after a few moments.</p>
 
-<p>You can see the metadata revealed without leaving this page by clicking 
-<a href="javascript:__RDFA_BASE='http://www.w3.org/2001/sw/BestPractices/HTML/rdfa-bookmarklet/';(function(){if(document.getElementById('rdfa_highlight_bm ')){alert('only once!');}else{s=document.createElement('script');s.type='text/javascript';s.id='rdfa_highlight_bm';s.src='http://www.w3.org/2001/sw/BestPractices/HTML/rdfa-bookmarklet/2006-10-08/highlight-metadata.js';document.getElementsByTagName('head')[0].appendChild(s);}})();">this
-RDFa bookmarklet link</a> (right click to bookmark the link and use on other pages).</p>
+<p>If you're using Firefox or Safari (patches welcome for IE), you can see the metadata revealed without leaving this page by clicking <a href="javascript:__RDFA_BASE='http://www.w3.org/2001/sw/BestPractices/HTML/rdfa-bookmarklet/';(function(){if(document.getElementById('rdfa_highlight_bm ')){alert('only once!');}else{s=document.createElement('script');s.type='text/javascript';s.id='rdfa_highlight_bm';s.src='http://www.w3.org/2001/sw/BestPractices/HTML/rdfa-bookmarklet/2006-10-08/highlight-metadata.js';document.getElementsByTagName('head')[0].appendChild(s);}})();">this RDFa bookmarklet link</a> (right click to bookmark the link and use on other pages).</p>
 
-<p>If you're using Firefox the <a
-href="http://wiki.creativecommons.org/MozCC">mozCC extension</a> can
-also reveal this metadata.</p>
+<p><a href="http://wiki.creativecommons.org/MozCC">MozCC</a> (also for Firefox) can also reveal this metadata.</p>
 
 <h3 id="backgroound">Background</h3>
 
