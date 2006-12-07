@@ -77,26 +77,26 @@ h4.conditions {
 
 #flg-connect-share {
 	float: left;
-	margin-left:  12px;
+	margin-left:  21px;
 }
 
 #flg-connect-remix {
 	float: right;
 	margin-top:  -69px;
-	margin-right:  9px;
+/*	margin-right:  9px;*/
 }
 
 #flg-connect-nc {
 	clear: both;
 	margin-top: -82px;
-	margin-left:  12px;
+	margin-left:  21px;
 	float: left;
 }
 
 #flg-connect-sa {
 	clear: both;
 	margin-top: -82px;
-	margin-right: 9px;
+/*	margin-left:  -9px;*/
 	float: right;
 }
 
@@ -196,7 +196,8 @@ h4.conditions {
 	width: 85px;
 	height: 80px;
 	padding: 30px 20px 10px 20px;
-	background: url(../images/fuzzy.png);
+/*	background: url(../images/fuzzy.png);*/
+	background-color:  #fff;
 	font-size:  80%;
 	border:  2px dashed #777;
 }
