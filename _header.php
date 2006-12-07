@@ -60,7 +60,7 @@ function print_wiki_page_name ($page_name = '')
     @import url(/style.css);
     <?= (($include) ? "@import url($include);\n" : ""); ?>
 	</style>
-	<!--[if IE]> <link rel="stylesheet" type="text/css" media="screen" href="style-ie.css"/><![endif]-->
+	<!--[if IE]> <link rel="stylesheet" type="text/css" media="screen" href="/style-ie.css"/><![endif]-->
 
     <?= (($head_extra) ? "$head_extra\n" : "\n"); ?>
 	
