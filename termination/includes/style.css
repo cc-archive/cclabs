@@ -1,0 +1,232 @@
+.question {
+  font-weight: normal;
+  clear: both;
+  padding: 10px;
+}
+.question-text {
+  float:left;
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.question-options {
+  float:right;
+/*  margin-left: 50px; */
+}
+.option {
+  float:left;
+  margin: 0 30px 0 0;
+//  font-size: 1.25em;
+}
+.option-input { text-align: right; }
+.question-error {
+  padding-top: 5px;
+  padding-right: 15px;
+  float: right;
+  font-size: 75%;
+  color: red;
+}
+.invisible {
+  display: none;
+}
+#totnav {
+  padding: 10px 8px 10px 0;
+  margin: 0 2px 0 10px;
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+#overview { margin-bottom: 20px; }
+#termlist { }
+#intro {
+/*  float:left; */
+/*  width: 85%; */
+  margin-left: auto;
+  margin-right: auto;
+/*  padding-left: 25px; */
+/*  padding-right: 25px; */
+/*  background-color: #ddd; */
+/*  border: 1px solid black; */
+  font-size: 130%;
+  line-height: 130%;
+}
+#screens {
+/*  width: 65%; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background: white;
+  font-size: 130%;
+  clear: both;
+}
+.screen-titlebar {
+  background-color: rgb(86, 133, 159);
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  border-top: 1px solid black;
+}
+.section1 { background-color: rgb(86, 133, 159); }
+.section2 { background-color: rgb(86, 83, 159); }
+.section3 { background-color: rgb(86, 23, 159); }
+.section4 { background-color: rgb(86, 83, 109); }
+.screen-header {
+  background-color: transparent;
+  color: #fff;
+  padding: 5px;
+  font-weight: bold;
+  line-height: 13px;
+  float: left;
+}
+.progress {
+  background-color: transparent;
+  color: #fff;
+  padding: 5px;
+  line-height: 13px;
+  text-align: right;
+  float: right;
+}
+#screens p {
+  padding-top: 10px;
+  clear: both;
+}
+#history {
+/*  width: 65%; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background-color: rgb(114, 156, 179);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.history-header {
+  padding: 5px;
+  width: 250px;
+  float: left;
+}
+.answer {
+  padding: 5px;
+  font-weight: normal;
+  float: left;
+}
+.gather-text {
+  border: 1px dotted;
+}
+.filter-date {
+  text-align: center;
+  border: 1px dotted;
+  width: 3em;
+}
+#cmonth {
+}
+.date-text {
+  margin: 1px;
+  text-align: center;
+  border: 0px;
+  background: #fff;
+  width: 3em;
+}
+.continue {
+  clear: left;
+  border: 1px solid #ddd;
+  float: left;
+  margin: 7px 14px 14px 14px;
+  background-color: #fff;
+}
+.buttons {
+  clear: both;
+  border: 0px solid;
+  margin: 5px;
+}
+.button-continue {
+  margin: 5px;
+  border: 1px solid #aaa;
+  background-color: #e2e2f7;
+}
+.term-category-list { padding: 0 0 0 60px; }
+.term-category-list li ul { padding: 0 0 10px 70px; }
+.names {
+  margin-bottom: 10px;
+  border: 1px dotted;
+  float: left;
+}
+.name_errors {
+  font-size: 75%;
+  color: red;
+  padding-right: 15px;
+}
+.child_name {
+  padding-bottom: 10px;
+}
+#section_list ul {
+  padding-left: 50px;
+}
+#section_list div {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+  background: #fff;
+}
+h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#screens p {
+  padding-left: 10px;
+  width: 75%;
+}
+#screens h1 {
+  margin-top:0px;
+  font-size:20px;
+  margin-bottom:0px;
+}
+#screens h3 {
+  padding-left: 8px;
+}
+#screens ul li {
+  margin:0;
+  margin-left:-20px;
+  padding:0 0 .5em 0;
+  line-height:1.3em;
+  list-style-image:url("/images/greendot.gif");
+  font-size:11px;
+}
+#glossary h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+#glossary div {
+  margin-top: 3px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 8px;
+}
+#glossary-explain {
+  border: 1px dotted black;
+  font-size: 80%;
+}
+.successor_heading {
+  float: left;
+  margin-left: 6px;
+  margin-right: 6px;
+  width: 200px;
+}
+#successors_container .names {
+  width: 200px;
+}
+#grantor_container {
+  padding-left: 50px;
+}
+/*
+a:link, a:visited {
+  color:#815151;
+  text-decoration: none;
+}
+*/
