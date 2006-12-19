@@ -1,20 +1,4 @@
-<? $pagetitle = "CC Termination of Transfer Tool"; ?>
-<? $head_extra = '<link rel="stylesheet" href="includes/style.css" type="text/css" />
-
-
-    <script type="text/javascript" src="includes/prototype.js"></script>
-    <script type="text/javascript" src="includes/domready.js"></script>
-    <script type="text/javascript" src="includes/scriptaculous.js?load=effects"></script>
-    <script type="text/javascript" src="includes/main.js"></script>
-    <script type="text/javascript" src="includes/lib/XML/ObjTree.js"></script>
-
-<script type="text/javascript">
-      //<![CDATA[
-      Event.onDOMReady(fixGlossaryLinks);
-      //]]>
-    </script>' ?>
-
-<? include_once "../_header.php"; ?>
+<? include_once "_header.php"; ?>
 
 <div id="content">
   <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>
@@ -61,7 +45,7 @@ the agreement means that the rights in the work return to you, and you are again
 of all of the rights in relation to your work.</p>
 
 <p>To learn more about this tool and whether it might be useful for you, feel free to check out
-our <a href="faq.html">FAQ</a>.</p>
+our <a href="faq.php">FAQ</a>.</p>
 
 <h3 id="what_does_it_mean">What does this mean for you?</h3>
 

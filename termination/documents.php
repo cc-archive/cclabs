@@ -1,20 +1,9 @@
 <? $pagetitle = "CC Termination of Transfer Tool"; ?>
-<? $head_extra = '<link rel="stylesheet" href="includes/style.css" type="text/css" />
+<? $head_extra = '
     <link rel="stylesheet" href="includes/documents.css" type="text/css" />
+'; ?>
 
-    <script type="text/javascript" src="includes/prototype.js"></script>
-    <script type="text/javascript" src="includes/domready.js"></script>
-    <script type="text/javascript" src="includes/scriptaculous.js?load=effects"></script>
-    <script type="text/javascript" src="includes/main.js"></script>
-    <script type="text/javascript" src="includes/lib/XML/ObjTree.js"></script>
-
-<script type="text/javascript">
-      //<![CDATA[
-      Event.onDOMReady(fixGlossaryLinks);
-      //]]>
-    </script>' ?>
-
-<? include_once "../_header.php"; ?>
+<? include_once "_header.php"; ?>
 
 <div id="content">
   <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>

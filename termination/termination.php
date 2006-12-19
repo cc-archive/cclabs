@@ -1,20 +1,14 @@
-<? $pagetitle = "CC Termination of Transfer Tool"; ?>
-<? $head_extra = '<link rel="stylesheet" href="includes/style.css" type="text/css" />
+<? $head_extra = '
 
-
-    <script type="text/javascript" src="includes/prototype.js"></script>
-    <script type="text/javascript" src="includes/domready.js"></script>
-    <script type="text/javascript" src="includes/scriptaculous.js?load=effects"></script>
-    <script type="text/javascript" src="includes/main.js"></script>
-    <script type="text/javascript" src="includes/lib/XML/ObjTree.js"></script>
-
-<script type="text/javascript">
+    <script type="text/javascript">
       //<![CDATA[
       Event.onDOMReady(totit);
       //]]>
-    </script>' ?>
+    </script>
 
-<? include_once "../_header.php"; ?>
+'; ?>
+
+<? include_once "_header.php"; ?>
 
 <div id="content">
   <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>
@@ -836,7 +830,7 @@
                   </div>
 		  <div class="question">
 		    For more information about which family members qualify, check out the
-		    <a href="faq.html#family_members">FAQ</a>.
+		    <a href="faq.php#I_am_not_the_original_author_or_artist.3B_can_I_still_take_advantage_of_the_termination_of_transfer_provisions.3F">FAQ</a>.
 		  </div>
                   <br clear="both"/>
                 </div>

@@ -950,9 +950,6 @@ function totit() {
       /* clear all error divs */
       $$('.question-error').each(function(div){Element.hide(div); });
  
-      /* add glossary pop-up */
-      fixGlossaryLinks();
-
       /* some extra event handlers */
       Event.observe(window,'keypress', keyPress, true);
       Event.observe($('spouse_no'),  'click', buttons.author_spouse_info.spouse_toggle, true);
