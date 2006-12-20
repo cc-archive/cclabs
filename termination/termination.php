@@ -16,8 +16,7 @@
       <div class="history-header">Employee Created Work:</div>
       <div id="h-wfh-emp-ans" class="answer">YES/NO</div>
       <br clear="both" />
-    </div>
-    <div id="h-wfh-com" class="section1">
+    </div><div id="h-wfh-com" class="section1">
       <div class="history-header">Commissioned Work:</div>
       <div id="h-wfh-com-ans" class="answer">YES/NO</div>
       <br clear="both" />
@@ -148,7 +147,6 @@
         <br clear="both" />
       </div>
     </div>
- 
   </div>
 
   <div id="screens" class="invisible">
