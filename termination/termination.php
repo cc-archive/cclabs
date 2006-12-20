@@ -1052,17 +1052,20 @@
               <div>
                 <div class="question">
                   <div class="question-text">
-                    We now need to determine if <span id="author_grandchildren-authorname1">AUTHOR NAME</span> had any grandchildren:<br>
-                    <br>
+                    We now need to determine if <span id="author_grandchildren-authorname1">AUTHOR NAME</span> had any grandchildren:
+		  </div>
+                </div>
+                <div class="question">
+                  <div class="question-text">
                     Please list all of <span id="author_grandchildren_name_span">[CHILD NAME]</span>'s
                     <a class="glossarylink" href="glossary.html#children">children</a>
-                    (i.e., <span id="author_grandchildren-authorname2">AUTHOR NAME</span>'s grandchildren):
+                    (i.e., <span id="author_grandchildren-authorname2">AUTHOR NAME</span>'s grandchildren):<br>
+                    <a id="more_grandchildren">[ More ]</a>
+                    <a id="less_grandchildren">[ Less ]</a>
                   </div>
                   <div class="question-options">
                     <span id="no_grandchildren">None</span>
                     <div id="grandchildren_container"></div>
-                    <a id="more_grandchildren">[ More ]</a>
-                    <a id="less_grandchildren">[ Less ]</a>
                   </div>
                   <br clear="both"/>
                 </div>

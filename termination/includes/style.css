@@ -230,3 +230,4 @@ a:link, a:visited {
   text-decoration: none;
 }
 */
+#toc ul { list-style: none; }

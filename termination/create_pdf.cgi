@@ -100,6 +100,8 @@ def genLatex( args ):
     output = output.replace('[TERMOPEN]',         args.find("twopen").text)
     output = output.replace('[TERMCLOSE]',        args.find("twclose").text)
     output = output.replace('[WORKTITLE]',        args.find("title").text)
+    output = output.replace('[CREATEDATE]',       args.find("create_date").text)
+    output = output.replace('[PUBLISHDATE]',      args.find("publish_date").text)
     output = output.replace('[COPYRIGHTDATE]',    args.find("copyright_date").text)
     output = output.replace('[COPYRIGHTNUMBER]',  args.find("ocn").text)
 
@@ -112,13 +114,7 @@ def genLatex( args ):
         output = output.replace('[AUTHORNAME]', author.find("name").text + ' ' + '(Non-Grantor)' )
 
 
-    output += template['grant_info']
-    output = output.replace('[GRANTDESCRIPTION]', args.find("grant_description").text)
-    output = output.replace('[GRANTDATE]',        args.find("grant_date").text)
-    output = output.replace('[ORIGINALGRANTEENAME]', args.find("original_grantee").text)
-    output = output.replace('[CURRENTGRANTEENAME]', args.find("current_grantee").text)
-
-    ## Descendants info only if we're doing an author_grant
+    ## Grant info
     if args.find("author_grant").text == 'Yes':
       output = output.replace('[GRANTBY]', '- Grant By Author')
       for author in authors:
@@ -126,8 +122,23 @@ def genLatex( args ):
           output += template['grantors']
           output = output.replace('[GRANTOR]', author.find("name").text + ' (Author)')
 
-      output += template['basic_end']
+    elif args.find("successor_grant").text == 'Yes':
+      output = output.replace('[GRANTBY]', '- Grant By Successors')
+      for grantor in args.findall("successor_grantors"):
+        output += template['grantors']
+        output = output.replace('[GRANTOR]', grantor.find("name").text + ' ' + deceasedStr( grantor.find("alive").text ) + ' (' + grantor.find("relationship").text + ')')
 
+    output += template['grant_info']
+    output = output.replace('[GRANTDESCRIPTION]',    args.find("grant_description").text)
+    output = output.replace('[GRANTDATE]',           args.find("grant_date").text)
+    output = output.replace('[ORIGINALGRANTEENAME]', args.find("original_grantee").text)
+    output = output.replace('[CURRENTGRANTEENAME]',  args.find("current_grantee").text)
+
+    output += template['basic_end']
+
+
+    ## Descendants info only if we're doing an author_grant
+    if args.find("author_grant").text == 'Yes':
       for author in authors:
         if len(authors) > 1 and author.find("grantor").text == 'No': continue
 
@@ -170,14 +181,6 @@ def genLatex( args ):
             output += template['nochildren']
 
           output += template['descendants_end']
-
-    elif args.find("successor_grant").text == 'Yes':
-      output = output.replace('[GRANTBY]', '- Grant By Successors')
-      for grantor in args.findall("successor_grantors"):
-        output += template['grantors']
-        output = output.replace('[GRANTOR]', grantor.find("name").text + ' ' + deceasedStr( grantor.find("alive").text ) + ' (' + grantor.find("relationship").text + ')')
-
-      output += template['basic_end']
 
     output += template['main_end']
 

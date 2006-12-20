@@ -3,6 +3,8 @@
 <div id="content">
   <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>
 
+<div id="intro">
+
 <table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h3>Frequently Asked Questions</h3></div>
 <ul>
 <li class='toclevel-1'><a href="#Questions_About_the_Law"><span class="tocnumber">1</span> <span class="toctext">Questions About the Law</span></a>
@@ -257,6 +259,8 @@
 <p>Feel free to send your question to us at  <a href="mailto:info@creativecommons.org" class='external text' title="mailto:info@creativecommons.org" rel="nofollow">info@creativecommons.org</a>.  We may not respond immediately but we will definitely respond and assist you as best we can!
 </p><p><br />
 </p><br style="clear:both;" />
+</div>
+
 </div>
 
 <? include_once "_footer.php"; ?>
