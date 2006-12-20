@@ -1098,7 +1098,7 @@ function showScreen(s,updater) {
     }
     if (updater) { updater(); }
   } else if (getCurrentScreen()) { hideScreen($(getCurrentScreen()),updater); }
-  Effect.BlindDown(s, {
+  Effect.Appear(s, {
     type: 'show',
     duration: 1.0,
     queue: {
@@ -1113,7 +1113,15 @@ function showScreen(s,updater) {
 
 function hideScreen(s,updater) {
   if(updater && typeof(updater) != 'function') updater = null;
-  Effect.BlindUp(s, {type: 'hide', duration: 0.5, queue: {position: 'end', scope: 'main'}, afterFinish: updater });
+  Effect.Fade(s, {
+    type: 'hide',
+    duration: 0.5,
+    queue: {
+      position: 'end',
+      scope: 'main'
+    },
+    afterFinish: updater
+  });
 }
 
 function showHistory(h) {

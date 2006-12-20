@@ -21,12 +21,10 @@
 }
 .question-options {
   float:right;
-/*  margin-left: 50px; */
 }
 .option {
   float:left;
   margin: 0 30px 0 0;
-//  font-size: 1.25em;
 }
 .option-input { text-align: right; }
 .question-error {
@@ -36,9 +34,7 @@
   font-size: 75%;
   color: red;
 }
-.invisible {
-  display: none;
-}
+.invisible { display: none; }
 #totnav {
   padding: 10px 8px 10px 0;
   margin: 0 2px 0 10px;
@@ -49,14 +45,8 @@
 #overview { margin-bottom: 20px; }
 #termlist { }
 #intro {
-/*  float:left; */
-/*  width: 85%; */
   margin-left: auto;
   margin-right: auto;
-/*  padding-left: 25px; */
-/*  padding-right: 25px; */
-/*  background-color: #ddd; */
-/*  border: 1px solid black; */
   font-size: 105%;
   line-height: 130%;
 }
@@ -78,18 +68,16 @@ p#startbtn a:hover {
 }
 
 #screens {
-/*  width: 65%; */
   margin-left: auto;
   margin-right: auto;
   padding: 0;
   background: white;
   font-size: 130%;
   clear: both;
+  height: 350px;
 }
 .screen-titlebar {
   background-color: rgb(86, 133, 159);
-  /* margin-left: auto;
-  margin-right: auto; */
   margin: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -121,11 +109,9 @@ p#startbtn a:hover {
   clear: both;
 }
 #history {
-/*  width: 65%; */
   margin-left: auto;
   margin-right: auto;
   padding: 0;
-/*  background-color: rgb(114, 156, 179);*/
   color: #fff;
   font-weight: bold;
   font-size: 1.3em;
@@ -147,9 +133,8 @@ p#startbtn a:hover {
 .filter-date {
   text-align: center;
   border: 1px dotted;
+  padding: 5px;
   width: 3em;
-}
-#cmonth {
 }
 .date-text {
   margin: 1px;
@@ -222,7 +207,6 @@ h4 {
   margin-left:-20px;
   padding:0 0 .5em 0;
   line-height:1.3em;
-  list-style-image:url("/images/greendot.gif");
   font-size:11px;
 }
 #glossary h3 {
@@ -251,10 +235,4 @@ h4 {
 #grantor_container {
   padding-left: 50px;
 }
-/*
-a:link, a:visited {
-  color:#815151;
-  text-decoration: none;
-}
-*/
 #toc ul { list-style: none; }
