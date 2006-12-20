@@ -6,6 +6,9 @@
       //]]>
     </script>
 
+    <!--[if IE]> <link rel="stylesheet" type="text/css" media="screen" href="includes/style-ie.css"/><![endif]-->
+    
+
 '; ?>
 
 <? include_once "_header.php"; ?>

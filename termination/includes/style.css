@@ -129,14 +129,6 @@ p#startbtn a:hover {
   color: #fff;
   font-weight: bold;
   font-size: 1.3em;
-  height: 1.7em;
-}
-
-#history div {
-  height: 1.7em;
-}
-#history div div {
-  height: auto;
 }
 
 .history-header {
