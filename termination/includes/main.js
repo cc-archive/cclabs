@@ -1187,15 +1187,18 @@ function fixGlossaryLinks() {
 
 function showGlossaryEntry(term) {
   $$('#glossary div').each(function(div) {
-    if (div.id == term) return;
-    Element.hide(div);
+    if (div.id == term) {
+       Element.show(div);
+    } else {
+       Element.hide(div);
+    }
   });
 }
 
 function fixIntraGlossaryLinks() {
 
   var onclick = function() {
-    var term = this.href.replace(/#/,'');
+    var term = this.href.replace(/.*glossary.html#/,'');
     showGlossaryEntry(term);
     return false;
   };
