@@ -73,6 +73,7 @@ p#startbtn a:hover {
   padding: 0;
   background: white;
   font-size: 130%;
+  line-height: 1.22em;
   clear: both;
   height: 350px;
 }
