@@ -1192,6 +1192,18 @@ function showGlossaryEntry(term) {
   });
 }
 
+function fixIntraGlossaryLinks() {
+
+  var onclick = function() {
+    var term = this.href.replace(/#/,'');
+    showGlossaryEntry(term);
+    return false;
+  };
+  $$('.glossarylink').each(function(a){
+    a.onclick = onclick;
+  });
+}
+
 var newWin = null;
 function popUp(strURL, strType, strHeight, strWidth) {
   if (newWin != null && !newWin.closed) newWin.close();
