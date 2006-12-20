@@ -14,6 +14,9 @@
 <? include_once "_header.php"; ?>
 
 <form id="term_form">
+  <div id="loading">
+    <h3>Loading... Please Wait</h3>
+  </div>
   <div id="history" class="invisible">
     <div id="h-wfh-emp" class="history-bar section1">
       <div class="history-header">Employee Created Work:</div>
@@ -1372,9 +1375,6 @@
 
   </div><!-- screens -->
 
-  <div id="loading">
-    <h3>Loading... Please Wait</h3>
-  </div>
 </form>
 
 <? include_once "_footer.php"; ?>
