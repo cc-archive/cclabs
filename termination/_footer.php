@@ -1,3 +1,4 @@
+</div>
 <div id="totfooter" align="center">
   <a href="what_information_do_i_need.php">Tool Overview</a> |
   <a href="documents.php">List of Useful Documents</a> |

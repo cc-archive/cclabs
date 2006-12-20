@@ -1,8 +1,5 @@
 <? include_once "_header.php"; ?>
 
-<div id="content">
-  <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>
-
 <div id="totnav">
 
 <div id="overview">
@@ -87,8 +84,6 @@ agreement entered into in relation to a creative work and, if so, whether your
 <a style="color:black;" href="termination.php"><p style="text-align:center; border:1px solid black; width:90px; margin-right:auto; margin-left:auto; background-color:grey;">
 START</p></a>
 <p><b>Please note, this tool is not, nor is it intended to be, legal advice, or a substitute for legal advice.</b>
-</div>
-
 </div>
 
 <? include_once "_footer.php"; ?>

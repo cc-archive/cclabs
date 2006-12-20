@@ -861,8 +861,7 @@ buttons = {
       new_node.value = '';
       new_node.className = '';
       new_node.getElementsByTagName('input')[0].value = '';
-      new_node.getElementsByTagName('input')[1].checked = false;
-      new_node.getElementsByTagName('span')[0].style.display = 'none';
+      Element.hide(new_node.getElementsByTagName('span')[0]);
       $('grandchildren_container').appendChild(new_node);
       return false;
     },

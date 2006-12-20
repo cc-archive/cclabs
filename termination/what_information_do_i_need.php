@@ -1,8 +1,5 @@
 <? include_once "_header.php"; ?>
 
-<div id="content">
-  <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>
-
 <div id="totnav">
 
 <div id="overview">
@@ -122,8 +119,6 @@ We have also compiled <a href="documents.php">some hints and tips about where yo
 <a style="color:black;" href="termination.php"><p style="text-align:center; border:1px solid black; width:90px; margin-right:auto; margin-left:auto; background-color:grey;">
 START</p></a>
 <br>
-
-</div>
 
 </div>
 

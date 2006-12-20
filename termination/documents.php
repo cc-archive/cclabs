@@ -5,10 +5,6 @@
 
 <? include_once "_header.php"; ?>
 
-<div id="content">
-  <h2>Returning Author's Rights: The CC Termination of Transfer Tool</h2>
-
-
 <div id="totnav">
 
 <div id="overview">
@@ -192,8 +188,6 @@ When it comes to searching the Copyright Office's records, in addition to conduc
 <a style="color:black;" href="termination.php"><p style="text-align:center; border:1px solid black; width:90px; margin-right:auto; margin-left:auto; background-color:grey;">
 START</p></a>
 <p>Back to: <a href="what_information_do_i_need.php">Overview of Termination of Transfer Tool</a></p>
-</div>
-
 </div>
 
 <? include_once "_footer.php"; ?>

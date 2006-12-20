@@ -1,4 +1,4 @@
-<? $pagetitle = "CC Termination of Transfer Tool"; ?>
+<? $pagetitle = "CC Termination of Transfer Tool [BETA]"; ?>
 <? $head_extra = '
 
     <link rel="stylesheet" href="includes/style.css" type="text/css" />
@@ -19,3 +19,7 @@
 ' . $head_extra; ?>
 
 <? include_once "../_header.php"; ?>
+
+<div id="content">
+  <h2>Returning Author's Rights: The CC Termination of Transfer Tool [BETA]</h2>
+
