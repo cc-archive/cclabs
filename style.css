@@ -107,10 +107,15 @@ div.blurb {
 }
 
 #content h2 {
-  padding: 36px 0 10px 0;
+  padding: 1.5em 0 0.02em 0;
   color: #4a4c4a;
   border-bottom: 5px solid #ABB3AC;
   margin: 0;
+}
+
+#content h4 {
+  margin: 0;
+  padding: 1.5em 0 0.02em 0;
 }
 
 #content .grey {
