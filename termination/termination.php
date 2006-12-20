@@ -15,139 +15,139 @@
 
 <form id="term_form">
   <div id="history" class="invisible">
-    <div id="h-wfh-emp" class="section1">
+    <div id="h-wfh-emp" class="history-bar section1">
       <div class="history-header">Employee Created Work:</div>
       <div id="h-wfh-emp-ans" class="answer">YES/NO</div>
-      <br clear="both" />
-    </div><div id="h-wfh-com" class="section1">
+      <br clear="all" />
+    </div><div id="h-wfh-com" class="history-bar section1">
       <div class="history-header">Commissioned Work:</div>
       <div id="h-wfh-com-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-wfh-pre" class="section1">
+    <div id="h-wfh-pre" class="history-bar section1">
       <div class="history-header">Work Created Before 1978:</div>
       <div id="h-wfh-pre-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-wfh-wri" class="section1">
+    <div id="h-wfh-wri" class="history-bar section1">
       <div class="history-header">Signed Written Agreement:</div>
       <div id="h-wfh-wri-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-wfh-catA" class="section1">
+    <div id="h-wfh-catA" class="history-bar section1">
       <div class="history-header">Movie, Translation, Test, etc:</div>
       <div id="h-wfh-catA-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-wfh-catB" class="section1">
+    <div id="h-wfh-catB" class="history-bar section1">
       <div class="history-header">Collective Work:</div>
       <div id="h-wfh-catB-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-wfh-catC" class="section1">
+    <div id="h-wfh-catC" class="history-bar section1">
       <div class="history-header">Supplementary Work:</div>
       <div id="h-wfh-catC-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-cdate" class="section2">
+    <div id="h-cdate" class="history-bar section2">
       <div class="history-header">Creation Date:</div>
       <div id="h-cdate-ans" class="answer">MM/DD/YYYY</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-pdate" class="section2">
+    <div id="h-pdate" class="history-bar section2">
       <div class="history-header">Publish Date:</div>
       <div id="h-pdate-ans" class="answer">MM/DD/YYYY</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-gdate" class="section2">
+    <div id="h-gdate" class="history-bar section2">
       <div class="history-header">Transfer Date:</div>
       <div id="h-gdate-ans" class="answer">MM/DD/YYYY</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-names" class="section3">
+    <div id="h-names" class="history-bar section3">
       <div class="history-header">Authors:</div>
       <div id="h-names-ans" class="answer">NAMES</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-basic" class="section3">
+    <div id="h-basic" class="history-bar section3">
       <div>
         <div class="history-header">Title:</div>
         <div id="h-basic-title" class="answer">TITLE</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
       <div>
         <div class="history-header">Registration Number:</div>
         <div id="h-basic-ocn" class="answer">OCN</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
       <div>
         <div class="history-header">Original Grantee:</div>
         <div id="h-basic-original-grantee" class="answer">GRANTEE</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
       <div>
         <div class="history-header">Current Grantee:</div>
         <div id="h-basic-current-grantee" class="answer">GRANTEE</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
       <div>
         <div class="history-header">Description:</div>
         <div id="h-basic-desc" class="answer">GRANT DESCRIPTION</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
     </div>
-    <div id="h-agrant" class="section4">
+    <div id="h-agrant" class="history-bar section4">
       <div class="history-header">Author Grant:</div>
       <div id="h-agrant-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-sgrant" class="section4">
+    <div id="h-sgrant" class="history-bar section4">
       <div class="history-header">Successor Grant:</div>
       <div id="h-sgrant-ans" class="answer">YES/NO</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-grantors" class="section4">
+    <div id="h-grantors" class="history-bar section4">
       <div class="history-header">Grantor(s):</div>
       <div id="h-grantors-ans" class="answer">AUTHOR NAMES</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-familytree" class="section4"></div>
-    <div id="h-auth-info" class="section4">
+    <div id="h-familytree" class="history-bar section4"></div>
+    <div id="h-auth-info" class="history-bar section4">
       <div class="history-header">Family Tree:</div>
       <div id="h-auth-info-ans" class="answer">AUTHOR NAME</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-auth-info-spouse" class="section4">
+    <div id="h-auth-info-spouse" class="history-bar section4">
       <div>
         <div class="history-header">Spouse:</div>
         <div id="h-auth-info-spouse-name" class="answer">SPOUSE NAME</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
     </div>
-    <div id="h-auth-info-nospouse" class="section4">
+    <div id="h-auth-info-nospouse" class="history-bar section4">
       <div class="history-header">No Spouse</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-auth-info-nochildren" class="section4">
+    <div id="h-auth-info-nochildren" class="history-bar section4">
       <div class="history-header">No Children</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-auth-info-child" class="section4">
+    <div id="h-auth-info-child" class="history-bar section4">
       <div>
         <div class="history-header">Child:</div>
         <div id="h-auth-info-child-ans" class="answer">CHILD NAME</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
     </div>
-    <div id="h-auth-info-nograndchildren" class="section4">
+    <div id="h-auth-info-nograndchildren" class="history-bar section4">
       <div class="history-header">No Grandchildren</div>
-      <br clear="both" />
+      <br clear="all" />
     </div>
-    <div id="h-auth-info-grandchild" class="section4">
+    <div id="h-auth-info-grandchild" class="history-bar section4">
       <div>
         <div class="history-header">Grandchild:</div>
         <div id="h-auth-info-grandchild-ans" class="answer">GRANDCHILD NAME</div>
-        <br clear="both" />
+        <br clear="all" />
       </div>
     </div>
   </div>

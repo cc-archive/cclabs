@@ -1,10 +1,6 @@
 
-#history div {
+#history div.history-bar {
   clear: both;
   height: 1.7em;
-} 
-#history div div {
-  height: auto;
-  clear: none;
 } 
   
