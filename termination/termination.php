@@ -609,7 +609,7 @@
           <div class="question-text">
           Please list all <a class="glossarylink" href="glossary.html#author">authors or artists</a>
           of the <a class="glossarylink" href="glossary.html#work">work</a>:<br>
-          <a href="#" id="more_authors">[ More ]</a> <a href="#" id="less_authors">[ Less ]</a>
+          <a id="more_authors">[ More ]</a> <a id="less_authors">[ Less ]</a>
           </div>
           <div class="question-options">
             <div id="authors_container"></div>
@@ -1013,8 +1013,8 @@
             Please list all of the <a class="glossarylink" href="glossary.html#author">author's or artist's</a>
             <a class="glossarylink" href="glossary.html#children">children</a>
             and indicate whether they are currently alive:<br>
-            <a href="#" id="more_children">[ More ]</a>
-            <a href="#" id="less_children">[ Less ]</a>
+            <a id="more_children">[ More ]</a>
+            <a id="less_children">[ Less ]</a>
             <br>
           </div>
           <div class="question-options">
@@ -1058,8 +1058,8 @@
             Please list all of <span id="author_grandchildren_name_span">[CHILD NAME]</span>'s
             <a class="glossarylink" href="glossary.html#children">children</a>
             (i.e., <span id="author_grandchildren-authorname2">AUTHOR NAME</span>'s grandchildren):<br>
-            <a href="#" id="more_grandchildren">[ More ]</a>
-            <a href="#" id="less_grandchildren">[ Less ]</a>
+            <a id="more_grandchildren">[ More ]</a>
+            <a id="less_grandchildren">[ Less ]</a>
           </div>
           <div class="question-options">
             <span id="no_grandchildren">None</span>
