@@ -20,7 +20,7 @@
   
 <p>Welcome to the Creative Commons Termination of Transfer Tool.  On this page we briefly explain what
 termination of transfer is all about, and how this tool can work for you.  If you like exploring as much
-as we do, try the navigation links over there to the left and at the bottom of the page.  And don't be scared
+as we do, try the navigation links over there to the right and at the bottom of the page.  And don't be scared
 to click on scary looking legal terms; we've put definitions for you over in our glossary.
 
 <h3 id="how_can_it_assist">How can this tool assist you?</h3>
@@ -81,8 +81,8 @@ that can then represent you in effecting your termination rights.</p>
 agreement entered into in relation to a creative work and, if so, whether your
 "notice window" is currently open, <a href="termination.php">click here</a>.</li>
 </p>
-<a style="color:black;" href="termination.php"><p style="text-align:center; border:1px solid black; width:90px; margin-right:auto; margin-left:auto; background-color:grey;">
-START</p></a>
+<p id="startbtn">
+<a href="termination.php">START</a></p>
 <p><b>Please note, this tool is not, nor is it intended to be, legal advice, or a substitute for legal advice.</b>
 </div>
 

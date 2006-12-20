@@ -1,4 +1,7 @@
 #content h2 { line-height: 110%; }
+#content {
+	width: 80%;
+}
 .question {
   font-weight: normal;
   clear: both;
@@ -48,9 +51,26 @@
 /*  padding-right: 25px; */
 /*  background-color: #ddd; */
 /*  border: 1px solid black; */
-  font-size: 130%;
+  font-size: 105%;
   line-height: 130%;
 }
+
+p#startbtn {
+	text-align:center; 
+	border:1px solid black; 
+	width:90px; 
+	margin:0 auto; 
+	background-color:#eef;
+}
+
+p#startbtn a, p#startbtn a:link {
+	color: #000;
+}
+
+p#startbtn a:hover {
+	color: #55f;
+}
+
 #screens {
 /*  width: 65%; */
   margin-left: auto;
