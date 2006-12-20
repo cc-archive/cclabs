@@ -21,5 +21,5 @@
 <? include_once "../_header.php"; ?>
 
 <div id="content">
-  <h2>Returning Author's Rights: The CC Termination of Transfer Tool [BETA]</h2>
+  <h2>Returning Author's Rights:<br>The CC Termination of Transfer Tool [BETA]</h2>
 

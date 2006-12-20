@@ -1114,7 +1114,7 @@
         the creation of the creative work in question to see if
         you have a termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-commissioned-pre1978">
@@ -1141,7 +1141,7 @@
         the creative work in question to see if you have a
         termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-commissioned-categoryA">
@@ -1171,7 +1171,7 @@
         the circumstances surrounding the creation of the creative
         work in question to see if you have a termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-commissioned-categoryB">
@@ -1199,7 +1199,7 @@
         the circumstances surrounding the creation of the creative
         work in question to see if you have a termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-commissioned-categoryC">
@@ -1226,7 +1226,7 @@
         the circumstances surrounding the creation of the creative
         work in question to see if you have a termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-after_window">
@@ -1248,7 +1248,7 @@
         in question to see if you have a current or future
         termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-before_window">
@@ -1273,7 +1273,7 @@
         circumstances surrounding the creation of the creative work
         in question to see if you have a termination right.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-invalid_grantor-203">
@@ -1299,7 +1299,7 @@
         on the circumstances surrounding the signing of the agreement
         or transfer to see if termination is possible.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-invalid_grantor-304">
@@ -1325,7 +1325,7 @@
         on the circumstances surrounding the signing of the agreement
         or transfer to see if termination is possible.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-commonlaw-303-grant">
@@ -1348,7 +1348,7 @@
         on the circumstances surrounding the signing of the agreement
         or transfer to see if termination is possible.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
     <div id="error-publicdomain">
@@ -1366,11 +1366,14 @@
         Please note, however, that this tool is not definitive nor is
         it legal advice.
       </p>
-      <p><a href="termination.html">Click here to start over</a></p>
+      <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
   </div><!-- screens -->
 
+  <div id="loading">
+    <h3>Loading... Please Wait</h3>
+  </div>
 </form>
 
 <? include_once "_footer.php"; ?>

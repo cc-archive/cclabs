@@ -3,8 +3,8 @@
 <div id="totnav">
 
 <div id="overview">
-<h4>Navigation Links</h4>
-<a href="#overview">Overview</a><br>
+<h4>Overview</h4>
+<a href="#overview">Overview of the Tool</a><br>
 <a href="#section_list">Sections of the Tool</a><br>
 <a href="#other_helpers">Other Helpers</a><br>
 </div>

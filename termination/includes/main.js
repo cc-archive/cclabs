@@ -942,6 +942,7 @@ function totit() {
       s.each(function(n){
         Element.hide(n);
       });
+      Element.hide($('loading'));
       Element.removeClassName($('h-familytree'), 'history');
       Element.removeClassName($('screens'), 'invisible');
       Element.removeClassName($('history'), 'invisible');

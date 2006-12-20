@@ -1,3 +1,4 @@
+#content h2 { line-height: 110%; }
 .question {
   font-weight: normal;
   clear: both;
@@ -210,7 +211,6 @@ h4 {
 }
 #glossary-explain {
   border: 1px dotted black;
-  font-size: 80%;
 }
 .successor_heading {
   float: left;
