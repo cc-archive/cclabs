@@ -1084,8 +1084,17 @@
       <span class="progress">Tool Completed</span>
       <br clear="both" />
       </div>
-      <p>Thank you for using the Creative Commons Termination of Transfer Tool.  An information sheet should in PDF format momentarily.  Take this form to your legal counsel, or one of the participating clinics
-         for further assistance.</p>
+      <p>
+        Thank you for using the Creative Commons Termination of Transfer
+        Tool. Based on the information you provided, it appears that you may
+        have a current termination right. To better understand what this
+        result means, feel free to check out this FAQ,
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_I_may_be_able_to_terminate_an_agreement.3B_what_do_I_do_now.3F">I
+        completed the tool and it tells me that I may be able to terminate an agreement; what do I do now?</a>
+        An information sheet containing information relevant to your termination right should appear in
+        PDF format momentarily. Take this form to your legal counsel, or one
+        of the <a class="glossarylink" href="glossary.html#clinic">participating clinics</a> for further assistance.
+      </p>
     </div>
 
     <div id="error-scope_of_employment">
@@ -1096,26 +1105,30 @@
       </div>
       <h3>Work For Hire - Scope of Employment</h3>
       <p>
-        If a copyrighted work was created within
-        the scope of employment, then the rights in the work
-        cannot be returned to the author under the
-        termination of transfer provisions of US copyright law.
-      </p>
+        Based on the information you have provided, it does not appear
+        likely that you have a termination right.  The information you
+        have provided indicates that the work was likely created within the
+        <a class="glossarylink" href="glossary.html#scope_of_employment">scope of employment</a>.
+        Works created within the scope of employment qualify as
+        <a class="glossarylink" href="glossary.html#work_for_hire">"works for hire"</a>
+        and "works for hire" are excluded from the termination of transfer provisions.
+      </p>  
+
       <p>
-        Based on the information you have provided, it seems
-        that you believe that the work was created within the
-        scope of employment and thus, the work cannot have the rights
-        returned to the author.  As a general rule, a work
-        created by an employee within the scope of their employment
-        is a "work for hire" and agreements and transfers in respect
-        of "works for hire" cannot be terminated.
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about agreements and transfers that cannot be terminated,
+        such as "works for hire," feel free check out
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">this section of our FAQ</a>.
+        And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive
         nor is it legal advice; so it may be that the work was
         not created in circumstances of employment and you may
         need to obtain some advice on the circumstances surrounding
-        the creation of the creative work in question to see if
+        the creation of the work to see if
         you have a termination right.
       </p>
       <p><a href="termination.php">Click here to start over</a></p>
@@ -1129,12 +1142,24 @@
       </div>
       <h3>Work For Hire - Commissioned Work Pre-1978</h3>
       <p>
-        Based on the information you have provided, it does not
-        appear that the rights can be returned to the author or artist.
+        Based on the information you have provided, it does not 
+        appear likely that you have a termination right.  The information
+        that you have provided indicates that the work was created before 1978
+        and by special order or commission.
         As a general rule, works that were created by special order
         or commission before January 1, 1978 are likely to be "works for hire"
-        and agreements and transfers in relation to "works for hire"
-        cannot be terminated.
+        and "works for hire" are excluded from the termination of transfer provisions.
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about agreements and transfers that cannot be terminated,
+        such as "works for hire," feel free check out
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">this section of our FAQ</a>.
+        To learn more about why a distinction is made between pre- and post-1978 materials, you may find
+        <a href="faq.php#Why_does_the_tool_make_distinctions_between_things_that_happened_before_January_1.2C_1978_and_after_January_1.2C_1978.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive
@@ -1157,15 +1182,22 @@
       <h3>Work For Hire - Commissioned Work Post-1978 (Motion Pictures, etc)</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that the rights can be returned to the author or
-        artist. As a general rule, works that were created by special
-        order or commission after January 1, 1978 under the terms of
-        a written agreement and that are a work that are part of a
-        motion picture or other audiovisual work, a translation, a
-        test, answer material for a test, an atlas, an instructional
-        text, are "works for hire" and agreements and transfers in
-        relation to "works for hire" are not capable of being
-        terminated.
+        appear likely that you have a termination right.  The information
+        you have provided indicates that the work was created after 1978
+        and likely qualifies as a "work for hire."  As a general rule,
+        "works for hire" are excluded from the termination of transfer provisions.
+      </p>
+
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about agreements and transfers that cannot be terminated,
+        such as "works for hire," feel free check out
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">this section of our FAQ</a>.
+        To learn more about why a distinction is made between pre- and post-1978 materials, you may find
+        <a href="faq.php#Why_does_the_tool_make_distinctions_between_things_that_happened_before_January_1.2C_1978_and_after_January_1.2C_1978.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
@@ -1173,7 +1205,7 @@
         surrounding the creation of the work mean that the work is
         not a "work for hire" and you may need to obtain some advice on
         the circumstances surrounding the creation of the creative
-        work in question to see if you have a termination right.
+        work to see if you have a termination right.
       </p>
       <p><a href="termination.php">Click here to start over</a></p>
     </div>
@@ -1187,13 +1219,19 @@
       <h3>Work For Hire - Commissioned Work Post-1978 (Collective Works, etc)</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that the rights can be returned to the author or
-        artist. As a general rule, works that were created by special
-        order or commission after January 1, 1978 under the terms of
-        a written agreement and that are a work that either a
-        compilation or a contribution to a collective work are works
-        for hire and agreements and transfers in relation to works
-        for hire are not capable of being terminated.
+        appear likely that you have a termination right.  The information
+        you have provided indicates that the work was made after 1978
+        and likely qualifies as a "work for hire." As a general rule,
+        "works for hire" are excluded from the termination of transfer provisions.
+      </p>
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about agreements and transfers that cannot
+        be terminated, such as "works for hire," feel free check out
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">this section of our FAQ</a>.
+        To learn more about why a distinction is made between pre- and post-1978 materials, you may find
+        <a href="faq.php#Why_does_the_tool_make_distinctions_between_things_that_happened_before_January_1.2C_1978_and_after_January_1.2C_1978.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
@@ -1201,7 +1239,7 @@
         surrounding the creation of the work mean that the work is
         not a "work for hire" and you may need to obtain some advice on
         the circumstances surrounding the creation of the creative
-        work in question to see if you have a termination right.
+        work to see if you have a termination right.
       </p>
       <p><a href="termination.php">Click here to start over</a></p>
     </div>
@@ -1215,12 +1253,21 @@
       <h3>Work For Hire - Commissioned Work Post-1978 (Supplementary Works)</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that the rights can be returned to the author or
-        artist. As a general rule, works that were created by special
-        order or commission after January 1, 1978 under the terms of
-        a written agreement and that are a supplementary work are
-        "works for hire" and agreements and transfers in relation to
-        "works for hire" are not capable of being terminated.
+        appear likely that you have a termination right.  The information
+        you have provided indicates that the work was made after 1978
+        and probably qualifies as a "work for hire." As a general rule,
+        "works for hire" are excluded from the termination of transfer provisions.
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about agreements and transfers that cannot be terminated,
+        such as "works for hire," feel free check out
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">this section of our FAQ</a>.
+        To learn more about why a distinction is made between pre- and post-1978 materials, you may find
+        <a href="faq.php#Why_does_the_tool_make_distinctions_between_things_that_happened_before_January_1.2C_1978_and_after_January_1.2C_1978.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
@@ -1228,7 +1275,7 @@
         surrounding the creation of the work mean that the work is
         not a "work for hire" and you may need to obtain some advice on
         the circumstances surrounding the creation of the creative
-        work in question to see if you have a termination right.
+        work to see if you have a termination right.
       </p>
       <p><a href="termination.php">Click here to start over</a></p>
     </div>
@@ -1242,14 +1289,21 @@
       <h3>Notice Window Expired</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that a current right to terminate the agreement
-        exists.
+        appear likely that a current right to terminate the agreement
+        exists.  The information you provided indicates that any
+        termination right that may have existed, has already expired.  
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
         it legal advice. You may need to obtain some advice on the
         circumstances surrounding the creation of the creative work
-        in question to see if you have a current or future
+        to see if you have a current or future
         termination right.
       </p>
       <p><a href="termination.php">Click here to start over</a></p>
@@ -1264,16 +1318,23 @@
       <h3>Before Notice Window</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that a current right to terminate the agreement exists
-        but one may arise in future beginning on
+        appear likely that a current right to terminate the agreement exists
+        but one may arise in future beginning in
         <span id="error-before_window-notice_window_open">[date]</span>.
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_I_may_have_a_termination_right_at_some_date_in_the_future.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
         it legal advice; so it may be that the information you input
         changes over time and/or that the circumstances surrounding
         the work's creation do not give rise to a right to terminate
-        at a future date. You may need to obtain some advice on the
+        at a future date or that the date generated by the tool changes.
+        You may need to obtain some advice on the
         circumstances surrounding the creation of the creative work
         in question to see if you have a termination right.
       </p>
@@ -1286,14 +1347,25 @@
       <span class="progress">Tool Completed</span>
       <br clear="both" />
       </div>
-      <h3>Post-1978 Agreement by Non-Author</h3>
+      <h3>Post-1978 Grant by Non-Author</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that any agreement or transfer entered into in
-        relation to the work may be able to be terminated. As a
-        general rule, only agreements and transfers entered into
-        after January 1st, 1978 that are signed by the author(s) may
-        be terminated. [MIA - TEXT REVIEW NEEDED]
+        appear that you have a termination right. As a
+        general rule, for agreements and transfers that are entered into
+        after January 1st, 1978, only those that are signed by the author or artist may
+        be terminated.  Based on the information you provided,
+        it seems that someone other than the author or artist
+        signed the agreement or transfer you are seeking to terminate.
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about non-author grants, you may find
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">this FAQ</a>
+        relevant. To learn more about why a distinction is made between pre- and post-1978 materials, you may find
+        <a href="faq.php#Why_does_the_tool_make_distinctions_between_things_that_happened_before_January_1.2C_1978_and_after_January_1.2C_1978.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
@@ -1312,14 +1384,27 @@
       <span class="progress">Tool Completed</span>
       <br clear="both" />
       </div>
-      <h3>Pre-1978 Agreement by Non-Family Member</h3>
+      <h3>Pre-1978 Grant by Non-Family Member</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that any agreement or transfer entered into in
-        relation to the work may be able to be terminated. As a
-        general rule, only agreements and transfers that are signed
-        either by the author(s) or their widows, widowers, children,
+        appear likely that you have a termination right.
+        Based on the information you provided, it seems that
+        someone other than the author or artist or one of their family
+        signed the agreement or transfer.  As a
+        general rule, for agreements and transfers that are signed
+        before January 1, 1978, only those that are signed by
+        the author(s) or their widows, widowers, children,
         next of kin or executors may be terminated.
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about grants by non-family members, you may find
+        <a href="faq.php#I_am_not_the_original_author_or_artist.3B_can_I_still_take_advantage_of_the_termination_of_transfer_provisions.3F">this FAQ</a>
+        relevant. To learn more about why a distinction is made between pre- and post-1978 materials, you may find
+        <a href="faq.php#Why_does_the_tool_make_distinctions_between_things_that_happened_before_January_1.2C_1978_and_after_January_1.2C_1978.3F">this FAQ</a> relevant.
+        And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
@@ -1341,8 +1426,18 @@
       <h3>Common Law Copyright Grant (17 USC 303)</h3>
       <p>
         Based on the information you have provided, it does not
-        appear that any agreement or transfer entered into in
-        relation to the work may be able to be terminated.
+        appear likely that you have a termination right.
+        The information you provided indicates that the agreement or
+        transfer may relate to "common law copyright." The termination of transfer
+        provisions appear to exclude agreements or transfers relating to common law copyright.
+      </p>
+      <p>
+        For more information about what this result means, you may find
+        <a href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this FAQ</a>
+        relevant. For more information about grants of "common law copyright," you may find
+        <a href="faq.php#I_am_not_the_original_author_or_artist.3B_can_I_still_take_advantage_of_the_termination_of_transfer_provisions.3F">this FAQ</a>
+        relevant. And of course, to understand more about the termination of transfer provisions
+        or the tool generally, you can review the <a href="faq.php">entire FAQ</a> at your leisure.
       </p>
       <p>
         Please note, however, that this tool is not definitive nor is
