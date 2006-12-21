@@ -89,6 +89,7 @@ p#startbtn a:hover {
 .section2 { background-color: rgb(86, 83, 159); }
 .section3 { background-color: rgb(86, 23, 159); }
 .section4 { background-color: rgb(86, 83, 109); }
+.section5 { background-color: rgb(86, 83, 109); } /* for completion + error screens */
 .screen-header {
   background-color: transparent;
   color: #fff;
@@ -139,6 +140,7 @@ p#startbtn a:hover {
 }
 .date-text {
   margin: 1px;
+  padding: 5px;
   text-align: center;
   border: 0px;
   background: #fff;

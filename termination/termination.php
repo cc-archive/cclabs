@@ -234,7 +234,7 @@
     </div><!-- commissioned -->
 
     <div id="pre1978">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section1">
       <span class="screen-header">What can be terminated?</span>
       <span class="progress">Section 1</span>
       <br clear="both" />
@@ -271,7 +271,7 @@
     </div><!-- pre1978 -->
 
     <div id="written_agreement">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section1">
       <span class="screen-header">What can be terminated?</span>
       <span class="progress">Section 1</span>
       <br clear="both" />
@@ -310,7 +310,7 @@
     </div><!-- written_agreement -->
 
     <div id="categoryA">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section1">
       <span class="screen-header">What can be terminated?</span>
       <span class="progress">Section 1</span>
       <br clear="both" />
@@ -357,7 +357,7 @@
     </div><!-- categoryA -->
 
     <div id="categoryB">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section1">
       <span class="screen-header">What can be terminated?</span>
       <span class="progress">Section 1</span>
       <br clear="both" />
@@ -419,7 +419,7 @@
     </div><!-- categoryB -->
 
     <div id="categoryC">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section1">
       <span class="screen-header">What can be terminated?</span>
       <span class="progress">Section 1</span>
       <br clear="both" />
@@ -951,7 +951,7 @@
     </div><!-- author_alive -->
 
     <div id="author_spouse_info">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section4">
       <span class="screen-header">Who can terminate? - Family</span>
       <span class="progress">Section 4</span>
       <br clear="both" />
@@ -1045,7 +1045,7 @@
     </div><!-- author_spouse_info -->
 
     <div id="author_grandchildren">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section4">
       <span class="screen-header">Who can terminate? - Grandchildren</span>
       <span class="progress">Section 4</span>
       <br clear="both" />
@@ -1079,7 +1079,7 @@
     </div><!-- author_grandchildren -->
 
     <div id="submit">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Tool Completed</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1089,7 +1089,7 @@
     </div>
 
     <div id="error-scope_of_employment">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1122,7 +1122,7 @@
     </div>
 
     <div id="error-commissioned-pre1978">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1149,7 +1149,7 @@
     </div>
 
     <div id="error-commissioned-categoryA">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1179,7 +1179,7 @@
     </div>
 
     <div id="error-commissioned-categoryB">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1207,7 +1207,7 @@
     </div>
 
     <div id="error-commissioned-categoryC">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1234,7 +1234,7 @@
     </div>
 
     <div id="error-after_window">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1256,7 +1256,7 @@
     </div>
 
     <div id="error-before_window">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Possible Future Termination Right</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1281,7 +1281,7 @@
     </div>
 
     <div id="error-invalid_grantor-203">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1307,7 +1307,7 @@
     </div>
 
     <div id="error-invalid_grantor-304">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1333,7 +1333,7 @@
     </div>
 
     <div id="error-commonlaw-303-grant">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Right Unlikely</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
@@ -1356,7 +1356,7 @@
     </div>
 
     <div id="error-publicdomain">
-      <div class="screen-titlebar">
+      <div class="screen-titlebar section5">
       <span class="screen-header">Termination Unnecessary</span>
       <span class="progress">Tool Completed</span>
       <br clear="both" />
