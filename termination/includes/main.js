@@ -1293,7 +1293,7 @@ function calculateTerminationWindow() {
   */
 
   /* So if the copyright date is on or after 10/27/1939 , we're in 304(c) land */
-  /* because we're only asking the year, though, we'll call everything in 1939 304(d) and flag it for the clinic
+  /* because we're only asking the year, though, we'll call everything in 1939 304(d) and flag it for the clinic */
   } else if ( dates.copyright > 1939 ) {
 
     tot.type = '304(c)';
