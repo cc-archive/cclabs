@@ -9,15 +9,17 @@
 
 <div id="overview">
 <h4>Overview</h4>
-<a href="#section1">Section 1</a><br>
-<a href="#section2">Section 2</a><br>
-<a href="#section3">Section 3</a><br>
-<a href="#section4">Section 4</a><br>
+<a href="#section1">What? - Section 1</a><br>
+<a href="#section2">When? - Section 2</a><br>
+<a href="#section3">Tell us more! - Section 3</a><br>
+<a href="#section4">Who? - Section 4</a><br>
 </div>
 
+<!-- unused for now...
 <div id="termlist">
 <h4>Legal Concepts</h4>
 </div>
+-->
 </div>
 
 <div id="intro">

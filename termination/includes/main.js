@@ -1172,7 +1172,6 @@ function rebuildFamilyTree(authors) {
 }
 
 function fixGlossaryLinks() {
-  var terms = new Array;
   var onclick = function() {
     var w = popUp(this.href, 'console', 200, 800);
     w.term = this.href.replace(/.*glossary.html#/,'');
@@ -1185,13 +1184,13 @@ function fixGlossaryLinks() {
       return;
     }
     a.onclick = onclick;
-    var t = a.href.replace(/.*glossary.html#/,'');
-    terms[t] = '<a class=glossarylink href="' + a.href + '">' + a.innerHTML + '</a><br><br>';
+    // var t = a.href.replace(/.*glossary.html#/,'');
+    // terms[t] = '<a class=glossarylink href="' + a.href + '">' + a.innerHTML + '</a><br><br>';
   });
-  var termlist = $('termlist');
-  if (!termlist) return;
-  termlist.innerHTML += $H(terms).values().sort().join("");
-  $A(termlist.childNodes).findAll(function(n) { return String(n).match('http'); }).each(function(a){ a.onclick = onclick; });
+  // var termlist = $('termlist');
+  // if (!termlist) return;
+  // termlist.innerHTML += $H(terms).values().sort().join("");
+  // $A(termlist.childNodes).findAll(function(n) { return String(n).match('http'); }).each(function(a){ a.onclick = onclick; });
 }
 
 function showGlossaryEntry(term) {

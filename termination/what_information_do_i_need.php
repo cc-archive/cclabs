@@ -11,6 +11,17 @@
 
 <div id="termlist">
 <h4>Legal Concepts</h4>
+<a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a><br>
+<a class="glossarylink" href="glossary.html#author">author or artist</a><br>
+<a class="glossarylink" href="glossary.html#authors_family">author's family or representative</a><br>
+<a class="glossarylink" href="glossary.html#registration_number">copyright registration number</a><br>
+<a class="glossarylink" href="glossary.html#creation_date">creation date</a><br>
+<a class="glossarylink" href="glossary.html#work">creative work</a><br>
+<a class="glossarylink" href="glossary.html#notice_window">notice window</a><br>
+<a class="glossarylink" href="glossary.html#grantee">original grantee</a><br>
+<a class="glossarylink" href="glossary.html#clinic">participating law clinics</a><br>
+<a class="glossarylink" href="glossary.html#publication_date">publication date</a><br>
+<a class="glossarylink" href="glossary.html#type_of_work">type of work</a><br>
 </div>
 
 </div>
@@ -45,7 +56,8 @@ better answer the questions.</p>
 
 <p>If you work through the tool and, based on the information you provide,
 it seems that you are not currently eligible to terminate an agreement
-in relation to a copyright work, do not be disheartened.  It may be that
+in relation to a <a class="glossarylink" href="glossary.html#work">copyrighted work</a>,
+do not be disheartened.  It may be that
 you entered some of the information in incorrectly and/or that you need
 some advice and assistance to correctly interpret and/or respond to the questions.</p>
 
