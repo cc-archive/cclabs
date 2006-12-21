@@ -39,6 +39,10 @@ include_once "_header.php";
     <h3><a href="metadata/">Metadata Lab</a></h3>
     <p>The license choosers above generate experimental metadata.  Read all about it.</p>
   </div>
+  <div class="blurb">
+    <h3><a href="termination/">Termination of Transfer Tool</a></h3>
+    <p>The U.S. Congress decided that it was important to provide a mechanism under which previously sold or licensed rights under copyright could be returned to the original author or their family members.  This tool is Creative Commons' attempt at simplifying that process to make it more author-friendly and accessible.  Please take a look at the <a href="termination/faq.php">FAQ</a>, and the tool itself, for more information.</p>
+  </div>
   <h2><a name="feedback"></a>Feedback</h2>
   <div class="blurb">
   <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
