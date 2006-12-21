@@ -281,11 +281,11 @@ buttons = {
 
       dates.publish = checkYear($F('pyear'));
 
-      if (!dates.publish) {
+      if (dates.create < 1978 && !dates.publish) {
         Element.show(getErrorDiv('publish_date'));
         return;
 
-      } else if (dates.publish < dates.create) {
+      } else if (dates.publish && (dates.publish < dates.create)) {
         Element.show(getErrorDiv('publish_date'));
         alert('Publication Date cannot be prior to Creation Date');
         return;
@@ -293,7 +293,7 @@ buttons = {
       } else {
         Element.hide(getErrorDiv('publish_date'));
         dates.copyright = calculateCopyrightDate(dates.create, dates.publish);
-        tot.publish_date = dates.publish.toString();
+        tot.publish_date = dates.publish ? dates.publish.toString() : '(unspecified)';
         tot.copyright_date = dates.copyright.toString();
 
         if (dates.copyright < 1923) {

@@ -58,12 +58,12 @@
       <br clear="all" />
     </div>
     <div id="h-pdate" class="history-bar section2">
-      <div class="history-header">Publish Date:</div>
+      <div class="history-header">Publication Date:</div>
       <div id="h-pdate-ans" class="answer">MM/DD/YYYY</div>
       <br clear="all" />
     </div>
     <div id="h-gdate" class="history-bar section2">
-      <div class="history-header">Transfer Date:</div>
+      <div class="history-header">Grant Date:</div>
       <div id="h-gdate-ans" class="answer">MM/DD/YYYY</div>
       <br clear="all" />
     </div>
@@ -808,9 +808,8 @@
         <div class="question">
           <div class="question-text">
             Was the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>
-            made by a member of the <a class="glossarylink" href="glossary.html#author">author's or artist's</a>
-            family, or by the <a class="glossarylink" href="glossary.html#executors">executor</a> of the
-            author's or artist's estate?
+            made by a member of the <a class="glossarylink" href="glossary.html#authors_family">author or artist's
+            immediate family</a>, or by the <a class="glossarylink" href="glossary.html#executors">executors</a>?
           </div>
           <div class="question-options">
             <div class="option">
@@ -851,7 +850,8 @@
       </div>
       <div>
         <div class="question">
-          Please list each family member or <a class="glossarylink" href="glossary.html#executor">executor</a>
+          Please list each <a class="glossarylink" href="glossary.html#authors_family">family member</a>
+	  or <a class="glossarylink" href="glossary.html#executor">executor</a>
           who signed the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>,
           their relationship to the <a class="glossarylink" href="glossary.html#author">author or artist</a>,
           and whether they are currently alive:
