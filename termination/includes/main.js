@@ -1176,7 +1176,7 @@ function fixGlossaryLinks() {
   var onclick = function() {
     var w = popUp(this.href, 'console', 200, 800);
     w.term = this.href.replace(/.*glossary.html#/,'');
-    w.onload = function() { w.showGlossaryEntry(this.term); };
+    /* w.onload = function() { w.showGlossaryEntry(this.term); }; */
     return false;
   };
   $$('.glossarylink').each(function(a){
@@ -1198,6 +1198,7 @@ function showGlossaryEntry(term) {
   $$('#glossary div').each(function(div) {
     if (div.id == term) {
        Element.show(div);
+       new Effect.ScrollTo(div, { duration: 0.0 });
     } else {
        Element.hide(div);
     }
@@ -1214,6 +1215,7 @@ function fixIntraGlossaryLinks() {
   $$('.glossarylink').each(function(a){
     a.onclick = onclick;
   });
+  if (window['term']) showGlossaryEntry(term);
 }
 
 var newWin = null;

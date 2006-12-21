@@ -103,7 +103,7 @@ Information required to complete this section:
 <li>Was the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a> signed by the
 <a class="glossarylink" href="glossary.html#author">author(s)</a></li>
 <li>Was the agreement or transfer signed by the
-<a class="glossarylink" href="glossary.html#family">author's spouse, widow (or widower), children, next of kin or executors & their names</a></li>
+<a class="glossarylink" href="glossary.html#authors_family">author's spouse, widow (or widower), children, next of kin or executors & their names</a></li>
 <li>Who among the author's spouse, widow (or widower), children and grandchildren are still living & their names</li>
 </ul>
 </div>

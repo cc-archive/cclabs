@@ -29,7 +29,7 @@ to click on scary looking legal terms; we've put definitions for you over in our
 type of creative <a class="glossarylink" href="glossary.html#work">work</a> that is protected by
 <a class="glossarylink" href="glossary.html#copyright_law">copyright law</a>?<br>
 <br>
-Are you a <a class="glossarylink" href="glossary.html#family">spouse, widow, other relative or authorized
+Are you a <a class="glossarylink" href="glossary.html#authors_family">spouse, widow, other relative or authorized
 representative</a> of an <a class="glossarylink" href="glossary.html#author">author or artist</a>?<br>
 <br>
 Did you or the <a class="glossarylink" href="glossary.html#author">author or artist</a> enter into
@@ -47,7 +47,7 @@ our <a href="faq.php">FAQ</a>.</p>
 <h3 id="what_does_it_mean">What does this mean for you?</h3>
 
 <p>Under US law, <a class="glossarylink" href="glossary.html#author">authors and artists</a> and, in some cases, their
-<a class="glossarylink" href="glossary.html#family">spouse, widow, other relatives or authorized representatives</a>
+<a class="glossarylink" href="glossary.html#authors_family">spouse, widow, other relatives or authorized representatives</a>
 have the chance to terminate earlier <a class="glossarylink" href="glossary.html#agreement">agreements or transfers</a>
 that they may have entered into many years ago before they
 knew how successful or profitable their work would be.  Under certain provisions of the
@@ -79,7 +79,8 @@ that can then represent you in effecting your termination rights.</p>
 
 <p>To start working through the tool and see if you may be eligible to terminate an
 agreement entered into in relation to a creative work and, if so, whether your
-"notice window" is currently open, <a href="termination.php">click here</a>.</li>
+<a class="glossarylink" href="glossary.html#notice_window">"notice window"</a> is currently open,
+<a href="termination.php">click here</a>.</li>
 </p>
 <p id="startbtn">
 <a href="termination.php">START</a></p>
