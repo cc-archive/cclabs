@@ -26,51 +26,50 @@
 <div id="intro">
   
 <p>Welcome to the Creative Commons Termination of Transfer Tool. On this page we briefly explain what
-termination of transfer is all about, and how this tool can work for you. For more detailed information,
-please take a look at our <a href="faq.php">FAQ</a>.  If you like exploring as much
-as we do, try the navigation links on the right and at the bottom of the page. And don't be shy
-about clicking on scary looking legal terms; we've put definitions for you in our
-<a class="glossarylink" href="glossary.html">glossary</a>.</p>
+termination of transfer is all about, and how this tool can work for you.</p>
 
 <h3 id="how_can_it_assist">How can this tool assist you?</h3>
 
 <p>Are you the creator of a book, a cartoon, a screenplay, a movie, a piece of artwork, or some other
 type of creative work that is protected by <a class="glossarylink" href="glossary.html#copyright_law">U.S. copyright law</a>?<br>
 <br>
-Perhaps you are a <a class="glossarylink" href="glossary.html#authors_family">family member or authorized representative</a>
-of such an <a class="glossarylink" href="glossary.html#author">author or artist</a>?<br>
+Or, are you a <a class="glossarylink" href="glossary.html#authors_family">family member or representative</a>
+of an <a class="glossarylink" href="glossary.html#author">author or artist</a>?<br>
 <br>
-Was the creator's copyrighted work sold or transferred to someone else who is now reaping commercial rewards from it?<br>
+Was that copyrighted work sold or licensed to someone else who is now reaping commercial rewards from it (with little return to you)?<br>
 <br>
-Would you like to get back the rights to the work?</p>
+Would you like to get back control over the work?</p>
 
-<p>If so, this tool may help you determine whether you can terminate that
-<a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>.
-"Terminating" the agreement means that the rights to the work return to you - you are back in control
-of all of the rights in relation to your work.*</p>
+<p>If so, this tool may help you in identifying whether you can regain control of 
+rights that were sold or licensed away.</p>
 
-<p>*To learn more about this tool, and whether it might be useful for you, please check out our <a href="faq.php">FAQ</a>.</p>
+<p>For more detailed information about the law surrounding the "termination of transfers" provisions or this tool,
+please take a look at <a href="faq.php">our FAQ</a>.  To move through the tool, use the navigation links
+on the right or the bottom of the page.  And don't be shy about clicking on scary looking legal terms;
+we've put important definitions for you in <a href="glossary.html">our Glossary</a>.
 
 <h3 id="what_does_it_mean">What does this mean for you?</h3>
 
-<p>Under certain circumstances, US law allows an <a class="glossarylink" href="glossary.html#author">author or artist</a>
+<p>US copyright law allows an <a class="glossarylink" href="glossary.html#author">author or artist</a>
 (and sometimes a <a class="glossarylink" href="glossary.html#authors_family">family member or authorized representative</a>)
-to cancel an <a class="glossarylink" href="glossary.html#agreement">agreement</a> in which the rights to a copyrighted work
-were sold or transferred, particularly when the agreement was made many years ago - before anyone knew how successful
-or profitable that work would become. These provisions of the US Copyright Act are commonly called the "termination of transfer" rules.
-A successful termination allows the beneficiary to negotiate new licenses and other deals with knowledge of the actual
-market value of their work.</p>
+- in certain circumstances - to cancel an <a class="glossarylink" href="glossary.html#agreement">agreement</a>
+(also known as a transfer) under which the rights to a copyrighted work
+were sold or licensed, particularly when the agreement was made many years ago - before anyone knew how successful
+or profitable that work would become. These provisions of the US Copyright Act are commonly called the "termination of transfer" provisions.
+If an agreement can be cancelled, this allows the person who reclaims the rights
+(which is generally the author or artist or their immediate family) to negotiate new and hopefully better
+licenses and other deals with knowledge of the actual market value of their work.</p>
 
 <h3 id="what_does_it_do">What does this tool do?</h3>
 
-<p>This tool will hopefully make it easier for you to identify and exercise "termination" rights under U.S. copyright law.
-Specifically, this tool assists you in determining whether you may have a right to terminate a particular
-<a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>, and, if so, it calculates
-- based on the information you provide - whether you are actually allowed to activate this termination right at the moment.
-The tool also gathers some basic details about the work, it's creation and it's exploitation.
+<p>This tool is designed to  make people more aware of the "termination of transfer" provisions
+and to make it easier for people to identify if they have a "termination right" under U.S. copyright law.
+If a termination right may exist, the tool calculates
+- based on the information you provide - whether that termination right can be exercised now
+and then gathers some basic details about the work that is useful and relevant to preparing a "termination notice."
 This information can then be passed on to either a lawyer or a
-<a class="glossarylink" href="glossary.html#clinic">participating law clinic</a> that can then represent you
-in effecting your termination rights.  While this tool is in a BETA stage, however, the gathered information
+<a class="glossarylink" href="glossary.html#clinic">participating law clinic</a>, who can then assist you
+in exercising your termination rights.  While this tool is in a BETA stage, however, this information
 will simply be summarized and presented in an Information Sheet.</p>
 
 <p>To learn more about the information that you will need in order to complete the tool,
@@ -78,9 +77,7 @@ will simply be summarized and presented in an Information Sheet.</p>
 
 <h3 id="get_started">How do I get started?</h3>
 
-<p>To start working through the tool and see if you may be eligible to terminate an
-agreement entered into in relation to a creative work and, if so, whether your
-<a class="glossarylink" href="glossary.html#notice_window">"notice window"</a> is currently open,
+<p>To start working through the tool and see if you may be able to terminate an existing agreement,
 <a href="termination.php">click here</a>.</p>
 
 <p id="startbtn"><a href="termination.php">START</a></p>

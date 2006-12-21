@@ -128,8 +128,7 @@ we have also prepared a <a class="glossarylink" href="glossary.html">glossary</a
 <br>
 We have also compiled <a href="documents.php">some hints and tips about where you may be able to find this information here</a>.<br>
 </p>
-<a style="color:black;" href="termination.php"><p style="text-align:center; border:1px solid black; width:90px; margin-right:auto; margin-left:auto; background-color:grey;">
-START</p></a>
+<p id="startbtn"><a href="termination.php">START</a></p>
 <br>
 
 </div>

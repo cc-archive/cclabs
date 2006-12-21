@@ -187,8 +187,7 @@ The US Library of Congress catalog provides an online searchable catalog (<a hre
 <br>
 When it comes to searching the Copyright Office's records, in addition to conducting the searches yourself, you also have the option of hiring private search firms or of paying the Copyright Office to conduct the search for you (<a href="http://www.copyright.gov/forms/search_estimate.html">http://www.copyright.gov/forms/search_estimate.html</a>).<br>
 </p>
-<a style="color:black;" href="termination.php"><p style="text-align:center; border:1px solid black; width:90px; margin-right:auto; margin-left:auto; background-color:grey;">
-START</p></a>
+<p id="startbtn"><a href="termination.php">START</a></p>
 <p>Back to: <a href="what_information_do_i_need.php">Overview of Termination of Transfer Tool</a></p>
 </div>
 
