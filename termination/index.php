@@ -41,7 +41,12 @@ Was that copyrighted work sold or licensed to someone else who is now reaping co
 Would you like to get back control over the work?</p>
 
 <p>If so, this tool may help you in identifying whether you can regain control of 
-rights that were sold or licensed away.</p>
+rights that were sold or licensed away. For example, if the work was
+published between 1929 and 1939 or between 1948 and 1961, or if the
+agreement selling or licensing rights in the work is dated between
+1978 and 1982, you may have the ability to regain rights in 2007 (if
+other requirements are met).
+</p>
 
 <p>For more detailed information about the law surrounding the "termination of transfers" provisions or this tool,
 please take a look at <a href="faq.php">our FAQ</a>.  To move through the tool, use the navigation links
