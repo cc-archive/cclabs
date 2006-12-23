@@ -17,6 +17,7 @@ var tot = {
     authors_set: false,
     successor_grantors: [],
     work_for_hire: '',
+    transfer_by_will: '',
     type: '',
     author_grant: '',
     successor_grant: '',
@@ -94,7 +95,7 @@ buttons = {
 
       if ($F(commissioned) == 'No')  {
         tot.work_for_hire = 'No';
-        showScreen($('create_date'));
+        showScreen($('transfer_by_will'));
 
       } else if ($F(commissioned) == 'Yes')  {
         showScreen($('pre1978'));
@@ -155,7 +156,7 @@ buttons = {
 
       if ($F(written) == 'No')  {
         tot.work_for_hire = 'No';
-        showScreen($('create_date'));
+        showScreen($('transfer_by_will'));
 
       } else if ($F(written) == 'Yes')  {
         showScreen($('categoryA'));
@@ -248,6 +249,34 @@ buttons = {
         showScreen($('error-commissioned-categoryC'));
 
       } else if ($F(categoryC) == 'No')  {
+        showScreen($('transfer_by_will'));
+      }
+    },
+    back: goBack
+  },
+
+  transfer_by_will: {
+    next: function() {
+      /* should be Yes/No/false */
+      var will = Form.getInputs($('term_form'),'radio','will').find(function(input){
+        return input.checked;
+      });
+
+      /* nothing selected or unexpected return value */
+      if (!will || ($F(will) != 'Yes' && $F(will) != 'No')) {
+        Element.show(getErrorDiv('transfer_by_will'));
+        return;
+      }
+
+      Element.hide(getErrorDiv('transfer_by_will'));
+      Element.update($('h-will-ans'), $F(will));
+      showHistory($('h-will'));
+
+      if ($F(will) == 'Yes') {
+        tot.transfer_by_will = 'Yes';
+        showScreen($('error-transfer_by_will'));
+
+      } else if ($F(will) == 'No')  {
         showScreen($('create_date'));
       }
     },

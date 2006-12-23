@@ -95,15 +95,22 @@ def genLatex( args ):
     ## Do Variable Substitution on main template
     output = template['main']
     output = output.replace('[GRANTTYPE]',        str(args.find("type").text))
-    output = output.replace('[NOTICEOPEN]',       args.find("nwopen").text)
-    output = output.replace('[NOTICECLOSE]',      args.find("nwclose").text)
-    output = output.replace('[TERMOPEN]',         args.find("twopen").text)
-    output = output.replace('[TERMCLOSE]',        args.find("twclose").text)
     output = output.replace('[WORKTITLE]',        args.find("title").text)
     output = output.replace('[CREATEDATE]',       args.find("create_date").text)
     output = output.replace('[PUBLISHDATE]',      args.find("publish_date").text)
     output = output.replace('[COPYRIGHTDATE]',    args.find("copyright_date").text)
     output = output.replace('[COPYRIGHTNUMBER]',  args.find("ocn").text)
+
+    ## Special note for 203 terminations
+    if str(args.find("type").text) == '203':
+      output = output.replace('[NOTICECLOSE]', '[NOTICECLOSE] *')
+      output = output.replace('[TERMCLOSE]', '[TERMCLOSE] *')
+      output = output.replace('%[203FOOTNOTE]', '')
+
+    output = output.replace('[NOTICEOPEN]',       args.find("nwopen").text)
+    output = output.replace('[NOTICECLOSE]',      args.find("nwclose").text)
+    output = output.replace('[TERMOPEN]',         args.find("twopen").text)
+    output = output.replace('[TERMCLOSE]',        args.find("twclose").text)
 
     authors = args.findall("authors")
     for author in authors:

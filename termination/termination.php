@@ -52,6 +52,11 @@
       <div id="h-wfh-catC-ans" class="answer">YES/NO</div>
       <br clear="all" />
     </div>
+    <div id="h-will" class="history-bar section1">
+      <div class="history-header">Transfer by Will:</div>
+      <div id="h-will-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
     <div id="h-cdate" class="history-bar section2">
       <div class="history-header">Creation Date:</div>
       <div id="h-cdate-ans" class="answer">MM/DD/YYYY</div>
@@ -483,6 +488,42 @@
       <br clear="both"/>
     </div><!-- categoryC -->
 
+    <div id="transfer_by_will">
+      <div class="screen-titlebar section1">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 1</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was the transfer by <a class="glossarylink" href="glossary.html#will">will</a>?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="will" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="will" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- transfer_by_will -->
+
     <div id="create_date">
       <div class="screen-titlebar section2">
       <span class="screen-header">When can the transfer be terminated?</span>
@@ -851,7 +892,7 @@
       <div>
         <div class="question">
           Please list each <a class="glossarylink" href="glossary.html#authors_family">family member</a>
-	  or <a class="glossarylink" href="glossary.html#executor">executor</a>
+          or <a class="glossarylink" href="glossary.html#executor">executor</a>
           who signed the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>,
           their relationship to the <a class="glossarylink" href="glossary.html#author">author or artist</a>,
           and whether they are currently alive:
@@ -1277,6 +1318,34 @@
         the circumstances surrounding the creation of the creative
         work to see if you have a termination right.
       </p>
+      <p><a href="termination.php">Click here to start over</a></p>
+    </div>
+
+    <div id="error-transfer_by_will">
+      <div class="screen-titlebar section5">
+      <span class="screen-header">Termination Right Unlikely</span>
+      <span class="progress">Tool Completed</span>
+      <br clear="both" />
+      </div>
+      <h3>Transfer by Will</h3>
+      <p>
+        Based on the information you have provided, it does not appear likely
+        that you have a termination right.  The information that you have
+        provided indicates that the agreement or transfer you wish to terminate
+        is a <a class="glossarylink" href="glossary.html#will">will</a>.
+        Transfers of copyright interests that occur by will cannot be
+        terminated.
+      <p></p>
+        For more information about what this result means, you may find <a
+        href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this
+        FAQ<a> relevant.  For more information about agreements and transfers
+        that cannot be terminated, such as transfers of copyright interests by
+        will feel free check out this
+        <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">section
+        of our FAQ</a>.  And of course, to understand more about the
+        termination of transfer provisions or the tool generally, you can
+        review the <a href="faq.php">entire FAQ</a>.
+      </p.
       <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
