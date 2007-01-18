@@ -1335,17 +1335,18 @@
         is a <a class="glossarylink" href="glossary.html#will">will</a>.
         Transfers of copyright interests that occur by will cannot be
         terminated.
-      <p></p>
+      </p>
+      <p>
         For more information about what this result means, you may find <a
         href="faq.php#I_completed_the_tool_and_it_tells_me_that_it_is_unlikely_that_I_can_terminate_an_agreement.3B_what_do_I_do_now.3F">this
-        FAQ<a> relevant.  For more information about agreements and transfers
+        FAQ</a> relevant.  For more information about agreements and transfers
         that cannot be terminated, such as transfers of copyright interests by
         will feel free check out this
         <a href="faq.php#What_kinds_of_agreements_cannot_be_terminated.3F">section
         of our FAQ</a>.  And of course, to understand more about the
         termination of transfer provisions or the tool generally, you can
         review the <a href="faq.php">entire FAQ</a>.
-      </p.
+      </p>
       <p><a href="termination.php">Click here to start over</a></p>
     </div>
 
