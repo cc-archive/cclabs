@@ -496,7 +496,9 @@
       </div>
       <div class="question">
         <div class="question-text">
-          Was the transfer by <a class="glossarylink" href="glossary.html#will">will</a>?
+          Is the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>
+          you want to terminate part of a
+          <a class="glossarylink" href="glossary.html#will">last will and testament</a>?
         </div>
         <div class="question-options">
           <div class="option">
