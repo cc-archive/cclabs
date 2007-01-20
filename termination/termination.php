@@ -18,66 +18,7 @@
     <h3>Loading... Please Wait</h3>
   </div>
   <div id="history" class="invisible">
-    <div id="h-wfh-emp" class="history-bar section1">
-      <div class="history-header">Employee Created Work:</div>
-      <div id="h-wfh-emp-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div><div id="h-wfh-com" class="history-bar section1">
-      <div class="history-header">Commissioned Work:</div>
-      <div id="h-wfh-com-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-wfh-pre" class="history-bar section1">
-      <div class="history-header">Work Created Before 1978:</div>
-      <div id="h-wfh-pre-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-wfh-wri" class="history-bar section1">
-      <div class="history-header">Signed Written Agreement:</div>
-      <div id="h-wfh-wri-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-wfh-catA" class="history-bar section1">
-      <div class="history-header">Movie, Translation, Test, etc:</div>
-      <div id="h-wfh-catA-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-wfh-catB" class="history-bar section1">
-      <div class="history-header">Collective Work:</div>
-      <div id="h-wfh-catB-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-wfh-catC" class="history-bar section1">
-      <div class="history-header">Supplementary Work:</div>
-      <div id="h-wfh-catC-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-will" class="history-bar section1">
-      <div class="history-header">Transfer by Will:</div>
-      <div id="h-will-ans" class="answer">YES/NO</div>
-      <br clear="all" />
-    </div>
-    <div id="h-cdate" class="history-bar section2">
-      <div class="history-header">Creation Date:</div>
-      <div id="h-cdate-ans" class="answer">MM/DD/YYYY</div>
-      <br clear="all" />
-    </div>
-    <div id="h-pdate" class="history-bar section2">
-      <div class="history-header">Publication Date:</div>
-      <div id="h-pdate-ans" class="answer">MM/DD/YYYY</div>
-      <br clear="all" />
-    </div>
-    <div id="h-gdate" class="history-bar section2">
-      <div class="history-header">Grant Date:</div>
-      <div id="h-gdate-ans" class="answer">MM/DD/YYYY</div>
-      <br clear="all" />
-    </div>
-    <div id="h-names" class="history-bar section3">
-      <div class="history-header">Authors:</div>
-      <div id="h-names-ans" class="answer">NAMES</div>
-      <br clear="all" />
-    </div>
-    <div id="h-basic" class="history-bar section3">
+    <div id="h-basic" class="history-bar section1">
       <div>
         <div class="history-header">Title:</div>
         <div id="h-basic-title" class="answer">TITLE</div>
@@ -103,6 +44,65 @@
         <div id="h-basic-desc" class="answer">GRANT DESCRIPTION</div>
         <br clear="all" />
       </div>
+    </div>
+    <div id="h-names" class="history-bar section1">
+      <div class="history-header">Authors:</div>
+      <div id="h-names-ans" class="answer">NAMES</div>
+      <br clear="all" />
+    </div>
+    <div id="h-wfh-emp" class="history-bar section2">
+      <div class="history-header">Employee Created Work:</div>
+      <div id="h-wfh-emp-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div><div id="h-wfh-com" class="history-bar section2">
+      <div class="history-header">Commissioned Work:</div>
+      <div id="h-wfh-com-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-wfh-pre" class="history-bar section2">
+      <div class="history-header">Work Created Before 1978:</div>
+      <div id="h-wfh-pre-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-wfh-wri" class="history-bar section2">
+      <div class="history-header">Signed Written Agreement:</div>
+      <div id="h-wfh-wri-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-wfh-catA" class="history-bar section2">
+      <div class="history-header">Movie, Translation, Test, etc:</div>
+      <div id="h-wfh-catA-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-wfh-catB" class="history-bar section2">
+      <div class="history-header">Collective Work:</div>
+      <div id="h-wfh-catB-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-wfh-catC" class="history-bar section2">
+      <div class="history-header">Supplementary Work:</div>
+      <div id="h-wfh-catC-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-will" class="history-bar section2">
+      <div class="history-header">Transfer by Will:</div>
+      <div id="h-will-ans" class="answer">YES/NO</div>
+      <br clear="all" />
+    </div>
+    <div id="h-cdate" class="history-bar section3">
+      <div class="history-header">Creation Date:</div>
+      <div id="h-cdate-ans" class="answer">MM/DD/YYYY</div>
+      <br clear="all" />
+    </div>
+    <div id="h-pdate" class="history-bar section3">
+      <div class="history-header">Publication Date:</div>
+      <div id="h-pdate-ans" class="answer">MM/DD/YYYY</div>
+      <br clear="all" />
+    </div>
+    <div id="h-gdate" class="history-bar section3">
+      <div class="history-header">Grant Date:</div>
+      <div id="h-gdate-ans" class="answer">MM/DD/YYYY</div>
+      <br clear="all" />
     </div>
     <div id="h-agrant" class="history-bar section4">
       <div class="history-header">Author Grant:</div>
@@ -162,525 +162,10 @@
 
   <div id="screens" class="invisible">
 
-    <div id="employee">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Did you, or the <a class="glossarylink" href="glossary.html#author">author or artist</a>,
-          <br> create the <a class="glossarylink" href="glossary.html#work">work</a> within the <br>
-          <a class="glossarylink" href="glossary.html#scope_of_employment">scope of your, or his or her, employment</a>?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="employee" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="employee" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- employee -->
-
-    <div id="commissioned">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Was the <a class="glossarylink" href="glossary.html#work">work</a>
-          created in response to a special order or commission by
-          some other person or company?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="commissioned" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="commissioned" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- commissioned -->
-
-    <div id="pre1978">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Was the <a class="glossarylink" href="glossary.html#work">work</a>
-          created before January 1st, 1978?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="pre1978" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="pre1978" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- pre1978 -->
-
-    <div id="written_agreement">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Was there a <a class="glossarylink" href="glossary.html#written_agreement">written agreement</a>
-          regarding the special order or commission
-          which explicitly refers to the work as a
-          <a class="glossarylink" href="glossary.html#work_for_hire">"work for hire?"</a>
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="written" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="written" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- written_agreement -->
-
-    <div id="categoryA">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Was the <a class="glossarylink" href="glossary.html#work">work</a> created for use as one of the following?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="categoryA" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="categoryA" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div>
-      <div style="clear:left;">
-        <!-- category list (part A) -->
-        <ul class="term-category-list">
-          <li>part of a motion picture or other audiovisual work</li>
-          <li>a translation</li>
-          <li>a test</li>
-          <li>answer material for a test</li>
-          <li>an atlas</li>
-          <li>as an instructional text (text and/or graphics)</li>
-        </ul>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- categoryA -->
-
-    <div id="categoryB">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Was the <a class="glossarylink" href="glossary.html#work">work</a> created for use as one of the following?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="categoryB" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="categoryB" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div><!-- category list (part B) -->
-      <div>
-        <ul class="term-category-list">
-          <li>a <a class="glossarylink" href="glossary.html#compilation">"compilation,"</a> such as: 
-            <ul>
-              <li>catalogs</li>
-              <li>directories</li>
-            </ul>
-          </li>
-          <li>a "contribution to a <a class="glossarylink" href="glossary.html#collective_work">collective work</a>," such as a contribution to a(n): 
-            <ul>
-              <li>magazine</li>
-              <li>anthology</li>
-              <li>encyclopedia</li>
-            </ul>
-          </li>
-        </ul>
-        <p>
-          The examples given for the types of things that
-          qualify as compilations and collective works are
-          illustrative only. If you think that the work you
-          or the <a class="glossarylink" href="glossary.html#author">author or artist</a>
-          created is likely to be a
-          compilation or collective work, you should check
-          "yes" even if it is not listed as one of the examples.
-        </p>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- categoryB -->
-
-    <div id="categoryC">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Was the <a class="glossarylink" href="glossary.html#work">work</a> created for use as one of the following?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="categoryC" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="categoryC" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div><!-- category list (part C) -->
-      <div>
-        <ul class="term-category-list">
-          <li>a <a class="glossarylink" href="glossary.html#supplementary_work">"supplementary work"</a>
-          (relating to an existing work by another author), such as: 
-            <ul>
-              <li>forewords</li>
-              <li>afterwords</li>
-              <li>pictorial illustrations</li>
-              <li>maps</li>
-              <li>charts</li>
-              <li>tables</li>
-              <li>editorial notes</li>
-              <li>musical arrangements</li>
-              <li>answer material for tests</li>
-              <li>bibliographies</li>
-              <li>appendixes</li>
-            </ul>
-          </li>
-        </ul>
-        <p>
-          The examples of types of things qualify as
-          "supplementary works" are illustrative only.
-          If you think that
-          the work you or the <a class="glossarylink" href="glossary.html#author">author or artist</a> created
-          is likely to be a supplementary, you should
-          check "yes" even if it is not listed as one
-          of the examples.
-        </p>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- categoryC -->
-
-    <div id="transfer_by_will">
-      <div class="screen-titlebar section1">
-      <span class="screen-header">What can be terminated?</span>
-      <span class="progress">Section 1</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          Is the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>
-          you want to terminate part of a
-          <a class="glossarylink" href="glossary.html#will">last will and testament</a>?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="will" value="Yes" />
-            </div>
-            <div class="option-text">Yes</div>
-          </div>
-          <div class="option">
-            <div class="option-input">
-              <input type="radio" name="will" value="No" />
-            </div>
-            <div class="option-text">No</div>
-          </div>
-        </div>
-        <div class="question-error">
-          Required Field
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- transfer_by_will -->
-
-    <div id="create_date">
-      <div class="screen-titlebar section2">
-      <span class="screen-header">When can the transfer be terminated?</span>
-      <span class="progress">Section 2</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          When was the
-          <a class="glossarylink" href="glossary.html#work">work</a>
-          <a class="glossarylink" href="glossary.html#creation_date">created?</a><br/>
-          <br/>
-          <!--
-          (Please enter your best recollection as to the date of creation.
-          The most important date is the year.
-          If you also know the month and/or the date of creation of the work,
-          then please include these details.)
-          -->
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input id="cyear" type="text" class="filter-date" name="cyear" size="4" maxlength="4" value="" />
-            </div>
-            <div class="option-text">
-              <input type="text" class="date-text" size="4" value="yyyy" disabled />
-            </div>
-          </div>
-        </div>
-        <div class="question-error">
-          Please enter a valid date
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- create_date -->
-
-    <div id="publish_date">
-      <div class="screen-titlebar section2">
-      <span class="screen-header">When can the transfer be terminated?</span>
-      <span class="progress">Section 2</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          When was the
-          <a class="glossarylink" href="glossary.html#work">work</a>
-          <a class="glossarylink" href="glossary.html#publication_date">first published?</a><br/>
-          <br/>
-          <!--
-          (Please enter your best recollection as to the date of first publication.
-          The most important date is the year.
-          If you also know the month and/or the date of first publication of the work,
-          then please include these details.)
-          -->
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input id="pyear"  name="pyear"  type="text" class="filter-date" size="4" maxlength="4" value="" />
-            </div>
-            <div class="option-text">
-              <input type="text" class="date-text" size="4" value="yyyy" disabled />
-            </div>
-          </div>
-        </div>
-        <div class="question-error">
-          Please enter a valid date
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- publish_date -->
-
-    <div id="grant_date">
-      <div class="screen-titlebar section2">
-      <span class="screen-header">When can the transfer be terminated?</span>
-      <span class="progress">Section 2</span>
-      <br clear="both" />
-      </div>
-      <div class="question">
-        <div class="question-text">
-          What is the date of the
-          <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>
-          that you or the <a class="glossarylink" href="glossary.html#author">author or artist</a> entered into
-          in relation to the
-          <a class="glossarylink" href="glossary.html#work">work</a>?
-        </div>
-        <div class="question-options">
-          <div class="option">
-            <div class="option-input">
-              <input id="gyear" type="text" class="filter-date" name="gyear" size="4" maxlength="4" value="" />
-            </div>
-            <div class="option-text">
-              <input type="text" class="date-text" size="4" value="yyyy" disabled />
-            </div>
-          </div>
-        </div>
-        <div class="question-error">
-          Please enter a valid date
-        </div>
-        <br clear="both"/>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- grant_date -->
-
-    <div id="author_names">
-      <div class="screen-titlebar section3">
-      <span class="screen-header">Tell us about the work</span>
-      <span class="progress">Section 3</span>
-      <br clear="both" />
-      </div>
-      <div>
-        <div class="question">
-          <div class="question-text">
-          Please list all <a class="glossarylink" href="glossary.html#author">authors or artists</a>
-          of the <a class="glossarylink" href="glossary.html#work">work</a>:<br>
-          <a id="more_authors">[ More ]</a> <a id="less_authors">[ Less ]</a>
-          </div>
-          <div class="question-options">
-            <div id="authors_container"></div>
-            <div id="author_name" class="invisible">
-              <div class="option"><div class="option-input">
-                <span class="name_errors">Required Field</span>
-                <input class="gather-text" type="text" size="25" />
-              </div></div>
-              <br>
-              <br clear="both"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="continue">
-        <button type="button" class="button-continue">Back</button>
-        <button type="button" class="button-continue">Next</button>
-      </div>
-      <br clear="both"/>
-    </div><!-- author_names -->
-
     <div id="basic">
-      <div class="screen-titlebar section3">
+      <div class="screen-titlebar section1">
       <span class="screen-header">Tell us about the work</span>
-      <span class="progress">Section 3</span>
+      <span class="progress">Section 1</span>
       <br clear="both" />
       </div>
       <div>
@@ -774,6 +259,521 @@
       </div>
       <br clear="both"/>
     </div><!-- basic_info -->
+
+    <div id="author_names">
+      <div class="screen-titlebar section1">
+      <span class="screen-header">Tell us about the work</span>
+      <span class="progress">Section 1</span>
+      <br clear="both" />
+      </div>
+      <div>
+        <div class="question">
+          <div class="question-text">
+          Please list all <a class="glossarylink" href="glossary.html#author">authors or artists</a>
+          of the <a class="glossarylink" href="glossary.html#work">work</a>:<br>
+          <a id="more_authors">[ More ]</a> <a id="less_authors">[ Less ]</a>
+          </div>
+          <div class="question-options">
+            <div id="authors_container"></div>
+            <div id="author_name" class="invisible">
+              <div class="option"><div class="option-input">
+                <span class="name_errors">Required Field</span>
+                <input class="gather-text" type="text" size="25" />
+              </div></div>
+              <br>
+              <br clear="both"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- author_names -->
+
+    <div id="employee">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Did you, or the <a class="glossarylink" href="glossary.html#author">author or artist</a>,
+          <br> create the <a class="glossarylink" href="glossary.html#work">work</a> within the <br>
+          <a class="glossarylink" href="glossary.html#scope_of_employment">scope of your, or his or her, employment</a>?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="employee" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="employee" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- employee -->
+
+    <div id="commissioned">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was the <a class="glossarylink" href="glossary.html#work">work</a>
+          created in response to a special order or commission by
+          some other person or company?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="commissioned" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="commissioned" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- commissioned -->
+
+    <div id="pre1978">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was the <a class="glossarylink" href="glossary.html#work">work</a>
+          created before January 1st, 1978?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="pre1978" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="pre1978" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- pre1978 -->
+
+    <div id="written_agreement">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was there a <a class="glossarylink" href="glossary.html#written_agreement">written agreement</a>
+          regarding the special order or commission
+          which explicitly refers to the work as a
+          <a class="glossarylink" href="glossary.html#work_for_hire">"work for hire?"</a>
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="written" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="written" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- written_agreement -->
+
+    <div id="categoryA">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was the <a class="glossarylink" href="glossary.html#work">work</a> created for use as one of the following?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="categoryA" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="categoryA" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div style="clear:left;">
+        <!-- category list (part A) -->
+        <ul class="term-category-list">
+          <li>part of a motion picture or other audiovisual work</li>
+          <li>a translation</li>
+          <li>a test</li>
+          <li>answer material for a test</li>
+          <li>an atlas</li>
+          <li>as an instructional text (text and/or graphics)</li>
+        </ul>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- categoryA -->
+
+    <div id="categoryB">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was the <a class="glossarylink" href="glossary.html#work">work</a> created for use as one of the following?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="categoryB" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="categoryB" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div><!-- category list (part B) -->
+      <div>
+        <ul class="term-category-list">
+          <li>a <a class="glossarylink" href="glossary.html#compilation">"compilation,"</a> such as: 
+            <ul>
+              <li>catalogs</li>
+              <li>directories</li>
+            </ul>
+          </li>
+          <li>a "contribution to a <a class="glossarylink" href="glossary.html#collective_work">collective work</a>," such as a contribution to a(n): 
+            <ul>
+              <li>magazine</li>
+              <li>anthology</li>
+              <li>encyclopedia</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          The examples given for the types of things that
+          qualify as compilations and collective works are
+          illustrative only. If you think that the work you
+          or the <a class="glossarylink" href="glossary.html#author">author or artist</a>
+          created is likely to be a
+          compilation or collective work, you should check
+          "yes" even if it is not listed as one of the examples.
+        </p>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- categoryB -->
+
+    <div id="categoryC">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Was the <a class="glossarylink" href="glossary.html#work">work</a> created for use as one of the following?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="categoryC" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="categoryC" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div><!-- category list (part C) -->
+      <div>
+        <ul class="term-category-list">
+          <li>a <a class="glossarylink" href="glossary.html#supplementary_work">"supplementary work"</a>
+          (relating to an existing work by another author), such as: 
+            <ul>
+              <li>forewords</li>
+              <li>afterwords</li>
+              <li>pictorial illustrations</li>
+              <li>maps</li>
+              <li>charts</li>
+              <li>tables</li>
+              <li>editorial notes</li>
+              <li>musical arrangements</li>
+              <li>answer material for tests</li>
+              <li>bibliographies</li>
+              <li>appendixes</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          The examples of types of things qualify as
+          "supplementary works" are illustrative only.
+          If you think that
+          the work you or the <a class="glossarylink" href="glossary.html#author">author or artist</a> created
+          is likely to be a supplementary, you should
+          check "yes" even if it is not listed as one
+          of the examples.
+        </p>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- categoryC -->
+
+    <div id="transfer_by_will">
+      <div class="screen-titlebar section2">
+      <span class="screen-header">What can be terminated?</span>
+      <span class="progress">Section 2</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          Is the <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>
+          you want to terminate part of a
+          <a class="glossarylink" href="glossary.html#will">last will and testament</a>?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="will" value="Yes" />
+            </div>
+            <div class="option-text">Yes</div>
+          </div>
+          <div class="option">
+            <div class="option-input">
+              <input type="radio" name="will" value="No" />
+            </div>
+            <div class="option-text">No</div>
+          </div>
+        </div>
+        <div class="question-error">
+          Required Field
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- transfer_by_will -->
+
+    <div id="create_date">
+      <div class="screen-titlebar section3">
+      <span class="screen-header">When can the transfer be terminated?</span>
+      <span class="progress">Section 3</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          When was the
+          <a class="glossarylink" href="glossary.html#work">work</a>
+          <a class="glossarylink" href="glossary.html#creation_date">created?</a><br/>
+          <br/>
+          <!--
+          (Please enter your best recollection as to the date of creation.
+          The most important date is the year.
+          If you also know the month and/or the date of creation of the work,
+          then please include these details.)
+          -->
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input id="cyear" type="text" class="filter-date" name="cyear" size="4" maxlength="4" value="" />
+            </div>
+            <div class="option-text">
+              <input type="text" class="date-text" size="4" value="yyyy" disabled />
+            </div>
+          </div>
+        </div>
+        <div class="question-error">
+          Please enter a valid date
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- create_date -->
+
+    <div id="publish_date">
+      <div class="screen-titlebar section3">
+      <span class="screen-header">When can the transfer be terminated?</span>
+      <span class="progress">Section 3</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          When was the
+          <a class="glossarylink" href="glossary.html#work">work</a>
+          <a class="glossarylink" href="glossary.html#publication_date">first published?</a><br/>
+          <br/>
+          <!--
+          (Please enter your best recollection as to the date of first publication.
+          The most important date is the year.
+          If you also know the month and/or the date of first publication of the work,
+          then please include these details.)
+          -->
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input id="pyear"  name="pyear"  type="text" class="filter-date" size="4" maxlength="4" value="" />
+            </div>
+            <div class="option-text">
+              <input type="text" class="date-text" size="4" value="yyyy" disabled />
+            </div>
+          </div>
+        </div>
+        <div class="question-error">
+          Please enter a valid date
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- publish_date -->
+
+    <div id="grant_date">
+      <div class="screen-titlebar section3">
+      <span class="screen-header">When can the transfer be terminated?</span>
+      <span class="progress">Section 3</span>
+      <br clear="both" />
+      </div>
+      <div class="question">
+        <div class="question-text">
+          What is the date of the
+          <a class="glossarylink" href="glossary.html#agreement">agreement or transfer</a>
+          that you or the <a class="glossarylink" href="glossary.html#author">author or artist</a> entered into
+          in relation to the
+          <a class="glossarylink" href="glossary.html#work">work</a>?
+        </div>
+        <div class="question-options">
+          <div class="option">
+            <div class="option-input">
+              <input id="gyear" type="text" class="filter-date" name="gyear" size="4" maxlength="4" value="" />
+            </div>
+            <div class="option-text">
+              <input type="text" class="date-text" size="4" value="yyyy" disabled />
+            </div>
+          </div>
+        </div>
+        <div class="question-error">
+          Please enter a valid date
+        </div>
+        <br clear="both"/>
+      </div>
+      <div class="continue">
+        <button type="button" class="button-continue">Back</button>
+        <button type="button" class="button-continue">Next</button>
+      </div>
+      <br clear="both"/>
+    </div><!-- grant_date -->
 
     <div id="author_grant">
       <div class="screen-titlebar section4">

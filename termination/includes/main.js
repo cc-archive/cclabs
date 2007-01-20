@@ -380,7 +380,7 @@ buttons = {
 
         } else {
           /* Otherwise, we're good - continue */
-          showScreen($('author_names'), buttons.author_names.update );
+          showScreen($('author_grant'));
         }
       }
     },
@@ -461,7 +461,7 @@ buttons = {
 
       /* move to next screen */
       showHistory($('h-names'));
-      showScreen($('basic'));
+      showScreen($('employee'));
     },
 
     back: goBack
@@ -493,7 +493,7 @@ buttons = {
 
       /* move to next screen */
       showHistory($('h-basic'));
-      showScreen($('author_grant'));
+      showScreen($('author_names'), buttons.author_names.update );
 
     },
     back: goBack
@@ -991,7 +991,7 @@ function totit() {
       Event.observe($('more_grandchildren'), 'click', buttons.author_grandchildren.more_grandchildren, true);
       Event.observe($('less_grandchildren'), 'click', buttons.author_grandchildren.less_grandchildren, true);
 
-      showScreen($(getQueryParams().screen || 'employee'));
+      showScreen($(getQueryParams().screen || 'basic'));
 }
 
 function keyPress(e) {
