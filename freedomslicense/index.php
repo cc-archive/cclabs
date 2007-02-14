@@ -34,9 +34,18 @@
     '/cc-license.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
     '/cc-lib-freedoms.js"></script>
+    <!-- Required gateway proxy code to allow for communication from Flash to JS -->
+    <script src="JavaScriptFlashGateway.js" type="text/javascript" charset="utf-8"></script>
+    
     <script type="text/javascript" language="javascript">
     <!--
     var freedoms;
+    var lcId = new Date().getTime();
+    
+    /* Proxy object, to talk to flash app */
+    /* !! Will not work with Flash < 6.0.65.0 !! */
+    var flashProxy = new FlashProxy(lcId, "JavaScriptFlashGateway.swf");
+    
     function init_freedoms ()
     {
         freedoms = new CCLibFreedoms(); // in cc-lib-freedoms.js
@@ -47,17 +56,36 @@
         init_tip();
 
     }
+    
+    function get_the_code ()
+    {
+      Element.scrollTo("get_the_code");
+      
+    }
+    
+    function js_update_state(piece, state)
+    {
+      switch(piece)
+      {
+        case "share":
+          share = state;
+          break;
+        case "remix":
+          remix = state;
+          break;
+        case "nc":
+          nc = state;
+          break;
+        case "sa":
+          sa = state;      
+      }
+      
+      build_license_details ();
+      
+    }
     // -->
     </script>
-<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->';
-    $onload = "init_freedoms();";
-
-    include_once "../_header.php"; 
-
-    require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
-
-?>
-
+<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->
 <script language="javascript" type="text/javascript">
 
 var share = false;
@@ -67,47 +95,19 @@ var nc_cond = false;
 var sa_on = false;
 var nc_on = false;
 
-/* Preload images, FF/NS/IE7 only. */
-/* FIXME: IE6 relies on PNG filter loader, so this type of preloading has no effect.
-          Setting up the filter on 1x1 div's may acheive same effect. Must test. */
-if (document.images) {
-  saon = new Image(376, 282);
-  saon.src = "5/sa-on.png";
-  saoff = new Image(376, 282);
-  saoff.src = "5/sa-off.png";
-  sadim = new Image(376, 282);
-  sadim.src = "5/sa-dim.png";
-  
-  ncon = new Image(282, 376);
-  ncon.src = "5/nc-on.png";
-  ncoff = new Image(282, 376);
-  ncoff.src = "5/nc-off.png";
-  ncdim = new Image(282, 376);
-  ncdim.src = "5/nc-dim.png";
-  
-  shareon  = new Image(282, 376);
-  shareon.src = "5/share-on.png";
-  sharedim  = new Image(282, 376);
-  sharedim.src = "5/share-dim.png";
-  
-  remixon  = new Image(376, 282);
-  remixon.src = "5/remix-on.png";
-  remixdim  = new Image(376, 282);
-  remixdim.src = "5/remix-dim.png";
-  
-}
-
-    function no_license_selection () {
-        $('flg-result').style.display = 'none';
-    }
-
-    function some_license_selection () {
-        $('flg-result').style.display = 'block';
-    }
-    
-
 </script>
- 
+
+
+
+';
+    $onload = "init_freedoms();";
+
+    include_once "../_header.php"; 
+
+    require_once CC_LIB_PHP . '/cc-license-jurisdictions.php';
+
+?>
+
 
 <div id="flg-sidebar">
   <h2>Freedoms License Generator</h2>
@@ -121,27 +121,17 @@ if (document.images) {
   all combinations are possible, but as you experiment with the  
   selections, you can see the different licenses that result.
   </p>
-  <p><small>This project requires <em>Javascript</em>. License buttons are not final, and not for use outside of this application.<br/><br/>This demo will currently <strong>not</strong> work with Internet Explorer 6.</small></p>
+  <p><small>This project requires <em>Javascript</em> and <em>Flash 6+</em>.</small></p>
 </div>
 
 <div id="flg-container">
-  <h4 class="freedoms">Freedoms</h4>
-<div id="flg-ui">
-  <div id="flg-left">
-    <div id="flg-connect-share" class="flg-pipe-on"><a href="javascript:freedoms.redo('share'); set_share(freedoms._share); ">&nbsp;</a></div>
-    <div id="flg-connect-nc" class="flg-pipe-middle"><a href="javascript:freedoms.redo('nc')">&nbsp;</a></div>
-  </div>
-
-  <div id="flg-right">
-    <div id="flg-connect-remix" class="flg-pipe-on"><a href="javascript:freedoms.redo('remix'); set_remix(freedoms._remix);">&nbsp;</a></div>
-    <div id="flg-connect-sa" class="flg-pipe-middle"><a href="javascript:freedoms.redo('sa')">&nbsp;</a></div>
-  </div>
-  <div id="flg-mid">
-    <div id="flg-result">BY</div>
-  </div>
-  <br clear="all"/>
-</div>
-<h4 class="conditions">Conditions</h4>
+  <script type="text/javascript">
+      /* Embed the chooser app and include required settings */
+      /* Minimum flash player version 6.0.65 */
+      var sample = new FlashTag("chooser.swf", 800, 600, "6,0,65,0");
+      sample.setFlashvars("lcId=" + lcId);
+      sample.write(document);
+  </script>
 </div>
 
 <hr class="spacer" />
