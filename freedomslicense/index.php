@@ -122,7 +122,7 @@ var nc_on = false;
   all combinations are possible, but as you experiment with the  
   selections, you can see the different licenses that result.
   </p>
-  <p><small>This project requires <em>Javascript</em> and <em>Flash 6+</em>.</small></p>
+  <p><small>This project requires <em>Javascript</em> and <em>Flash 6+</em>. Please contribute to <a href="http://www.gnu.org/software/gnash/">Gnash</a>, a GPL Flash player and one of the Free Software Foundation's <a href="http://www.fsf.org/campaigns/priority.html">high-priority projects</a>.</small></p>
 </div>
 
 <div id="flg-container">
