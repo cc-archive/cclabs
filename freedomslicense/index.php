@@ -59,7 +59,8 @@
     
     function get_the_code ()
     {
-      Element.scrollTo("get_the_code");
+      //Element.scrollTo("get_the_code");
+      document.location = "#get_the_code";
       
     }
     
@@ -128,7 +129,7 @@ var nc_on = false;
   <script type="text/javascript">
       /* Embed the chooser app and include required settings */
       /* Minimum flash player version 6.0.65 */
-      var sample = new FlashTag("chooser.swf", 800, 600, "6,0,65,0");
+      var sample = new FlashTag("chooser.swf", 680, 600, "6,0,65,0");
       sample.setFlashvars("lcId=" + lcId);
       sample.write(document);
   </script>
