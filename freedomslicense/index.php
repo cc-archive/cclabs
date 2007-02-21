@@ -123,7 +123,7 @@ var nc_on = false;
   selections, you can see the different licenses that result.
   </p>
   <p><small>This project requires <em>Javascript</em> and <em>Flash 6+</em>. Please contribute to <a href="http://www.gnu.org/software/gnash/">Gnash</a>, a GPL Flash player and one of the Free Software Foundation's <a href="http://www.fsf.org/campaigns/priority.html">high-priority projects</a>.</small></p>
-  <p><a href="chooser.zip">Downlown Flash Sources</a></p>
+  <p><a href="chooser.zip">Download Flash Sources</a></p>
 </div>
 
 <div id="flg-container">
