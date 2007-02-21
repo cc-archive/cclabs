@@ -11,7 +11,7 @@ if (strpos($ref,'http://labs.creativecommons.org/') === 0
   $mailsubj = "Labs Feedback";
   $mailhead = "From: $email\n";
   reset ($HTTP_POST_VARS);
-  $mailbody = "Submitted from" . $ref . "\n";
+  $mailbody = "Submitted from " . $ref . "\n";
   while (list ($key, $val) = each ($HTTP_POST_VARS)) { $mailbody .= "$key : $val\n"; }
   if (!eregi("\n",$HTTP_POST_VARS[email])) { mail($mailto, $mailsubj, $mailbody, $mailhead); }
  echo('Thanks for your feedback!');
