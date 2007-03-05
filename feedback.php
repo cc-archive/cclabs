@@ -8,8 +8,8 @@ $ref = $_SERVER["HTTP_REFERER"];
 // print_r($_REQUEST);
 // echo '<pre>';
 
-if ( strpos($ref,'http://labs.creativecommons.org/') === 0
-     || strpos($ref,'http://labt.creativecommons.org/') === 0
+if ( ( strpos($ref,'http://labs.creativecommons.org/') === 0
+     || strpos($ref,'http://labt.creativecommons.org/') === 0 )
      &&
      !empty($_REQUEST['compare']) && !empty($_REQUEST['understandable'])
      && !empty($_REQUEST['comments']) )
@@ -20,6 +20,7 @@ if ( strpos($ref,'http://labs.creativecommons.org/') === 0
         $email = $_REQUEST['email']; 
 
     $mailto     = "labs@creativecommons.org";
+    // $mailto     = "jon@creativecommons.org";
     $mailsubj   = "Labs Feedback";
     $mailhead   = "From: $email\n";
     
