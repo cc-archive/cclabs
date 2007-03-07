@@ -82,7 +82,7 @@
                     name="remix" value="" id="remix" />
                     <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('Licensor permits others to make derivative works.') . '</p>'; 
                     ?>
-                    <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remix'); ?></strong></label> 
+                    <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remixing'); ?></strong></label> 
                     <?= print_more_info($remix_tooltip); ?>
                     <br />
 
@@ -92,9 +92,12 @@
                     ?>
                     <label for="nc" <?= get_tooltip_js($nc_tooltip); ?> id="nc-label"><strong><?= _('Prohibit Commercial Use'); ?></strong></label> 
                     <?= print_more_info($nc_tooltip); ?>
-                    <br />
-            
 
+                    <div id="nc-ad">
+                      <label><input type="radio" onchange="modify(this);" name="nc-ad" checked value="1" id="nc-ad-allow" /> <strong><?= _('Allow use with advertising'); ?></strong></label><br/>
+                      <label><input type="radio" onchange="modify(this);" name="nc-ad" value="0" id="nc-ad-prohibit" /> <strong><?= _('Prohibit use with advertising'); ?></strong></label>
+                    </div>
+            
                     <input type="checkbox" onchange="modify(this);" 
                     name="sa" value="" id="sa" />
                     <?php $sa_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
