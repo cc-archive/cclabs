@@ -23,7 +23,7 @@
     require_once( CC_LIB . '/php/cc-lib.php' );
 
     $pagetitle = "Freedoms License Generator";
-    $include = "flg-five.css?5559393";
+    $include = "flg-five.css?445333445";
     $head_extra = '<script type="text/javascript" language="javascript" src="' .
     CC_LIB_JS . '/prototype.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
@@ -34,19 +34,14 @@
     '/cc-license.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . 
     '/cc-lib-freedoms.js"></script>
-    <!-- Required gateway proxy code to allow for communication from Flash to JS -->
-    <script src="JavaScriptFlashGateway.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript" language="javascript" src="chooser.js"></script>
     
     <script type="text/javascript" language="javascript">
     <!--
     var freedoms;
-    var lcId = new Date().getTime();
     
-    /* Proxy object, to talk to flash app */
-    /* !! Will not work with Flash < 6.0.65.0 !! */
-    var flashProxy = new FlashProxy(lcId, "JavaScriptFlashGateway.swf");
-    
-    function init_freedoms ()
+    var init_freedoms = function()
     {
         freedoms = new CCLibFreedoms(); // in cc-lib-freedoms.js
         // the next two are in cc-license.js
@@ -54,39 +49,22 @@
         modify(this);
             
         init_tip();
+        
+        // init the chooser
+    	  FreedomsChooser = new FreedomsChooserClass("Freedoms_");
+    	  FreedomsChooser.selectLicense("by");
+    	  FreedomsChooser.setupEventListeners();
 
     }
     
-    function get_the_code ()
-    {
-      //Element.scrollTo("get_the_code");
-      document.location = "#get_the_code";
-      
-    }
-    
-    function js_update_state(piece, state)
-    {
-      switch(piece)
-      {
-        case "share":
-          share = state;
-          break;
-        case "remix":
-          remix = state;
-          break;
-        case "nc":
-          nc = state;
-          break;
-        case "sa":
-          sa = state;      
-      }
-      
-      build_license_details ();
-      
-    }
     // -->
     </script>
-<!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen" href="flg-five-ie.css" /><![endif]-->
+    <!--[if lt IE 7]>
+    		<script type="text/javascript" language="javascript" src="iepngfix2.js"></script>
+    		<script type="text/javascript" language="javascript">
+            var $PNGFIX=true;
+        </script>
+    <![endif]-->
 <script language="javascript" type="text/javascript">
 
 var share = false;
@@ -95,6 +73,18 @@ var sa_cond = false;
 var nc_cond = false;
 var sa_on = false;
 var nc_on = false;
+
+
+function freedoms_update (license) {
+
+	license["share"] ? share = 1 : share = 0;
+	license["remix"] ? remix = 1 : remix = 0;
+	license["nc"] ? nc = 1 : nc = 0;
+	license["sa"] ? sa = 1 : sa = 0;
+
+	update_hack( license.data[2], license.data[0], license.data[1] );
+	
+}
 
 </script>
 
@@ -122,18 +112,35 @@ var nc_on = false;
   all combinations are possible, but as you experiment with the  
   selections, you can see the different licenses that result.
   </p>
-  <p><small>This project requires <em>Javascript</em> and <em>Flash 6+</em>. Please contribute to <a href="http://www.gnu.org/software/gnash/">Gnash</a>, a GPL Flash player and one of the Free Software Foundation's <a href="http://www.fsf.org/campaigns/priority.html">high-priority projects</a>.</small></p>
-  <p><a href="chooser.zip">Download Flash Sources</a></p>
+  <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 2.0, Safari, and IE6.</p>
 </div>
+<div id="nc-ad"></div>
 
 <div id="flg-container">
-  <script type="text/javascript">
-      /* Embed the chooser app and include required settings */
-      /* Minimum flash player version 6.0.65 */
-      var sample = new FlashTag("chooser.swf", 680, 600, "6,0,65,0");
-      sample.setFlashvars("lcId=" + lcId);
-      sample.write(document);
-  </script>
+
+  <div id="Freedoms_container" style="">
+
+  	<img src="images/sa-shadow.png" id="Freedoms_image_sa-shadow" alt="" style="display: none;">
+  	<img src="images/share-shadow.png" id="Freedoms_image_share-shadow" alt="" style="display: none;">
+  	<img src="images/nc-shadow.png" id="Freedoms_image_nc-shadow" alt="" style="display: none;">
+  	<img src="images/remix-shadow.png" id="Freedoms_image_remix-shadow" alt="" style="display: none;">
+
+  	<img src="images/nc-piece.png" id="Freedoms_image_nc-piece-normal" alt="" style="position: absolute; left: 0px; top: 172px; display: none;">
+  	<img src="images/sa-piece.png" id="Freedoms_image_sa-piece-normal" alt="" style="position: absolute; left: 172px; top: 238px; display: none;">
+  	<img src="images/share-piece.png" id="Freedoms_image_share-piece-normal" alt="" style="position: absolute; left: 0px; top: 0px;">
+  	<img src="images/remix-piece.png" id="Freedoms_image_remix-piece-normal" alt="" style="position: absolute; left: 239px; top: 0px;">
+
+  	<img src="images/sa-piece-grey.png" id="Freedoms_image_sa-piece-grey" alt="" style="position: absolute; left: 172px; top: 238px;">
+  	<img src="images/nc-piece-grey.png" id="Freedoms_image_nc-piece-grey" alt="" style="position: absolute; left: 0px; top: 172px;">
+
+  	<img src="images/off-x.png" id="Freedoms_image_nc-off-x" alt="" style="position: absolute; left: 9px; top: 372px;">
+  	<img src="images/off-x.png" id="Freedoms_image_sa-off-x" alt="" style="position: absolute; left: 388px; top: 372px;">
+
+  	<img src="images/button-shadow-clean.png" id="Freedoms_image_button-shadow-clean" alt="" style="position: absolute; left: 163px; top: 182px;">
+
+  	<div style="position: absolute; left: 175px; top: 202px;" id="Freedoms_centerLicense"></div>
+  </div>
+
 </div>
 
 <hr class="spacer" />
