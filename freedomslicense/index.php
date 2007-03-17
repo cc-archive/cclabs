@@ -112,7 +112,7 @@ function freedoms_update (license) {
   all combinations are possible, but as you experiment with the  
   selections, you can see the different licenses that result.
   </p>
-  <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 2.0, Safari, and IE6.</p>
+  <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 1.5+, Safari, and IE6.</p>
 </div>
 <div id="nc-ad"></div>
 
