@@ -193,7 +193,7 @@ function freedoms_update (license) {
       <br/><input type="radio" name="understandable" value="maybe"/> Maybe
       <br/><input type="radio" name="understabdable" value="no"/> No
       </p>
-      <p>Comments (required)<br/><textarea name="comments" rows="10" cols="40"></textarea></p>
+      <p>Comments (optional)<br/><textarea name="comments" rows="10" cols="40"></textarea></p>
       <p><input type="submit" value="Send Feedback" /></p>
       </form>
     </div>

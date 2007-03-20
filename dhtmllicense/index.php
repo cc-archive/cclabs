@@ -59,7 +59,7 @@
             sprintf(_("For those new to Creative Commons licensing, we've prepared %sa list of things to think about%s."), 
             '<a href="http://creativecommons.org/about/think">', '</a>') . 
             sprintf(_('If you want to offer your work with no conditions, choose the %spublic domain%s'), 
-            '<a href="http://creativecommons.org/publicdomain-2">', '</a>') ?>
+            '<a href="http://creativecommons.org/license/publicdomain-2">', '</a>') ?>
             </p>
             </div>
             
@@ -70,41 +70,38 @@
 
                     <p>
 
-                    <input type="checkbox" onchange="modify(this);" 
-                    name="share" value="" id="share" />
+                    <p>
                     <?php $share_tooltip = '<p><strong>' . _('Share') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work.') . '</p>'; 
-                    ?>
+                    ?><?= print_more_info($share_tooltip); ?><input type="checkbox" onchange="modify(this);" name="share" value="" id="share" />
                     <label for="share" <?= get_tooltip_js($share_tooltip); ?> id="share-label"><strong><?= _('Allow Sharing'); ?></strong></label> 
-                    <?= print_more_info($share_tooltip); ?>
-                    <br />
+                    </p>
+                    
 
-                    <input type="checkbox" onchange="modify(this);" 
-                    name="remix" value="" id="remix" />
-                    <?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('Licensor permits others to make derivative works.') . '</p>'; 
-                    ?>
+                    <p><?php $remix_tooltip = '<p><strong>' . _('Remix') . '</strong> ' . _('Licensor permits others to make derivative works.') . '</p>'; 
+                    ?><?= print_more_info($remix_tooltip); ?><input type="checkbox" onchange="modify(this);" name="remix" value="" id="remix" />
+                    
                     <label for="remix" <?= get_tooltip_js($remix_tooltip); ?> id="remix-label"><strong><?= _('Allow Remixing'); ?></strong></label> 
-                    <?= print_more_info($remix_tooltip); ?>
-                    <br />
+                    </p>
+                    
 
-                    <input type="checkbox" onchange="modify(this);" 
-                    name="nc" value="" id="nc" />
-                    <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>'; 
-                    ?>
+                   <p> <?php $nc_tooltip = '<p><img src="http://creativecommons.org/icon/nc/standard.gif" alt="nc" class="icon" /><strong>' . _('Noncommercial') . '</strong> ' . _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.') . '</p>'; 
+                    ?><?= print_more_info($nc_tooltip); ?><input type="checkbox" onchange="modify(this);" name="nc" value="" id="nc" />
+                    
                     <label for="nc" <?= get_tooltip_js($nc_tooltip); ?> id="nc-label"><strong><?= _('Prohibit Commercial Use'); ?></strong></label> 
-                    <?= print_more_info($nc_tooltip); ?>
+                    </p>
 
                     <div id="nc-ad">
-                      <label><input type="radio" onchange="modify(this);" name="nc-ad" checked value="1" id="nc-ad-allow" /> <strong><?= _('Allow use with advertising'); ?></strong></label><br/>
-                      <label><input type="radio" onchange="modify(this);" name="nc-ad" value="0" id="nc-ad-prohibit" /> <strong><?= _('Prohibit use with advertising'); ?></strong></label>
+                      <label><input type="radio" onchange="modify(this);" name="nc-ad" checked value="1" id="nc-ad-allow" /> <strong><?= _('Ok on ad-supported sites'); ?></strong></label><br/>
+                      <label><input type="radio" onchange="modify(this);" name="nc-ad" value="0" id="nc-ad-prohibit" /> <strong><?= _('Not ok on ad-supported sites'); ?></strong></label>
                     </div>
             
-                    <input type="checkbox" onchange="modify(this);" 
-                    name="sa" value="" id="sa" />
-                    <?php $sa_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
+                    <p><?php $sa_tooltip = '<p><img src="http://creativecommons.org/icon/sa/standard.gif" alt="sa" class="icon" /><strong>' .
                     _('Share Alike') . '</strong> ' . 
                     _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.') . '</p>'; ?>
+                     <?= print_more_info($sa_tooltip); ?><input type="checkbox" onchange="modify(this);" name="sa" value="" id="sa" />
+                    
                     <label for="sa" id="sa-label" <?= get_tooltip_js($sa_tooltip) ?>><strong><?= _('Require Share-Alike'); ?></strong></label>
-                    <?= print_more_info($sa_tooltip); ?>
+                   </p>
 
 
                     <br />
@@ -121,7 +118,8 @@
                     <div id="jurisdiction_box">
                     <?php $jurisdiction_tooltip = '<p><strong>' . _('Jurisdiction') . '</strong> ' .
                                         _('If you desire a license governed by the Copyright Law of a specific jurisdiction, please select the appropriate jurisdiction.') . '</p>' ?>
-                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong> <?= print_more_info($jurisdiction_tooltip) ?> </p>
+                                        <?= print_more_info($jurisdiction_tooltip) ?>
+                    <p><strong <?= get_tooltip_js($jurisdiction_tooltip) ?>><?= _('Jurisdiction of your license') ;?></strong>  </p>
                     <script language="javascript" type="text/javascript">
 
                     // hardwiring the jurisdiction passed in, right into
