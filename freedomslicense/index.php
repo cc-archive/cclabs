@@ -182,18 +182,18 @@ function freedoms_update (license) {
       <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a> or fill out the form below.</p>
 
       <form action="/feedback.php" method="post">
-      <p>Your email address (optional)<br/><input name="email"/></p>
-      <p>How does the <em>Freedoms License Generator</em> on this page compare to our <a href="http://creativecommons.org/license/">current license chooser</a>? (required)
+      <p>Your email address<br/><input name="email"/></p>
+      <p>How does the <em>Freedoms License Generator</em> on this page compare to our <a href="http://creativecommons.org/license/">current license chooser</a>?
       <br/><input type="radio" name="compare" value="better"/> Better
       <br/><input type="radio" name="compare" value="different"/> Just different
       <br/><input type="radio" name="compare" value="worse"/> Worse
       </p>
-      <p>Did you find the <em>Freedoms License Generator</em> on this page easy to use and understand? (required)
+      <p>Did you find the <em>Freedoms License Generator</em> on this page easy to use and understand?
       <br/><input type="radio" name="understandable" value="yes"/> Yes
       <br/><input type="radio" name="understandable" value="maybe"/> Maybe
       <br/><input type="radio" name="understabdable" value="no"/> No
       </p>
-      <p>Comments (optional)<br/><textarea name="comments" rows="10" cols="40"></textarea></p>
+      <p>Comments<br/><textarea name="comments" rows="10" cols="40"></textarea></p>
       <p><input type="submit" value="Send Feedback" /></p>
       </form>
     </div>
