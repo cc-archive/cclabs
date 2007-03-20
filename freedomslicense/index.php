@@ -203,4 +203,16 @@ function freedoms_update (license) {
 </div>
 
 
-<? include_once "../_footer.php"; ?>
+<? /*include_once "../_footer.php";*/ ?>
+    </div>    <div id="footer"><?php include_once '../_sidebar.php'; ?><p><a href="http://creativecommons.org/licenses/by/2.5/"><img src="http://i.creativecommons.org/l/by/2.5/88x31.png" border="0" alt="Creative Commons" /></a><br />
+Except where otherwise <a href="http://creativecommons.org/policies#license">noted</a>, content on this site is<br />
+licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a></p>
+    
+  <p><a href="http://creativecommons.org/">Creative Commons</a> | <a href="http://creativecommons.org/contact">Contact</a></p>
+    </div>
+  </div>
+  <!-- Crazyegg.com heatmap, user click tracking, test. -->
+  <script type="text/javascript" src="http://cetrk.com/pages/scripts/0004/4424.js"> </script>
+
+</body>
+</html>
