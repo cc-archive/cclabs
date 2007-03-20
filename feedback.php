@@ -11,7 +11,8 @@ $ref = $_SERVER["HTTP_REFERER"];
 if ( ( strpos($ref,'http://labs.creativecommons.org/') === 0
      || strpos($ref,'http://labt.creativecommons.org/') === 0 )
      &&
-     !empty($_REQUEST['compare']) && !empty($_REQUEST['understandable']) )
+     !empty($_REQUEST['compare']) || !empty($_REQUEST['understandable']) ||
+     !empty($_REQUEST['comments']) )
 {
     if ( empty($_REQUEST['email'] ) )
         $email = 'noreply@creativecommons.org';
