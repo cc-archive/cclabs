@@ -45,7 +45,7 @@ function print_wiki_page_name ($page_name = '')
         echo $root_url . $page_name;
 }
 
-?>
+/*
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -80,4 +80,55 @@ function print_wiki_page_name ($page_name = '')
     </div>
     
     <div id="innertube">
-     
+*/ ?>
+
+
+
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html>
+       <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title><?= (($pagetitle) ? "$pagetitle —" : ""); ?> Creative Commons Labs</title>
+
+        <style type="text/css" media="screen">
+          @import url(/style.css);
+          <?= (($include) ? "@import url($include);\n" : ""); ?>
+      	</style>
+      	<!--[if IE]> <link rel="stylesheet" type="text/css" media="screen" href="/style-ie.css"/><![endif]-->
+
+        <?= (($head_extra) ? "$head_extra\n" : "\n"); ?>
+
+        <script src="/includes/icommons.js" type="text/javascript"></script>
+       </head>
+       <body <?= (($onload) ? "onload=\"$onload\"" : ""); ?>>
+          <div id="header-wrapper">
+            <div id="header-main">
+              <a href="http://wiki.creativecommons.org/Labs" class="cc-actions"><img src="http://creativecommons.org/images/publish.png" border="0" class="publish"/> <h4>Feedback</h4>On The CC Wiki</a>
+              <a href="http://search.creativecommons.org/" class="cc-actions"><img src="http://creativecommons.org/images/find.png" border="0"/> <h4>Find</h4>CC Licensed Work</a>
+              <a href="/"><img src="/images/cc-labs.png" alt="ccLabs"/></a>
+            </div>
+          </div>
+          <div id="wrapper"><div id="wrapper-ie">
+
+          <div class="jurisdictions">
+            <h4><a href="/worldwide">Worldwide</a>&nbsp;</h4>
+            <select name="sortby" onchange="orderby(this)">
+              <option value="">Select a jurisdiction</option>
+              <script type="text/javascript" src="http://creativecommons.org/includes/jurisdictions.js"></script>
+            </select>
+          </div>
+          <div class="clear">&nbsp;</div>
+
+          <div id="body">
+            <div id="splash">
+              <h1><?= (($pagetitle) ? $pagetitle : ""); ?><br/>&nbsp;</h1>
+              <div id="splash-menu">
+              </div>
+            </div>
+
+            <div id="content">
+              <div id="main-content">
+                <div id="page">
+                  <div class="post">
+                    

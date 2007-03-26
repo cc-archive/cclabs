@@ -148,13 +148,16 @@
 
                     <p>
                     <input type="radio" onchange="modify(this)" name="using" value="webpage" id="using_webpage" checked="checked" />
-                    <label for="using_webpage" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> 
+                    <label for="using_webpage" <?= print_tooltip_js( _('The generator will make html that is ready to be inserted into an html-based webpage.')) ?>><?= _('Webpage'); ?></label> <br/>
+                    
+
 
                     <input type="radio" onchange="modify(this)" name="using" value="myspace" id="using_myspace" />
-                    <label for="using_myspace" <?= print_tooltip_js( _("The generator will make html that may be inserted into the popular social networking site\'s, http://myspace.com, <em>Who I\'d Like To Meet</em> box")) ?>><?= _('MySpace'); ?></label>
+                    <label for="using_myspace" <?= print_tooltip_js( _("The generator will make html that may be inserted into the popular social networking site\'s, http://myspace.com, <em>Who I\'d Like To Meet</em> box")) ?>><?= _('MySpace'); ?></label><br/>
+                    
 
                     <input type="radio" onchange="modify(this)" name="using" value="youtube" id="using_youtube" />
-                    <label for="using_youtube" <?= print_tooltip_js( _("The generator will make text and a url which you can place in a youtube video submission\'s description form field.")) ?>><?= _('YouTube'); ?></label>
+                    <label for="using_youtube" <?= print_tooltip_js( _("The generator will make text and a url which you can place in a youtube video submission\'s description form field.")) ?>><?= _('YouTube'); ?></label><br/>
                     </p> 
 
 

@@ -24,8 +24,6 @@
 
 ?>
 
-<div id="content">
-<h2>Metadata Lab</h2>
 
 <p>Using the experimental license choosers at <a href="/">CC Labs</a>
 you can provide some optional information about your work, including a
@@ -39,11 +37,21 @@ you want used for attribution purposes.</p>
 
 <h3 id="demo">Demo</h3>
 
-<table width="70%" border="1" cellpadding="10" align="center"><tr><td align="center"><small>
-<span xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#">
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.5/"><img alt="Creative Commons License" border="0" src="http://i.creativecommons.org/l/by-nc/2.5/88x31.png" class="cc-button"/></a><br/><span id="work_title" property="dc:title">Metadata Lab Demo</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://labs.creativecommons.org">CC Labs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 License</a>. Permissions beyond the scope of this public license may be available at <a rel="cc:morePermissions" href="http://labs.creativecommons.org/metadata/demo-beyond.php">labs.creativecommons.org</a>.
-</span>
-</small></td></tr></table>
+<div id="metadata-demo" style="border: 1px solid #ddd; padding: 25px 25px 28px 25px; text-align: center; margin: 15px; width: 75%;"><small>
+  
+  <!-- Creative Commons License -->
+  <span xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#">
+    <a rel="license" href="http://a2.creativecommons.org/licenses/by-nc/3.0/">
+      <img alt="Creative Commons License" border="0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" class="cc-button"/>
+    </a>
+    <div class="cc-info">
+      <span xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <span id="work_title" property="dc:title">Metadata Lab</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://labs.creativecommons.org/">CC Labs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 License</a>. Permissions beyond the scope of this license may be available at <a rel="cc:morePermissions" href="http://labs.creativecommons.org/metadata/demo-beyond.php">labs.creativecommons.org</a>.
+      </span>
+    </div>
+  </span>
+  
+</small></div>
 
 <p>The HTML rendered in the box above includes metadata.  Click on
 the license button and the license deed will update itself to display
@@ -123,9 +131,4 @@ join and post to the <a href="">cc-metadata</a> mailing list, or add
 to the <a href="http://wiki.creativecommons.org/Metadata_lab">metadata
 lab wiki</a>.</p>
 
-</div>
-</div>
-</div>
-
-</body>
-</html>
+<? include_once "../_footer.php"; ?>

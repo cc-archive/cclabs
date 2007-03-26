@@ -1,4 +1,3 @@
-</div>
 <div id="totfooter" align="center">
   <a href="index.php">Intro</a> |
   <a href="what_information_do_i_need.php">Tool Overview</a> |

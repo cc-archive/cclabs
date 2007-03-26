@@ -19,12 +19,12 @@
  * Copyright 2006, Creative Commons, www.creativecommons.org.
  *
  */
-include_once "_header.php"; 
+ $pagetitle = "Welcome to the labs";
 
+include_once "_header.php"; 
 ?>
 
 <div id="content">
-  <h2>Welcome to the labs</h2>
   <p class="blurb"><img src="/images/dev.png" class="dev" alt="[ Development ]" /> Featured here are projects currently under development at <a href="http://creativecommons.org">Creative Commons</a>. All projects are prone to change and are unsupported. Comments and <a href="#feedback">feedback</a> welcome.</p>
   <h2>Current Projects</h2>
   <div class="blurb">
@@ -39,7 +39,7 @@ include_once "_header.php";
     <h3><a href="metadata/">Metadata Lab</a></h3>
     <p>The license choosers above generate experimental metadata.  Read all about it.</p>
   </div>
-  <div class="blurb">
+  <div class="blurb end">
     <h3><a href="termination/">Termination of Transfer Tool</a></h3>
     <p>The U.S. Congress decided that it was important to provide a mechanism under which previously sold or licensed rights under copyright could be returned to the original author or their family members.  This tool is Creative Commons' attempt at simplifying that process to make it more author-friendly and accessible.  Please take a look at the <a href="termination/faq.php">FAQ</a>, and the tool itself, for more information.</p>
   </div>
