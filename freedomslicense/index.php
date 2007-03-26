@@ -163,7 +163,7 @@ function freedoms_update (license) {
                     print_jurisdictions_option( jurisdiction_code );
                     </script>
                     </div>
-<br />
+<br clear="both" />
 <h4>More Information About Your Work (Optional)</h4>
 <?php
     include CC_LIB_PHP . '/cc-license-more-info.php';
