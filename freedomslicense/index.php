@@ -112,7 +112,7 @@ function freedoms_update (license) {
   all combinations are possible, but as you experiment with the  
   selections, you can see the different licenses that result.
   </p>
-  <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 1.5+, Safari, and IE6.</p>
+  <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 1.5+, Safari, and IE6.</small></p>
 </div>
 <div id="nc-ad"></div>
 
@@ -203,7 +203,8 @@ function freedoms_update (license) {
 </div>
 
 
-<? /*include_once "../_footer.php";*/ ?>
+<? include_once "../_footer.php"; ?>
+<? /*
     </div>    <div id="footer"><?php include_once '../_sidebar.php'; ?><p><a href="http://creativecommons.org/licenses/by/2.5/"><img src="http://i.creativecommons.org/l/by/2.5/88x31.png" border="0" alt="Creative Commons" /></a><br />
 Except where otherwise <a href="http://creativecommons.org/policies#license">noted</a>, content on this site is<br />
 licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a></p>
@@ -216,3 +217,4 @@ licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2
 
 </body>
 </html>
+*/ ?>
