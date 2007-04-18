@@ -196,15 +196,15 @@ FreedomsChooserClass.prototype = {
 			
 			// Two special cases when disabling elements :
 			
-			// "share" disables "nc" and "sa" too
-			/*if (groupName=="share") {
-				license["nc"]=0;
-				license["sa"]=0;
-			}*/
-			
-			// "remix" disables "sa" too
+	
+			// "remix" and "share" disable "sa"
 			if ((groupName=="share") || (groupName=="remix")) {
 				license["sa"]=0;
+			}
+			
+			// "nc" disabled if "share" is already disabled and "remix" selected
+			if ((groupName=="remix") && (license["share"] == 0)) {
+					license["nc"]=0;
 			}
 			
 		}
