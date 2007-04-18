@@ -85,7 +85,8 @@ FreedomsChooserClass.prototype = {
 			
 			"by-nd":	{"share":1,"remix":0,"nc": 0,"sa":-1,"data":['2.5', 'Attribution-NoDerivs','by-nd']},
 			"by":		{"share":1,"remix":1,"nc": 0,"sa": 0,"data":['2.5', 'Attribution', 'by']},
-			"sampling":	{"share":0,"remix":1,"nc":-1,"sa":-1,"data":['1.0', 'Sampling', 'sampling']},
+			"sampling":	{"share":0,"remix":1,"nc":0,"sa":-1,"data":['1.0', 'Sampling', 'sampling']},
+			"nc-sampling+": {"share":0,"remix":1,"nc":1,"sa":-1,"data":['1.0', 'NonCommercial-Sampling Plus', 'nc-sampling+']},
 			"by-nc":	{"share":1,"remix":1,"nc": 1,"sa": 0,"data":['2.5','Attribution-NonCommercial','by-nc']},
 			"by-nc-sa":	{"share":1,"remix":1,"nc": 1,"sa": 1,"data":['2.5','Attribution-NonCommercial-ShareAlike','by-nc-sa']},
 			"by-sa":	{"share":1,"remix":1,"nc": 0,"sa": 1,"data":['2.5', 'Attribution-ShareAlike','by-sa']},
@@ -196,13 +197,13 @@ FreedomsChooserClass.prototype = {
 			// Two special cases when disabling elements :
 			
 			// "share" disables "nc" and "sa" too
-			if (groupName=="share") {
+			/*if (groupName=="share") {
 				license["nc"]=0;
 				license["sa"]=0;
-			}
+			}*/
 			
 			// "remix" disables "sa" too
-			if (groupName=="remix") {
+			if ((groupName=="share") || (groupName=="remix")) {
 				license["sa"]=0;
 			}
 			
