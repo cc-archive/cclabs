@@ -41,7 +41,7 @@ you want used for attribution purposes.</p>
   
   <!-- Creative Commons License -->
   <span xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#">
-    <a rel="license" href="http://a2.creativecommons.org/licenses/by-nc/3.0/">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">
       <img alt="Creative Commons License" border="0" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" class="cc-button"/>
     </a>
     <div class="cc-info">
