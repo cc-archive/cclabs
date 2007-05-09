@@ -107,9 +107,8 @@ href="http://magnatune.com/artists/albums/anup-embrace/">Embrace</a></em>.</p>
 
 <p><a href="http://www.pumpaudio.com/">Pump Audio</a> is
 a leader in commercial licensing of music and now offers
-a CC option to interested musicians.  Two examples are <a
-href="http://www.lovetheory.com/listenbuy.html">Electron Love Theory</a>
-and <a href="http://www.myspace.com/garynewvision">Gary Robinson</a>.</p>
+a CC option to interested musicians.  For an example see <a
+<a href="http://www.myspace.com/garynewvision">Gary Robinson</a>.</p>
 
 <p><a href="http://www.beatpick.com">BeatPick</a> is a "fair play" record label that offers music under a CC license and handles commercial licensing and sales for artists. Visit any artist page, for example <a href="http://www.beatpick.com/2-Seconds-Away">2 Seconds Away</a>.</p>
 
