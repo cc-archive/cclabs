@@ -108,8 +108,8 @@
               <div class="choose-btn"><input type="checkbox" onchange="modify(this);" name="dn" value="" id="dn" /></div>
               <div class="choose-icon"><label for="dn"><img src="images/devnations.png" border="0"/></label></div>
               <div class="choose-txt">
-                <label for="dn" id="dn-label" class="option_on"><strong><?= _('Developing Nations Only'); ?></strong></label><br/>
-                <?=  _('You may exercise the above freedoms in developing nations only.'); ?>
+                <label for="dn" id="dn-label" class="option_on"><strong><?= _('Developing Nations'); ?></strong></label><br/>
+                <?=  _('Allow commercial sharing and remixing in developing nations in addition to the rights granted worldwide above.'); ?>
               </div>
             </div>
             <div class="choose">
