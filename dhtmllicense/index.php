@@ -26,7 +26,7 @@
     require_once( CC_LIB . '/php/cc-lib.php' );
 
     $pagetitle  = _('CC DHTML License');
-    $include    = 'style-b.css';
+    $include    = 'style.css';
     $head_extra = 
     '<script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/prototype.js"></script>
     <script type="text/javascript" language="javascript" src="' . CC_LIB_JS . '/cc-tooltip.js"></script>
