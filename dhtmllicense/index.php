@@ -57,10 +57,11 @@
             '</a>', 
             '<span ' . get_tooltip_js('<p><img src="http://creativecommons.org/icon/by/standard.gif" alt="by" class="icon" /><strong>' . _('Attribution') . '</strong> ' . _('You must attribute the work in the manner specified by the author or licensor.') . '</p>',  'http://a2.creativecommons.org/characteristic/by?lang=' . $lang) . '>', '</span>' ) . 
             sprintf(_("For those new to Creative Commons licensing, we've prepared %sa list of things to think about%s."), 
-            '<a href="http://creativecommons.org/about/think">', '</a>') . 
+            '<a href="http://creativecommons.org/about/think">', '</a>') . ' ' .
             sprintf(_('If you want to offer your work with no conditions, choose the %spublic domain%s'), 
             '<a href="http://creativecommons.org/license/publicdomain-2">', '</a>') ?>
           </p>
+          <p><small><em>Notice</em><br/>This is a <strong>demonstration</strong> of developmental code. Do <strong>not</strong> use any generated code from this generator.</small></p>
         </div>
             
         <div id="lic-menu" class="block">
