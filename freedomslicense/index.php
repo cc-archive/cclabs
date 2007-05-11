@@ -165,10 +165,13 @@ function freedoms_update (license) {
                     </div>
 <br clear="both" />
 <h4>More Information About Your Work (Optional)</h4>
+<div id="more_info">
 <?php
     include CC_LIB_PHP . '/cc-license-more-info.php';
 ?>
 <br />
+</div>
+<br/>
 <h4>Get the Code</h4>
 <?php
     include CC_LIB_PHP . '/cc-license-result.php';
