@@ -58,7 +58,7 @@ FreedomsChooserClass.prototype = {
 			"sa-off-x":				[348,332,"sa"],
 			//"sa-shadow":			[0,0,"sa"],
 			
-			"share-piece-normal":	[0,0,"share"]
+			//"share-piece-normal":	[0,0,"share"]
 			//"share-shadow":		[0,0,"share"]
 			
 		});

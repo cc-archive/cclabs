@@ -115,6 +115,7 @@ function freedoms_update (license) {
   <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 1.5+, Safari, and IE6.</small></p>
 </div>
 <div id="nc-ad"></div>
+<div id="dn"></div>
 
 <div id="flg-container">
 
@@ -127,7 +128,7 @@ function freedoms_update (license) {
 
   	<img src="images/nc-piece.png" id="Freedoms_image_nc-piece-normal" alt="" style="position: absolute; left: 0px; top: 172px; display: none;">
   	<img src="images/sa-piece.png" id="Freedoms_image_sa-piece-normal" alt="" style="position: absolute; left: 172px; top: 238px; display: none;">
-  	<img src="images/share-piece.png" id="Freedoms_image_share-piece-normal" alt="" style="position: absolute; left: 0px; top: 0px;">
+  	<img src="images/share-piece.png" id="Freedoms_image_share-piece-normal" alt="" style="position: absolute; left: 20px; top: 20px;">
   	<img src="images/remix-piece.png" id="Freedoms_image_remix-piece-normal" alt="" style="position: absolute; left: 239px; top: 0px;">
 
   	<img src="images/sa-piece-grey.png" id="Freedoms_image_sa-piece-grey" alt="" style="position: absolute; left: 172px; top: 238px;">
