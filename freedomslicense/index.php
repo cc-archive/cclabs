@@ -105,14 +105,19 @@ function freedoms_update (license) {
   <p>
   Creative Commons licenses mark creative work with the freedoms the  
   author wants it to carry. This license engine helps make those  
-  freedoms, and limits, clear. Begin by selecting which freedoms you  
-  want to enable &mdash; either Share, or Remix, or both &mdash; by clicking on  
-  the green puzzle pieces. Then select which conditions, if any, you'd  
+  freedoms, and limits, clear. Begin by selecting whether to enable the 
+  freedom to Remix, by clicking on the green Remix puzzle piece &mdash; 
+  Sharing is always permitted. Then select which conditions, if any, you'd  
   like to impose &mdash; either NonCommercial, or ShareAlike, or both. Not  
-  all combinations are possible, but as you experiment with the  
-  selections, you can see the different licenses that result.
+  all combinations are possible, but as you experiment with the selections,
+  you can see the different licenses that result.
   </p>
-  <p><small>This project requires <em>Javascript</em>. It has been tested and works with Firefox 1.5+, Safari, and IE6.</small></p>
+  <p>
+    <small>
+      This project requires <em>Javascript</em>. It has been tested 
+      and works with Firefox 1.5+, Safari, and IE6.
+    </small>
+  </p>
 </div>
 <div id="nc-ad"></div>
 <div id="dn"></div>
