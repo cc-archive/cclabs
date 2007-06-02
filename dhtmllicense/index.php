@@ -55,7 +55,7 @@
             <?= sprintf(_('With a Creative Commons license, <strong>you keep your copyright</strong> but allow people to %scopy and distribute your work%s provided they %sgive you credit%s &mdash; and only on the conditions you specify here.'), 
             '<a href="http://creativecommons.org/learn/licenses/fullrights">', 
             '</a>', 
-            '<span ' . get_tooltip_js('<p><img src="http://creativecommons.org/icon/by/standard.gif" alt="by" class="icon" /><strong>' . _('Attribution') . '</strong> ' . _('You must attribute the work in the manner specified by the author or licensor.') . '</p>',  'http://a2.creativecommons.org/characteristic/by?lang=' . $lang) . '>', '</span>' ) . 
+            '<span ' . get_tooltip_js('<p><img src="http://creativecommons.org/icon/by/standard.gif" alt="by" class="icon" /><strong>' . _('Attribution') . '</strong> ' . _('You must attribute the work in the manner specified by the author or licensor.') . '</p>',  'http://a2.creativecommons.org/characteristic/by?lang=' . $lang) . '>', '</span> ' ) . 
             sprintf(_("For those new to Creative Commons licensing, we've prepared %sa list of things to think about%s."), 
             '<a href="http://creativecommons.org/about/think">', '</a>') . ' ' .
             sprintf(_('If you want to offer your work with no conditions, choose the %spublic domain%s'), 
@@ -68,7 +68,10 @@
           <h1>1. <?= _('Choose License Options'); ?></h1>
           <div id="required">
             <div class="choose">
-              <div class="choose-btn"><input type="checkbox" onchange="modify(this);" name="share" value="" id="share" /></div>
+              <input type="hidden" name="share" id="share" value="1"/>
+              <div class="choose-btn">
+                <input type="checkbox" name="__share" checked id="__share" disabled />
+              </div>
               <div class="choose-icon"><label for="share"><img src="images/share.png" border="0"/></label></div>
               <div class="choose-txt">
                 <label for="share"><strong><?= _('Allow Sharing'); ?></strong></label><br/>
