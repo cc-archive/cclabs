@@ -188,23 +188,8 @@ function freedoms_update (license) {
   <h2><a name="feedback"></a>Feedback</h2>
     <div class="blurb">
       <p>What do you think of this license chooser concept? How can it be improved? How does it compare to our <a href="http://creativecommons.org/license/">current license chooser</a> or other experimental concepts here at CC Labs?</p>
-      <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a> or fill out the form below.</p>
+        <p>We want your feedback on CC Labs projects.  Send an email to <a href="mailto:labs@creativecommons.org">labs@creativecommons.org</a>, join and post to our <a href="http://lists.ibiblio.org/mailman/listinfo/cc-devel">developer mailing list</a>, or edit the <a href="http://wiki.creativecommons.org/Labs">CC Labs wiki</a>.</p>
 
-      <form action="/feedback.php" method="post">
-      <p>Your email address<br/><input name="email"/></p>
-      <p>How does the <em>Freedoms License Generator</em> on this page compare to our <a href="http://creativecommons.org/license/">current license chooser</a>?
-      <br/><input type="radio" name="compare" value="better"/> Better
-      <br/><input type="radio" name="compare" value="different"/> Just different
-      <br/><input type="radio" name="compare" value="worse"/> Worse
-      </p>
-      <p>Did you find the <em>Freedoms License Generator</em> on this page easy to use and understand?
-      <br/><input type="radio" name="understandable" value="yes"/> Yes
-      <br/><input type="radio" name="understandable" value="maybe"/> Maybe
-      <br/><input type="radio" name="understabdable" value="no"/> No
-      </p>
-      <p>Comments<br/><textarea name="comments" rows="10" cols="40"></textarea></p>
-      <p><input type="submit" value="Send Feedback" /></p>
-      </form>
     </div>
 
    <div id="tip_cloak" style="position:absolute; visibility:hidden; z-index:100">hidden tip</div> 
