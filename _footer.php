@@ -83,7 +83,7 @@ licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2
           Join us at the next Creative Commons event.
         </div>
         <div class="ccExtras">
-          <h2><a href="/featured-projects">Featured Projects</a></h2>
+          <h2><a href="http://creativecommons.org/featured-projects">Featured Projects</a></h2>
           Read about people and projects that use CC.
         </div> 
         <div class="clear">&nbsp;</div>
