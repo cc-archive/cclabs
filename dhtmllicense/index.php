@@ -92,11 +92,6 @@
               <div class="choose-txt">
                 <label for="nc" id="nc-label" class="option_on"><strong><?= _('Prohibit Commercial Use'); ?></strong></label><br/>
                 <?=  _('The licensor permits others to copy, distribute, display, and perform the work. In return, licensees may not use the work for commercial purposes &mdash; unless they get the permission of the licensor.'); ?>
-                <div id="nc-ad" class="options">
-                  <label><input type="radio" onchange="modify(this);" name="nc-ad" checked value="1" id="nc-ad-allow" /> <strong><?= _('Ok on ad-supported sites'); ?></strong></label>
-                  <label><input type="radio" onchange="modify(this);" name="nc-ad" value="0" id="nc-ad-prohibit" /> <strong><?= _('Not ok on ad-supported sites'); ?></strong></label>
-                </div>
-                          
               </div>
             </div>
             <div class="choose">
@@ -107,14 +102,9 @@
                 <?=  _('The licensor permits others to distribute derivative works only under a license identical to the one that governs the work of the licensor.'); ?>
               </div>
             </div>
-            <div class="choose">
-              <div class="choose-btn"><input type="checkbox" onchange="modify(this);" name="dn" value="" id="dn" /></div>
-              <div class="choose-icon"><label for="dn"><img src="images/devnations.png" border="0"/></label></div>
-              <div class="choose-txt">
-                <label for="dn" id="dn-label" class="option_on"><strong><?= _('Developing Nations'); ?></strong></label><br/>
-                <?=  _('Allow commercial sharing and remixing in developing nations in addition to the rights granted worldwide above.'); ?>
-              </div>
-            </div>
+
+	    <input type="hidden" name="dn" value="" id="dn" />
+
             <div class="choose">
               <div class="choose-jurisdiction">
                 <script language="javascript" type="text/javascript">
