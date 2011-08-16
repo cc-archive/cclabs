@@ -3,8 +3,7 @@
 import cgi
 import cgitb; cgitb.enable()
 import commands
-import time
-import random
+import tempfile
 from types import *
 from os import chdir, environ
 import lxml.etree
@@ -16,8 +15,8 @@ pdflatex_bin = '/usr/bin/pdflatex'
 template_path = '/latex/'
 template_prefix = 'termination_template_'
 
-# working directory - we should set this someday :)
-work_dir = '/tmp'
+# Temporary directory
+work_dir = tempfile.mkdtemp()
 
 def escapeStrForLatex( str ):
     # we'll do backslashes separately to keep from getting confused
@@ -191,8 +190,8 @@ def genLatex( args ):
 
     output += template['main_end']
 
-    ## Ideally we'd use a unique file name...
-    latex_file = str(time.time()) + str(random.randrange(1000)) + '.tex'
+    # Name doesn't need to be random anymore.
+    latex_file = "out.tex"
     if len(work_dir): chdir(work_dir)
     active = file(latex_file,'w')
     active.write(output)
@@ -203,14 +202,20 @@ def genLatex( args ):
 
 def genPDF( args ):
 
-    # get the latex
-    latex_file = genLatex( args )
+    # create the latex
+    genLatex( args )
 
     # feed it to pdflatex
-    commands.getstatusoutput( pdflatex_bin + ' ' + latex_file)
+    commands.getstatusoutput('%s out.tex' % pdflatex_bin)
+
+    # debug:
+    commands.getstatusoutput("ls > /home/lunpa/debug.txt")
+    commands.getstatusoutput("cat out.log > /home/lunpa/out.log")
+    commands.getstatusoutput("cat out.tex > /home/lunpa/out.tex")
+
 
     # get the pdf file
-    pdf_file = latex_file.replace('.tex','.pdf')
+    pdf_file = "out.pdf"
     pdf_bin = file( pdf_file, 'r' ).read()
 
     # clean up the crud
